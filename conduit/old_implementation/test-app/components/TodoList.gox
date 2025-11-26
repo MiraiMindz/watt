@@ -1,0 +1,304 @@
+package main
+
+import "gox"
+
+type Todo struct {
+	id        int
+	text      string
+	completed bool
+}
+
+component TodoList() {
+	todos, setTodos := gox.UseState[[]Todo]([]Todo{})
+	inputValue, setInputValue := gox.UseState[string]("")
+	nextId, setNextId := gox.UseState[int](1)
+	filter, setFilter := gox.UseState[string]("all")
+
+	// Add a new todo
+	addTodo := func() {
+		if inputValue != "" {
+			newTodo := Todo{
+				id:        nextId,
+				text:      inputValue,
+				completed: false,
+			}
+			setTodos(append(todos, newTodo))
+			setNextId(nextId + 1)
+			setInputValue("")
+		}
+	}
+
+	// Toggle todo completion
+	toggleTodo := func(id int) {
+		updatedTodos := make([]Todo, len(todos))
+		for i, todo := range todos {
+			if todo.id == id {
+				todo.completed = !todo.completed
+			}
+			updatedTodos[i] = todo
+		}
+		setTodos(updatedTodos)
+	}
+
+	// Delete a todo
+	deleteTodo := func(id int) {
+		filteredTodos := []Todo{}
+		for _, todo := range todos {
+			if todo.id != id {
+				filteredTodos = append(filteredTodos, todo)
+			}
+		}
+		setTodos(filteredTodos)
+	}
+
+	// Clear completed todos
+	clearCompleted := func() {
+		activeTodos := []Todo{}
+		for _, todo := range todos {
+			if !todo.completed {
+				activeTodos = append(activeTodos, todo)
+			}
+		}
+		setTodos(activeTodos)
+	}
+
+	// Filter todos based on status
+	getFilteredTodos := func() []Todo {
+		switch filter {
+		case "active":
+			active := []Todo{}
+			for _, todo := range todos {
+				if !todo.completed {
+					active = append(active, todo)
+				}
+			}
+			return active
+		case "completed":
+			completed := []Todo{}
+			for _, todo := range todos {
+				if todo.completed {
+					completed = append(completed, todo)
+				}
+			}
+			return completed
+		default:
+			return todos
+		}
+	}
+
+	// Count active todos
+	activeCount := gox.UseMemo(func() int {
+		count := 0
+		for _, todo := range todos {
+			if !todo.completed {
+				count++
+			}
+		}
+		return count
+	}, []interface{}{todos})
+
+	render {
+		<div className="todo-card">
+			<h2>Todo List Component</h2>
+
+			<div className="todo-input">
+				<input
+					type="text"
+					value={inputValue}
+					onChange={func(e Event) { setInputValue(e.target.value) }}
+					onKeyPress={func(e KeyEvent) {
+						if e.key == "Enter" {
+							addTodo()
+						}
+					}}
+					placeholder="What needs to be done?"
+				/>
+				<button onClick={addTodo} className="add-btn">
+					Add Todo
+				</button>
+			</div>
+
+			<div className="todo-filters">
+				<button
+					onClick={func() { setFilter("all") }}
+					className={filter == "all" ? "active" : ""}>
+					All ({len(todos)})
+				</button>
+				<button
+					onClick={func() { setFilter("active") }}
+					className={filter == "active" ? "active" : ""}>
+					Active ({activeCount})
+				</button>
+				<button
+					onClick={func() { setFilter("completed") }}
+					className={filter == "completed" ? "active" : ""}>
+					Completed ({len(todos) - activeCount})
+				</button>
+			</div>
+
+			<ul className="todo-list">
+				{getFilteredTodos().map(func(todo Todo) JSXElement {
+					return <li key={todo.id} className={todo.completed ? "completed" : ""}>
+						<input
+							type="checkbox"
+							checked={todo.completed}
+							onChange={func() { toggleTodo(todo.id) }}
+						/>
+						<span onClick={func() { toggleTodo(todo.id) }}>
+							{todo.text}
+						</span>
+						<button
+							onClick={func() { deleteTodo(todo.id) }}
+							className="delete-btn">
+							×
+						</button>
+					</li>
+				})}
+			</ul>
+
+			{len(todos) > 0 && (
+				<div className="todo-footer">
+					<span>{activeCount} items left</span>
+					<button onClick={clearCompleted} className="clear-btn">
+						Clear Completed
+					</button>
+				</div>
+			)}
+		</div>
+	}
+
+	style {
+		.todo-card {
+			background: white;
+			border-radius: 12px;
+			padding: 2rem;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			margin: 1rem;
+			max-width: 600px;
+		}
+
+		.todo-input {
+			display: flex;
+			gap: 0.5rem;
+			margin: 1.5rem 0;
+		}
+
+		.todo-input input {
+			flex: 1;
+			padding: 0.75rem;
+			font-size: 1rem;
+			border: 2px solid #e0e0e0;
+			border-radius: 8px;
+			outline: none;
+		}
+
+		.todo-input input:focus {
+			border-color: #667eea;
+		}
+
+		.add-btn {
+			padding: 0.75rem 1.5rem;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+		}
+
+		.todo-filters {
+			display: flex;
+			gap: 0.5rem;
+			margin-bottom: 1rem;
+			padding-bottom: 1rem;
+			border-bottom: 2px solid #f0f0f0;
+		}
+
+		.todo-filters button {
+			padding: 0.5rem 1rem;
+			background: none;
+			border: 1px solid #e0e0e0;
+			border-radius: 6px;
+			cursor: pointer;
+			transition: all 0.2s;
+		}
+
+		.todo-filters button.active {
+			background: #667eea;
+			color: white;
+			border-color: #667eea;
+		}
+
+		.todo-list {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.todo-list li {
+			display: flex;
+			align-items: center;
+			padding: 1rem;
+			border-bottom: 1px solid #f0f0f0;
+			transition: background 0.2s;
+		}
+
+		.todo-list li:hover {
+			background: #f8f9fa;
+		}
+
+		.todo-list li.completed span {
+			text-decoration: line-through;
+			color: #9e9e9e;
+		}
+
+		.todo-list input[type="checkbox"] {
+			margin-right: 1rem;
+			width: 20px;
+			height: 20px;
+			cursor: pointer;
+		}
+
+		.todo-list span {
+			flex: 1;
+			cursor: pointer;
+		}
+
+		.delete-btn {
+			background: none;
+			border: none;
+			color: #dc3545;
+			font-size: 1.5rem;
+			cursor: pointer;
+			opacity: 0;
+			transition: opacity 0.2s;
+		}
+
+		.todo-list li:hover .delete-btn {
+			opacity: 1;
+		}
+
+		.todo-footer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1rem;
+			margin-top: 1rem;
+			border-top: 1px solid #f0f0f0;
+			color: #6c757d;
+		}
+
+		.clear-btn {
+			padding: 0.5rem 1rem;
+			background: none;
+			border: 1px solid #dc3545;
+			color: #dc3545;
+			border-radius: 6px;
+			cursor: pointer;
+		}
+
+		.clear-btn:hover {
+			background: #dc3545;
+			color: white;
+		}
+	}
+}

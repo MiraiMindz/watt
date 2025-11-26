@@ -1,0 +1,14 @@
+# command-line-arguments [command-line-arguments.test]
+middleware/cors_test.go:11:16: undefined: CORS
+middleware/cors_test.go:36:12: undefined: CORSConfig
+middleware/cors_test.go:43:16: undefined: CORSWithConfig
+middleware/cors_test.go:89:12: undefined: CORSConfig
+middleware/cors_test.go:93:16: undefined: CORSWithConfig
+middleware/cors_test.go:128:12: undefined: CORSConfig
+middleware/cors_test.go:133:16: undefined: CORSWithConfig
+middleware/cors_test.go:154:12: undefined: CORSConfig
+middleware/cors_test.go:159:16: undefined: CORSWithConfig
+middleware/cors_test.go:184:16: undefined: CORS
+middleware/cors_test.go:184:16: too many errors
+FAIL	command-line-arguments [build failed]
+FAIL

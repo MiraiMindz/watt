@@ -1,0 +1,41 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/benchmarks/competitors
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkGorillaWebSocketEcho-8             	  148161	      6829 ns/op	   4.98 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-8             	  169810	      6599 ns/op	   5.15 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-8             	  182461	      6396 ns/op	   5.32 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-8             	  188535	      7092 ns/op	   4.79 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-8             	  184660	      6696 ns/op	   5.08 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketBroadcast-8        	   22411	     50310 ns/op	   3.58 MB/s	    5768 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-8        	   26564	     51483 ns/op	   3.50 MB/s	    5768 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-8        	   23572	     53305 ns/op	   3.38 MB/s	    5768 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-8        	   22971	     50862 ns/op	   3.54 MB/s	    5768 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-8        	   23600	     50999 ns/op	   3.53 MB/s	    5768 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketThroughput-8       	  842755	      1380 ns/op	 741.88 MB/s	    2873 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketThroughput-8       	  904868	      1376 ns/op	 744.22 MB/s	    2871 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketThroughput-8       	  776595	      1369 ns/op	 748.19 MB/s	    2863 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-8       	  818527	      1346 ns/op	 760.66 MB/s	    2870 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-8       	  877884	      1380 ns/op	 741.92 MB/s	    2864 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketConcurrent-8       	  504400	      2417 ns/op	1903.08 MB/s	    1094 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-8       	  476200	      2333 ns/op	1972.06 MB/s	    1095 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-8       	  453500	      2398 ns/op	1918.22 MB/s	    1095 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-8       	  442700	      2365 ns/op	1945.10 MB/s	    1095 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-8       	  428700	      2395 ns/op	1920.83 MB/s	    1095 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-8     	     100	  42340467 ns/op	  49.53 MB/s	10482337 B/op	      59 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-8     	     430	  12609465 ns/op	 166.32 MB/s	10482357 B/op	      59 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-8     	     427	   5874646 ns/op	 356.98 MB/s	10482376 B/op	      59 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-8     	     241	  16238796 ns/op	 129.14 MB/s	10482372 B/op	      59 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-8     	     234	  21708532 ns/op	  96.60 MB/s	10482372 B/op	      59 allocs/op
+BenchmarkGorillaWebSocketPing-8             	   88022	     13573 ns/op	    1040 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-8             	   87067	     13667 ns/op	    1040 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-8             	   88465	     13550 ns/op	    1040 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-8             	   89479	     13955 ns/op	    1040 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-8             	   82580	     14547 ns/op	    1040 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-8   	120426631	         9.831 ns/op	1118.93 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-8   	125208175	         9.908 ns/op	1110.16 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-8   	120969344	         9.993 ns/op	1100.80 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-8   	120648927	        10.08 ns/op	1091.03 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-8   	121623826	         9.816 ns/op	1120.66 MB/s	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/benchmarks/competitors	71.658s

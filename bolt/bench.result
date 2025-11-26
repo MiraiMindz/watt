@@ -1,0 +1,2333 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/bolt/benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkFull_Bolt_StaticRoute               	      50	      1581 ns/op	      59 B/op	       1 allocs/op
+BenchmarkFull_Bolt_StaticRoute-2             	      50	      1795 ns/op	     279 B/op	       1 allocs/op
+BenchmarkFull_Gin_StaticRoute                	      50	       790.4 ns/op	      72 B/op	       2 allocs/op
+BenchmarkFull_Gin_StaticRoute-2              	      50	       775.5 ns/op	      74 B/op	       2 allocs/op
+BenchmarkFull_Echo_StaticRoute               	      50	       769.0 ns/op	      80 B/op	       1 allocs/op
+BenchmarkFull_Echo_StaticRoute-2             	      50	       848.2 ns/op	      85 B/op	       1 allocs/op
+BenchmarkFull_Fiber_StaticRoute              	      50	     13712 ns/op	    5861 B/op	      24 allocs/op
+BenchmarkFull_Fiber_StaticRoute-2            	      50	     16808 ns/op	    5882 B/op	      24 allocs/op
+BenchmarkFull_Bolt_DynamicRoute              	      50	      2303 ns/op	     351 B/op	       4 allocs/op
+BenchmarkFull_Bolt_DynamicRoute-2            	      50	      2681 ns/op	     146 B/op	       4 allocs/op
+BenchmarkFull_Gin_DynamicRoute               	      50	      1388 ns/op	     194 B/op	       5 allocs/op
+BenchmarkFull_Gin_DynamicRoute-2             	      50	      1564 ns/op	     199 B/op	       5 allocs/op
+BenchmarkFull_Echo_DynamicRoute              	      50	      2218 ns/op	     160 B/op	       4 allocs/op
+BenchmarkFull_Echo_DynamicRoute-2            	      50	      1447 ns/op	     165 B/op	       4 allocs/op
+BenchmarkFull_Fiber_DynamicRoute             	      50	     14739 ns/op	    6042 B/op	      27 allocs/op
+BenchmarkFull_Fiber_DynamicRoute-2           	      50	     28282 ns/op	    6057 B/op	      27 allocs/op
+BenchmarkFull_Bolt_MiddlewareChain           	      50	      1838 ns/op	     271 B/op	       1 allocs/op
+BenchmarkFull_Bolt_MiddlewareChain-2         	      50	      3253 ns/op	     279 B/op	       1 allocs/op
+BenchmarkFull_Gin_MiddlewareChain            	      50	      1661 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFull_Gin_MiddlewareChain-2          	      50	      1609 ns/op	      70 B/op	       2 allocs/op
+BenchmarkFull_Echo_MiddlewareChain           	      50	      1818 ns/op	     156 B/op	       6 allocs/op
+BenchmarkFull_Echo_MiddlewareChain-2         	      50	      1496 ns/op	     161 B/op	       6 allocs/op
+BenchmarkFull_Fiber_MiddlewareChain          	      50	     15913 ns/op	    5864 B/op	      24 allocs/op
+BenchmarkFull_Fiber_MiddlewareChain-2        	      50	     19287 ns/op	    5888 B/op	      24 allocs/op
+BenchmarkFull_Bolt_LargeJSON                 	      50	    405363 ns/op	   16854 B/op	     102 allocs/op
+BenchmarkFull_Bolt_LargeJSON-2               	      50	    408611 ns/op	   16864 B/op	     102 allocs/op
+BenchmarkFull_Gin_LargeJSON                  	      50	    816879 ns/op	  123822 B/op	    2103 allocs/op
+BenchmarkFull_Gin_LargeJSON-2                	      50	    653184 ns/op	  123848 B/op	    2103 allocs/op
+BenchmarkFull_Echo_LargeJSON                 	      50	    763526 ns/op	   74696 B/op	    2102 allocs/op
+BenchmarkFull_Echo_LargeJSON-2               	      50	    620920 ns/op	   74706 B/op	    2102 allocs/op
+BenchmarkFull_Fiber_LargeJSON                	      50	    829410 ns/op	  181835 B/op	    2127 allocs/op
+BenchmarkFull_Fiber_LargeJSON-2              	      50	    712682 ns/op	  186258 B/op	    2128 allocs/op
+BenchmarkFull_Bolt_QueryParams               	      50	      2161 ns/op	     171 B/op	       3 allocs/op
+BenchmarkFull_Bolt_QueryParams-2             	      50	      2277 ns/op	     179 B/op	       3 allocs/op
+BenchmarkFull_Gin_QueryParams                	      50	      4756 ns/op	    1564 B/op	      19 allocs/op
+BenchmarkFull_Gin_QueryParams-2              	      50	      5074 ns/op	    1569 B/op	      19 allocs/op
+BenchmarkFull_Echo_QueryParams               	      50	      4644 ns/op	    1445 B/op	      17 allocs/op
+BenchmarkFull_Echo_QueryParams-2             	      50	      5231 ns/op	    1456 B/op	      17 allocs/op
+BenchmarkFull_Fiber_QueryParams              	      50	     16748 ns/op	    6636 B/op	      27 allocs/op
+BenchmarkFull_Fiber_QueryParams-2            	      50	     21227 ns/op	    6675 B/op	      27 allocs/op
+BenchmarkFull_Bolt_Concurrent                	      50	      1606 ns/op	      65 B/op	       1 allocs/op
+BenchmarkFull_Bolt_Concurrent-2              	      50	      1898 ns/op	     324 B/op	       1 allocs/op
+BenchmarkFull_Gin_Concurrent                 	      50	       967.0 ns/op	      80 B/op	       2 allocs/op
+BenchmarkFull_Gin_Concurrent-2               	      50	      1898 ns/op	     129 B/op	       2 allocs/op
+BenchmarkFull_Echo_Concurrent                	      50	       921.2 ns/op	      88 B/op	       1 allocs/op
+BenchmarkFull_Echo_Concurrent-2              	      50	      1228 ns/op	      98 B/op	       1 allocs/op
+BenchmarkFull_Fiber_Concurrent               	      50	     15793 ns/op	    5866 B/op	      24 allocs/op
+BenchmarkFull_Fiber_Concurrent-2             	      50	     10371 ns/op	    6120 B/op	      25 allocs/op
+BenchmarkRouter_StaticRoute                  	      50	      1555 ns/op	     256 B/op	       2 allocs/op
+BenchmarkRouter_StaticRoute-2                	      50	      1628 ns/op	     261 B/op	       2 allocs/op
+BenchmarkRouter_DynamicRoute                 	      50	      2321 ns/op	     351 B/op	       7 allocs/op
+BenchmarkRouter_DynamicRoute-2               	      50	      3031 ns/op	     144 B/op	       7 allocs/op
+BenchmarkRouter_MultipleParams               	      50	      3060 ns/op	     518 B/op	       9 allocs/op
+BenchmarkRouter_MultipleParams-2             	      50	      3319 ns/op	     746 B/op	       9 allocs/op
+BenchmarkRouter_ManyRoutes_StaticLookup      	      50	       241.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRouter_ManyRoutes_StaticLookup-2    	      50	       223.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRouter_ManyRoutes_DynamicLookup     	      50	      1066 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRouter_ManyRoutes_DynamicLookup-2   	      50	      1042 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRouter_WildcardRoute                	      50	      2777 ns/op	     720 B/op	       7 allocs/op
+BenchmarkRouter_WildcardRoute-2              	      50	      3201 ns/op	     728 B/op	       7 allocs/op
+BenchmarkRouter_MixedRoutes/Static           	      50	      1228 ns/op	      44 B/op	       2 allocs/op
+BenchmarkRouter_MixedRoutes/Static-2         	      50	      1242 ns/op	      49 B/op	       2 allocs/op
+BenchmarkRouter_MixedRoutes/Dynamic          	      50	      1919 ns/op	     268 B/op	       4 allocs/op
+BenchmarkRouter_MixedRoutes/Dynamic-2        	      50	      2130 ns/op	     274 B/op	       4 allocs/op
+BenchmarkRouter_MixedRoutes/Nested           	      50	      3755 ns/op	      56 B/op	       4 allocs/op
+BenchmarkRouter_MixedRoutes/Nested-2         	      50	      2176 ns/op	     274 B/op	       4 allocs/op
+BenchmarkRouter_MixedRoutes/Wildcard         	      50	      3123 ns/op	      75 B/op	       4 allocs/op
+BenchmarkRouter_MixedRoutes/Wildcard-2       	      50	      2350 ns/op	      80 B/op	       4 allocs/op
+BenchmarkRouter_ParamExtraction_Single       	      50	       537.7 ns/op	      13 B/op	       2 allocs/op
+BenchmarkRouter_ParamExtraction_Single-2     	      50	       548.5 ns/op	      13 B/op	       2 allocs/op
+BenchmarkRouter_ParamExtraction_Multiple     	      50	       917.4 ns/op	      54 B/op	       6 allocs/op
+BenchmarkRouter_ParamExtraction_Multiple-2   	      50	       978.5 ns/op	      54 B/op	       6 allocs/op
+BenchmarkRouter_Concurrent                   	      50	      2237 ns/op	     292 B/op	       4 allocs/op
+BenchmarkRouter_Concurrent-2                 	      50	      3449 ns/op	     534 B/op	       4 allocs/op
+BenchmarkBolt_StaticRoute                    	      50	         6.040 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBolt_StaticRoute-2                  	      50	         6.940 ns/op	       0 B/op	       0 allocs/op
+BenchmarkGin_StaticRoute                     	      50	       769.7 ns/op	      72 B/op	       2 allocs/op
+BenchmarkGin_StaticRoute-2                   	      50	       812.1 ns/op	      78 B/op	       2 allocs/op
+BenchmarkEcho_StaticRoute                    	      50	      1236 ns/op	      76 B/op	       1 allocs/op
+BenchmarkEcho_StaticRoute-2                  	      50	      1027 ns/op	      81 B/op	       1 allocs/op
+BenchmarkFiber_StaticRoute                   	      50	     12823 ns/op	    5868 B/op	      24 allocs/op
+BenchmarkFiber_StaticRoute-2                 	      50	     21163 ns/op	    5882 B/op	      24 allocs/op
+BenchmarkBolt_DynamicRoute                   	      50	         7.620 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBolt_DynamicRoute-2                 	      50	        10.32 ns/op	       0 B/op	       0 allocs/op
+BenchmarkGin_DynamicRoute                    	      50	      1195 ns/op	     174 B/op	       4 allocs/op
+BenchmarkGin_DynamicRoute-2                  	      50	      2048 ns/op	     180 B/op	       4 allocs/op
+BenchmarkEcho_DynamicRoute                   	      50	      1322 ns/op	     141 B/op	       3 allocs/op
+BenchmarkEcho_DynamicRoute-2                 	      50	      1182 ns/op	     146 B/op	       3 allocs/op
+BenchmarkFiber_DynamicRoute                  	      50	     22407 ns/op	    5998 B/op	      26 allocs/op
+BenchmarkFiber_DynamicRoute-2                	      50	     24839 ns/op	    6019 B/op	      26 allocs/op
+BenchmarkBolt_Middleware                     	      50	         6.940 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBolt_Middleware-2                   	      50	         5.820 ns/op	       0 B/op	       0 allocs/op
+BenchmarkGin_Middleware                      	      50	      1564 ns/op	      64 B/op	       2 allocs/op
+BenchmarkGin_Middleware-2                    	      50	      1095 ns/op	      70 B/op	       2 allocs/op
+BenchmarkBolt_LargeJSON                      	      50	         8.440 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBolt_LargeJSON-2                    	      50	         7.700 ns/op	       0 B/op	       0 allocs/op
+BenchmarkGin_LargeJSON                       	      50	   1210875 ns/op	  123822 B/op	    2103 allocs/op
+BenchmarkGin_LargeJSON-2                     	      50	    768147 ns/op	  123848 B/op	    2103 allocs/op
+BenchmarkBolt_QueryParams                    	      50	         8.280 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBolt_QueryParams-2                  	      50	         6.760 ns/op	       0 B/op	       0 allocs/op
+BenchmarkGin_QueryParams                     	      50	      4970 ns/op	    1315 B/op	      22 allocs/op
+BenchmarkGin_QueryParams-2                   	      50	      4291 ns/op	    1320 B/op	      22 allocs/op
+BenchmarkBolt_Concurrent                     	      50	       157.2 ns/op	       4 B/op	       0 allocs/op
+BenchmarkBolt_Concurrent-2                   	      50	       661.3 ns/op	       4 B/op	       0 allocs/op
+BenchmarkGin_Concurrent                      	      50	      1319 ns/op	     179 B/op	       2 allocs/op
+BenchmarkGin_Concurrent-2                    	      50	      1727 ns/op	     320 B/op	       3 allocs/op
+BenchmarkJSON_Marshal                        	      50	      2005 ns/op	     114 B/op	       1 allocs/op
+BenchmarkJSON_Marshal-2                      	      50	      1124 ns/op	      69 B/op	       1 allocs/op
+BenchmarkJSON_Decode                         	      50	      1564 ns/op	     164 B/op	       3 allocs/op
+BenchmarkJSON_Decode-2                       	      50	      1607 ns/op	     166 B/op	       3 allocs/op
+PASS
+ok  	github.com/yourusername/bolt/benchmarks	0.718s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/bolt/core
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkAppGet                            	      50	      1105 ns/op	     624 B/op	       9 allocs/op
+BenchmarkAppGet-2                          	      50	      1781 ns/op	     624 B/op	       9 allocs/op
+BenchmarkAppGetWithMiddleware              	      50	      1168 ns/op	     648 B/op	      11 allocs/op
+BenchmarkAppGetWithMiddleware-2            	      50	      2204 ns/op	     648 B/op	      11 allocs/op
+BenchmarkAppDataWrapper                    	      50	      1796 ns/op	     624 B/op	       9 allocs/op
+BenchmarkAppDataWrapper-2                  	      50	      1061 ns/op	     624 B/op	       9 allocs/op
+BenchmarkContextPoolAcquire                	      50	       627.9 ns/op	     898 B/op	       1 allocs/op
+BenchmarkContextPoolAcquire-2              	      50	      1753 ns/op	     901 B/op	       1 allocs/op
+BenchmarkContextPoolAcquireRelease         	      50	       273.7 ns/op	      20 B/op	       0 allocs/op
+BenchmarkContextPoolAcquireRelease-2       	      50	       287.4 ns/op	      23 B/op	       0 allocs/op
+BenchmarkContextPoolConcurrent             	      50	       423.9 ns/op	      33 B/op	       1 allocs/op
+BenchmarkContextPoolConcurrent-2           	      50	       292.9 ns/op	      62 B/op	       1 allocs/op
+BenchmarkContextPoolReset                  	      50	      1590 ns/op	     680 B/op	       6 allocs/op
+BenchmarkContextPoolReset-2                	      50	       538.6 ns/op	     680 B/op	       6 allocs/op
+BenchmarkContextParam                      	      50	        19.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextParam-2                    	      50	        16.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextSetGet                     	      50	        95.16 ns/op	       6 B/op	       0 allocs/op
+BenchmarkContextSetGet-2                   	      50	       694.0 ns/op	       6 B/op	       0 allocs/op
+BenchmarkContextQuery                      	      50	       169.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextQuery-2                    	      50	       167.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextPool                       	      50	       309.0 ns/op	      20 B/op	       0 allocs/op
+BenchmarkContextPool-2                     	      50	       260.1 ns/op	      23 B/op	       0 allocs/op
+BenchmarkContextPoolWithUsage              	      50	       596.6 ns/op	     372 B/op	       4 allocs/op
+BenchmarkContextPoolWithUsage-2            	      50	       582.4 ns/op	     375 B/op	       4 allocs/op
+BenchmarkCoverageFullStack                 	      50	      8855 ns/op	    8540 B/op	      19 allocs/op
+BenchmarkCoverageFullStack-2               	      50	      8751 ns/op	    8329 B/op	      19 allocs/op
+BenchmarkOK                                	      50	         5.820 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOK-2                              	      50	         6.400 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWithMeta                          	      50	        67.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWithMeta-2                        	      50	        65.94 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFluentAPI                         	      50	       136.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFluentAPI-2                       	      50	       146.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_String                  	      50	       101.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_String-2                	      50	       119.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_Bytes                   	      50	        98.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_Bytes-2                 	      50	       109.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_PreCompiledHelper       	      50	        96.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_PreCompiledHelper-2     	      50	       105.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkJSON_WithPreCompiledHeaders       	      50	      2234 ns/op	     325 B/op	       1 allocs/op
+BenchmarkJSON_WithPreCompiledHeaders-2     	      50	      3128 ns/op	     332 B/op	       1 allocs/op
+BenchmarkText_WithPreCompiledHeaders       	      50	       325.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkText_WithPreCompiledHeaders-2     	      50	       198.8 ns/op	      16 B/op	       1 allocs/op
+BenchmarkHTML_WithPreCompiledHeaders       	      50	       181.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkHTML_WithPreCompiledHeaders-2     	      50	       204.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkMultipleHeaders_String            	      50	       398.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMultipleHeaders_String-2          	      50	       383.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMultipleHeaders_Bytes             	      50	       420.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMultipleHeaders_Bytes-2           	      50	       423.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegrationFullCycle              	      50	      3028 ns/op	     726 B/op	       7 allocs/op
+BenchmarkIntegrationFullCycle-2            	      50	      4395 ns/op	     736 B/op	       7 allocs/op
+BenchmarkRouter_StaticRoute                	      50	       207.6 ns/op	       8 B/op	       1 allocs/op
+BenchmarkRouter_StaticRoute-2              	      50	       216.0 ns/op	       8 B/op	       1 allocs/op
+BenchmarkRouter_DynamicRoute               	      50	      1735 ns/op	     358 B/op	       5 allocs/op
+BenchmarkRouter_DynamicRoute-2             	      50	       811.8 ns/op	     358 B/op	       5 allocs/op
+BenchmarkRouter_MultipleParams             	      50	      1202 ns/op	     416 B/op	       9 allocs/op
+BenchmarkRouter_MultipleParams-2           	      50	      1073 ns/op	     416 B/op	       9 allocs/op
+BenchmarkRouter_Wildcard                   	      50	      1702 ns/op	     440 B/op	       5 allocs/op
+BenchmarkRouter_Wildcard-2                 	      50	      1667 ns/op	     440 B/op	       5 allocs/op
+BenchmarkRouter_Add                        	      50	      2537 ns/op	     904 B/op	      16 allocs/op
+BenchmarkRouter_Add-2                      	      50	      1402 ns/op	     904 B/op	      16 allocs/op
+BenchmarkRouter_ServeHTTP_DynamicRoute     	      50	       439.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRouter_ServeHTTP_DynamicRoute-2   	      50	       412.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBytesToString_Standard            	      50	        59.62 ns/op	      64 B/op	       1 allocs/op
+BenchmarkBytesToString_Standard-2          	      50	        52.00 ns/op	      64 B/op	       1 allocs/op
+BenchmarkBytesToString_Unsafe              	      50	         6.780 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBytesToString_Unsafe-2            	      50	         8.260 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringToBytes_Standard            	      50	         7.140 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringToBytes_Standard-2          	      50	         7.080 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringToBytes_Unsafe              	      50	         7.300 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringToBytes_Unsafe-2            	      50	         9.020 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParam_BeforeUnsafe                	      50	        21.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParam_BeforeUnsafe-2              	      50	        41.24 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParam_AfterUnsafe                 	      50	        15.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParam_AfterUnsafe-2               	      50	        28.14 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/yourusername/bolt/core	0.138s
+?   	github.com/yourusername/bolt/examples/hello	[no test files]
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/bolt/middleware
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkCORS                      	      50	       138.5 ns/op	       7 B/op	       0 allocs/op
+BenchmarkCORS-2                    	      50	       114.8 ns/op	       7 B/op	       0 allocs/op
+BenchmarkCORSPreflight             	      50	       459.5 ns/op	      44 B/op	       2 allocs/op
+BenchmarkCORSPreflight-2           	      50	       620.1 ns/op	     262 B/op	       2 allocs/op
+BenchmarkLogger                    	      50	      1906 ns/op	     123 B/op	       2 allocs/op
+BenchmarkLogger-2                  	      50	      1673 ns/op	     125 B/op	       2 allocs/op
+BenchmarkLoggerSkipPath            	      50	        39.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLoggerSkipPath-2          	      50	        39.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRateLimit                 	      50	       505.9 ns/op	       6 B/op	       0 allocs/op
+BenchmarkRateLimit-2               	      50	       603.2 ns/op	       6 B/op	       0 allocs/op
+BenchmarkRateLimitMultipleKeys     	      50	       940.1 ns/op	     244 B/op	       5 allocs/op
+BenchmarkRateLimitMultipleKeys-2   	      50	      1262 ns/op	     244 B/op	       5 allocs/op
+BenchmarkRecovery                  	      50	        19.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRecovery-2                	      50	        25.46 ns/op	       0 B/op	       0 allocs/op
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 26 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x1)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).run1.func1()
+	/usr/lib/go/src/testing/benchmark.go:245 +0x48
+created by testing.(*B).run1 in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:238 +0x90
+BenchmarkRecoveryWithPanic         	2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 55 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6b08?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6b08)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6b08, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6b08)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+      50	     57570 ns/op	    3613 B/op	      10 allocs/op
+BenchmarkRecoveryWithPanic-2       	2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 56 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x1)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).run1.func1()
+	/usr/lib/go/src/testing/benchmark.go:245 +0x48
+created by testing.(*B).run1 in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:238 +0x90
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+2025/11/18 14:51:31 PANIC: benchmark panic
+goroutine 57 [running]:
+runtime/debug.Stack()
+	/usr/lib/go/src/runtime/debug/stack.go:26 +0x5e
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3.1()
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:35 +0x58
+panic({0x6e1640?, 0x7bbb80?})
+	/usr/lib/go/src/runtime/panic.go:783 +0x132
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.func1(0x4801ee?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:204 +0x25
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic.BenchmarkRecoveryWithPanic.Recovery.func2.func3(0xc0000c6588?)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery.go:47 +0x57
+github.com/yourusername/bolt/middleware.BenchmarkRecoveryWithPanic(0xc0000c6588)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/middleware/recovery_test.go:213 +0xa5
+testing.(*B).runN(0xc0000c6588, 0x32)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0xc0000c6588)
+	/usr/lib/go/src/testing/benchmark.go:344 +0x7d
+created by testing.(*B).doBench in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:296 +0x65
+      50	     59952 ns/op	    3626 B/op	      10 allocs/op
+BenchmarkTimeout                   	      50	      5368 ns/op	     544 B/op	       8 allocs/op
+BenchmarkTimeout-2                 	      50	      6167 ns/op	     553 B/op	       8 allocs/op
+BenchmarkTimeoutSkipPath           	      50	        89.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTimeoutSkipPath-2         	      50	        60.22 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/yourusername/bolt/middleware	0.041s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/bolt/middleware/jwt
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkJWT             	      50	      1120 ns/op	      89 B/op	       1 allocs/op
+BenchmarkJWT-2           	      50	      1005 ns/op	      89 B/op	       1 allocs/op
+BenchmarkJWTSkipPath     	      50	        52.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkJWTSkipPath-2   	      50	        51.20 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/yourusername/bolt/middleware/jwt	0.013s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/bolt/pool
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkAcquire             	      50	       303.6 ns/op	      20 B/op	       0 allocs/op
+BenchmarkAcquire-2           	      50	       425.8 ns/op	      23 B/op	       0 allocs/op
+BenchmarkAcquireRelease      	      50	       540.5 ns/op	     356 B/op	       2 allocs/op
+BenchmarkAcquireRelease-2    	      50	      1137 ns/op	     359 B/op	       2 allocs/op
+BenchmarkAcquireParallel     	      50	       604.2 ns/op	     361 B/op	       2 allocs/op
+BenchmarkAcquireParallel-2   	      50	       829.1 ns/op	     372 B/op	       2 allocs/op
+BenchmarkNoPool              	      50	       248.8 ns/op	     336 B/op	       2 allocs/op
+BenchmarkNoPool-2            	      50	      1121 ns/op	     336 B/op	       2 allocs/op
+PASS
+ok  	github.com/yourusername/bolt/pool	0.018s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/bolt/pool/buffers
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkJSONBufferPool_AcquireRelease/SmallBuffer           	      50	       300.3 ns/op	      13 B/op	       0 allocs/op
+BenchmarkJSONBufferPool_AcquireRelease/SmallBuffer-2         	      50	       318.4 ns/op	       5 B/op	       0 allocs/op
+BenchmarkJSONBufferPool_AcquireRelease/MediumBuffer          	      50	       225.0 ns/op	       2 B/op	       0 allocs/op
+BenchmarkJSONBufferPool_AcquireRelease/MediumBuffer-2        	      50	       941.6 ns/op	     170 B/op	       0 allocs/op
+BenchmarkJSONBufferPool_AcquireRelease/LargeBuffer           	      50	       691.4 ns/op	    1314 B/op	       0 allocs/op
+BenchmarkJSONBufferPool_AcquireRelease/LargeBuffer-2         	      50	       198.0 ns/op	       5 B/op	       0 allocs/op
+BenchmarkJSONBufferPool_SmallJSON/WithPool                   	      50	      1144 ns/op	      37 B/op	       1 allocs/op
+BenchmarkJSONBufferPool_SmallJSON/WithPool-2                 	      50	      1307 ns/op	      42 B/op	       1 allocs/op
+BenchmarkJSONBufferPool_SmallJSON/WithoutPool                	      50	      1321 ns/op	     642 B/op	       3 allocs/op
+BenchmarkJSONBufferPool_SmallJSON/WithoutPool-2              	      50	      1639 ns/op	     597 B/op	       3 allocs/op
+BenchmarkJSONBufferPool_SmallJSON/Marshal                    	      50	      1151 ns/op	      82 B/op	       2 allocs/op
+BenchmarkJSONBufferPool_SmallJSON/Marshal-2                  	      50	       976.7 ns/op	      85 B/op	       2 allocs/op
+BenchmarkJSONBufferPool_MediumJSON/WithPool                  	      50	      1874 ns/op	     346 B/op	       1 allocs/op
+BenchmarkJSONBufferPool_MediumJSON/WithPool-2                	      50	      1698 ns/op	     138 B/op	       1 allocs/op
+BenchmarkJSONBufferPool_MediumJSON/WithoutPool               	      50	      4865 ns/op	    4274 B/op	       3 allocs/op
+BenchmarkJSONBufferPool_MediumJSON/WithoutPool-2             	      50	      4608 ns/op	    4277 B/op	       3 allocs/op
+BenchmarkJSONBufferPool_MediumJSON/Marshal                   	      50	      1971 ns/op	     338 B/op	       2 allocs/op
+BenchmarkJSONBufferPool_MediumJSON/Marshal-2                 	      50	      2549 ns/op	     388 B/op	       2 allocs/op
+BenchmarkJSONBufferPool_LargeJSON/WithPool                   	      50	     35644 ns/op	    2617 B/op	       1 allocs/op
+BenchmarkJSONBufferPool_LargeJSON/WithPool-2                 	      50	     36158 ns/op	      34 B/op	       1 allocs/op
+BenchmarkJSONBufferPool_LargeJSON/WithoutPool                	      50	     52694 ns/op	   16458 B/op	       3 allocs/op
+BenchmarkJSONBufferPool_LargeJSON/WithoutPool-2              	      50	     41069 ns/op	   17737 B/op	       3 allocs/op
+BenchmarkJSONBufferPool_LargeJSON/Marshal                    	      50	     38024 ns/op	   14871 B/op	       2 allocs/op
+BenchmarkJSONBufferPool_LargeJSON/Marshal-2                  	      50	     81737 ns/op	   14873 B/op	       2 allocs/op
+BenchmarkJSONBufferPool_Concurrency/Concurrent_4             	      50	      1297 ns/op	      37 B/op	       1 allocs/op
+BenchmarkJSONBufferPool_Concurrency/Concurrent_4-2           	      50	      2812 ns/op	     272 B/op	       1 allocs/op
+BenchmarkJSONBufferPool_Concurrency/Concurrent_8             	      50	      2591 ns/op	     258 B/op	       1 allocs/op
+BenchmarkJSONBufferPool_Concurrency/Concurrent_8-2           	      50	      2009 ns/op	     284 B/op	       1 allocs/op
+BenchmarkJSONBufferPool_Concurrency/Concurrent_16            	      50	      2414 ns/op	     268 B/op	       1 allocs/op
+BenchmarkJSONBufferPool_Concurrency/Concurrent_16-2          	      50	      2941 ns/op	     326 B/op	       2 allocs/op
+PASS
+ok  	github.com/yourusername/bolt/pool/buffers	0.058s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/bolt/shockwave
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkConfigCreation     	      50	         7.700 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConfigCreation-2   	      50	         9.240 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDefaultConfig      	      50	         4.080 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDefaultConfig-2    	      50	         7.700 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/yourusername/bolt/shockwave	0.007s

@@ -1,0 +1,36 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/bolt/benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkFull_Bolt_StaticRoute-8       	 3812800	       331.4 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_StaticRoute-8       	 3727014	       348.2 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_StaticRoute-8       	 3876312	       330.6 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_StaticRoute-8       	 3733299	       351.2 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_StaticRoute-8       	 3426273	       334.3 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_DynamicRoute-8      	 2133195	       564.3 ns/op	      96 B/op	       4 allocs/op
+BenchmarkFull_Bolt_DynamicRoute-8      	 2161520	       545.3 ns/op	      96 B/op	       4 allocs/op
+BenchmarkFull_Bolt_DynamicRoute-8      	 2115943	       576.6 ns/op	      96 B/op	       4 allocs/op
+BenchmarkFull_Bolt_DynamicRoute-8      	 2176634	       578.6 ns/op	      96 B/op	       4 allocs/op
+BenchmarkFull_Bolt_DynamicRoute-8      	 2182939	       667.3 ns/op	      96 B/op	       4 allocs/op
+BenchmarkFull_Bolt_MiddlewareChain-8   	 2864480	       387.6 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_MiddlewareChain-8   	 3039102	       409.0 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_MiddlewareChain-8   	 2909134	       447.0 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_MiddlewareChain-8   	 2914983	       391.1 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_MiddlewareChain-8   	 3083199	       387.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_LargeJSON-8         	    6295	    194386 ns/op	    9724 B/op	     102 allocs/op
+BenchmarkFull_Bolt_LargeJSON-8         	    5770	    217528 ns/op	    9815 B/op	     102 allocs/op
+BenchmarkFull_Bolt_LargeJSON-8         	    5109	    198412 ns/op	    9800 B/op	     102 allocs/op
+BenchmarkFull_Bolt_LargeJSON-8         	    6906	    197944 ns/op	    9720 B/op	     102 allocs/op
+BenchmarkFull_Bolt_LargeJSON-8         	    5856	    192613 ns/op	    9718 B/op	     102 allocs/op
+BenchmarkFull_Bolt_QueryParams-8       	 1335634	       992.7 ns/op	     128 B/op	       3 allocs/op
+BenchmarkFull_Bolt_QueryParams-8       	 1298242	       925.2 ns/op	     128 B/op	       3 allocs/op
+BenchmarkFull_Bolt_QueryParams-8       	 1329764	       895.1 ns/op	     129 B/op	       3 allocs/op
+BenchmarkFull_Bolt_QueryParams-8       	 1333759	       884.1 ns/op	     128 B/op	       3 allocs/op
+BenchmarkFull_Bolt_QueryParams-8       	 1396020	       904.3 ns/op	     128 B/op	       3 allocs/op
+BenchmarkFull_Bolt_Concurrent-8        	 7784250	       174.3 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_Concurrent-8        	 8123817	       169.7 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_Concurrent-8        	 6499524	       173.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_Concurrent-8        	 6729660	       170.4 ns/op	      16 B/op	       1 allocs/op
+BenchmarkFull_Bolt_Concurrent-8        	 6359179	       220.1 ns/op	      16 B/op	       1 allocs/op
+PASS
+ok  	github.com/yourusername/bolt/benchmarks	50.181s

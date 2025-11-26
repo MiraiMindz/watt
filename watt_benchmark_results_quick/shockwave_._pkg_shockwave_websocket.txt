@@ -1,0 +1,99 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/websocket
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkReadMessageInto              	 1818064	       132.4 ns/op	7732.91 MB/s	      48 B/op	       1 allocs/op
+BenchmarkReadMessageInto              	 1825746	       131.9 ns/op	7764.99 MB/s	      48 B/op	       1 allocs/op
+BenchmarkReadMessageInto              	 1802935	       133.2 ns/op	7685.65 MB/s	      48 B/op	       1 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessage         	  570912	       403.0 ns/op	2541.25 MB/s	    2120 B/op	       4 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessage         	  511639	       411.8 ns/op	2486.49 MB/s	    2120 B/op	       4 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessage         	  579014	       369.1 ns/op	2773.96 MB/s	    2120 B/op	       4 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessageInto     	 1801525	       133.7 ns/op	7659.37 MB/s	      48 B/op	       1 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessageInto     	 1771100	       135.7 ns/op	7544.76 MB/s	      48 B/op	       1 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessageInto     	 1765633	       134.7 ns/op	7600.56 MB/s	      48 B/op	       1 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessageInto+Pool         	 1396674	       177.7 ns/op	5761.95 MB/s	      72 B/op	       2 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessageInto+Pool         	 1400575	       171.5 ns/op	5970.42 MB/s	      72 B/op	       2 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessageInto+Pool         	 1379728	       173.2 ns/op	5911.95 MB/s	      72 B/op	       2 allocs/op
+BenchmarkBufferPooledReading                                       	 1372677	       174.8 ns/op	5857.64 MB/s	      72 B/op	       2 allocs/op
+BenchmarkBufferPooledReading                                       	 1369579	       175.1 ns/op	5847.84 MB/s	      72 B/op	       2 allocs/op
+BenchmarkBufferPooledReading                                       	 1353128	       176.6 ns/op	5797.88 MB/s	      72 B/op	       2 allocs/op
+BenchmarkConnWriteMessage                                          	11749304	        19.57 ns/op	52316.74 MB/s	       0 B/op	       0 allocs/op
+BenchmarkConnWriteMessage                                          	11472078	        19.23 ns/op	53244.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkConnWriteMessage                                          	11357872	        19.62 ns/op	52197.01 MB/s	       0 B/op	       0 allocs/op
+BenchmarkConnReadMessage                                           	  532918	       393.4 ns/op	2603.28 MB/s	    2120 B/op	       4 allocs/op
+BenchmarkConnReadMessage                                           	  551853	       389.2 ns/op	2631.08 MB/s	    2120 B/op	       4 allocs/op
+BenchmarkConnReadMessage                                           	  561720	       394.0 ns/op	2598.66 MB/s	    2120 B/op	       4 allocs/op
+BenchmarkConnReadWriteRoundtrip                                    	   42962	      5512 ns/op	 185.76 MB/s	    4240 B/op	       8 allocs/op
+BenchmarkConnReadWriteRoundtrip                                    	   43670	      5249 ns/op	 195.10 MB/s	    4240 B/op	       8 allocs/op
+BenchmarkConnReadWriteRoundtrip                                    	   45352	      5213 ns/op	 196.44 MB/s	    4240 B/op	       8 allocs/op
+BenchmarkFrameReaderReadFrame/@                                    	  282999	       813.3 ns/op	  78.69 MB/s	    4512 B/op	       7 allocs/op
+BenchmarkFrameReaderReadFrame/@                                    	  262518	       824.3 ns/op	  77.64 MB/s	    4512 B/op	       7 allocs/op
+BenchmarkFrameReaderReadFrame/@                                    	  271838	       822.7 ns/op	  77.79 MB/s	    4512 B/op	       7 allocs/op
+BenchmarkFrameReaderReadFrame/Ā                                    	  268914	       849.0 ns/op	 301.53 MB/s	    4512 B/op	       7 allocs/op
+BenchmarkFrameReaderReadFrame/Ā                                    	  272071	       831.8 ns/op	 307.78 MB/s	    4512 B/op	       7 allocs/op
+BenchmarkFrameReaderReadFrame/Ā                                    	  261451	       844.0 ns/op	 303.33 MB/s	    4512 B/op	       7 allocs/op
+BenchmarkFrameReaderReadFrame/Ѐ                                    	  209913	      1084 ns/op	 944.60 MB/s	    5280 B/op	       7 allocs/op
+BenchmarkFrameReaderReadFrame/Ѐ                                    	  203144	       993.5 ns/op	1030.69 MB/s	    5280 B/op	       7 allocs/op
+BenchmarkFrameReaderReadFrame/Ѐ                                    	  225034	       957.0 ns/op	1070.06 MB/s	    5280 B/op	       7 allocs/op
+BenchmarkFrameReaderReadFrame/က                                    	  152677	      1494 ns/op	2741.94 MB/s	    8352 B/op	       7 allocs/op
+BenchmarkFrameReaderReadFrame/က                                    	  150700	      1487 ns/op	2754.40 MB/s	    8352 B/op	       7 allocs/op
+BenchmarkFrameReaderReadFrame/က                                    	  153912	      1487 ns/op	2755.26 MB/s	    8352 B/op	       7 allocs/op
+BenchmarkFrameWriterWriteFrame/@                                   	 8280901	        28.65 ns/op	2234.20 MB/s	      64 B/op	       1 allocs/op
+BenchmarkFrameWriterWriteFrame/@                                   	 8188740	        28.30 ns/op	2261.41 MB/s	      64 B/op	       1 allocs/op
+BenchmarkFrameWriterWriteFrame/@                                   	 8238238	        28.52 ns/op	2243.71 MB/s	      64 B/op	       1 allocs/op
+BenchmarkFrameWriterWriteFrame/Ā                                   	 4355720	        52.63 ns/op	4864.47 MB/s	     256 B/op	       1 allocs/op
+BenchmarkFrameWriterWriteFrame/Ā                                   	 4604379	        52.81 ns/op	4847.98 MB/s	     256 B/op	       1 allocs/op
+BenchmarkFrameWriterWriteFrame/Ā                                   	 4533380	        51.87 ns/op	4935.58 MB/s	     256 B/op	       1 allocs/op
+BenchmarkFrameWriterWriteFrame/Ѐ                                   	 1648018	       147.0 ns/op	6964.13 MB/s	    1024 B/op	       1 allocs/op
+BenchmarkFrameWriterWriteFrame/Ѐ                                   	 1646089	       144.6 ns/op	7081.63 MB/s	    1024 B/op	       1 allocs/op
+BenchmarkFrameWriterWriteFrame/Ѐ                                   	 1661403	       146.1 ns/op	7009.04 MB/s	    1024 B/op	       1 allocs/op
+BenchmarkFrameWriterWriteFrame/က                                   	  403491	       554.3 ns/op	7389.44 MB/s	    4096 B/op	       1 allocs/op
+BenchmarkFrameWriterWriteFrame/က                                   	  403713	       549.4 ns/op	7454.78 MB/s	    4096 B/op	       1 allocs/op
+BenchmarkFrameWriterWriteFrame/က                                   	  370070	       557.6 ns/op	7345.16 MB/s	    4096 B/op	       1 allocs/op
+BenchmarkFrameReadWriteRoundtrip                                   	  169597	      1388 ns/op	 737.63 MB/s	    7568 B/op	      11 allocs/op
+BenchmarkFrameReadWriteRoundtrip                                   	  161418	      1400 ns/op	 731.28 MB/s	    7568 B/op	      11 allocs/op
+BenchmarkFrameReadWriteRoundtrip                                   	  160422	      1415 ns/op	 723.50 MB/s	    7568 B/op	      11 allocs/op
+BenchmarkBufferPoolGet/Ā                                           	 5843644	        41.70 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/Ā                                           	 5807862	        41.16 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/Ā                                           	 5757830	        41.34 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/Ѐ                                           	 5753271	        41.24 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/Ѐ                                           	 5844367	        41.74 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/Ѐ                                           	 5636815	        41.88 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/က                                           	 5708228	        42.38 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/က                                           	 5759758	        41.67 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/က                                           	 5803854	        41.56 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/䀀                                           	 5681773	        42.59 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/䀀                                           	 5702866	        41.89 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/䀀                                           	 5723445	        41.67 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGetPut/1KB                                      	 5711348	        41.40 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGetPut/1KB                                      	 5781014	        41.63 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGetPut/1KB                                      	 5731503	        42.21 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolVsAlloc/Pool                                    	 5811090	        41.40 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolVsAlloc/Pool                                    	 5754813	        41.48 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolVsAlloc/Pool                                    	 5830068	        41.43 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolVsAlloc/Alloc                                   	961203310	         0.2322 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBufferPoolVsAlloc/Alloc                                   	1000000000	         0.2317 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBufferPoolVsAlloc/Alloc                                   	1000000000	         0.2336 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/\x10                                            	40654936	         6.510 ns/op	2457.69 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/\x10                                            	36801648	         6.504 ns/op	2459.85 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/\x10                                            	36673056	         6.493 ns/op	2464.20 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/@                                               	58207216	         4.393 ns/op	14568.26 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/@                                               	55144093	         4.388 ns/op	14585.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/@                                               	55083544	         4.374 ns/op	14632.57 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/Ā                                               	35359844	         6.847 ns/op	37391.19 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/Ā                                               	36016858	         6.867 ns/op	37282.45 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/Ā                                               	36127711	         6.844 ns/op	37406.57 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/Ѐ                                               	15440044	        15.95 ns/op	64198.86 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/Ѐ                                               	14271529	        16.86 ns/op	60738.86 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/Ѐ                                               	15115357	        15.80 ns/op	64802.27 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/က                                               	 3862336	        61.53 ns/op	66565.59 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/က                                               	 3893452	        61.62 ns/op	66473.48 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/က                                               	 3893944	        62.14 ns/op	65915.14 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/䀀                                               	 1000000	       215.5 ns/op	76035.97 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/䀀                                               	 1000000	       214.6 ns/op	76362.01 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/䀀                                               	 1000000	       214.3 ns/op	76441.70 MB/s	       0 B/op	       0 allocs/op
+BenchmarkComputeAcceptKey                                          	 1349232	       179.3 ns/op	      56 B/op	       2 allocs/op
+BenchmarkComputeAcceptKey                                          	 1340097	       178.0 ns/op	      56 B/op	       2 allocs/op
+BenchmarkComputeAcceptKey                                          	 1342936	       190.9 ns/op	      56 B/op	       2 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/websocket	44.319s

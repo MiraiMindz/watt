@@ -1,0 +1,54 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http11
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkComparison_ParseSimpleGET_Shockwave-8         	 1922374	       684.5 ns/op	 113.95 MB/s	      32 B/op	       1 allocs/op
+BenchmarkComparison_ParseSimpleGET_Shockwave-8         	  686114	      1545 ns/op	  50.49 MB/s	      32 B/op	       1 allocs/op
+BenchmarkComparison_ParseSimpleGET_Shockwave-8         	  360544	      3056 ns/op	  25.53 MB/s	      32 B/op	       1 allocs/op
+BenchmarkComparison_ParseSimpleGET_NetHTTP-8           	   62642	     20604 ns/op	   3.79 MB/s	    5185 B/op	      11 allocs/op
+BenchmarkComparison_ParseSimpleGET_NetHTTP-8           	   70482	     14980 ns/op	   5.21 MB/s	    5185 B/op	      11 allocs/op
+BenchmarkComparison_ParseSimpleGET_NetHTTP-8           	   88916	     14124 ns/op	   5.52 MB/s	    5185 B/op	      11 allocs/op
+BenchmarkComparison_ParsePOST_Shockwave-8              	  343546	      4894 ns/op	  25.34 MB/s	      88 B/op	       3 allocs/op
+BenchmarkComparison_ParsePOST_Shockwave-8              	  206174	      6705 ns/op	  18.49 MB/s	      88 B/op	       3 allocs/op
+BenchmarkComparison_ParsePOST_Shockwave-8              	  268330	      6619 ns/op	  18.73 MB/s	      88 B/op	       3 allocs/op
+BenchmarkComparison_ParsePOST_NetHTTP-8                	   45936	     22498 ns/op	   5.51 MB/s	    5281 B/op	      14 allocs/op
+BenchmarkComparison_ParsePOST_NetHTTP-8                	   56360	     26148 ns/op	   4.74 MB/s	    5281 B/op	      14 allocs/op
+BenchmarkComparison_ParsePOST_NetHTTP-8                	   55822	     20521 ns/op	   6.04 MB/s	    5281 B/op	      14 allocs/op
+BenchmarkComparison_ParseMultipleHeaders_Shockwave-8   	  150926	      9112 ns/op	  32.48 MB/s	      32 B/op	       1 allocs/op
+BenchmarkComparison_ParseMultipleHeaders_Shockwave-8   	  204260	      4937 ns/op	  59.96 MB/s	      32 B/op	       1 allocs/op
+BenchmarkComparison_ParseMultipleHeaders_Shockwave-8   	  332383	      4754 ns/op	  62.26 MB/s	      32 B/op	       1 allocs/op
+BenchmarkComparison_ParseMultipleHeaders_NetHTTP-8     	   37238	     32281 ns/op	   9.17 MB/s	    5850 B/op	      23 allocs/op
+BenchmarkComparison_ParseMultipleHeaders_NetHTTP-8     	   47223	     31888 ns/op	   9.28 MB/s	    5850 B/op	      23 allocs/op
+BenchmarkComparison_ParseMultipleHeaders_NetHTTP-8     	   44265	     37715 ns/op	   7.85 MB/s	    5850 B/op	      23 allocs/op
+BenchmarkComparison_WriteSimpleResponse_Shockwave-8    	 1247788	      1448 ns/op	  64.22 MB/s	      16 B/op	       1 allocs/op
+BenchmarkComparison_WriteSimpleResponse_Shockwave-8    	  905589	      1721 ns/op	  54.03 MB/s	      16 B/op	       1 allocs/op
+BenchmarkComparison_WriteSimpleResponse_Shockwave-8    	  881824	      1512 ns/op	  61.52 MB/s	      16 B/op	       1 allocs/op
+BenchmarkComparison_WriteSimpleResponse_NetHTTP-8      	  112848	     10887 ns/op	   7.07 MB/s	     787 B/op	      12 allocs/op
+BenchmarkComparison_WriteSimpleResponse_NetHTTP-8      	   91712	     12098 ns/op	   6.36 MB/s	     787 B/op	      12 allocs/op
+BenchmarkComparison_WriteSimpleResponse_NetHTTP-8      	  130592	     11018 ns/op	   6.99 MB/s	     785 B/op	      12 allocs/op
+BenchmarkComparison_WriteJSONResponse_Shockwave-8      	  997046	      1422 ns/op	  40.09 MB/s	       0 B/op	       0 allocs/op
+BenchmarkComparison_WriteJSONResponse_Shockwave-8      	 1000000	      1592 ns/op	  35.79 MB/s	       0 B/op	       0 allocs/op
+BenchmarkComparison_WriteJSONResponse_Shockwave-8      	  937890	      1230 ns/op	  46.33 MB/s	       0 B/op	       0 allocs/op
+BenchmarkComparison_WriteJSONResponse_NetHTTP-8        	  137684	      9762 ns/op	   5.84 MB/s	     693 B/op	       9 allocs/op
+BenchmarkComparison_WriteJSONResponse_NetHTTP-8        	  120424	      9368 ns/op	   6.08 MB/s	     694 B/op	       9 allocs/op
+BenchmarkComparison_WriteJSONResponse_NetHTTP-8        	  115916	     11791 ns/op	   4.83 MB/s	     693 B/op	       9 allocs/op
+BenchmarkComparison_FullCycleSimpleGET_Shockwave-8     	  262984	      3977 ns/op	  19.61 MB/s	      80 B/op	       2 allocs/op
+BenchmarkComparison_FullCycleSimpleGET_Shockwave-8     	  341263	      3698 ns/op	  21.09 MB/s	      80 B/op	       2 allocs/op
+BenchmarkComparison_FullCycleSimpleGET_Shockwave-8     	  409503	      3986 ns/op	  19.57 MB/s	      80 B/op	       2 allocs/op
+BenchmarkComparison_FullCycleSimpleGET_NetHTTP-8       	   58944	     22069 ns/op	   3.53 MB/s	    5936 B/op	      20 allocs/op
+BenchmarkComparison_FullCycleSimpleGET_NetHTTP-8       	   65568	     22554 ns/op	   3.46 MB/s	    5920 B/op	      20 allocs/op
+BenchmarkComparison_FullCycleSimpleGET_NetHTTP-8       	   48802	     28153 ns/op	   2.77 MB/s	    5935 B/op	      20 allocs/op
+BenchmarkComparison_Throughput1KB_Shockwave-8          	  744512	      1944 ns/op	 526.81 MB/s	       4 B/op	       1 allocs/op
+BenchmarkComparison_Throughput1KB_Shockwave-8          	  812211	      1405 ns/op	 728.85 MB/s	       4 B/op	       1 allocs/op
+BenchmarkComparison_Throughput1KB_Shockwave-8          	  920682	      1480 ns/op	 692.08 MB/s	       4 B/op	       1 allocs/op
+BenchmarkComparison_Throughput1KB_NetHTTP-8            	  206298	      8048 ns/op	 127.24 MB/s	     705 B/op	      10 allocs/op
+BenchmarkComparison_Throughput1KB_NetHTTP-8            	  161986	      9126 ns/op	 112.20 MB/s	     704 B/op	      10 allocs/op
+BenchmarkComparison_Throughput1KB_NetHTTP-8            	  129582	      9305 ns/op	 110.04 MB/s	     704 B/op	      10 allocs/op
+BenchmarkComparison_Throughput10KB_Shockwave-8         	  248000	      5298 ns/op	1932.64 MB/s	       5 B/op	       1 allocs/op
+BenchmarkComparison_Throughput10KB_Shockwave-8         	  274834	      4806 ns/op	2130.55 MB/s	       5 B/op	       1 allocs/op
+BenchmarkComparison_Throughput10KB_Shockwave-8         	  189716	      5935 ns/op	1725.36 MB/s	       5 B/op	       1 allocs/op
+BenchmarkComparison_Throughput10KB_NetHTTP-8           	  133516	     12340 ns/op	 829.84 MB/s	     704 B/op	      10 allocs/op
+BenchmarkComparison_Throughput10KB_NetHTTP-8           	  115242	      9522 ns/op	1075.41 MB/s	     703 B/op	      10 allocs/op
+BenchmarkComparison_Throughput10KB_NetHTTP-8           	  143119	      7260 ns/op	1410.40 MB/s	     706 B/op	      10 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/http11	85.973s

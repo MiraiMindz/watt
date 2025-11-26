@@ -1,0 +1,10 @@
+BenchmarkNetHTTPSimpleGET-8       	   31730	     43125 ns/op	   0.05 MB/s	    4558 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8       	   27824	     42675 ns/op	   0.05 MB/s	    4543 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8       	   28294	     41011 ns/op	   0.05 MB/s	    4536 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8       	   27344	     42910 ns/op	   0.05 MB/s	    4521 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8       	   29007	     42995 ns/op	   0.05 MB/s	    4514 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8       	   30316	     39282 ns/op	   0.05 MB/s	    4503 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8       	   30846	     39162 ns/op	   0.05 MB/s	    4502 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8       	   30542	     41389 ns/op	   0.05 MB/s	    4495 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8       	   31396	     39623 ns/op	   0.05 MB/s	    4505 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8       	   28371	     39315 ns/op	   0.05 MB/s	    4504 B/op	      57 allocs/op

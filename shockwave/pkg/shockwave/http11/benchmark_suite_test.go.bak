@@ -1,0 +1,656 @@
+package http11
+
+import (
+	"bytes"
+	"strings"
+	"testing"
+)
+
+// Benchmark Suite for Performance Validation
+// Target: 16x faster than net/http, 1.2x faster than fasthttp
+
+// ============================================================================
+// Request Parsing Benchmarks
+// ============================================================================
+
+func BenchmarkSuite_ParseSimpleGET(b *testing.B) {
+	request := "GET / HTTP/1.1\r\nHost: example.com\r\n\r\n"
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(int64(len(request)))
+
+	for i := 0; i < b.N; i++ {
+		parser := GetParser()
+		_, err := parser.Parse(strings.NewReader(request))
+		if err != nil {
+			b.Fatal(err)
+		}
+		PutParser(parser)
+	}
+}
+
+func BenchmarkSuite_ParseGETWithHeaders(b *testing.B) {
+	request := "GET /api/users HTTP/1.1\r\n" +
+		"Host: example.com\r\n" +
+		"User-Agent: Benchmark/1.0\r\n" +
+		"Accept: application/json\r\n" +
+		"Accept-Encoding: gzip, deflate\r\n" +
+		"Authorization: Bearer token123\r\n" +
+		"\r\n"
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(int64(len(request)))
+
+	for i := 0; i < b.N; i++ {
+		parser := GetParser()
+		_, err := parser.Parse(strings.NewReader(request))
+		if err != nil {
+			b.Fatal(err)
+		}
+		PutParser(parser)
+	}
+}
+
+func BenchmarkSuite_ParsePOST(b *testing.B) {
+	request := "POST /api/users HTTP/1.1\r\n" +
+		"Host: example.com\r\n" +
+		"Content-Type: application/json\r\n" +
+		"Content-Length: 50\r\n" +
+		"\r\n"
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(int64(len(request)))
+
+	for i := 0; i < b.N; i++ {
+		parser := GetParser()
+		_, err := parser.Parse(strings.NewReader(request))
+		if err != nil {
+			b.Fatal(err)
+		}
+		PutParser(parser)
+	}
+}
+
+func BenchmarkSuite_ParseWith10Headers(b *testing.B) {
+	var requestBuilder strings.Builder
+	requestBuilder.WriteString("GET / HTTP/1.1\r\n")
+	for i := 0; i < 10; i++ {
+		requestBuilder.WriteString("X-Header-")
+		requestBuilder.WriteString(string(rune('0' + i%10)))
+		requestBuilder.WriteString(": value\r\n")
+	}
+	requestBuilder.WriteString("\r\n")
+
+	request := requestBuilder.String()
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(int64(len(request)))
+
+	for i := 0; i < b.N; i++ {
+		parser := GetParser()
+		_, err := parser.Parse(strings.NewReader(request))
+		if err != nil {
+			b.Fatal(err)
+		}
+		PutParser(parser)
+	}
+}
+
+func BenchmarkSuite_ParseWith20Headers(b *testing.B) {
+	var requestBuilder strings.Builder
+	requestBuilder.WriteString("GET / HTTP/1.1\r\n")
+	for i := 0; i < 20; i++ {
+		requestBuilder.WriteString("X-Header-")
+		requestBuilder.WriteString(string(rune('0' + i%10)))
+		requestBuilder.WriteString(": value\r\n")
+	}
+	requestBuilder.WriteString("\r\n")
+
+	request := requestBuilder.String()
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(int64(len(request)))
+
+	for i := 0; i < b.N; i++ {
+		parser := GetParser()
+		_, err := parser.Parse(strings.NewReader(request))
+		if err != nil {
+			b.Fatal(err)
+		}
+		PutParser(parser)
+	}
+}
+
+func BenchmarkSuite_ParseWith32Headers(b *testing.B) {
+	var requestBuilder strings.Builder
+	requestBuilder.WriteString("GET / HTTP/1.1\r\n")
+	for i := 0; i < 32; i++ {
+		requestBuilder.WriteString("X-Header-")
+		requestBuilder.WriteString(string(rune('0' + i%10)))
+		requestBuilder.WriteString(": value\r\n")
+	}
+	requestBuilder.WriteString("\r\n")
+
+	request := requestBuilder.String()
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(int64(len(request)))
+
+	for i := 0; i < b.N; i++ {
+		parser := GetParser()
+		_, err := parser.Parse(strings.NewReader(request))
+		if err != nil {
+			b.Fatal(err)
+		}
+		PutParser(parser)
+	}
+}
+
+// ============================================================================
+// Response Writing Benchmarks
+// ============================================================================
+
+func BenchmarkSuite_Write200OK(b *testing.B) {
+	var buf bytes.Buffer
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		buf.Reset()
+		rw := GetResponseWriter(&buf)
+		rw.WriteHeader(200)
+		rw.Write([]byte("OK"))
+		rw.Flush()
+		PutResponseWriter(rw)
+	}
+}
+
+func BenchmarkSuite_WriteJSONResponse(b *testing.B) {
+	var buf bytes.Buffer
+	jsonData := []byte(`{"status":"ok","data":{"id":1,"name":"test"}}`)
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(int64(len(jsonData)))
+
+	for i := 0; i < b.N; i++ {
+		buf.Reset()
+		rw := GetResponseWriter(&buf)
+		rw.WriteJSON(200, jsonData)
+		PutResponseWriter(rw)
+	}
+}
+
+func BenchmarkSuite_WriteHTMLResponse(b *testing.B) {
+	var buf bytes.Buffer
+	htmlData := []byte(`<!DOCTYPE html><html><body><h1>Hello</h1></body></html>`)
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(int64(len(htmlData)))
+
+	for i := 0; i < b.N; i++ {
+		buf.Reset()
+		rw := GetResponseWriter(&buf)
+		rw.WriteHTML(200, htmlData)
+		PutResponseWriter(rw)
+	}
+}
+
+func BenchmarkSuite_Write404Error(b *testing.B) {
+	var buf bytes.Buffer
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		buf.Reset()
+		rw := GetResponseWriter(&buf)
+		rw.WriteError(404, "Not Found")
+		PutResponseWriter(rw)
+	}
+}
+
+func BenchmarkSuite_WriteWithCustomHeaders(b *testing.B) {
+	var buf bytes.Buffer
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		buf.Reset()
+		rw := GetResponseWriter(&buf)
+		rw.Header().Set([]byte("Content-Type"), []byte("text/plain"))
+		rw.Header().Set([]byte("Cache-Control"), []byte("max-age=3600"))
+		rw.Header().Set([]byte("X-Request-ID"), []byte("req-123"))
+		rw.WriteHeader(200)
+		rw.Write([]byte("OK"))
+		rw.Flush()
+		PutResponseWriter(rw)
+	}
+}
+
+// ============================================================================
+// Full Request/Response Cycle Benchmarks
+// ============================================================================
+
+func BenchmarkSuite_FullCycleSimpleGET(b *testing.B) {
+	requestData := "GET /test HTTP/1.1\r\nHost: example.com\r\n\r\n"
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(int64(len(requestData)))
+
+	handler := func(req *Request, rw *ResponseWriter) error {
+		return rw.WriteText(200, []byte("OK"))
+	}
+
+	for i := 0; i < b.N; i++ {
+		mockConn := newMockConn(requestData)
+		config := DefaultConnectionConfig()
+		conn := NewConnection(mockConn, config, handler)
+
+		conn.Serve()
+		conn.Close()
+	}
+}
+
+func BenchmarkSuite_FullCycleJSONAPI(b *testing.B) {
+	requestData := "GET /api/users HTTP/1.1\r\n" +
+		"Host: example.com\r\n" +
+		"Accept: application/json\r\n" +
+		"\r\n"
+
+	responseBody := []byte(`{"users":[{"id":1,"name":"Alice"},{"id":2,"name":"Bob"}]}`)
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(int64(len(requestData) + len(responseBody)))
+
+	for i := 0; i < b.N; i++ {
+		mockConn := newMockConn(requestData)
+		config := DefaultConnectionConfig()
+		conn := NewConnection(mockConn, config)
+
+		handler := func(req *Request, rw *ResponseWriter) error {
+			return rw.WriteJSON(200, responseBody)
+		}
+
+		conn.Serve(handler)
+		conn.Close()
+	}
+}
+
+func BenchmarkSuite_FullCycleWithHeaderProcessing(b *testing.B) {
+	requestData := "GET /api/data HTTP/1.1\r\n" +
+		"Host: example.com\r\n" +
+		"User-Agent: Benchmark/1.0\r\n" +
+		"Accept: application/json\r\n" +
+		"Authorization: Bearer token123\r\n" +
+		"\r\n"
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		mockConn := newMockConn(requestData)
+		config := DefaultConnectionConfig()
+		conn := NewConnection(mockConn, config)
+
+		handler := func(req *Request, rw *ResponseWriter) error {
+			// Process authorization header
+			auth := req.GetHeaderString("Authorization")
+			if auth == "" {
+				return rw.WriteError(401, "Unauthorized")
+			}
+
+			// Process User-Agent
+			userAgent := req.GetHeaderString("User-Agent")
+			_ = userAgent
+
+			return rw.WriteJSON(200, []byte(`{"status":"ok"}`))
+		}
+
+		conn.Serve(handler)
+		conn.Close()
+	}
+}
+
+// ============================================================================
+// Pooling Efficiency Benchmarks
+// ============================================================================
+
+func BenchmarkSuite_PoolEfficiency_Request(b *testing.B) {
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		req := GetRequest()
+		req.MethodID = MethodGET
+		req.pathBytes = []byte("/test")
+		PutRequest(req)
+	}
+}
+
+func BenchmarkSuite_PoolEfficiency_ResponseWriter(b *testing.B) {
+	var buf bytes.Buffer
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		buf.Reset()
+		rw := GetResponseWriter(&buf)
+		PutResponseWriter(rw)
+	}
+}
+
+func BenchmarkSuite_PoolEfficiency_Parser(b *testing.B) {
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		parser := GetParser()
+		PutParser(parser)
+	}
+}
+
+func BenchmarkSuite_PoolEfficiency_Buffer(b *testing.B) {
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		buf := GetBuffer()
+		PutBuffer(buf)
+	}
+}
+
+func BenchmarkSuite_PoolEfficiency_AllPools(b *testing.B) {
+	var buf bytes.Buffer
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		req := GetRequest()
+		parser := GetParser()
+		rw := GetResponseWriter(&buf)
+		buffer := GetBuffer()
+
+		PutRequest(req)
+		PutParser(parser)
+		PutResponseWriter(rw)
+		PutBuffer(buffer)
+	}
+}
+
+// ============================================================================
+// Concurrency Benchmarks
+// ============================================================================
+
+func BenchmarkSuite_ConcurrentParsing(b *testing.B) {
+	request := "GET / HTTP/1.1\r\nHost: example.com\r\n\r\n"
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			parser := GetParser()
+			parser.Parse(strings.NewReader(request))
+			PutParser(parser)
+		}
+	})
+}
+
+func BenchmarkSuite_ConcurrentResponseWriting(b *testing.B) {
+	jsonData := []byte(`{"status":"ok"}`)
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	b.RunParallel(func(pb *testing.PB) {
+		var buf bytes.Buffer
+		for pb.Next() {
+			buf.Reset()
+			rw := GetResponseWriter(&buf)
+			rw.WriteJSON(200, jsonData)
+			PutResponseWriter(rw)
+		}
+	})
+}
+
+func BenchmarkSuite_ConcurrentFullCycle(b *testing.B) {
+	requestData := "GET /test HTTP/1.1\r\nHost: example.com\r\n\r\n"
+
+	handler := func(req *Request, rw *ResponseWriter) error {
+		return rw.WriteText(200, []byte("OK"))
+	}
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			mockConn := newMockConn(requestData)
+			config := DefaultConnectionConfig()
+			conn := NewConnection(mockConn, config)
+			conn.Serve(handler)
+			conn.Close()
+		}
+	})
+}
+
+// ============================================================================
+// Memory Allocation Benchmarks
+// ============================================================================
+
+func BenchmarkSuite_MemoryAlloc_ParseOnly(b *testing.B) {
+	request := "GET / HTTP/1.1\r\nHost: example.com\r\n\r\n"
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		parser := GetParser()
+		parser.Parse(strings.NewReader(request))
+		PutParser(parser)
+	}
+}
+
+func BenchmarkSuite_MemoryAlloc_ResponseOnly(b *testing.B) {
+	var buf bytes.Buffer
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		buf.Reset()
+		rw := GetResponseWriter(&buf)
+		rw.WriteHeader(200)
+		rw.Write([]byte("OK"))
+		rw.Flush()
+		PutResponseWriter(rw)
+	}
+}
+
+func BenchmarkSuite_MemoryAlloc_FullCycle(b *testing.B) {
+	requestData := "GET /test HTTP/1.1\r\nHost: example.com\r\n\r\n"
+
+	handler := func(req *Request, rw *ResponseWriter) error {
+		return rw.WriteText(200, []byte("OK"))
+	}
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		mockConn := newMockConn(requestData)
+		config := DefaultConnectionConfig()
+		conn := NewConnection(mockConn, config)
+		conn.Serve(handler)
+		conn.Close()
+	}
+}
+
+// ============================================================================
+// Throughput Benchmarks (ops/sec focused)
+// ============================================================================
+
+func BenchmarkSuite_Throughput_1KB_Response(b *testing.B) {
+	requestData := "GET /data HTTP/1.1\r\nHost: example.com\r\n\r\n"
+	responseBody := make([]byte, 1024) // 1KB
+	for i := range responseBody {
+		responseBody[i] = 'A'
+	}
+
+	handler := func(req *Request, rw *ResponseWriter) error {
+		return rw.WriteText(200, responseBody)
+	}
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(1024)
+
+	for i := 0; i < b.N; i++ {
+		mockConn := newMockConn(requestData)
+		config := DefaultConnectionConfig()
+		conn := NewConnection(mockConn, config)
+		conn.Serve(handler)
+		conn.Close()
+	}
+}
+
+func BenchmarkSuite_Throughput_10KB_Response(b *testing.B) {
+	requestData := "GET /data HTTP/1.1\r\nHost: example.com\r\n\r\n"
+	responseBody := make([]byte, 10*1024) // 10KB
+	for i := range responseBody {
+		responseBody[i] = 'A'
+	}
+
+	handler := func(req *Request, rw *ResponseWriter) error {
+		return rw.WriteText(200, responseBody)
+	}
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(10 * 1024)
+
+	for i := 0; i < b.N; i++ {
+		mockConn := newMockConn(requestData)
+		config := DefaultConnectionConfig()
+		conn := NewConnection(mockConn, config)
+		conn.Serve(handler)
+		conn.Close()
+	}
+}
+
+func BenchmarkSuite_Throughput_SmallJSONAPI(b *testing.B) {
+	requestData := "GET /api/status HTTP/1.1\r\nHost: example.com\r\nAccept: application/json\r\n\r\n"
+	responseBody := []byte(`{"status":"ok","timestamp":1234567890}`)
+
+	handler := func(req *Request, rw *ResponseWriter) error {
+		return rw.WriteJSON(200, responseBody)
+	}
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(int64(len(responseBody)))
+
+	for i := 0; i < b.N; i++ {
+		mockConn := newMockConn(requestData)
+		config := DefaultConnectionConfig()
+		conn := NewConnection(mockConn, config)
+		conn.Serve(handler)
+		conn.Close()
+	}
+}
+
+// ============================================================================
+// Realistic Scenario Benchmarks
+// ============================================================================
+
+func BenchmarkSuite_Realistic_RESTfulAPI(b *testing.B) {
+	// Simulate realistic REST API with auth, JSON parsing, response
+	requestData := "POST /api/v1/users HTTP/1.1\r\n" +
+		"Host: api.example.com\r\n" +
+		"Content-Type: application/json\r\n" +
+		"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\r\n" +
+		"Content-Length: 50\r\n" +
+		"User-Agent: Mobile/1.0\r\n" +
+		"\r\n"
+
+	responseBody := []byte(`{"id":12345,"status":"created","timestamp":"2024-01-01T00:00:00Z"}`)
+
+	handler := func(req *Request, rw *ResponseWriter) error {
+		// Simulate auth check
+		auth := req.GetHeaderString("Authorization")
+		if auth == "" {
+			return rw.WriteError(401, "Unauthorized")
+		}
+
+		// Simulate response
+		rw.Header().Set([]byte("X-Request-ID"), []byte("req-12345"))
+		return rw.WriteJSON(201, responseBody)
+	}
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		mockConn := newMockConn(requestData)
+		config := DefaultConnectionConfig()
+		conn := NewConnection(mockConn, config)
+		conn.Serve(handler)
+		conn.Close()
+	}
+}
+
+func BenchmarkSuite_Realistic_StaticFileServing(b *testing.B) {
+	// Simulate static file serving with caching headers
+	requestData := "GET /static/style.css HTTP/1.1\r\n" +
+		"Host: cdn.example.com\r\n" +
+		"If-None-Match: \"abc123\"\r\n" +
+		"Accept-Encoding: gzip\r\n" +
+		"\r\n"
+
+	fileContent := make([]byte, 5*1024) // 5KB CSS file
+	for i := range fileContent {
+		fileContent[i] = byte(i % 256)
+	}
+
+	handler := func(req *Request, rw *ResponseWriter) error {
+		// Check ETag
+		ifNoneMatch := req.GetHeaderString("If-None-Match")
+		if ifNoneMatch == `"abc123"` {
+			rw.Header().Set([]byte("ETag"), []byte(`"abc123"`))
+			rw.WriteHeader(304)
+			return nil
+		}
+
+		// Serve file
+		rw.Header().Set([]byte("Content-Type"), []byte("text/css"))
+		rw.Header().Set([]byte("Cache-Control"), []byte("max-age=31536000"))
+		rw.Header().Set([]byte("ETag"), []byte(`"abc123"`))
+		return rw.WriteText(200, fileContent)
+	}
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	b.SetBytes(int64(len(fileContent)))
+
+	for i := 0; i < b.N; i++ {
+		mockConn := newMockConn(requestData)
+		config := DefaultConnectionConfig()
+		conn := NewConnection(mockConn, config)
+		conn.Serve(handler)
+		conn.Close()
+	}
+}

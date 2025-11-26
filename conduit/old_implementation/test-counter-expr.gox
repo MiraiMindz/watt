@@ -1,0 +1,15 @@
+package main
+
+import "gox"
+
+component Counter(initialValue int) {
+	count, setCount := gox.UseState[int](initialValue)
+
+	render {
+		<div>
+			<p>Count: {count}</p>
+			<p>Initial: {initialValue}</p>
+			<p>Difference: {count - initialValue}</p>
+		</div>
+	}
+}

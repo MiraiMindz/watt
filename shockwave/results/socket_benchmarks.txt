@@ -1,0 +1,6 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/socket
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkApply-8                               	   13154	     46613 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkLatency_Baseline-8                    	   68358	      9323 ns/op	       0 B/op	       0 allocs/op

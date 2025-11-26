@@ -1,0 +1,37 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http11
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkResponseWriterPoolGetPut-8                  	32421282	        35.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriterPoolGetUsePut-8               	11132211	       116.6 ns/op	       2 B/op	       1 allocs/op
+BenchmarkResponseWriterNonPooled-8                   	1000000000	         0.6517 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriterPooled-8                      	32750076	        44.06 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriterSimple-8                      	  333488	      4038 ns/op	   3.22 MB/s	    6528 B/op	       1 allocs/op
+BenchmarkResponseWriterWithHeaders-8                 	  248514	      5512 ns/op	   2.36 MB/s	    6528 B/op	       1 allocs/op
+BenchmarkResponseWriterStatus200-8                   	  213758	      4946 ns/op	    6528 B/op	       1 allocs/op
+BenchmarkResponseWriterStatus404-8                   	  234274	      6622 ns/op	    6528 B/op	       1 allocs/op
+BenchmarkResponseWriterStatus500-8                   	  193070	      8136 ns/op	    6528 B/op	       1 allocs/op
+BenchmarkResponseWriterUncommonStatus-8              	  244996	      5871 ns/op	    6563 B/op	       3 allocs/op
+BenchmarkResponseWriterWriteJSON-8                   	  170344	      6537 ns/op	   5.35 MB/s	    6528 B/op	       1 allocs/op
+BenchmarkResponseWriterMultipleWrites-8              	  185798	      6095 ns/op	   2.13 MB/s	    6528 B/op	       1 allocs/op
+BenchmarkResponseWriterReset-8                       	340809223	         3.652 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteStatusLine200-8         	 4200306	       244.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteStatusLine404-8         	 6306722	       224.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteStatusLine500-8         	 6041468	       226.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteSimpleResponse-8        	 1595710	       876.1 ns/op	  14.84 MB/s	       0 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteJSON-8                  	 2654463	       439.4 ns/op	 129.74 MB/s	       0 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteHTML-8                  	 2578191	       397.8 ns/op	 100.55 MB/s	       0 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteError-8                 	 2323767	       468.7 ns/op	      16 B/op	       1 allocs/op
+BenchmarkResponseWriter_WriteWithSingleHeader-8      	 4328104	       251.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteWithMultipleHeaders-8   	 1912825	       683.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteChunkedSmall-8          	 1462756	       811.8 ns/op	      32 B/op	       4 allocs/op
+BenchmarkResponseWriter_WriteChunkedIncremental-8    	 1000000	      1049 ns/op	      56 B/op	       7 allocs/op
+BenchmarkResponseWriter_WriteChunkedLarge-8          	  976371	      1136 ns/op	9913.27 MB/s	      32 B/op	       5 allocs/op
+BenchmarkResponseWriter_PoolGetPut-8                 	27297154	        53.27 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriter_PoolReuse-8                  	 3122241	       381.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriter_Throughput100B-8             	 2321378	       499.6 ns/op	 200.15 MB/s	       3 B/op	       1 allocs/op
+BenchmarkResponseWriter_Throughput1KB-8              	 2389587	       475.5 ns/op	2153.51 MB/s	       4 B/op	       1 allocs/op
+BenchmarkResponseWriter_Throughput10KB-8             	 1513640	       854.4 ns/op	11984.94 MB/s	       5 B/op	       1 allocs/op
+BenchmarkResponseWriter_Throughput100KB-8            	  153472	      8182 ns/op	12514.65 MB/s	       8 B/op	       1 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/http11	50.850s

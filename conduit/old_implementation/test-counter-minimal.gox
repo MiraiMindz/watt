@@ -1,0 +1,32 @@
+package main
+
+import "gox"
+
+component Counter(initialValue int) {
+	count, setCount := gox.UseState[int](initialValue)
+
+	increment := func() {
+		setCount(count + 1)
+	}
+
+	decrement := func() {
+		setCount(count - 1)
+	}
+
+	reset := func() {
+		setCount(initialValue)
+	}
+
+	render {
+		<div className="counter-container">
+			<h1>Counter</h1>
+			<div>{count}</div>
+			<button onClick={increment}>+ Increment</button>
+			<button onClick={decrement}>- Decrement</button>
+			<button onClick={reset}>Reset</button>
+			<p>Initial value: {initialValue}</p>
+			<p>Current value: {count}</p>
+			<p>Difference: {count - initialValue}</p>
+		</div>
+	}
+}

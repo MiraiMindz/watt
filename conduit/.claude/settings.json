@@ -1,0 +1,115 @@
+{
+  "project": {
+    "name": "GoX/Conduit",
+    "description": "React-inspired frontend framework for Go",
+    "version": "0.1.0"
+  },
+
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "validate-write",
+            "command": "bash .claude/hooks/pre-tool-use/validate-write.sh",
+            "description": "Prevent writing to protected files"
+          }
+        ]
+      }
+    ],
+
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "auto-format",
+            "command": "bash .claude/hooks/post-tool-use/auto-format.sh",
+            "description": "Auto-format Go files with gofmt"
+          },
+          {
+            "type": "command",
+            "name": "auto-test",
+            "command": "bash .claude/hooks/post-tool-use/auto-test.sh",
+            "description": "Auto-run tests for modified packages"
+          }
+        ]
+      }
+    ],
+
+    "SubagentStop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "prompt",
+            "name": "suggest-next-step",
+            "prompt": "Based on what the subagent just completed, suggest the next logical step in the development workflow. Consider: testing, review, documentation, or the next phase of implementation.",
+            "description": "Suggests next steps after subagent completion"
+          }
+        ]
+      }
+    ]
+  },
+
+  "skills": {
+    "enabled": [
+      "lexer-dev",
+      "parser-dev",
+      "transpiler-dev"
+    ],
+    "autoDiscovery": true
+  },
+
+  "agents": {
+    "defaultModel": "sonnet",
+    "available": [
+      "gox-planner",
+      "gox-implementer",
+      "gox-reviewer",
+      "gox-tester"
+    ]
+  },
+
+  "toolPermissions": {
+    "gox-planner": ["Read", "Grep", "Glob"],
+    "gox-implementer": ["Read", "Write", "Edit", "Bash", "Grep", "Glob"],
+    "gox-reviewer": ["Read", "Bash", "Grep", "Glob"],
+    "gox-tester": ["Read", "Write", "Edit", "Bash", "Grep", "Glob"]
+  },
+
+  "development": {
+    "autoFormat": true,
+    "autoTest": true,
+    "watchMode": false
+  },
+
+  "performance": {
+    "targets": {
+      "lexer": "1000 lines/ms",
+      "parser": "500 lines/ms",
+      "analyzer": "200 components/s",
+      "transpiler": "100 components/s"
+    },
+    "benchmarkOnChange": false
+  },
+
+  "testing": {
+    "coverage": {
+      "minimum": 70,
+      "target": 85
+    },
+    "autoRunTests": true,
+    "parallelTests": true
+  },
+
+  "git": {
+    "enforceCommitFormat": true,
+    "commitTemplate": "<type>(<scope>): <subject>\n\n<body>\n\n<footer>",
+    "allowedTypes": ["feat", "fix", "refactor", "test", "docs", "perf", "style"],
+    "allowedScopes": ["lexer", "parser", "analyzer", "optimizer", "ssr", "csr", "runtime", "cli"]
+  }
+}

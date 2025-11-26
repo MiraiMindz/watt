@@ -1,0 +1,11 @@
+package main
+
+import "gox"
+
+component Test(a int, b int) {
+	render {
+		<div>
+			<p>{a - b}</p>
+		</div>
+	}
+}

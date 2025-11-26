@@ -1,0 +1,20 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/memory
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkStandardPool_HTTPRequest-8    	 2870484	       251.2 ns/op	     768 B/op	       3 allocs/op
+BenchmarkGreenTeaGC_HTTPRequest-8      	  992256	       626.9 ns/op	     364 B/op	       7 allocs/op
+BenchmarkStandardPool_LargeRequest-8   	  537543	      1103 ns/op	59406.23 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGreenTeaGC_LargeRequest-8     	  195368	      3064 ns/op	21386.64 MB/s	      25 B/op	       1 allocs/op
+BenchmarkStandardPool_ManyHeaders-8    	  163515	      3090 ns/op	    2048 B/op	      66 allocs/op
+BenchmarkGreenTeaGC_ManyHeaders-8      	  252993	      2217 ns/op	    3324 B/op	      13 allocs/op
+BenchmarkGCPressure_Standard-8         	13840819	        41.63 ns/op	         1.000 GCs	         0.003981 ns/op-gc	       0 B/op	       0 allocs/op
+BenchmarkGCPressure_GreenTea-8         	 1520084	       471.0 ns/op	        79.00 GCs	         3.212 ns/op-gc	     170 B/op	       5 allocs/op
+BenchmarkAllocationRate_Standard-8     	18580651	        27.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllocationRate_GreenTea-8     	 1637396	       314.7 ns/op	      74 B/op	       3 allocs/op
+BenchmarkCacheLocality_Standard-8      	   63403	     10908 ns/op	   19200 B/op	     200 allocs/op
+BenchmarkCacheLocality_GreenTea-8      	   33405	     19242 ns/op	    5002 B/op	     100 allocs/op
+BenchmarkThroughput_Standard-8         	72779226	         7.732 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThroughput_GreenTea-8         	 3542809	       189.2 ns/op	      99 B/op	       3 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/memory	11.411s

@@ -1,0 +1,22 @@
+--- FAIL: TestConnectionKeepAlive (0.00s)
+    connection_test.go:183: Serve error = <nil>, want EOF
+    connection_test.go:187: Handler called 1 times, want 2
+    connection_test.go:191: RequestCount = 1, want 2
+--- FAIL: TestConnectionMaxRequests (0.00s)
+    connection_test.go:255: Handler called 1 times, want 2
+--- FAIL: TestConnectionKeepAlive (0.00s)
+    connection_test.go:183: Serve error = <nil>, want EOF
+    connection_test.go:187: Handler called 1 times, want 2
+    connection_test.go:191: RequestCount = 1, want 2
+--- FAIL: TestConnectionMaxRequests (0.00s)
+    connection_test.go:255: Handler called 1 times, want 2
+--- FAIL: TestConnectionKeepAlive (0.00s)
+    connection_test.go:183: Serve error = <nil>, want EOF
+    connection_test.go:187: Handler called 1 times, want 2
+    connection_test.go:191: RequestCount = 1, want 2
+--- FAIL: TestConnectionMaxRequests (0.00s)
+    connection_test.go:255: Handler called 1 times, want 2
+FAIL
+exit status 1
+FAIL	github.com/yourusername/shockwave/pkg/shockwave/http11	0.176s
+FAIL

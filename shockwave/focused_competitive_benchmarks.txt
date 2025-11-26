@@ -1,0 +1,57 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/benchmarks/competitors
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkComparisonSimpleGET/net/http-8 	   12404	    123492 ns/op	   16237 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-8 	    8558	    139067 ns/op	   16247 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-8 	    8530	    134618 ns/op	   16236 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-8 	    8689	    139639 ns/op	   16233 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-8 	    8845	    127095 ns/op	   16245 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-8 	  234446	      4926 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-8 	  229491	      5382 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-8 	  257050	      4994 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-8 	  246848	      4986 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-8 	  291762	      4570 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonRequestParsing/net/http-8         	  391875	      3056 ns/op	  39.26 MB/s	    5242 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-8         	  387156	      3270 ns/op	  36.69 MB/s	    5242 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-8         	  402062	      2975 ns/op	  40.34 MB/s	    5242 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-8         	  390429	      2978 ns/op	  40.29 MB/s	    5242 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-8         	  442438	      3008 ns/op	  39.89 MB/s	    5242 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-8         	  556905	      1875 ns/op	  64.01 MB/s	    4242 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-8         	  682687	      1876 ns/op	  63.96 MB/s	    4241 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-8         	  628540	      2110 ns/op	  56.86 MB/s	    4241 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-8         	  629760	      1839 ns/op	  65.25 MB/s	    4241 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-8         	  596344	      1999 ns/op	  60.02 MB/s	    4241 B/op	       3 allocs/op
+BenchmarkComparisonResponseWriting/net/http-8        	 2088796	       656.2 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-8        	 2105599	       621.2 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-8        	 2172009	       661.5 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-8        	 1750730	       581.8 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-8        	 1667864	       611.1 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-8        	 6687702	       208.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-8        	 5096544	       206.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-8        	 5083317	       216.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-8        	 6424509	       296.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-8        	 6277537	       205.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-8       	  130540	     10680 ns/op	  86.24 MB/s	    8979 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-8       	   98670	     12492 ns/op	  73.73 MB/s	    8979 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-8       	   97632	     10512 ns/op	  87.61 MB/s	    8979 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-8       	  114559	     10705 ns/op	  86.04 MB/s	    8979 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-8       	  118754	      9962 ns/op	  92.45 MB/s	    8979 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-8       	  176224	      5872 ns/op	 156.85 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-8       	  199034	      5327 ns/op	 172.91 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-8       	  220048	      5717 ns/op	 161.10 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-8       	  217432	      5038 ns/op	 182.82 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-8       	  204220	      5939 ns/op	 155.07 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-8 	  110929	     10050 ns/op	   3.38 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-8 	  135916	      9697 ns/op	   3.51 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-8 	  136699	      9616 ns/op	   3.54 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-8 	  124357	     10238 ns/op	   3.32 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-8 	  136585	      9739 ns/op	   3.49 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonKeepAlive/net/http-8              	    1000	  35756108 ns/op	   17091 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-8              	    1000	  71269787 ns/op	   17132 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-8              	    1000	  19419256 ns/op	   17028 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-8              	    1000	   3212907 ns/op	   17052 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-8              	    1000	  14477326 ns/op	   17041 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-8              	signal: killed
+FAIL	github.com/yourusername/shockwave/benchmarks/competitors	526.115s
+FAIL

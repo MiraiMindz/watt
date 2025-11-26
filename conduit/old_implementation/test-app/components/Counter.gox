@@ -1,0 +1,122 @@
+package main
+
+import "gox"
+
+component Counter(initialCount int, step int) {
+	count, setCount := gox.UseState[int](initialCount)
+
+	// Use memo to calculate doubled value
+	doubled := gox.UseMemo(func() int {
+		return count * 2
+	}, []interface{}{count})
+
+	increment := func() {
+		setCount(count + step)
+	}
+
+	decrement := func() {
+		setCount(count - step)
+	}
+
+	reset := func() {
+		setCount(initialCount)
+	}
+
+	// Effect to log changes
+	gox.UseEffect(func() {
+		console.log("Count changed to:", count)
+	}, []interface{}{count})
+
+	render {
+		<div className="counter-card">
+			<h2>Counter Component</h2>
+			<div className="counter-display">
+				<div className="count-value">{count}</div>
+				<div className="count-doubled">Doubled: {doubled}</div>
+			</div>
+			<div className="counter-controls">
+				<button onClick={increment} className="btn-primary">
+					+{step}
+				</button>
+				<button onClick={decrement} className="btn-secondary">
+					-{step}
+				</button>
+				<button onClick={reset} className="btn-danger">
+					Reset
+				</button>
+			</div>
+			<div className="counter-info">
+				<small>Initial: {initialCount} | Step: {step}</small>
+			</div>
+		</div>
+	}
+
+	style {
+		.counter-card {
+			background: white;
+			border-radius: 12px;
+			padding: 2rem;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			margin: 1rem;
+		}
+
+		.counter-display {
+			text-align: center;
+			margin: 2rem 0;
+		}
+
+		.count-value {
+			font-size: 4rem;
+			font-weight: bold;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		.count-doubled {
+			color: #6c757d;
+			font-size: 1.2rem;
+			margin-top: 0.5rem;
+		}
+
+		.counter-controls {
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+		}
+
+		.counter-controls button {
+			padding: 0.75rem 1.5rem;
+			font-size: 1.1rem;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.2s;
+		}
+
+		.counter-controls button:hover {
+			transform: translateY(-2px);
+		}
+
+		.btn-primary {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+		}
+
+		.btn-secondary {
+			background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+			color: white;
+		}
+
+		.btn-danger {
+			background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+			color: white;
+		}
+
+		.counter-info {
+			text-align: center;
+			margin-top: 1rem;
+			color: #6c757d;
+		}
+	}
+}

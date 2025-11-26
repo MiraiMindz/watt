@@ -1,0 +1,63 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/websocket
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkReadMessageInto-8                	  769640	      1502 ns/op	 681.65 MB/s	      48 B/op	       1 allocs/op
+BenchmarkReadMessageInto-8                	 1171654	      1365 ns/op	 749.94 MB/s	      48 B/op	       1 allocs/op
+BenchmarkReadMessageInto-8                	 1000000	      1610 ns/op	 635.99 MB/s	      48 B/op	       1 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessage-8         	  206965	      5032 ns/op	 203.50 MB/s	    2120 B/op	       4 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessage-8         	  185352	      5681 ns/op	 180.25 MB/s	    2120 B/op	       4 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessage-8         	  233863	      5918 ns/op	 173.04 MB/s	    2120 B/op	       4 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessageInto-8     	  664940	      1798 ns/op	 569.44 MB/s	      48 B/op	       1 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessageInto-8     	  619506	      1654 ns/op	 619.11 MB/s	      48 B/op	       1 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessageInto-8     	  983788	      2194 ns/op	 466.79 MB/s	      48 B/op	       1 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessageInto+Pool-8         	  452664	      3435 ns/op	 298.09 MB/s	      72 B/op	       2 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessageInto+Pool-8         	  422601	      2727 ns/op	 375.48 MB/s	      72 B/op	       2 allocs/op
+BenchmarkReadMessageVsReadMessageInto/ReadMessageInto+Pool-8         	  392274	      2918 ns/op	 350.90 MB/s	      72 B/op	       2 allocs/op
+BenchmarkBufferPooledReading-8                                       	  516816	      2994 ns/op	 342.06 MB/s	      72 B/op	       2 allocs/op
+BenchmarkBufferPooledReading-8                                       	  431209	      2527 ns/op	 405.26 MB/s	      72 B/op	       2 allocs/op
+BenchmarkBufferPooledReading-8                                       	  426705	      2570 ns/op	 398.48 MB/s	      72 B/op	       2 allocs/op
+BenchmarkConnReadMessage-8                                           	  260352	      5911 ns/op	 173.24 MB/s	    2120 B/op	       4 allocs/op
+BenchmarkConnReadMessage-8                                           	  242635	      5487 ns/op	 186.62 MB/s	    2120 B/op	       4 allocs/op
+BenchmarkConnReadMessage-8                                           	  419264	      9111 ns/op	 112.39 MB/s	    2120 B/op	       4 allocs/op
+BenchmarkBufferPoolGet/Ā-8                                           	 3351708	       465.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/Ā-8                                           	 3266829	       349.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/Ā-8                                           	 3744721	       324.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/Ѐ-8                                           	 3771860	       303.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/Ѐ-8                                           	 3485624	       307.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/Ѐ-8                                           	 3697602	       356.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/က-8                                           	 4386320	       370.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/က-8                                           	 3936693	       293.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/က-8                                           	 3760984	       335.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/䀀-8                                           	 3914820	       364.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/䀀-8                                           	 4657564	       246.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGet/䀀-8                                           	 4804111	       301.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGetPut/1KB-8                                      	 3912208	       347.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGetPut/1KB-8                                      	 3262645	       311.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolGetPut/1KB-8                                      	 4281361	       249.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolVsAlloc/Pool-8                                    	 5126208	       228.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolVsAlloc/Pool-8                                    	 5022463	       297.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolVsAlloc/Pool-8                                    	 3786002	       313.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPoolVsAlloc/Alloc-8                                   	666607378	         1.596 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBufferPoolVsAlloc/Alloc-8                                   	905119784	         1.315 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBufferPoolVsAlloc/Alloc-8                                   	903631141	         1.533 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/\x10-8                                            	29593598	        68.32 ns/op	 234.21 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/\x10-8                                            	20642342	        53.81 ns/op	 297.35 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/\x10-8                                            	27278488	        42.50 ns/op	 376.51 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/@-8                                               	35948592	        34.17 ns/op	1872.97 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/@-8                                               	30742478	        39.35 ns/op	1626.54 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/@-8                                               	32451504	        35.83 ns/op	1786.02 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/Ā-8                                               	20685714	        58.40 ns/op	4383.87 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/Ā-8                                               	22489825	        48.52 ns/op	5275.81 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/Ā-8                                               	27471093	        47.38 ns/op	5402.73 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/Ѐ-8                                               	 6772557	       183.2 ns/op	5589.11 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/Ѐ-8                                               	 6582474	       200.4 ns/op	5108.89 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/Ѐ-8                                               	 6905530	       164.1 ns/op	6240.44 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/က-8                                               	 2748308	       382.0 ns/op	10722.88 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/က-8                                               	 3246117	       391.1 ns/op	10473.02 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/က-8                                               	 2976219	       465.1 ns/op	8805.93 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/䀀-8                                               	  731764	      1707 ns/op	9597.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/䀀-8                                               	  741656	      1549 ns/op	10574.24 MB/s	       0 B/op	       0 allocs/op
+BenchmarkMaskBytes/䀀-8                                               	 1000000	      1564 ns/op	10473.79 MB/s	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/websocket	203.367s

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://claude.com/schemas/settings.json",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "block-vendor-writes",
+            "description": "Prevent writes to vendor directories",
+            "command": "if echo \"$TOOL_INPUT\" | jq -r '.file_path' | grep -q '^vendor/'; then echo 'Error: Cannot write to vendor directory'; exit 1; fi"
+          },
+          {
+            "type": "command",
+            "name": "validate-go-files",
+            "description": "Validate Go file paths follow package structure",
+            "command": "filepath=$(echo \"$TOOL_INPUT\" | jq -r '.file_path'); if [[ \"$filepath\" == *.go ]] && [[ \"$filepath\" != *_test.go ]] && [[ ! \"$filepath\" =~ ^(arena|pool|simd|hash|bits|lockfree|cache|dense|strings|parse|io|encoding|sync|sched|metrics|trace|test)/ ]]; then echo 'Warning: Go file should be in a recognized package directory'; fi"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "pre-commit-validation",
+            "description": "Validate code quality before git commits",
+            "command": "if echo \"$TOOL_INPUT\" | grep -q 'git commit'; then echo 'Running pre-commit checks...'; go test -short ./... 2>&1 | head -20 || exit 1; fi"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "format-go-code",
+            "description": "Auto-format Go files after editing",
+            "command": "filepath=$(echo \"$TOOL_INPUT\" | jq -r '.file_path'); if [[ \"$filepath\" == *.go ]]; then gofmt -w \"$filepath\" 2>/dev/null || true; echo \"Formatted: $filepath\"; fi"
+          },
+          {
+            "type": "command",
+            "name": "run-go-vet",
+            "description": "Run go vet on modified files",
+            "command": "filepath=$(echo \"$TOOL_INPUT\" | jq -r '.file_path'); if [[ \"$filepath\" == *.go ]] && [[ -f \"$filepath\" ]]; then go vet \"$filepath\" 2>&1 | head -10 || true; fi"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "name": "suggest-next-action",
+            "description": "Suggest next steps after agent completes",
+            "prompt": "Agent completed: $AGENT_NAME\n\nReview the agent's work and suggest the next logical step in the development process. Consider:\n- What was just completed?\n- What's the next phase or task?\n- Should we run tests, benchmarks, or reviews?\n\nProvide a brief (1-2 sentence) suggestion."
+          }
+        ]
+      }
+    ]
+  },
+  "preferences": {
+    "defaultModel": "sonnet",
+    "testCommand": "go test ./...",
+    "buildCommand": "go build ./...",
+    "formatCommand": "gofmt -w ."
+  }
+}

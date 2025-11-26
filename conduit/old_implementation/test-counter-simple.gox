@@ -1,0 +1,17 @@
+package main
+
+import "gox"
+
+component Counter(initialValue int) {
+	count, setCount := gox.UseState[int](initialValue)
+
+	increment := func() {
+		setCount(count + 1)
+	}
+
+	render {
+		<div>
+			<h1>Counter: {count}</h1>
+		</div>
+	}
+}

@@ -1,0 +1,84 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http2
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkParseFrameHeader-8                	1000000000	         0.3117 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWriteFrameHeader-8                	1000000000	         0.3171 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameHeaderValidation-8           	155206593	         3.524 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseDataFrame-8                  	14721117	        43.97 ns/op	23290.11 MB/s	      48 B/op	       1 allocs/op
+BenchmarkParseDataFramePadded-8            	16009350	        44.06 ns/op	23238.64 MB/s	      48 B/op	       1 allocs/op
+BenchmarkParseHeadersFrame-8               	15544568	        64.66 ns/op	      48 B/op	       1 allocs/op
+BenchmarkParseHeadersFrameWithPriority-8   	10459994	        59.47 ns/op	      48 B/op	       1 allocs/op
+BenchmarkParsePriorityFrame-8              	1000000000	         0.3415 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseRSTStreamFrame-8             	1000000000	         0.3339 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseSettingsFrame-8              	 7756629	        91.35 ns/op	      64 B/op	       2 allocs/op
+BenchmarkParseSettingsFrameAck-8           	14054854	        42.76 ns/op	      48 B/op	       1 allocs/op
+BenchmarkParsePingFrame-8                  	1000000000	         0.3691 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseGoAwayFrame-8                	1000000000	         0.3431 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseGoAwayFrameWithDebugData-8   	1000000000	         0.3416 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseWindowUpdateFrame-8          	1000000000	         0.3316 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseContinuationFrame-8          	1000000000	         0.3111 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParsePushPromiseFrame-8           	13957005	        50.48 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFrameParsingAllTypes/DATA-8       	13349335	        45.48 ns/op	22513.36 MB/s	      48 B/op	       1 allocs/op
+BenchmarkFrameParsingAllTypes/HEADERS-8    	11859189	        44.67 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFrameParsingAllTypes/PRIORITY-8   	1000000000	         0.3505 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/RST_STREAM-8 	1000000000	         0.3169 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/SETTINGS-8   	 8394968	        75.26 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFrameParsingAllTypes/PUSH_PROMISE-8         	15029163	        42.28 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFrameParsingAllTypes/PING-8                 	1000000000	         0.3333 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/GOAWAY-8               	1000000000	         0.3281 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/WINDOW_UPDATE-8        	1000000000	         0.3196 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/CONTINUATION-8         	1000000000	         0.3388 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameTypeString-8                           	252832246	         2.601 ns/op	       0 B/op	       0 allocs/op
+BenchmarkErrorCodeString-8                           	1000000000	         0.3364 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFlagsHas-8                                  	1000000000	         0.3151 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHuffmanEncode/short-8                       	16369064	        34.56 ns/op	  86.80 MB/s	      16 B/op	       1 allocs/op
+BenchmarkHuffmanEncode/medium-8                      	 7268574	        87.28 ns/op	 171.86 MB/s	      64 B/op	       1 allocs/op
+BenchmarkHuffmanEncode/long-8                        	 2291511	       293.8 ns/op	 204.25 MB/s	     240 B/op	       1 allocs/op
+BenchmarkHuffmanDecode/short-8                       	 4993392	       125.2 ns/op	  23.97 MB/s	      67 B/op	       2 allocs/op
+BenchmarkHuffmanDecode/medium-8                      	 2416790	       257.6 ns/op	  46.58 MB/s	      80 B/op	       2 allocs/op
+BenchmarkHuffmanDecode/long-8                        	  902025	       704.3 ns/op	  65.31 MB/s	     128 B/op	       2 allocs/op
+BenchmarkStaticTableLookup/:method-8                 	12824730	        43.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStaticTableLookup/:status-8                 	12656862	        44.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStaticTableLookup/content-type-8            	12593941	        51.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicTableAdd-8                           	50557970	        11.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicTableGet-8                           	191707657	         3.276 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicTableFind-8                          	100000000	         5.116 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegerEncode/small-8                       	101465060	         5.502 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegerEncode/medium-8                      	65062107	         9.140 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegerEncode/large-8                       	44467474	        12.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegerDecode/small-8                       	146036337	         4.863 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegerDecode/medium-8                      	100000000	         6.523 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegerDecode/large-8                       	72098005	         8.066 ns/op	       0 B/op	       0 allocs/op
+BenchmarkEncode/small-8                              	 4264363	       139.7 ns/op	 114.50 MB/s	       2 B/op	       1 allocs/op
+BenchmarkEncode/medium-8                             	 1770195	       342.4 ns/op	 227.83 MB/s	       5 B/op	       1 allocs/op
+BenchmarkEncode/large-8                              	  674359	       991.1 ns/op	 349.11 MB/s	     304 B/op	       6 allocs/op
+BenchmarkDecode/small-8                              	 4684971	       116.5 ns/op	  17.16 MB/s	      64 B/op	       1 allocs/op
+BenchmarkDecode/medium-8                             	  718777	       762.1 ns/op	  34.12 MB/s	     320 B/op	       5 allocs/op
+BenchmarkDecode/large-8                              	  119140	      4563 ns/op	  44.49 MB/s	    1216 B/op	      19 allocs/op
+BenchmarkRoundTrip-8                                 	  985558	       750.1 ns/op	     200 B/op	       2 allocs/op
+BenchmarkEncodeHuffman/with_huffman-8                	 1766714	       320.1 ns/op	       4 B/op	       1 allocs/op
+BenchmarkEncodeHuffman/without_huffman-8             	 2525630	       297.0 ns/op	       4 B/op	       1 allocs/op
+BenchmarkEncoderWithDynamicTable-8                   	 2419435	       246.7 ns/op	       3 B/op	       1 allocs/op
+BenchmarkSequentialRequests-8                        	  455376	      1672 ns/op	     396 B/op	       6 allocs/op
+BenchmarkStreamCreation-8                            	  502216	      1262 ns/op	     680 B/op	       6 allocs/op
+BenchmarkConcurrentStreamCreation-8                  	   10000	     72862 ns/op	     799 B/op	       6 allocs/op
+BenchmarkStreamStateTransitions-8                    	  685748	       968.9 ns/op	     608 B/op	       4 allocs/op
+BenchmarkFlowControlSend-8                           	 7988994	        69.41 ns/op	14752.65 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFlowControlReceive-8                        	14406993	        39.75 ns/op	25763.82 MB/s	       0 B/op	       0 allocs/op
+BenchmarkStreamIO-8                                  	--- FAIL: BenchmarkStreamIO-8
+    http2_bench_test.go:117: EOF
+BenchmarkConcurrentStreamIO-8                        	   14145	     44481 ns/op	2302.11 MB/s	   10795 B/op	     201 allocs/op
+BenchmarkWindowUpdate-8                              	1000000000	         0.3284 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHPACKEncoding-8                             	 1466683	       454.6 ns/op	       8 B/op	       1 allocs/op
+BenchmarkHPACKDecoding-8                             	 1470382	       458.7 ns/op	     208 B/op	       3 allocs/op
+BenchmarkPriorityTree/AddStream-8                    	 2306450	       303.8 ns/op	      80 B/op	       1 allocs/op
+BenchmarkPriorityTree/UpdatePriority-8               	 6680972	        88.55 ns/op	      27 B/op	       0 allocs/op
+BenchmarkPriorityTree/CalculateWeight-8              	21796598	        23.65 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPriorityTree/RemoveStream-8                 	 3610000	       159.0 ns/op	      48 B/op	       1 allocs/op
+BenchmarkConnectionSettings-8                        	17125140	        34.24 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStreamLifecycle-8                           	  417430	      1483 ns/op	     688 B/op	       7 allocs/op
+BenchmarkChunkData-8                                 	 1225596	       466.7 ns/op	214263.94 MB/s	     360 B/op	       4 allocs/op
+FAIL
+exit status 1
+FAIL	github.com/yourusername/shockwave/pkg/shockwave/http2	386.473s

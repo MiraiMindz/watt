@@ -1,0 +1,37 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/client
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkClientGET-8                   	   18866	     32492 ns/op	    2692 B/op	      21 allocs/op
+BenchmarkOriginalClientGET-8           	   17613	     31435 ns/op	    3208 B/op	      22 allocs/op
+BenchmarkNetHTTP_GET-8                 	   12478	     49864 ns/op	    5427 B/op	      62 allocs/op
+BenchmarkFasthttp_GET-8                	   17703	     33912 ns/op	    1438 B/op	      15 allocs/op
+BenchmarkClientConcurrent-8            	   73882	      7668 ns/op	    2681 B/op	      21 allocs/op
+BenchmarkClientWithHeaders-8           	   16080	     35470 ns/op	    2782 B/op	      27 allocs/op
+BenchmarkClientConnectionReuse-8       	   18073	     34217 ns/op	    2689 B/op	      21 allocs/op
+BenchmarkHeaderInlineStorage-8         	 7902420	        64.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestBuilding-8             	 4403420	       139.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseParsing-8             	 1256620	       539.2 ns/op	     114 B/op	       5 allocs/op
+BenchmarkPoolWarmup-8                  	  123128	      5532 ns/op	    1775 B/op	      70 allocs/op
+BenchmarkMethodIDLookup-8              	228524413	         2.677 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBytesEqualCaseInsensitive-8   	40705035	        14.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseIntFast-8                	146434396	         4.392 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOptimizedReaderReadLine-8     	 4278018	       151.3 ns/op	      48 B/op	       1 allocs/op
+BenchmarkURLCacheHit-8                 	11726131	        50.86 ns/op	       0 B/op	       0 allocs/op
+BenchmarkURLCacheMiss-8                	 3056570	       194.8 ns/op	     112 B/op	       3 allocs/op
+BenchmarkInlineStringBuilder-8         	23328956	        21.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBuildHostPort-8               	29319583	        20.14 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardConcat-8              	1000000000	         0.3286 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOptimizedResponseParsing-8    	 1662760	       321.3 ns/op	      48 B/op	       1 allocs/op
+BenchmarkPooling/Request-8             	26157630	        25.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPooling/Response-8            	24181201	        21.90 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPooling/Headers-8             	37658277	        15.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPooling/OptimizedReader-8     	32687509	        18.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkZeroCopyVsCopy/ZeroCopy-8     	1000000000	         0.3558 ns/op	       0 B/op	       0 allocs/op
+BenchmarkZeroCopyVsCopy/Copy-8         	716599332	         0.7960 ns/op	       0 B/op	       0 allocs/op
+BenchmarkZeroCopyVsCopy/String-8       	100000000	         5.176 ns/op	       0 B/op	       0 allocs/op
+--- FAIL: BenchmarkCompleteRequestLifecycle
+    optimizations_bench_test.go:198: failed to get connection: failed to dial 127.0.0.1:8080: dial tcp 127.0.0.1:8080: connect: connection refused
+FAIL
+exit status 1
+FAIL	github.com/yourusername/shockwave/pkg/shockwave/client	21.208s

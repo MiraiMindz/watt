@@ -1,0 +1,590 @@
+testing: open /home/mirai/watt_benchmark_results/profiles/shockwave__pkg_shockwave_cpu.prof: permission denied
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkLoadTest                             	       2	1014389834 ns/op	361714788 B/op	15063100 allocs/op
+BenchmarkLoadTest                             	       2	1018763774 ns/op	374269544 B/op	15586664 allocs/op
+BenchmarkLoadTest                             	       2	1010547960 ns/op	367235964 B/op	15293597 allocs/op
+BenchmarkLoadTest                             	       2	1019040208 ns/op	372059088 B/op	15494375 allocs/op
+BenchmarkLoadTest                             	       2	1007894461 ns/op	366726132 B/op	15272616 allocs/op
+BenchmarkLoadTest                             	       2	1007257770 ns/op	364524240 B/op	15180959 allocs/op
+BenchmarkLoadTest                             	       2	1007944824 ns/op	371944876 B/op	15489540 allocs/op
+BenchmarkLoadTest                             	       2	1010324704 ns/op	370667616 B/op	15436578 allocs/op
+BenchmarkLoadTest                             	       2	1003164164 ns/op	368689292 B/op	15354326 allocs/op
+BenchmarkLoadTest-4                           	       2	1004052936 ns/op	320282244 B/op	13328807 allocs/op
+BenchmarkLoadTest-4                           	       2	1008088150 ns/op	323596244 B/op	13465909 allocs/op
+BenchmarkLoadTest-4                           	       2	1003801814 ns/op	316990676 B/op	13190188 allocs/op
+BenchmarkLoadTest-4                           	       2	1015587038 ns/op	325716544 B/op	13553956 allocs/op
+BenchmarkLoadTest-4                           	       2	1008229134 ns/op	318782944 B/op	13266135 allocs/op
+BenchmarkLoadTest-4                           	       2	1005744168 ns/op	311367264 B/op	12957329 allocs/op
+BenchmarkLoadTest-4                           	       2	1004270518 ns/op	323246944 B/op	13452091 allocs/op
+BenchmarkLoadTest-4                           	       2	1001657946 ns/op	258818972 B/op	10769550 allocs/op
+BenchmarkLoadTest-4                           	       2	1005163576 ns/op	226515288 B/op	 9424470 allocs/op
+BenchmarkLoadTest-8                           	       2	1004446520 ns/op	285890188 B/op	11875829 allocs/op
+BenchmarkLoadTest-8                           	       2	1003334894 ns/op	307491344 B/op	12778523 allocs/op
+BenchmarkLoadTest-8                           	       2	1009770854 ns/op	305300804 B/op	12688829 allocs/op
+BenchmarkLoadTest-8                           	       2	1010560555 ns/op	308328760 B/op	12813292 allocs/op
+BenchmarkLoadTest-8                           	       2	1005446485 ns/op	307865188 B/op	12795815 allocs/op
+BenchmarkLoadTest-8                           	       2	1006010884 ns/op	305605120 B/op	12697864 allocs/op
+BenchmarkLoadTest-8                           	       2	1005349009 ns/op	307828468 B/op	12792993 allocs/op
+BenchmarkLoadTest-8                           	       2	1006130622 ns/op	304112264 B/op	12635009 allocs/op
+BenchmarkLoadTest-8                           	       2	1007233792 ns/op	307679244 B/op	12786251 allocs/op
+BenchmarkSecureBufferPool_Zeroed              	18837168	       127.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed              	18943695	       127.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed              	18668562	       123.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed              	19275748	       125.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed              	19068230	       123.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed              	18989646	       123.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed              	18932955	       122.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed              	19350387	       124.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed              	18942703	       122.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-4            	22531916	       107.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-4            	22731102	       106.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-4            	22360813	       105.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-4            	22799036	       106.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-4            	22678993	       106.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-4            	22127697	       106.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-4            	22594174	       108.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-4            	21161150	       105.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-4            	22848278	       105.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-8            	22706538	       107.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-8            	22993920	       106.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-8            	22179009	       105.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-8            	20075337	       107.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-8            	22882408	       107.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-8            	22660262	       110.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-8            	22857924	       105.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-8            	22349478	       106.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-8            	22643238	       107.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random              	  459277	      5443 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random              	  441901	      5431 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random              	  441844	      5467 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random              	  445490	      5398 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random              	  447211	      5396 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random              	  445786	      5426 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random              	  446403	      5378 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random              	  447912	      5373 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random              	  448402	      5400 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-4            	  459074	      5379 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-4            	  447094	      5435 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-4            	  444705	      5375 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-4            	  458716	      5376 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-4            	  451249	      5386 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-4            	  456264	      5364 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-4            	  446668	      5391 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-4            	  455367	      5428 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-4            	  451969	      5389 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-8            	  455588	      5376 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-8            	  451858	      5424 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-8            	  457172	      5332 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-8            	  463588	      5350 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-8            	  462724	      5422 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-8            	  457388	      5330 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-8            	  460068	      5354 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-8            	  459441	      5381 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-8            	  460574	      5334 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular              	52887681	        53.53 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular              	45294033	        53.11 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular              	45024847	        53.00 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular              	45460130	        53.14 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular              	45102919	        53.15 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular              	45431590	        53.08 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular              	45237064	        53.31 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular              	44584178	        53.22 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular              	44803995	        53.09 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-4            	59028511	        40.58 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-4            	54958231	        39.97 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-4            	56191120	        40.32 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-4            	58001121	        40.75 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-4            	59068953	        40.28 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-4            	60323612	        40.71 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-4            	50766110	        40.69 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-4            	56063899	        40.48 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-4            	56124902	        40.75 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-8            	58900117	        40.91 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-8            	60201051	        40.43 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-8            	58656286	        41.51 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-8            	57728468	        40.76 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-8            	59657768	        40.58 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-8            	58799755	        41.52 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-8            	57989493	        40.29 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-8            	59203569	        40.71 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-8            	59585307	        41.94 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure               	20269569	       123.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure               	19509276	       123.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure               	19806394	       124.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure               	19588021	       122.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure               	19759768	       122.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure               	19858924	       122.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure               	19720792	       121.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure               	19240323	       123.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure               	19804003	       121.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-4             	22595233	       108.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-4             	21653451	       107.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-4             	22115383	       108.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-4             	22388491	       106.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-4             	20197323	       108.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-4             	22580259	       106.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-4             	22422202	       106.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-4             	22230986	       107.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-4             	23170872	       107.7 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-8             	22091577	       106.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-8             	22213352	       107.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-8             	22727859	       107.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-8             	22944504	       108.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-8             	21638152	       106.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-8             	22536297	       107.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-8             	22409990	       107.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-8             	21620949	       106.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-8             	22540292	       107.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom         	  451264	      5467 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom         	  441452	      5435 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom         	  443034	      5451 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom         	  443046	      5477 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom         	  441536	      5420 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom         	  442107	      5479 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom         	  440745	      5457 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom         	  443790	      5430 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom         	  443331	      5401 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-4       	  394612	      5375 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-4       	  449460	      5388 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-4       	  447901	      5406 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-4       	  437784	      5392 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-4       	  459894	      5372 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-4       	  455100	      5369 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-4       	  458822	      5358 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-4       	  454585	      5366 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-4       	  452626	      5345 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-8       	  446000	      5348 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-8       	  461532	      5358 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-8       	  462063	      5358 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-8       	  456656	      5391 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-8       	  450502	      5346 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-8       	  462799	      5394 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-8       	  457428	      5359 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-8       	  463498	      5364 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-8       	  420939	      5322 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB        	25544110	       100.3 ns/op	20412.22 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB        	23974843	       100.9 ns/op	20295.22 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB        	23918824	       100.2 ns/op	20433.08 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB        	24057192	       100.3 ns/op	20413.84 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB        	24020601	       101.6 ns/op	20166.00 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB        	23544541	       101.9 ns/op	20104.24 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB        	23830111	       100.8 ns/op	20314.43 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB        	24022738	       100.6 ns/op	20357.48 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB        	24030894	       100.2 ns/op	20443.31 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-4      	27605595	        86.80 ns/op	23595.05 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-4      	28141612	        88.04 ns/op	23261.65 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-4      	27924288	        85.97 ns/op	23821.79 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-4      	27777608	        87.19 ns/op	23488.63 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-4      	27552781	        87.66 ns/op	23364.20 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-4      	27647870	        86.83 ns/op	23585.47 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-4      	27594073	        88.66 ns/op	23098.89 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-4      	27405482	        86.24 ns/op	23746.34 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-4      	26873838	        87.48 ns/op	23411.39 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-8      	28084701	        87.83 ns/op	23317.44 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-8      	28130076	        86.45 ns/op	23689.38 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-8      	27814396	        86.70 ns/op	23620.96 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-8      	27780493	        87.79 ns/op	23327.61 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-8      	28203082	        85.84 ns/op	23857.24 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-8      	27547075	        86.85 ns/op	23581.69 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-8      	27487633	        88.27 ns/op	23202.81 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-8      	27735313	        86.35 ns/op	23717.52 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-8      	26907538	        87.08 ns/op	23517.28 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB        	21259182	       119.1 ns/op	34396.82 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB        	19933647	       118.7 ns/op	34511.62 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB        	19763966	       118.8 ns/op	34486.23 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB        	20450178	       117.9 ns/op	34742.69 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB        	19942510	       118.5 ns/op	34575.00 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB        	20541895	       117.4 ns/op	34892.84 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB        	20204331	       117.9 ns/op	34736.26 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB        	19982696	       117.9 ns/op	34748.97 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB        	20268630	       117.2 ns/op	34933.98 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-4      	22753993	       104.1 ns/op	39361.97 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-4      	23054173	       104.3 ns/op	39262.93 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-4      	23103883	       105.4 ns/op	38855.19 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-4      	22468178	       105.2 ns/op	38933.29 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-4      	23137530	       106.7 ns/op	38375.42 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-4      	22412536	       106.1 ns/op	38613.72 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-4      	22074099	       105.0 ns/op	39009.03 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-4      	22873148	       106.6 ns/op	38416.38 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-4      	22620178	       104.6 ns/op	39157.93 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-8      	22610625	       105.2 ns/op	38931.76 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-8      	22861760	       105.4 ns/op	38843.93 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-8      	22429896	       105.1 ns/op	38973.14 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-8      	22669036	       105.6 ns/op	38772.85 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-8      	22963180	       105.3 ns/op	38905.94 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-8      	23171970	       104.0 ns/op	39369.09 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-8      	22575774	       105.3 ns/op	38902.12 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-8      	22627212	       106.2 ns/op	38553.57 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-8      	22222483	       104.5 ns/op	39211.36 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB        	15506302	       164.2 ns/op	49900.98 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB        	14662555	       161.7 ns/op	50674.77 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB        	14816685	       163.2 ns/op	50180.78 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB        	14858994	       160.8 ns/op	50940.64 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB        	14987354	       159.9 ns/op	51239.41 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB        	14797629	       160.4 ns/op	51086.27 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB        	15105868	       160.4 ns/op	51066.10 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB        	15018004	       159.0 ns/op	51521.83 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB        	14795118	       158.9 ns/op	51553.42 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-4      	15343815	       150.0 ns/op	54623.13 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-4      	16225593	       146.6 ns/op	55896.22 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-4      	16170366	       148.8 ns/op	55035.86 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-4      	16406796	       148.0 ns/op	55359.12 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-4      	16064541	       149.7 ns/op	54719.36 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-4      	16348822	       149.9 ns/op	54631.55 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-4      	16149416	       149.1 ns/op	54927.58 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-4      	16412364	       147.9 ns/op	55401.75 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-4      	15462644	       149.4 ns/op	54834.74 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-8      	15882585	       148.3 ns/op	55230.56 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-8      	15920400	       147.6 ns/op	55514.05 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-8      	16424289	       148.9 ns/op	55025.89 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-8      	16052191	       147.3 ns/op	55609.02 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-8      	16131648	       148.3 ns/op	55240.57 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-8      	16437705	       146.9 ns/op	55776.67 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-8      	16386748	       147.8 ns/op	55423.65 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-8      	16471628	       150.1 ns/op	54578.66 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-8      	16653618	       148.8 ns/op	55053.25 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB       	 9340110	       250.1 ns/op	65518.65 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB       	 9637462	       250.5 ns/op	65416.30 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB       	 9649944	       249.0 ns/op	65801.47 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB       	 9569173	       249.8 ns/op	65589.86 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB       	 9579618	       249.7 ns/op	65608.45 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB       	 9638509	       249.4 ns/op	65685.63 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB       	 9636092	       251.7 ns/op	65102.38 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB       	 9518678	       249.0 ns/op	65793.98 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB       	 9645484	       248.3 ns/op	65989.46 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-4     	10273638	       236.0 ns/op	69433.62 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-4     	10063161	       234.3 ns/op	69937.17 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-4     	10305576	       236.5 ns/op	69281.50 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-4     	 9884074	       234.3 ns/op	69930.05 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-4     	10104452	       236.1 ns/op	69381.53 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-4     	10230626	       238.3 ns/op	68741.12 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-4     	10283359	       234.7 ns/op	69806.59 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-4     	10372359	       234.5 ns/op	69871.82 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-4     	10206230	       238.7 ns/op	68652.42 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-8     	10213165	       234.5 ns/op	69866.94 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-8     	10230459	       237.2 ns/op	69061.35 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-8     	10150429	       235.8 ns/op	69493.23 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-8     	10069443	       235.8 ns/op	69485.70 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-8     	10303504	       238.1 ns/op	68815.76 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-8     	10107232	       235.7 ns/op	69501.80 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-8     	10003932	       236.3 ns/op	69343.67 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-8     	 9775784	       237.0 ns/op	69126.69 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-8     	10231578	       236.2 ns/op	69376.26 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB       	 5626510	       433.6 ns/op	75572.42 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB       	 5571979	       428.4 ns/op	76484.43 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB       	 5650471	       425.0 ns/op	77097.89 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB       	 5594400	       426.8 ns/op	76769.97 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB       	 5693228	       428.5 ns/op	76466.63 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB       	 5608296	       428.2 ns/op	76532.21 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB       	 5635786	       423.4 ns/op	77383.65 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB       	 5657798	       423.2 ns/op	77437.28 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB       	 5528930	       427.3 ns/op	76683.41 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-4     	 5895487	       416.4 ns/op	78690.53 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-4     	 5834292	       420.5 ns/op	77926.13 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-4     	 5841957	       416.3 ns/op	78704.16 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-4     	 5723383	       415.5 ns/op	78870.36 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-4     	 5399307	       415.9 ns/op	78779.18 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-4     	 5787150	       414.9 ns/op	78969.87 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-4     	 5741658	       421.6 ns/op	77724.60 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-4     	 5767315	       412.0 ns/op	79539.62 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-4     	 5716629	       422.5 ns/op	77564.44 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-8     	 5472402	       414.5 ns/op	79059.42 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-8     	 5855505	       413.8 ns/op	79190.68 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-8     	 5844187	       417.5 ns/op	78481.61 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-8     	 5806393	       415.8 ns/op	78808.05 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-8     	 5783728	       414.2 ns/op	79117.68 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-8     	 5427358	       416.1 ns/op	78750.86 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-8     	 5844532	       412.4 ns/op	79465.54 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-8     	 5783988	       419.1 ns/op	78180.46 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-8     	 5816409	       411.8 ns/op	79567.19 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB       	 1000000	      2393 ns/op	27388.61 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB       	 1000000	      2414 ns/op	27145.60 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB       	  997004	      2399 ns/op	27315.17 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB       	 1000000	      2394 ns/op	27376.44 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB       	 1000000	      2434 ns/op	26927.59 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB       	  994676	      2405 ns/op	27252.11 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB       	 1000000	      2425 ns/op	27027.36 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB       	  994081	      2405 ns/op	27249.31 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB       	  997810	      2396 ns/op	27357.29 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-4     	 1000000	      2398 ns/op	27329.33 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-4     	 1000000	      2378 ns/op	27560.41 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-4     	 1000000	      2374 ns/op	27607.43 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-4     	 1000000	      2387 ns/op	27457.10 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-4     	 1000000	      2377 ns/op	27574.05 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-4     	 1000000	      2377 ns/op	27573.29 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-4     	 1000000	      2411 ns/op	27184.09 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-4     	 1000000	      2364 ns/op	27727.69 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-4     	 1004634	      2412 ns/op	27174.14 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-8     	 1000000	      2382 ns/op	27516.87 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-8     	 1000000	      2403 ns/op	27277.55 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-8     	 1000000	      2413 ns/op	27157.03 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-8     	 1000000	      2387 ns/op	27455.83 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-8     	 1000000	      2381 ns/op	27525.71 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-8     	 1000000	      2409 ns/op	27201.79 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-8     	 1000000	      2392 ns/op	27403.50 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-8     	 1000000	      2380 ns/op	27531.59 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-8     	 1000000	      2400 ns/op	27308.67 MB/s	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool           	25471050	       102.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool           	23774702	       101.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool           	23329962	       103.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool           	23885997	       102.0 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool           	23849043	       101.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool           	23199774	       102.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool           	23743116	       101.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool           	23552616	       103.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool           	23744826	       101.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-4         	25767373	        90.30 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-4         	26988228	        91.69 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-4         	25596735	        89.98 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-4         	25650949	        90.48 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-4         	26576166	        91.51 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-4         	26567595	        90.26 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-4         	26869680	        90.13 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-4         	26690524	        92.05 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-4         	25405238	        90.66 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-8         	27616356	        89.31 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-8         	22353018	        90.94 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-8         	25958307	        89.49 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-8         	26796874	        89.18 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-8         	26974141	        90.56 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-8         	26913397	        89.51 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-8         	25524205	        90.84 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-8         	26978506	        90.09 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-8         	26350375	        89.91 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool              	608950015	         3.987 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool              	603347756	         3.997 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool              	602506062	         4.001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool              	608919099	         3.946 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool              	606433419	         3.960 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool              	605395408	         3.934 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool              	612289935	         3.946 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool              	602337218	         3.945 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool              	605163998	         3.946 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-4            	617416255	         3.967 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-4            	608130946	         3.974 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-4            	611469987	         3.933 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-4            	609656476	         3.982 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-4            	619817484	         3.929 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-4            	624159841	         3.957 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-4            	605797134	         4.004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-4            	603094483	         3.907 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-4            	618705648	         3.981 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-8            	604302640	         3.894 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-8            	618473898	         3.995 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-8            	603150865	         3.949 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-8            	612089274	         3.895 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-8            	624012366	         3.969 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-8            	621006166	         3.934 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-8            	612415874	         3.945 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-8            	619986345	         4.002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-8            	611963286	         3.976 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_Parallel                                 	20525824	       120.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel                                 	20043075	       122.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel                                 	19912362	       119.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel                                 	20122045	       123.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel                                 	19836618	       119.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel                                 	20181858	       121.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel                                 	19591950	       119.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel                                 	20087952	       121.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel                                 	20361238	       120.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-4                               	33967438	        68.96 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-4                               	32652753	        76.99 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-4                               	31502168	        72.69 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-4                               	32976776	        76.40 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-4                               	31655160	        77.26 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-4                               	33440060	        80.22 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-4                               	33640144	        79.95 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-4                               	31608870	        74.22 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-4                               	32878540	        88.58 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-8                               	29982616	        87.69 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-8                               	28123653	        85.07 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-8                               	28653908	        87.49 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-8                               	27493238	        84.98 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-8                               	28696524	        87.66 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-8                               	27733066	        83.95 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-8                               	28761398	        86.34 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-8                               	27748021	        83.83 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-8                               	28566734	        85.83 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB                                        	44086528	        55.79 ns/op	36707.28 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB                                        	42741896	        55.62 ns/op	36824.17 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB                                        	42822876	        55.13 ns/op	37147.22 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB                                        	43042460	        54.86 ns/op	37331.68 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB                                        	42858002	        54.81 ns/op	37366.94 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB                                        	43801748	        55.19 ns/op	37108.24 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB                                        	43630154	        54.68 ns/op	37455.76 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB                                        	43883509	        54.50 ns/op	37578.76 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB                                        	44208997	        54.43 ns/op	37628.06 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-4                                      	58262302	        41.55 ns/op	49288.06 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-4                                      	59341389	        41.10 ns/op	49824.29 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-4                                      	56596694	        41.89 ns/op	48886.37 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-4                                      	58276738	        42.16 ns/op	48580.06 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-4                                      	57721202	        41.77 ns/op	49031.94 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-4                                      	53979157	        42.34 ns/op	48368.30 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-4                                      	59033920	        41.63 ns/op	49199.50 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-4                                      	57080931	        41.71 ns/op	49105.41 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-4                                      	56056190	        41.77 ns/op	49034.63 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-8                                      	58847240	        41.68 ns/op	49140.75 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-8                                      	57823327	        42.23 ns/op	48496.36 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-8                                      	57247728	        41.28 ns/op	49615.60 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-8                                      	58168000	        41.88 ns/op	48901.73 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-8                                      	53612250	        42.50 ns/op	48193.68 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-8                                      	55563130	        41.47 ns/op	49386.23 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-8                                      	57440640	        41.79 ns/op	49005.70 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-8                                      	57244046	        41.92 ns/op	48850.14 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-8                                      	52713474	        41.49 ns/op	49359.82 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB                                        	48751476	        55.29 ns/op	74088.75 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB                                        	43454090	        55.25 ns/op	74134.58 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB                                        	44073403	        54.49 ns/op	75163.40 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB                                        	44408500	        54.69 ns/op	74893.59 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB                                        	41682470	        54.50 ns/op	75162.72 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB                                        	44717976	        54.15 ns/op	75647.02 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB                                        	44920196	        54.01 ns/op	75836.33 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB                                        	44576858	        54.01 ns/op	75844.12 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB                                        	44691591	        53.79 ns/op	76154.30 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-4                                      	57742687	        40.84 ns/op	100294.09 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-4                                      	57794290	        41.89 ns/op	97789.89 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-4                                      	56974126	        41.53 ns/op	98617.47 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-4                                      	58032325	        41.81 ns/op	97956.61 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-4                                      	57400732	        41.57 ns/op	98543.93 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-4                                      	57659935	        41.19 ns/op	99439.70 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-4                                      	56332666	        43.31 ns/op	94573.03 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-4                                      	57424484	        41.30 ns/op	99178.04 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-4                                      	57546236	        42.30 ns/op	96829.01 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-8                                      	48991264	        41.30 ns/op	99168.70 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-8                                      	57523694	        41.44 ns/op	98837.60 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-8                                      	58154871	        41.93 ns/op	97682.56 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-8                                      	50956644	        41.66 ns/op	98316.33 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-8                                      	56811685	        41.53 ns/op	98620.80 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-8                                      	53740002	        41.81 ns/op	97976.97 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-8                                      	50689462	        42.57 ns/op	96220.35 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-8                                      	58312267	        41.47 ns/op	98778.33 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-8                                      	58498358	        42.38 ns/op	96644.51 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB                                        	52716196	        54.44 ns/op	150465.71 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB                                        	43792278	        54.34 ns/op	150761.96 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB                                        	44939682	        54.56 ns/op	150150.27 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB                                        	43605081	        54.04 ns/op	151583.73 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB                                        	44071318	        54.46 ns/op	150416.53 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB                                        	44574858	        53.86 ns/op	152084.66 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB                                        	44570985	        53.94 ns/op	151879.19 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB                                        	45055194	        53.33 ns/op	153615.39 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB                                        	44894196	        53.72 ns/op	152498.48 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-4                                      	59528347	        41.49 ns/op	197427.33 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-4                                      	58234755	        41.22 ns/op	198724.07 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-4                                      	59573104	        42.08 ns/op	194698.23 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-4                                      	57853730	        41.23 ns/op	198702.59 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-4                                      	58837423	        41.90 ns/op	195534.24 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-4                                      	56708248	        41.04 ns/op	199632.49 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-4                                      	55711203	        41.52 ns/op	197307.44 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-4                                      	59036344	        41.69 ns/op	196480.46 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-4                                      	58234316	        41.75 ns/op	196209.24 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-8                                      	56213323	        41.84 ns/op	195782.53 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-8                                      	58549144	        43.34 ns/op	189016.11 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-8                                      	56172258	        42.16 ns/op	194288.47 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-8                                      	56635368	        41.99 ns/op	195092.48 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-8                                      	57500985	        43.04 ns/op	190340.02 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-8                                      	56755274	        41.72 ns/op	196358.23 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-8                                      	56962867	        41.51 ns/op	197350.54 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-8                                      	52005724	        43.07 ns/op	190196.42 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-8                                      	54810481	        41.79 ns/op	196040.38 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB                                       	47431978	        54.01 ns/op	303341.13 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB                                       	44621256	        54.15 ns/op	302566.79 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB                                       	45148736	        53.77 ns/op	304688.72 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB                                       	44681803	        52.77 ns/op	310503.69 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB                                       	45740413	        53.35 ns/op	307095.92 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB                                       	44786330	        52.78 ns/op	310421.15 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB                                       	45711099	        52.46 ns/op	312296.10 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB                                       	45000301	        52.63 ns/op	311320.32 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB                                       	45522559	        53.30 ns/op	307412.01 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-4                                     	58564833	        41.17 ns/op	397918.02 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-4                                     	58477896	        40.41 ns/op	405400.24 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-4                                     	59601523	        40.67 ns/op	402842.65 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-4                                     	57356890	        41.12 ns/op	398475.45 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-4                                     	56561536	        40.45 ns/op	405089.88 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-4                                     	56846457	        40.77 ns/op	401887.69 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-4                                     	56329059	        41.44 ns/op	395327.22 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-4                                     	57919861	        40.69 ns/op	402621.83 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-4                                     	57918844	        41.10 ns/op	398679.93 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-8                                     	57914679	        41.58 ns/op	394055.98 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-8                                     	59208372	        40.94 ns/op	400171.63 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-8                                     	54424662	        41.48 ns/op	394946.76 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-8                                     	59646282	        41.55 ns/op	394286.26 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-8                                     	59887490	        41.50 ns/op	394808.03 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-8                                     	59701246	        41.70 ns/op	392927.25 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-8                                     	58786454	        41.98 ns/op	390279.10 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-8                                     	59336034	        40.94 ns/op	400183.06 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-8                                     	55158259	        41.06 ns/op	399031.06 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB                                       	48861447	        54.86 ns/op	597262.92 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB                                       	44633053	        54.34 ns/op	603072.77 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB                                       	44381510	        53.97 ns/op	607147.67 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB                                       	43813866	        53.87 ns/op	608277.79 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB                                       	44881693	        53.82 ns/op	608892.30 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB                                       	45219896	        53.60 ns/op	611363.72 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB                                       	44635106	        53.31 ns/op	614712.61 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB                                       	45040198	        53.47 ns/op	612838.98 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB                                       	44925662	        54.21 ns/op	604498.88 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-4                                     	52404006	        40.22 ns/op	814675.81 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-4                                     	58898115	        40.39 ns/op	811375.96 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-4                                     	58330461	        41.16 ns/op	796183.94 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-4                                     	58750956	        40.53 ns/op	808566.23 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-4                                     	57283629	        41.61 ns/op	787584.01 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-4                                     	59524558	        40.93 ns/op	800520.65 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-4                                     	59144833	        40.82 ns/op	802817.71 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-4                                     	57932491	        41.90 ns/op	782023.55 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-4                                     	59761189	        40.93 ns/op	800575.10 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-8                                     	58440619	        40.54 ns/op	808257.35 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-8                                     	58153422	        41.25 ns/op	794349.30 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-8                                     	59197956	        41.02 ns/op	798893.29 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-8                                     	58425393	        40.80 ns/op	803168.55 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-8                                     	58327102	        41.54 ns/op	788800.66 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-8                                     	58814264	        40.98 ns/op	799529.57 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-8                                     	57332814	        40.73 ns/op	804502.82 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-8                                     	58226323	        41.47 ns/op	790130.43 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-8                                     	57592118	        41.50 ns/op	789524.08 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB                                       	51448338	        53.42 ns/op	1226857.74 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB                                       	44477397	        53.59 ns/op	1222870.97 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB                                       	45300848	        53.10 ns/op	1234153.03 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB                                       	41451332	        53.64 ns/op	1221679.89 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB                                       	44835272	        53.26 ns/op	1230529.89 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB                                       	45670766	        53.04 ns/op	1235565.26 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB                                       	45012262	        53.54 ns/op	1224081.90 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB                                       	44931669	        53.11 ns/op	1234057.28 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB                                       	45128780	        52.65 ns/op	1244710.55 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-4                                     	54370570	        41.14 ns/op	1593178.72 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-4                                     	55343830	        41.48 ns/op	1579779.06 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-4                                     	59473234	        40.75 ns/op	1608210.97 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-4                                     	58642774	        41.89 ns/op	1564564.74 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-4                                     	56803584	        41.59 ns/op	1575902.45 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-4                                     	59252546	        41.40 ns/op	1583118.34 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-4                                     	57924363	        42.59 ns/op	1538638.75 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-4                                     	57183804	        41.06 ns/op	1596157.73 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-4                                     	59248677	        41.44 ns/op	1581451.93 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-8                                     	58835618	        41.57 ns/op	1576529.37 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-8                                     	58564453	        41.09 ns/op	1594878.91 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-8                                     	57180628	        41.34 ns/op	1585210.06 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-8                                     	59591070	        42.02 ns/op	1559756.15 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-8                                     	59170809	        41.39 ns/op	1583198.96 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-8                                     	55737634	        41.57 ns/op	1576681.13 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-8                                     	57629014	        41.31 ns/op	1586461.91 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-8                                     	58265462	        40.95 ns/op	1600214.22 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-8                                     	59212299	        42.01 ns/op	1560037.19 MB/s	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB                                  	10544788	       231.7 ns/op	8838.00 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB                                  	10365684	       231.6 ns/op	8843.15 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB                                  	10507192	       233.2 ns/op	8782.69 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB                                  	10429711	       231.3 ns/op	8853.52 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB                                  	10029157	       231.5 ns/op	8847.86 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB                                  	10468064	       231.4 ns/op	8850.13 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB                                  	10469326	       231.0 ns/op	8865.06 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB                                  	 9918596	       231.3 ns/op	8855.09 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB                                  	10453512	       231.0 ns/op	8865.44 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB-4                                	 9806626	       249.7 ns/op	8202.56 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB-4                                	 9578679	       244.6 ns/op	8373.86 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB-4                                	 9926338	       248.4 ns/op	8243.18 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB-4                                	 9859269	       251.5 ns/op	8143.73 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB-4                                	 9537438	       247.5 ns/op	8273.29 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB-4                                	 9400284	       247.4 ns/op	8278.03 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB-4                                	 8450967	       247.4 ns/op	8278.63 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB-4                                	 9903435	       250.0 ns/op	8192.06 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB-4                                	

@@ -1,0 +1,14 @@
+package main
+
+import "gox"
+
+component SimpleTest() {
+	count, setCount := gox.UseState[int](0)
+
+	render {
+		<div>
+			<h1>Count: {count}</h1>
+			<button onClick={() => setCount(count + 1)}>Increment</button>
+		</div>
+	}
+}

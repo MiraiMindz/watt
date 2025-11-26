@@ -1,0 +1,46 @@
+Benchmark Run Summary
+=====================
+Date: Sun 16 Nov 2025 05:05:18 AM -03
+Total Packages: 15
+Successful: 8
+Failed: 7
+
+Package Results:
+----------------
+shockwave__pkg_shockwave                 TIMEOUT
+bolt__core                               TIMEOUT
+bolt__shockwave                          FAILED
+shockwave__pkg_shockwave_http2           TIMEOUT
+bolt__middleware_                        FAILED
+shockwave__pkg_shockwave_http11          FAILED
+bolt__pool_                              FAILED
+shockwave__pkg_shockwave_server          FAILED
+shockwave__pkg_shockwave_client          TIMEOUT
+bolt__benchmarks                         TIMEOUT
+shockwave__benchmarks_competitors        TIMEOUT
+shockwave__pkg_shockwave_tls             FAILED
+shockwave__pkg_shockwave_memory          TIMEOUT
+shockwave__pkg_shockwave_socket          TIMEOUT
+shockwave__pkg_shockwave_websocket       FAILED
+
+Benchmark Files:
+----------------
+-rw-r--r-- 1 mirai mirai  68K Nov 16 01:36 /home/mirai/watt_benchmark_results/bolt__benchmarks_20251116_003657.txt
+-rw-r--r-- 1 mirai mirai  75K Nov 16 02:27 /home/mirai/watt_benchmark_results/bolt__core_20251116_013702.txt
+-rw-r--r-- 1 mirai mirai   53 Nov 16 02:27 /home/mirai/watt_benchmark_results/bolt__middleware__20251116_022712.txt
+-rw-r--r-- 1 mirai mirai   53 Nov 16 02:27 /home/mirai/watt_benchmark_results/bolt__pool__20251116_022707.txt
+-rw-r--r-- 1 mirai mirai 6.0K Nov 16 02:27 /home/mirai/watt_benchmark_results/bolt__shockwave_20251116_022717.txt
+-rw-r--r-- 1 root  root   923 Nov 16 05:05 /home/mirai/watt_benchmark_results/run_summary_20251116_050518.txt
+-rw-r--r-- 1 mirai mirai  33K Nov 16 05:05 /home/mirai/watt_benchmark_results/shockwave__benchmarks_competitors_20251116_043513.txt
+-rw-r--r-- 1 mirai mirai  73K Nov 16 03:58 /home/mirai/watt_benchmark_results/shockwave__pkg_shockwave_20251116_033337.txt
+-rw-r--r-- 1 mirai mirai  46K Nov 16 03:33 /home/mirai/watt_benchmark_results/shockwave__pkg_shockwave_client_20251116_031332.txt
+-rw-r--r-- 1 mirai mirai   86 Nov 16 02:27 /home/mirai/watt_benchmark_results/shockwave__pkg_shockwave_http11_20251116_022738.txt
+-rw-r--r-- 1 mirai mirai 171K Nov 16 03:12 /home/mirai/watt_benchmark_results/shockwave__pkg_shockwave_http2_20251116_022743.txt
+-rw-r--r-- 1 mirai mirai  33K Nov 16 04:13 /home/mirai/watt_benchmark_results/shockwave__pkg_shockwave_memory_20251116_035842.txt
+-rw-r--r-- 1 mirai mirai 1.7K Nov 16 04:28 /home/mirai/watt_benchmark_results/shockwave__pkg_shockwave_server_20251116_042852.txt
+-rw-r--r-- 1 mirai mirai 5.3K Nov 16 04:19 /home/mirai/watt_benchmark_results/shockwave__pkg_shockwave_socket_20251116_041347.txt
+-rw-r--r-- 1 mirai mirai  18K Nov 16 04:35 /home/mirai/watt_benchmark_results/shockwave__pkg_shockwave_tls_20251116_042857.txt
+-rw-r--r-- 1 mirai mirai  396 Nov 16 03:13 /home/mirai/watt_benchmark_results/shockwave__pkg_shockwave_websocket_20251116_031248.txt
+
+Profile Files:
+--------------

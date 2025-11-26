@@ -1,0 +1,729 @@
+// ==========================================
+// CONTEXT DEFINITION
+// ==========================================
+
+context ThemeContext {
+    Theme string
+    SetTheme func(string)
+}
+
+context AuthContext {
+    User User
+    IsAuthenticated bool
+    Login func(string, string) error
+    Logout func()
+}
+
+// ==========================================
+// RESOURCE DEFINITIONS
+// ==========================================
+
+resource UserResource(userId string) (User, error) {
+    return fetchUser(userId)
+}
+
+resource PostsResource(userId string) ([]Post, error) {
+    return fetchUserPosts(userId)
+}
+
+resource CommentsResource(postId string) ([]Comment, error) {
+    return fetchComments(postId)
+}
+
+// ==========================================
+// LAYOUT COMPONENT WITH CONTEXT PROVIDER
+// ==========================================
+
+component Layout() {
+    state {
+        theme string = "dark"
+        user User = User{}
+        isAuthenticated bool = false
+    }
+    
+    provide {
+        ThemeContext: {
+            Theme: theme,
+            SetTheme: theme.set,
+        },
+        AuthContext: {
+            User: user,
+            IsAuthenticated: isAuthenticated,
+            Login: handleLogin,
+            Logout: handleLogout,
+        }
+    }
+    
+    handleLogin := func(email string, password string) error {
+        u, err := await(loginAPI(email, password))
+        if err != nil {
+            return err
+        }
+        user.set(u)
+        isAuthenticated.set(true)
+        return nil
+    }
+    
+    handleLogout := func() {
+        user.set(User{})
+        isAuthenticated.set(false)
+    }
+    
+    return (
+        <div class="layout">
+            <Header />
+            <main>
+                {children}
+            </main>
+            <Footer />
+        </div>
+    )
+}
+
+// ==========================================
+// HEADER WITH CONTEXT CONSUMPTION
+// ==========================================
+
+component Header() {
+    consume theme = ThemeContext
+    consume auth = AuthContext
+    
+    return (
+        <header class={theme.Theme}>
+            <nav>
+                <Logo />
+                {auth.IsAuthenticated ? (
+                    <UserMenu user={auth.User} onLogout={auth.Logout} />
+                ) : (
+                    <LoginButton />
+                )}
+                <ThemeToggle />
+            </nav>
+        </header>
+    )
+}
+
+// ==========================================
+// BUTTON WITH PROPS AND DERIVE
+// ==========================================
+
+component Button(
+    label string = "Click me",
+    variant string = "primary",
+    disabled bool = false,
+    loading bool = false,
+    onclick func() = nil,
+) {
+    consume theme = ThemeContext
+    
+    derive {
+        // Derived from props
+        isInteractive bool = !disabled && !loading
+        buttonText string = loading ? "Loading..." : label
+        classes string = fmt.Sprintf("btn btn-%s %s", variant, theme.Theme)
+    }
+    
+    state {
+        isPressed bool = false
+    }
+    
+    handleClick := func() {
+        if isInteractive && onclick != nil {
+            onclick()
+        }
+    }
+    
+    return (
+        <button 
+            class={classes}
+            disabled={!isInteractive}
+            onclick={handleClick}
+            onmousedown={isPressed.set(true)}
+            onmouseup={isPressed.set(false)}
+        >
+            {loading && <Spinner />}
+            {buttonText}
+        </button>
+    )
+}
+
+// ==========================================
+// COUNTER WITH STATE, COMPUTE, AND EFFECTS
+// ==========================================
+
+component Counter(initialValue int = 0) {
+    mount {
+        fmt.Println("Counter mounted")
+    }
+    
+    unmount {
+        fmt.Println("Counter unmounted")
+    }
+    
+    state {
+        count int = initialValue
+        clicks int = 0
+        history []int = []int{}
+    }
+    
+    compute {
+        // Computed from state
+        double int = count * 2
+        isEven bool = count % 2 == 0
+        isPositive bool = count > 0
+    }
+    
+    effect (count) {
+        history.set(append(history, count))
+        fmt.Printf("Count changed to: %d\n", count)
+    }
+    
+    effect (clicks) {
+        fmt.Printf("Total clicks: %d\n", clicks)
+    }
+    
+    increment := func() {
+        count.set(count + 1)
+        clicks.set(clicks + 1)
+    }
+    
+    decrement := func() {
+        count.set(count - 1)
+        clicks.set(clicks + 1)
+    }
+    
+    reset := func() {
+        count.set(initialValue)
+        clicks.set(0)
+        history.set([]int{})
+    }
+    
+    return (
+        <div class="counter">
+            <h2>Counter: {count}</h2>
+            <p>Double: {double}</p>
+            <p>Is Even: {isEven ? "Yes" : "No"}</p>
+            <p>Total Clicks: {clicks}</p>
+            
+            <div class="controls">
+                <Button label="-" onclick={decrement} />
+                <Button label="+" onclick={increment} />
+                <Button label="Reset" variant="secondary" onclick={reset} />
+            </div>
+            
+            <div class="history">
+                <h3>History:</h3>
+                {history.map(val => (
+                    <span key={val} class="history-item">{val}</span>
+                ))}
+            </div>
+        </div>
+    )
+}
+
+// ==========================================
+// AUTO-FOCUS INPUT WITH REFS
+// ==========================================
+
+component AutoFocusInput(placeholder string = "Enter text...") {
+    ref inputRef *Element
+    ref previousValue string = ""
+    ref changeCount int = 0
+    
+    state {
+        value string = ""
+    }
+    
+    mount {
+        inputRef.focus()
+    }
+    
+    effect (value) {
+        changeCount++ // Doesn't trigger re-render
+        fmt.Printf("Changed from '%s' to '%s' (change #%d)\n", previousValue, value, changeCount)
+        previousValue = value
+    }
+    
+    watch (value) (oldVal, newVal) {
+        if len(newVal) > 100 {
+            fmt.Println("Warning: Input is getting long!")
+        }
+    }
+    
+    return (
+        <div class="input-wrapper">
+            <input 
+                ref={inputRef}
+                value={value}
+                placeholder={placeholder}
+                oninput={e => value.set(e.target.value)}
+            />
+            <p>Length: {len(value)}</p>
+        </div>
+    )
+}
+
+// ==========================================
+// USER PROFILE WITH RESOURCE (CACHED DATA)
+// ==========================================
+
+component UserProfile(userId string) {
+    user, err := useResource(UserResource, userId)
+    
+    derive {
+        fullName string = user.FirstName + " " + user.LastName
+        initials string = string(user.FirstName[0]) + string(user.LastName[0])
+    }
+    
+    if err != nil {
+        return <ErrorMessage error={err} />
+    }
+    
+    return (
+        <div class="user-profile">
+            <div class="avatar">{initials}</div>
+            <h2>{fullName}</h2>
+            <p>{user.Email}</p>
+            <p>Joined: {user.CreatedAt.Format("Jan 2, 2006")}</p>
+        </div>
+    )
+}
+
+// ==========================================
+// POSTS LIST WITH RESOURCE
+// ==========================================
+
+component PostsList(userId string) {
+    posts, err := useResource(PostsResource, userId)
+    
+    if err != nil {
+        return <ErrorMessage error={err} />
+    }
+    
+    return (
+        <div class="posts-list">
+            <h2>Posts ({len(posts)})</h2>
+            {posts.map(post => (
+                <PostCard key={post.ID} post={post} />
+            ))}
+        </div>
+    )
+}
+
+// ==========================================
+// POST CARD COMPONENT
+// ==========================================
+
+component PostCard(post Post) {
+    derive {
+        timeAgo string = formatTimeAgo(post.CreatedAt)
+        preview string = truncate(post.Content, 100)
+        hasComments bool = post.CommentCount > 0
+    }
+    
+    state {
+        expanded bool = false
+    }
+    
+    return (
+        <article class="post-card">
+            <h3>{post.Title}</h3>
+            <p class="meta">Posted {timeAgo}</p>
+            <p>{expanded ? post.Content : preview}</p>
+            
+            {!expanded && len(post.Content) > 100 && (
+                <Button 
+                    label="Read more" 
+                    variant="link"
+                    onclick={expanded.set(true)}
+                />
+            )}
+            
+            {hasComments && (
+                <p class="comments">{post.CommentCount} comments</p>
+            )}
+        </article>
+    )
+}
+
+// ==========================================
+// FORM WITH AWAIT
+// ==========================================
+
+component ContactForm() {
+    state {
+        email string = ""
+        message string = ""
+        submitting bool = false
+        result string = ""
+        error error = nil
+    }
+    
+    derive {
+        isValid bool = email != "" && message != "" && len(message) >= 10
+    }
+    
+    handleSubmit := func(e Event) {
+        e.preventDefault()
+        
+        if !isValid {
+            return
+        }
+        
+        submitting.set(true)
+        error.set(nil)
+        
+        response, err := await(submitContactForm(email, message))
+        
+        submitting.set(false)
+        
+        if err != nil {
+            error.set(err)
+            return
+        }
+        
+        result.set(response.Message)
+        email.set("")
+        message.set("")
+    }
+    
+    return (
+        <form class="contact-form" onsubmit={handleSubmit}>
+            <h2>Contact Us</h2>
+            
+            <input
+                type="email"
+                placeholder="Your email"
+                value={email}
+                oninput={e => email.set(e.target.value)}
+            />
+            
+            <textarea
+                placeholder="Your message (min 10 characters)"
+                value={message}
+                oninput={e => message.set(e.target.value)}
+                rows={5}
+            />
+            
+            <Button
+                label="Send Message"
+                type="submit"
+                disabled={!isValid}
+                loading={submitting}
+            />
+            
+            {error && <ErrorMessage error={error} />}
+            {result && <SuccessMessage message={result} />}
+        </form>
+    )
+}
+
+// ==========================================
+// IMAGE UPLOADER WITH AWAIT
+// ==========================================
+
+component ImageUploader() {
+    state {
+        imageUrl string = ""
+        uploading bool = false
+        progress int = 0
+    }
+    
+    derive {
+        hasImage bool = imageUrl != ""
+    }
+    
+    handleUpload := func(e Event) {
+        file := e.target.files[0]
+        if file == nil {
+            return
+        }
+        
+        uploading.set(true)
+        
+        url, err := await(uploadImage(file))
+        
+        uploading.set(false)
+        
+        if err != nil {
+            fmt.Printf("Upload failed: %v\n", err)
+            return
+        }
+        
+        imageUrl.set(url)
+    }
+    
+    return (
+        <div class="image-uploader">
+            <input 
+                type="file" 
+                accept="image/*"
+                onchange={handleUpload}
+                disabled={uploading}
+            />
+            
+            {uploading && (
+                <div class="upload-progress">
+                    <Spinner />
+                    <p>Uploading...</p>
+                </div>
+            )}
+            
+            {hasImage && (
+                <div class="preview">
+                    <img src={imageUrl} alt="Uploaded image" />
+                    <Button 
+                        label="Remove" 
+                        variant="danger"
+                        onclick={imageUrl.set("")}
+                    />
+                </div>
+            )}
+        </div>
+    )
+}
+
+// ==========================================
+// LIVE FEED WITH MANUAL GOROUTINE
+// ==========================================
+
+component LiveFeed(channelId string) {
+    state {
+        messages []Message = []Message{}
+        connected bool = false
+        error error = nil
+    }
+    
+    derive {
+        messageCount int = len(messages)
+        hasMessages bool = messageCount > 0
+    }
+    
+    effect (channelId) {
+        ctx, cancel := context.WithCancel(context.Background())
+        
+        go func() {
+            ws, err := connectWebSocket(ctx, channelId)
+            if err != nil {
+                error.set(err)
+                return
+            }
+            
+            connected.set(true)
+            
+            for {
+                select {
+                case <-ctx.Done():
+                    ws.Close()
+                    return
+                    
+                case msg := <-ws.Messages:
+                    messages.set(append(messages, msg))
+                    
+                case err := <-ws.Errors:
+                    error.set(err)
+                    connected.set(false)
+                    return
+                }
+            }
+        }()
+        
+        cleanup {
+            cancel()
+        }
+    }
+    
+    if error != nil {
+        return <ErrorMessage error={error} />
+    }
+    
+    if !connected {
+        return <LoadingSpinner message="Connecting to live feed..." />
+    }
+    
+    return (
+        <div class="live-feed">
+            <div class="feed-header">
+                <h2>Live Feed</h2>
+                <span class="status connected">● Connected</span>
+                <span class="count">{messageCount} messages</span>
+            </div>
+            
+            <div class="messages">
+                {hasMessages ? (
+                    <>
+                        {messages.map(msg => (
+                            <MessageCard key={msg.ID} message={msg} />
+                        ))}
+                    </>
+                ) : (
+                    <p class="empty">No messages yet...</p>
+                )}
+            </div>
+        </div>
+    )
+}
+
+// ==========================================
+// SEARCH WITH DEBOUNCING
+// ==========================================
+
+component SearchBar() {
+    state {
+        query string = ""
+        results []SearchResult = []SearchResult{}
+        searching bool = false
+    }
+    
+    derive {
+        hasQuery bool = query != ""
+        hasResults bool = len(results) > 0
+    }
+    
+    effect (query) {
+        if !hasQuery {
+            results.set([]SearchResult{})
+            return
+        }
+        
+        ctx, cancel := context.WithCancel(context.Background())
+        
+        go func() {
+            // Debounce: wait 300ms
+            timer := time.NewTimer(300 * time.Millisecond)
+            
+            select {
+            case <-ctx.Done():
+                timer.Stop()
+                return
+            case <-timer.C:
+                searching.set(true)
+                searchResults, err := searchAPI(ctx, query)
+                searching.set(false)
+                
+                if err == nil {
+                    results.set(searchResults)
+                }
+            }
+        }()
+        
+        cleanup {
+            cancel()
+        }
+    }
+    
+    watch (query) (oldQuery, newQuery) {
+        fmt.Printf("Search query changed: '%s' -> '%s'\n", oldQuery, newQuery)
+    }
+    
+    return (
+        <div class="search-bar">
+            <input
+                type="search"
+                placeholder="Search..."
+                value={query}
+                oninput={e => query.set(e.target.value)}
+            />
+            
+            {searching && <Spinner />}
+            
+            {hasResults && (
+                <div class="results">
+                    {results.map(result => (
+                        <SearchResultItem key={result.ID} result={result} />
+                    ))}
+                </div>
+            )}
+            
+            {hasQuery && !searching && !hasResults && (
+                <p class="no-results">No results found</p>
+            )}
+        </div>
+    )
+}
+
+// ==========================================
+// USER DASHBOARD - COMBINING EVERYTHING
+// ==========================================
+
+component UserDashboard(userId string) {
+    consume theme = ThemeContext
+    consume auth = AuthContext
+    
+    // Resources are cached and shared
+    user, _ := useResource(UserResource, userId)
+    posts, _ := useResource(PostsResource, userId)
+    
+    derive {
+        isOwnProfile bool = auth.IsAuthenticated && auth.User.ID == userId
+        canEdit bool = isOwnProfile
+    }
+    
+    state {
+        activeTab string = "posts"
+    }
+    
+    compute {
+        postsCount int = len(posts)
+        hasContent bool = postsCount > 0
+    }
+    
+    return (
+        <div class={fmt.Sprintf("dashboard theme-%s", theme.Theme)}>
+            <UserProfile userId={userId} />
+            
+            {canEdit && (
+                <div class="actions">
+                    <Button label="Edit Profile" variant="primary" />
+                </div>
+            )}
+            
+            <div class="tabs">
+                <button 
+                    class={activeTab == "posts" ? "active" : ""}
+                    onclick={activeTab.set("posts")}
+                >
+                    Posts ({postsCount})
+                </button>
+                <button 
+                    class={activeTab == "activity" ? "active" : ""}
+                    onclick={activeTab.set("activity")}
+                >
+                    Activity
+                </button>
+            </div>
+            
+            <div class="tab-content">
+                {activeTab == "posts" ? (
+                    hasContent ? (
+                        <PostsList userId={userId} />
+                    ) : (
+                        <EmptyState message="No posts yet" />
+                    )
+                ) : (
+                    <ActivityFeed userId={userId} />
+                )}
+            </div>
+        </div>
+    )
+}
+
+// ==========================================
+// ROOT APP COMPONENT
+// ==========================================
+
+component App() {
+    return (
+        <Layout>
+            <Suspense fallback={<LoadingScreen />}>
+                <ErrorBoundary fallback={<ErrorPage />}>
+                    <Router>
+                        <Route path="/" component={HomePage} />
+                        <Route path="/user/:id" component={UserDashboard} />
+                        <Route path="/search" component={SearchPage} />
+                    </Router>
+                </ErrorBoundary>
+            </Suspense>
+        </Layout>
+    )
+}

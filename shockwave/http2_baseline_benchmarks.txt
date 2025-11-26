@@ -1,0 +1,97 @@
+# HTTP/2 Baseline Performance Summary
+Generated: 2025-11-19
+Platform: Linux 6.17.8-zen1-1-zen, Intel i7-1165G7 @ 2.80GHz
+
+## CRITICAL BOTTLENECKS (Optimization Targets)
+
+### 1. Stream Creation (PRIMARY TARGET)
+- StreamCreation: **~970 ns/op, 680 B/op, 6 allocs/op**
+- ConcurrentStreamCreation: **~72 μs/op, 410 B/op, 4 allocs/op**
+- StreamStateTransitions: **~700 ns/op, 608 B/op, 4 allocs/op**
+
+**Impact**: Per-stream object pooling will eliminate 6 allocations and 680 bytes per stream
+
+### 2. HPACK Large Decoding (SECONDARY TARGET)
+- Decode (large): **3315-3868 ns/op, 1216 B/op, 19 allocs/op**
+- Decode (medium): **630-670 ns/op, 320 B/op, 5 allocs/op**  
+- Encode (large): **820-850 ns/op, 304 B/op, 6 allocs/op**
+
+**Impact**: HPACK optimization can reduce 19 allocations to ~5-10 allocations
+
+### 3. Sequential Requests
+- BenchmarkSequentialRequests: **~960-1200 ns/op, 396 B/op, 6 allocs/op**
+
+## AREAS ALREADY OPTIMIZED (Excellent!)
+
+### Frame Parsing (EXCELLENT)
+- ParseFrameHeader: **0.23 ns/op, 0 B/op, 0 allocs/op** ✅
+- Most frame types: **< 1 ns/op, 0 allocs** ✅
+- DATA/HEADERS frames: **~32-35 ns/op, 48 B/op, 1 alloc/op** ✅
+
+### Flow Control (EXCELLENT)
+- FlowControlSend: **60 ns/op, 0 B/op, 0 allocs/op** ✅
+- FlowControlReceive: **32 ns/op, 0 B/op, 0 allocs/op** ✅
+
+### HPACK Dynamic Table (EXCELLENT)
+- DynamicTableGet: **2.9 ns/op, 0 B/op, 0 allocs/op** ✅
+- DynamicTableFind: **4.2 ns/op, 0 B/op, 0 allocs/op** ✅
+- DynamicTableAdd: **10 ns/op, 0 B/op, 0 allocs/op** ✅
+
+### Integer Encoding (EXCELLENT)
+- IntegerEncode (small): **4.5 ns/op, 0 allocs** ✅
+- IntegerDecode (small): **3.6-3.9 ns/op, 0 allocs** ✅
+
+## HPACK Performance Details
+
+### Encoding
+- Small: ~110 ns/op, 2 B/op, 1 alloc/op
+- Medium: ~276 ns/op, 5 B/op, 1 alloc/op  
+- Large: ~820 ns/op, 304 B/op, 6 allocs/op ⚠️
+
+### Decoding  
+- Small: ~91-94 ns/op, 64 B/op, 1 alloc/op
+- Medium: ~630-670 ns/op, 320 B/op, 5 allocs/op ⚠️
+- Large: ~3315-3868 ns/op, 1216 B/op, 19 allocs/op ⚠️⚠️
+
+### Huffman
+- Encode (short): ~30 ns/op, 16 B/op, 1 alloc
+- Decode (short): ~83-85 ns/op, 67 B/op, 2 allocs
+- Encode (long): ~215-218 ns/op, 240 B/op, 1 alloc
+- Decode (long): ~602-662 ns/op, 128 B/op, 2 allocs
+
+## Optimization Strategy
+
+### Priority 1: Per-Stream Object Pools
+**Target**: Eliminate 6 allocs/op and 680 B/op in stream creation
+**Estimated improvement**: 2-3x faster stream creation (~300-400 ns/op)
+**Implementation**:
+- Create sync.Pool for Stream objects
+- Pool buffer slices (recvBuf, sendBuf)
+- Pool header field slices
+- Reset and reuse Stream objects
+
+### Priority 2: HPACK Decoding Optimization  
+**Target**: Reduce 19 allocs in large header decoding to ~5-10 allocs
+**Estimated improvement**: 1.5-2x faster large header decoding
+**Implementation**:
+- Pre-allocate header field slices with capacity
+- Pool intermediate buffers
+- Reduce string allocations with byte slice references
+
+### Priority 3: Lock-Free Frame Batching
+**Target**: Reduce concurrent stream creation latency from 72 μs to ~20-30 μs
+**Estimated improvement**: 2-3x faster concurrent operations
+**Implementation**:
+- Batch multiple frames into single write
+- Lock-free frame queue
+- Reduce syscall overhead
+
+## Expected Results After Optimization
+
+| Benchmark | Current | Target | Improvement |
+|-----------|---------|--------|-------------|
+| StreamCreation | ~970 ns/op, 680 B/op, 6 allocs | ~300 ns/op, 64 B/op, 2 allocs | **3x faster**, 10x less memory |
+| HPACK Decode (large) | 3600 ns/op, 1216 B/op, 19 allocs | ~2000 ns/op, 400 B/op, 8 allocs | **1.8x faster**, 2.5x fewer allocs |
+| Sequential Requests | 1000 ns/op, 396 B/op, 6 allocs | ~500 ns/op, 100 B/op, 2 allocs | **2x faster**, 4x less memory |
+
+**Overall target**: Achieve 2-3x faster than net/http/h2

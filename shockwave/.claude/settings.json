@@ -1,0 +1,71 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "description": "Check for performance anti-patterns in code changes",
+            "command": "bash .claude/hooks/check_antipatterns.sh \"$TOOL_INPUT\""
+          }
+        ]
+      },
+      {
+        "matcher": "Bash.*git commit",
+        "hooks": [
+          {
+            "type": "command",
+            "description": "Validate benchmarks pass before commit",
+            "command": "bash .claude/hooks/pre_commit_bench.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit.*\\.go$",
+        "hooks": [
+          {
+            "type": "prompt",
+            "description": "Check if critical path was modified and suggest benchmark run",
+            "prompt": "If the edited file is in pkg/shockwave/http11/parser.go, pkg/shockwave/pool*.go, or other hot paths mentioned in CLAUDE.md, suggest running `/bench` to verify no performance regression."
+          }
+        ]
+      },
+      {
+        "matcher": "Write.*_test\\.go$",
+        "hooks": [
+          {
+            "type": "command",
+            "description": "Run new tests to verify they pass",
+            "command": "go test -v $(dirname \"$TOOL_INPUT\") -run $(basename \"$TOOL_INPUT\" | sed 's/_test.go//')"
+          }
+        ]
+      }
+    ],
+    "PrePrompt": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "description": "Load current performance context",
+            "command": "bash .claude/hooks/load_perf_context.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allowedTools": ["Read", "Write", "Edit", "Bash", "Grep", "Glob", "Task"],
+    "dangerousOperations": {
+      "allowNetworkAccess": false,
+      "allowFileSystemRoot": false
+    }
+  },
+  "buildTags": {
+    "default": ["customhttp"],
+    "performance": ["customhttp", "arenas"],
+    "testing": ["customhttp", "greenteagc"]
+  }
+}

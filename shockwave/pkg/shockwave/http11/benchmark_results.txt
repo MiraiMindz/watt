@@ -1,0 +1,156 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http11
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkSuite_ParseSimpleGET-8                  	  556590	      2105 ns/op	  17.58 MB/s	   15016 B/op	       3 allocs/op
+BenchmarkSuite_ParseSimpleGET-8                  	  628539	      2173 ns/op	  17.02 MB/s	   15016 B/op	       3 allocs/op
+BenchmarkSuite_ParseSimpleGET-8                  	  561112	      2131 ns/op	  17.36 MB/s	   15016 B/op	       3 allocs/op
+BenchmarkSuite_ParseSimpleGET-8                  	  592618	      2374 ns/op	  15.59 MB/s	   15016 B/op	       3 allocs/op
+BenchmarkSuite_ParseSimpleGET-8                  	  549304	      2083 ns/op	  17.76 MB/s	   15016 B/op	       3 allocs/op
+BenchmarkSuite_ParseGETWithHeaders-8             	  541161	      2367 ns/op	  68.85 MB/s	   15016 B/op	       3 allocs/op
+BenchmarkSuite_ParseGETWithHeaders-8             	  520777	      3457 ns/op	  47.16 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_ParseGETWithHeaders-8             	  402656	      3687 ns/op	  44.21 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_ParseGETWithHeaders-8             	  388263	      3977 ns/op	  40.98 MB/s	   15014 B/op	       3 allocs/op
+BenchmarkSuite_ParseGETWithHeaders-8             	  339397	      3964 ns/op	  41.12 MB/s	   15014 B/op	       3 allocs/op
+BenchmarkSuite_ParsePOST-8                       	  295761	      4036 ns/op	  24.53 MB/s	   15038 B/op	       4 allocs/op
+BenchmarkSuite_ParsePOST-8                       	  232272	      4327 ns/op	  22.88 MB/s	   15039 B/op	       4 allocs/op
+BenchmarkSuite_ParsePOST-8                       	  308550	      4262 ns/op	  23.23 MB/s	   15038 B/op	       4 allocs/op
+BenchmarkSuite_ParsePOST-8                       	  321079	      3891 ns/op	  25.44 MB/s	   15039 B/op	       4 allocs/op
+BenchmarkSuite_ParsePOST-8                       	  370900	      3544 ns/op	  27.93 MB/s	   15038 B/op	       4 allocs/op
+BenchmarkSuite_ParseWith10Headers-8              	  284316	      4555 ns/op	  45.67 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith10Headers-8              	  272738	      4555 ns/op	  45.66 MB/s	   15014 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith10Headers-8              	  260448	      4792 ns/op	  43.41 MB/s	   15014 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith10Headers-8              	  318172	      4414 ns/op	  47.12 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith10Headers-8              	  344911	      4288 ns/op	  48.50 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith20Headers-8              	  223233	      5030 ns/op	  79.13 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith20Headers-8              	  309824	      5605 ns/op	  71.01 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith20Headers-8              	  223886	      6064 ns/op	  65.63 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith20Headers-8              	  204357	      5195 ns/op	  76.61 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith20Headers-8              	  267358	      5345 ns/op	  74.46 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith32Headers-8              	  213554	      6168 ns/op	 101.49 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith32Headers-8              	  185536	      7250 ns/op	  86.34 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith32Headers-8              	  217298	      6541 ns/op	  95.70 MB/s	   15014 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith32Headers-8              	  208023	      5726 ns/op	 109.33 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith32Headers-8              	  230923	      6233 ns/op	 100.43 MB/s	   15015 B/op	       3 allocs/op
+BenchmarkSuite_Write200OK-8                      	19213522	        71.47 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_Write200OK-8                      	19122619	        77.23 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_Write200OK-8                      	19938253	        65.81 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_Write200OK-8                      	17972852	        70.75 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_Write200OK-8                      	19833024	        69.86 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_WriteJSONResponse-8               	 8513908	       190.1 ns/op	 236.70 MB/s	       0 B/op	       0 allocs/op
+BenchmarkSuite_WriteJSONResponse-8               	 8442992	       157.0 ns/op	 286.55 MB/s	       0 B/op	       0 allocs/op
+BenchmarkSuite_WriteJSONResponse-8               	 9990242	       145.9 ns/op	 308.50 MB/s	       0 B/op	       0 allocs/op
+BenchmarkSuite_WriteJSONResponse-8               	 8310798	       141.5 ns/op	 317.91 MB/s	       0 B/op	       0 allocs/op
+BenchmarkSuite_WriteJSONResponse-8               	 7000519	       157.2 ns/op	 286.32 MB/s	       0 B/op	       0 allocs/op
+BenchmarkSuite_WriteHTMLResponse-8               	 7195728	       152.0 ns/op	 361.75 MB/s	       0 B/op	       0 allocs/op
+BenchmarkSuite_WriteHTMLResponse-8               	 8528428	       151.7 ns/op	 362.59 MB/s	       0 B/op	       0 allocs/op
+BenchmarkSuite_WriteHTMLResponse-8               	 8243901	       142.0 ns/op	 387.20 MB/s	       0 B/op	       0 allocs/op
+BenchmarkSuite_WriteHTMLResponse-8               	 8241462	       152.5 ns/op	 360.74 MB/s	       0 B/op	       0 allocs/op
+BenchmarkSuite_WriteHTMLResponse-8               	 8635947	       154.5 ns/op	 356.02 MB/s	       0 B/op	       0 allocs/op
+BenchmarkSuite_Write404Error-8                   	 6420764	       199.8 ns/op	      16 B/op	       1 allocs/op
+BenchmarkSuite_Write404Error-8                   	 5333199	       188.2 ns/op	      16 B/op	       1 allocs/op
+BenchmarkSuite_Write404Error-8                   	 6031389	       175.8 ns/op	      16 B/op	       1 allocs/op
+BenchmarkSuite_Write404Error-8                   	 7728962	       189.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkSuite_Write404Error-8                   	 5705184	       213.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkSuite_WriteWithCustomHeaders-8          	 6409179	       208.3 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_WriteWithCustomHeaders-8          	 6538634	       204.6 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_WriteWithCustomHeaders-8          	 6025016	       202.7 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_WriteWithCustomHeaders-8          	 6704841	       235.4 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_WriteWithCustomHeaders-8          	 6469534	       203.0 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_FullCycleSimpleGET-8              	  215040	      6651 ns/op	   6.16 MB/s	   19743 B/op	      10 allocs/op
+BenchmarkSuite_FullCycleSimpleGET-8              	  210644	      6570 ns/op	   6.24 MB/s	   19748 B/op	      10 allocs/op
+BenchmarkSuite_FullCycleSimpleGET-8              	  191518	      6846 ns/op	   5.99 MB/s	   19740 B/op	      10 allocs/op
+BenchmarkSuite_FullCycleSimpleGET-8              	  184150	      6606 ns/op	   6.21 MB/s	   19745 B/op	      10 allocs/op
+BenchmarkSuite_FullCycleSimpleGET-8              	  228394	      6719 ns/op	   6.10 MB/s	   19744 B/op	      10 allocs/op
+BenchmarkSuite_FullCycleJSONAPI-8                	  157114	      6927 ns/op	  18.62 MB/s	   19793 B/op	       9 allocs/op
+BenchmarkSuite_FullCycleJSONAPI-8                	  254149	      6869 ns/op	  18.78 MB/s	   19791 B/op	       9 allocs/op
+BenchmarkSuite_FullCycleJSONAPI-8                	  175045	      6647 ns/op	  19.41 MB/s	   19797 B/op	       9 allocs/op
+BenchmarkSuite_FullCycleJSONAPI-8                	  211203	      6496 ns/op	  19.86 MB/s	   19792 B/op	       9 allocs/op
+BenchmarkSuite_FullCycleJSONAPI-8                	  220477	      6753 ns/op	  19.10 MB/s	   19790 B/op	       9 allocs/op
+BenchmarkSuite_FullCycleWithHeaderProcessing-8   	  179301	      7286 ns/op	   19769 B/op	      10 allocs/op
+BenchmarkSuite_FullCycleWithHeaderProcessing-8   	  165375	      7118 ns/op	   19770 B/op	      10 allocs/op
+BenchmarkSuite_FullCycleWithHeaderProcessing-8   	  203950	      7149 ns/op	   19777 B/op	      10 allocs/op
+BenchmarkSuite_FullCycleWithHeaderProcessing-8   	  196638	      7194 ns/op	   19773 B/op	      10 allocs/op
+BenchmarkSuite_FullCycleWithHeaderProcessing-8   	  172111	      7121 ns/op	   19777 B/op	      10 allocs/op
+BenchmarkSuite_PoolEfficiency_Request-8          	26317244	        42.56 ns/op	       5 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_Request-8          	24815242	        47.50 ns/op	       5 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_Request-8          	33198530	        41.33 ns/op	       5 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_Request-8          	26080543	        41.62 ns/op	       5 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_Request-8          	34968750	        42.26 ns/op	       5 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_ResponseWriter-8   	55754026	        19.72 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_ResponseWriter-8   	61891148	        21.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_ResponseWriter-8   	72435384	        20.05 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_ResponseWriter-8   	66207871	        21.95 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_ResponseWriter-8   	60619615	        21.34 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_Parser-8           	100000000	        15.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_Parser-8           	76135623	        14.11 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_Parser-8           	91068226	        14.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_Parser-8           	100000000	        13.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_Parser-8           	92346612	        14.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_Buffer-8           	24495025	        52.33 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_Buffer-8           	22192792	        47.63 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_Buffer-8           	30032545	        49.90 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_Buffer-8           	25065135	        48.62 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_Buffer-8           	28776550	        55.24 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_AllPools-8         	11819626	       111.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_AllPools-8         	12872212	       110.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_AllPools-8         	11234778	       112.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_AllPools-8         	11200018	       118.8 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_AllPools-8         	10630309	       124.4 ns/op	      24 B/op	       1 allocs/op
+BenchmarkSuite_ConcurrentParsing-8               	  425054	      3692 ns/op	   15017 B/op	       3 allocs/op
+BenchmarkSuite_ConcurrentParsing-8               	  429739	      3898 ns/op	   15017 B/op	       3 allocs/op
+BenchmarkSuite_ConcurrentParsing-8               	  396806	      3597 ns/op	   15017 B/op	       3 allocs/op
+BenchmarkSuite_ConcurrentParsing-8               	  376287	      4029 ns/op	   15016 B/op	       3 allocs/op
+BenchmarkSuite_ConcurrentParsing-8               	  357414	      4209 ns/op	   15017 B/op	       3 allocs/op
+BenchmarkSuite_ConcurrentResponseWriting-8       	26321796	        48.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_ConcurrentResponseWriting-8       	24062050	        43.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_ConcurrentResponseWriting-8       	26005792	        48.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_ConcurrentResponseWriting-8       	24572937	        50.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_ConcurrentResponseWriting-8       	27161539	        51.83 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSuite_ConcurrentFullCycle-8             	  212414	      5903 ns/op	   19841 B/op	      10 allocs/op
+BenchmarkSuite_ConcurrentFullCycle-8             	  225135	      6086 ns/op	   19842 B/op	      10 allocs/op
+BenchmarkSuite_ConcurrentFullCycle-8             	  193165	      6536 ns/op	   19846 B/op	      10 allocs/op
+BenchmarkSuite_ConcurrentFullCycle-8             	  226730	      6905 ns/op	   19834 B/op	      10 allocs/op
+BenchmarkSuite_ConcurrentFullCycle-8             	  215962	      6165 ns/op	   19846 B/op	      10 allocs/op
+BenchmarkSuite_MemoryAlloc_ParseOnly-8           	  334755	      4090 ns/op	   15015 B/op	       3 allocs/op
+BenchmarkSuite_MemoryAlloc_ParseOnly-8           	  297098	      3937 ns/op	   15016 B/op	       3 allocs/op
+BenchmarkSuite_MemoryAlloc_ParseOnly-8           	  367272	      3955 ns/op	   15015 B/op	       3 allocs/op
+BenchmarkSuite_MemoryAlloc_ParseOnly-8           	  325030	      3968 ns/op	   15016 B/op	       3 allocs/op
+BenchmarkSuite_MemoryAlloc_ParseOnly-8           	  387927	      3985 ns/op	   15016 B/op	       3 allocs/op
+BenchmarkSuite_MemoryAlloc_ResponseOnly-8        	20417528	        64.90 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_MemoryAlloc_ResponseOnly-8        	15458400	        65.97 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_MemoryAlloc_ResponseOnly-8        	21302426	        67.78 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_MemoryAlloc_ResponseOnly-8        	17048011	        72.05 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_MemoryAlloc_ResponseOnly-8        	16646553	        68.69 ns/op	       2 B/op	       1 allocs/op
+BenchmarkSuite_MemoryAlloc_FullCycle-8           	  206880	      5968 ns/op	   19755 B/op	      10 allocs/op
+BenchmarkSuite_MemoryAlloc_FullCycle-8           	  273356	      4652 ns/op	   19769 B/op	      10 allocs/op
+BenchmarkSuite_MemoryAlloc_FullCycle-8           	  300512	      3987 ns/op	   19771 B/op	      10 allocs/op
+BenchmarkSuite_MemoryAlloc_FullCycle-8           	  295514	      4245 ns/op	   19753 B/op	      10 allocs/op
+BenchmarkSuite_MemoryAlloc_FullCycle-8           	  233281	      4543 ns/op	   19756 B/op	      10 allocs/op
+BenchmarkSuite_Throughput_1KB_Response-8         	  292815	      4305 ns/op	 237.85 MB/s	   20812 B/op	      10 allocs/op
+BenchmarkSuite_Throughput_1KB_Response-8         	  274726	      4141 ns/op	 247.27 MB/s	   20811 B/op	      10 allocs/op
+BenchmarkSuite_Throughput_1KB_Response-8         	  233312	      5567 ns/op	 183.95 MB/s	   20814 B/op	      10 allocs/op
+BenchmarkSuite_Throughput_1KB_Response-8         	  233079	      4675 ns/op	 219.04 MB/s	   20817 B/op	      10 allocs/op
+BenchmarkSuite_Throughput_1KB_Response-8         	  275792	      4498 ns/op	 227.67 MB/s	   20817 B/op	      10 allocs/op
+BenchmarkSuite_Throughput_10KB_Response-8        	  187723	      6786 ns/op	1509.04 MB/s	   34725 B/op	      11 allocs/op
+BenchmarkSuite_Throughput_10KB_Response-8        	  175665	      7498 ns/op	1365.76 MB/s	   34725 B/op	      11 allocs/op
+BenchmarkSuite_Throughput_10KB_Response-8        	  163507	      7527 ns/op	1360.41 MB/s	   34722 B/op	      11 allocs/op
+BenchmarkSuite_Throughput_10KB_Response-8        	  183715	      7128 ns/op	1436.58 MB/s	   34722 B/op	      11 allocs/op
+BenchmarkSuite_Throughput_10KB_Response-8        	  193543	      6659 ns/op	1537.87 MB/s	   34725 B/op	      11 allocs/op
+BenchmarkSuite_Throughput_SmallJSONAPI-8         	  318499	      3975 ns/op	   9.56 MB/s	   19783 B/op	       9 allocs/op
+BenchmarkSuite_Throughput_SmallJSONAPI-8         	  308762	      4231 ns/op	   8.98 MB/s	   19785 B/op	       9 allocs/op
+BenchmarkSuite_Throughput_SmallJSONAPI-8         	  261153	      4432 ns/op	   8.57 MB/s	   19787 B/op	       9 allocs/op
+BenchmarkSuite_Throughput_SmallJSONAPI-8         	  279120	      4409 ns/op	   8.62 MB/s	   19790 B/op	       9 allocs/op
+BenchmarkSuite_Throughput_SmallJSONAPI-8         	  328214	      4096 ns/op	   9.28 MB/s	   19807 B/op	       9 allocs/op
+BenchmarkSuite_Realistic_RESTfulAPI-8            	  262723	      4775 ns/op	   19935 B/op	      11 allocs/op
+BenchmarkSuite_Realistic_RESTfulAPI-8            	  266404	      5456 ns/op	   19939 B/op	      11 allocs/op
+BenchmarkSuite_Realistic_RESTfulAPI-8            	  216253	      4741 ns/op	   19940 B/op	      11 allocs/op
+BenchmarkSuite_Realistic_RESTfulAPI-8            	  258576	      4917 ns/op	   19934 B/op	      11 allocs/op
+BenchmarkSuite_Realistic_RESTfulAPI-8            	  252666	      4436 ns/op	   19938 B/op	      11 allocs/op
+BenchmarkSuite_Realistic_StaticFileServing-8     	  302736	      4184 ns/op	1223.85 MB/s	   19734 B/op	       9 allocs/op
+BenchmarkSuite_Realistic_StaticFileServing-8     	  227469	      4737 ns/op	1080.93 MB/s	   19733 B/op	       9 allocs/op
+BenchmarkSuite_Realistic_StaticFileServing-8     	  291177	      4623 ns/op	1107.62 MB/s	   19736 B/op	       9 allocs/op
+BenchmarkSuite_Realistic_StaticFileServing-8     	  273135	      4177 ns/op	1225.86 MB/s	   19735 B/op	       9 allocs/op
+BenchmarkSuite_Realistic_StaticFileServing-8     	  300597	      4741 ns/op	1079.98 MB/s	   19742 B/op	       9 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/http11	226.255s

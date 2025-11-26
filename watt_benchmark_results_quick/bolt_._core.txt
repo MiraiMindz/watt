@@ -1,0 +1,82 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/bolt/core
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkAppGet                        	  679825	       407.7 ns/op	     624 B/op	       9 allocs/op
+BenchmarkAppGet                        	  501163	       409.5 ns/op	     624 B/op	       9 allocs/op
+BenchmarkAppGet                        	  505330	       412.4 ns/op	     624 B/op	       9 allocs/op
+BenchmarkAppGetWithMiddleware          	  451798	       485.5 ns/op	     648 B/op	      11 allocs/op
+BenchmarkAppGetWithMiddleware          	  450910	       475.7 ns/op	     648 B/op	      11 allocs/op
+BenchmarkAppGetWithMiddleware          	  446634	       480.6 ns/op	     648 B/op	      11 allocs/op
+BenchmarkAppDataWrapper                	  516822	       407.8 ns/op	     624 B/op	       9 allocs/op
+BenchmarkAppDataWrapper                	  510276	       405.5 ns/op	     624 B/op	       9 allocs/op
+BenchmarkAppDataWrapper                	  509258	       414.0 ns/op	     624 B/op	       9 allocs/op
+BenchmarkContextPoolAcquire            	 1414287	       168.5 ns/op	     896 B/op	       1 allocs/op
+BenchmarkContextPoolAcquire            	 1423466	       169.1 ns/op	     896 B/op	       1 allocs/op
+BenchmarkContextPoolAcquire            	 1419313	       168.9 ns/op	     896 B/op	       1 allocs/op
+BenchmarkContextPoolAcquireRelease     	17886138	        13.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextPoolAcquireRelease     	17944023	        13.08 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextPoolAcquireRelease     	18302869	        14.09 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextPoolConcurrent         	 6186134	        39.96 ns/op	       8 B/op	       1 allocs/op
+BenchmarkContextPoolConcurrent         	 6153752	        39.56 ns/op	       8 B/op	       1 allocs/op
+BenchmarkContextPoolConcurrent         	 6352203	        40.56 ns/op	       8 B/op	       1 allocs/op
+BenchmarkContextPoolReset              	  840411	       284.6 ns/op	     680 B/op	       6 allocs/op
+BenchmarkContextPoolReset              	  840961	       284.5 ns/op	     680 B/op	       6 allocs/op
+BenchmarkContextPoolReset              	  683804	       293.8 ns/op	     680 B/op	       6 allocs/op
+BenchmarkContextParam                  	68183406	         3.387 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextParam                  	71500198	         3.375 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextParam                  	72259729	         3.373 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextSetGet                 	13918137	        18.69 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextSetGet                 	12803685	        19.06 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextSetGet                 	13190317	        18.08 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextQuery                  	 4361936	        54.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextQuery                  	 4348344	        59.77 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextQuery                  	 3854008	        54.78 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextPool                   	18120099	        13.04 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextPool                   	18460485	        13.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextPool                   	17895621	        13.63 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContextPoolWithUsage          	 1082762	       222.1 ns/op	     352 B/op	       4 allocs/op
+BenchmarkContextPoolWithUsage          	 1078778	       224.0 ns/op	     352 B/op	       4 allocs/op
+BenchmarkContextPoolWithUsage          	 1076871	       222.6 ns/op	     352 B/op	       4 allocs/op
+BenchmarkCoverageFullStack             	   81152	      2839 ns/op	    8282 B/op	      19 allocs/op
+BenchmarkCoverageFullStack             	   82364	      2872 ns/op	    8282 B/op	      19 allocs/op
+BenchmarkCoverageFullStack             	   81088	      2844 ns/op	    8282 B/op	      19 allocs/op
+BenchmarkOK                            	973995655	         0.2306 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOK                            	1000000000	         0.2301 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOK                            	1000000000	         0.2322 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWithMeta                      	13579190	        18.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWithMeta                      	12887397	        18.72 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWithMeta                      	12744237	        18.78 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFluentAPI                     	 4694912	        50.24 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFluentAPI                     	 4765137	        50.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFluentAPI                     	 4761254	        50.17 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_String              	 7727356	        30.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_String              	 7883116	        30.69 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_String              	 7880662	        30.27 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_Bytes               	 7995830	        29.78 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_Bytes               	 8021695	        32.13 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_Bytes               	 6999048	        31.67 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_PreCompiledHelper   	 7924422	        30.06 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_PreCompiledHelper   	 7975077	        30.16 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSetHeader_PreCompiledHelper   	 8015461	        29.98 ns/op	       0 B/op	       0 allocs/op
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x18 pc=0x6b9867]
+
+goroutine 139 [running]:
+github.com/yourusername/shockwave/pkg/shockwave/http11.(*ResponseWriter).writeHeaders(0xc0000ad988)
+	/home/mirai/Documents/Programming/Projects/watt/shockwave/pkg/shockwave/http11/response.go:96 +0x47
+github.com/yourusername/shockwave/pkg/shockwave/http11.(*ResponseWriter).Write(0xc0000ad988, {0xc0000fe000, 0x24, 0x2000})
+	/home/mirai/Documents/Programming/Projects/watt/shockwave/pkg/shockwave/http11/response.go:74 +0x37
+github.com/yourusername/bolt/core.(*Context).JSON(0xc000031bc8, 0xc8, {0x85a5a0, 0xc00009e390})
+	/home/mirai/Documents/Programming/Projects/watt/bolt/core/context.go:499 +0x20b
+github.com/yourusername/bolt/core.BenchmarkJSON_WithPreCompiledHeaders(0xc0000c6848)
+	/home/mirai/Documents/Programming/Projects/watt/bolt/core/headers_bench_test.go:59 +0x130
+testing.(*B).runN(0xc0000c6848, 0x1)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190
+testing.(*B).run1.func1()
+	/usr/lib/go/src/testing/benchmark.go:245 +0x48
+created by testing.(*B).run1 in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:238 +0x90
+exit status 2
+FAIL	github.com/yourusername/bolt/core	16.160s
+FAIL

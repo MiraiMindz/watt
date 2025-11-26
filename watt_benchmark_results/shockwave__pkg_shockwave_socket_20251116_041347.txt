@@ -1,0 +1,53 @@
+testing: open /home/mirai/watt_benchmark_results/profiles/shockwave__pkg_shockwave_socket_cpu.prof: permission denied
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/socket
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkApply                                 	   80845	     28628 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply                                 	   81138	     29528 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply                                 	   87514	     29782 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply                                 	   87510	     28303 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply                                 	   86280	     28284 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply                                 	   85999	     28500 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply                                 	   82666	     28590 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply                                 	   84282	     28574 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-4                               	   85069	     27919 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-4                               	   85568	     27879 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-4                               	   86368	     28513 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-4                               	   84919	   1312625 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-4                               	   83690	     27598 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-4                               	   90184	     28556 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-4                               	   81816	     26785 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-4                               	   87506	     26974 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-8                               	   88954	     27692 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-8                               	   89487	     27271 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-8                               	   85737	     27230 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-8                               	   88386	     27699 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-8                               	   88743	     27531 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-8                               	   87606	     27970 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-8                               	   86145	     27562 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkApply-8                               	   10000	  13659974 ns/op	    1048 B/op	      26 allocs/op
+BenchmarkLatency_Baseline                      	  460605	      5385 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline                      	  469759	      5362 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline                      	  443522	      5347 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline                      	  410224	      5397 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline                      	  437986	      5396 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline                      	  442993	      5434 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline                      	  427648	      5459 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline                      	  431886	      5444 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-4                    	  453087	      5443 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-4                    	  431517	      5387 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-4                    	  441225	      5493 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-4                    	  436447	      5510 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-4                    	  449529	      5479 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-4                    	  430048	      5482 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-4                    	  452734	      5591 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-4                    	  441255	      5483 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-8                    	  435421	      5576 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-8                    	  460179	      5556 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-8                    	  440875	      5491 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-8                    	  434524	      5492 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-8                    	  422709	      5650 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-8                    	  430612	      5537 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-8                    	  441758	      5529 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLatency_Baseline-8                    	  407331	      5506 ns/op	       0 B/op	       0 allocs/op

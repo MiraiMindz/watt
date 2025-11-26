@@ -1,0 +1,8 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/server
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkServer_vs_NetHTTP/Shockwave-8         	    4522	    113566 ns/op	    3899 B/op	       9 allocs/op
+BenchmarkServer_vs_NetHTTP/net/http-8          	    2325	    256008 ns/op	    1408 B/op	      14 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/server	2.205s

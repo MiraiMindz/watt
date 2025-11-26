@@ -1,0 +1,261 @@
+package main
+
+import "gox"
+
+component Timer() {
+	seconds, setSeconds := gox.UseState[int](0)
+	isRunning, setIsRunning := gox.UseState[bool](false)
+	intervalId, setIntervalId := gox.UseRef[int](0)
+
+	// Format time display
+	formatTime := func(totalSeconds int) string {
+		hours := totalSeconds / 3600
+		minutes := (totalSeconds % 3600) / 60
+		secs := totalSeconds % 60
+		return fmt.Sprintf("%02d:%02d:%02d", hours, minutes, secs)
+	}
+
+	// Start timer
+	start := func() {
+		setIsRunning(true)
+	}
+
+	// Pause timer
+	pause := func() {
+		setIsRunning(false)
+	}
+
+	// Reset timer
+	reset := func() {
+		setSeconds(0)
+		setIsRunning(false)
+	}
+
+	// Lap time recording
+	laps, setLaps := gox.UseState[[]int]([]int{})
+
+	recordLap := func() {
+		if isRunning && seconds > 0 {
+			setLaps(append(laps, seconds))
+		}
+	}
+
+	clearLaps := func() {
+		setLaps([]int{})
+	}
+
+	// Timer effect
+	gox.UseEffect(func() {
+		if isRunning {
+			id := setInterval(func() {
+				setSeconds(seconds + 1)
+			}, 1000)
+			setIntervalId(id)
+
+			// Cleanup function
+			return func() {
+				clearInterval(intervalId.current)
+			}
+		}
+	}, []interface{}{isRunning})
+
+	render {
+		<div className="timer-card">
+			<h2>Timer Component</h2>
+
+			<div className="timer-display">
+				<div className="time-value">
+					{formatTime(seconds)}
+				</div>
+				<div className="timer-status">
+					{isRunning ? "Running" : seconds > 0 ? "Paused" : "Ready"}
+				</div>
+			</div>
+
+			<div className="timer-controls">
+				{!isRunning ? (
+					<button onClick={start} className="btn-start">
+						{seconds > 0 ? "Resume" : "Start"}
+					</button>
+				) : (
+					<button onClick={pause} className="btn-pause">
+						Pause
+					</button>
+				)}
+				<button onClick={reset} className="btn-reset">
+					Reset
+				</button>
+				<button
+					onClick={recordLap}
+					className="btn-lap"
+					disabled={!isRunning || seconds == 0}>
+					Lap
+				</button>
+			</div>
+
+			{len(laps) > 0 && (
+				<div className="lap-times">
+					<div className="lap-header">
+						<h3>Lap Times</h3>
+						<button onClick={clearLaps} className="clear-laps">
+							Clear
+						</button>
+					</div>
+					<ul className="lap-list">
+						{laps.map(func(lap int, index int) JSXElement {
+							return <li key={index}>
+								<span className="lap-number">Lap {index + 1}</span>
+								<span className="lap-time">{formatTime(lap)}</span>
+							</li>
+						})}
+					</ul>
+				</div>
+			)}
+
+			<div className="timer-info">
+				<small>
+					Timer demonstrates async operations, effects with cleanup, and refs
+				</small>
+			</div>
+		</div>
+	}
+
+	style {
+		.timer-card {
+			background: white;
+			border-radius: 12px;
+			padding: 2rem;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			margin: 1rem;
+		}
+
+		.timer-display {
+			text-align: center;
+			margin: 2rem 0;
+		}
+
+		.time-value {
+			font-size: 4rem;
+			font-weight: 300;
+			font-family: 'Courier New', monospace;
+			background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		.timer-status {
+			font-size: 1rem;
+			color: #6c757d;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin-top: 0.5rem;
+		}
+
+		.timer-controls {
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+			margin: 2rem 0;
+		}
+
+		.timer-controls button {
+			padding: 0.75rem 1.5rem;
+			font-size: 1rem;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.2s;
+		}
+
+		.timer-controls button:hover:not(:disabled) {
+			transform: translateY(-2px);
+		}
+
+		.timer-controls button:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+
+		.btn-start {
+			background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+			color: white;
+		}
+
+		.btn-pause {
+			background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+			color: white;
+		}
+
+		.btn-reset {
+			background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+			color: white;
+		}
+
+		.btn-lap {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+		}
+
+		.lap-times {
+			margin-top: 2rem;
+			padding-top: 2rem;
+			border-top: 2px solid #f0f0f0;
+		}
+
+		.lap-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 1rem;
+		}
+
+		.lap-header h3 {
+			margin: 0;
+			color: #333;
+		}
+
+		.clear-laps {
+			padding: 0.25rem 0.75rem;
+			background: none;
+			border: 1px solid #dc3545;
+			color: #dc3545;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 0.875rem;
+		}
+
+		.lap-list {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			max-height: 200px;
+			overflow-y: auto;
+		}
+
+		.lap-list li {
+			display: flex;
+			justify-content: space-between;
+			padding: 0.5rem 1rem;
+			background: #f8f9fa;
+			margin-bottom: 0.5rem;
+			border-radius: 6px;
+		}
+
+		.lap-number {
+			color: #6c757d;
+			font-weight: 600;
+		}
+
+		.lap-time {
+			font-family: 'Courier New', monospace;
+			color: #333;
+		}
+
+		.timer-info {
+			text-align: center;
+			margin-top: 2rem;
+			color: #6c757d;
+			font-size: 0.875rem;
+		}
+	}
+}

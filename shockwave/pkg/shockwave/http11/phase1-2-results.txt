@@ -1,0 +1,36 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http11
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkSuite_ParseSimpleGET-8        	  705204	      1930 ns/op	  19.17 MB/s	   10944 B/op	       2 allocs/op
+BenchmarkSuite_ParseSimpleGET-8        	  698253	      1770 ns/op	  20.91 MB/s	   10945 B/op	       2 allocs/op
+BenchmarkSuite_ParseSimpleGET-8        	  635020	      1710 ns/op	  21.64 MB/s	   10945 B/op	       2 allocs/op
+BenchmarkSuite_ParseSimpleGET-8        	  849896	      1766 ns/op	  20.95 MB/s	   10944 B/op	       2 allocs/op
+BenchmarkSuite_ParseSimpleGET-8        	  716504	      1777 ns/op	  20.82 MB/s	   10943 B/op	       2 allocs/op
+BenchmarkSuite_ParseGETWithHeaders-8   	  542269	      1929 ns/op	  84.50 MB/s	   10943 B/op	       2 allocs/op
+BenchmarkSuite_ParseGETWithHeaders-8   	  681754	      2058 ns/op	  79.18 MB/s	   10943 B/op	       2 allocs/op
+BenchmarkSuite_ParseGETWithHeaders-8   	  653481	      1952 ns/op	  83.49 MB/s	   10942 B/op	       2 allocs/op
+BenchmarkSuite_ParseGETWithHeaders-8   	  450716	      2881 ns/op	  56.59 MB/s	   10941 B/op	       2 allocs/op
+BenchmarkSuite_ParseGETWithHeaders-8   	  477055	      2852 ns/op	  57.16 MB/s	   10940 B/op	       2 allocs/op
+BenchmarkSuite_ParsePOST-8             	  487234	      2876 ns/op	  34.42 MB/s	   10966 B/op	       3 allocs/op
+BenchmarkSuite_ParsePOST-8             	  488348	      2836 ns/op	  34.91 MB/s	   10964 B/op	       3 allocs/op
+BenchmarkSuite_ParsePOST-8             	  541352	      2806 ns/op	  35.28 MB/s	   10966 B/op	       3 allocs/op
+BenchmarkSuite_ParsePOST-8             	  563415	      2720 ns/op	  36.40 MB/s	   10965 B/op	       3 allocs/op
+BenchmarkSuite_ParsePOST-8             	  594781	      2808 ns/op	  35.26 MB/s	   10964 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith10Headers-8    	  440325	      3137 ns/op	  66.31 MB/s	   10939 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith10Headers-8    	  467754	      3290 ns/op	  63.23 MB/s	   10938 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith10Headers-8    	  407838	      3105 ns/op	  67.00 MB/s	   10941 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith10Headers-8    	  454310	      3432 ns/op	  60.61 MB/s	   10940 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith10Headers-8    	  516975	      3141 ns/op	  66.22 MB/s	   10940 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith20Headers-8    	  372807	      3570 ns/op	 111.49 MB/s	   10939 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith20Headers-8    	  370330	      4125 ns/op	  96.47 MB/s	   10938 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith20Headers-8    	  342838	      4171 ns/op	  95.42 MB/s	   10938 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith20Headers-8    	  348633	      3984 ns/op	  99.89 MB/s	   10939 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith20Headers-8    	  373047	      3940 ns/op	 101.02 MB/s	   10940 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith32Headers-8    	  263228	      4494 ns/op	 139.31 MB/s	   10939 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith32Headers-8    	  272540	      4398 ns/op	 142.34 MB/s	   10938 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith32Headers-8    	  254586	      4852 ns/op	 129.01 MB/s	   10939 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith32Headers-8    	  345482	      4466 ns/op	 140.16 MB/s	   10939 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith32Headers-8    	  283878	      4624 ns/op	 135.38 MB/s	   10939 B/op	       2 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/http11	48.271s

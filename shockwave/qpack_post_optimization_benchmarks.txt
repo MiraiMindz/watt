@@ -1,0 +1,46 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http3/qpack
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkDecodeIndexedFieldLine-8    	196083001	         5.873 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecodeIndexedFieldLine-8    	204396529	         5.925 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecodeIndexedFieldLine-8    	198710661	         6.067 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecodeIndexedFieldLine-8    	201466918	         6.239 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecodeIndexedFieldLine-8    	191568361	         6.087 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecodeHeaders-8             	38837239	        33.67 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecodeHeaders-8             	39842127	        33.98 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecodeHeaders-8             	39417320	        35.73 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecodeHeaders-8             	32763708	        37.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecodeHeaders-8             	36749058	        36.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkEncoderDecoderRoundTrip-8   	 3733525	       400.6 ns/op	      40 B/op	       2 allocs/op
+BenchmarkEncoderDecoderRoundTrip-8   	 3771752	       362.0 ns/op	      40 B/op	       2 allocs/op
+BenchmarkEncoderDecoderRoundTrip-8   	 3819086	       374.4 ns/op	      40 B/op	       2 allocs/op
+BenchmarkEncoderDecoderRoundTrip-8   	 3525193	       351.8 ns/op	      40 B/op	       2 allocs/op
+BenchmarkEncoderDecoderRoundTrip-8   	 3546925	       360.9 ns/op	      40 B/op	       2 allocs/op
+BenchmarkHuffmanEncode-8             	 6617522	       171.3 ns/op	     192 B/op	       1 allocs/op
+BenchmarkHuffmanEncode-8             	 7273924	       175.9 ns/op	     192 B/op	       1 allocs/op
+BenchmarkHuffmanEncode-8             	 7026439	       178.0 ns/op	     192 B/op	       1 allocs/op
+BenchmarkHuffmanEncode-8             	 6391221	       166.0 ns/op	     192 B/op	       1 allocs/op
+BenchmarkHuffmanEncode-8             	 6835952	       176.6 ns/op	     192 B/op	       1 allocs/op
+BenchmarkHuffmanDecode-8             	 2518237	       503.9 ns/op	      64 B/op	       1 allocs/op
+BenchmarkHuffmanDecode-8             	 2569963	       471.6 ns/op	      64 B/op	       1 allocs/op
+BenchmarkHuffmanDecode-8             	 2716178	       494.3 ns/op	      64 B/op	       1 allocs/op
+BenchmarkHuffmanDecode-8             	 2590615	       488.6 ns/op	      64 B/op	       1 allocs/op
+BenchmarkHuffmanDecode-8             	 2774050	       451.3 ns/op	      64 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeShort-8        	33425024	        33.38 ns/op	      16 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeShort-8        	41395867	        33.40 ns/op	      16 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeShort-8        	40090682	        34.87 ns/op	      16 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeShort-8        	36477152	        34.30 ns/op	      16 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeShort-8        	41164155	        33.27 ns/op	      16 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeLong-8         	  972338	      1135 ns/op	    1280 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeLong-8         	 1000000	      1107 ns/op	    1280 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeLong-8         	  991647	      1069 ns/op	    1280 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeLong-8         	 1000000	      1174 ns/op	    1280 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeLong-8         	 1000000	      1153 ns/op	    1280 B/op	       1 allocs/op
+BenchmarkShouldHuffmanEncode-8       	66622784	        16.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkShouldHuffmanEncode-8       	63069540	        16.87 ns/op	       0 B/op	       0 allocs/op
+BenchmarkShouldHuffmanEncode-8       	76730929	        16.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkShouldHuffmanEncode-8       	77670369	        16.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkShouldHuffmanEncode-8       	79984498	        17.06 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/http3/qpack	59.214s

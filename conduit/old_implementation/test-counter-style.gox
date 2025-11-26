@@ -1,0 +1,15 @@
+package main
+
+import "gox"
+
+component Test() {
+	render {
+		<div>Hello</div>
+	}
+
+	style {
+		.counter-container {
+			max-width: 400px;
+		}
+	}
+}

@@ -1,0 +1,99 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "name": "prevent-net-http-import",
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$TOOL_INPUT\" | grep -q 'import.*\"net/http\"'; then echo 'ERROR: net/http import forbidden. Use Shockwave types instead.' && exit 1; fi"
+          }
+        ]
+      },
+      {
+        "name": "validate-file-path",
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "dir=$(dirname \"$(echo \"$TOOL_INPUT\" | jq -r '.file_path')\") && if [ ! -d \"$dir\" ] && [ \"$dir\" != \".\" ]; then echo \"WARNING: Directory $dir does not exist. Will be created.\" && mkdir -p \"$dir\"; fi"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "name": "run-tests-after-code-change",
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "file=\"$(echo \"$TOOL_INPUT\" | jq -r '.file_path')\" && if [[ \"$file\" == *.go ]] && [[ \"$file\" != *_test.go ]]; then pkg=$(dirname \"$file\") && echo \"Running tests for $pkg...\" && go test -run=. \"$pkg\" 2>&1 | head -20 || echo \"Tests failed. Fix errors before continuing.\"; fi"
+          }
+        ]
+      },
+      {
+        "name": "format-go-code",
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "file=\"$(echo \"$TOOL_INPUT\" | jq -r '.file_path')\" && if [[ \"$file\" == *.go ]]; then gofmt -s -w \"$file\" && echo \"Formatted: $file\"; fi"
+          }
+        ]
+      }
+    ],
+    "PrePrompt": [
+      {
+        "name": "workspace-context",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Current working directory: $(pwd)\nGit branch: $(git branch --show-current 2>/dev/null || echo 'not a git repo')\nGo version: $(go version 2>/dev/null || echo 'Go not installed')"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "name": "suggest-next-step",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Agent completed. Review output and consider next steps:\n- Run /test to validate changes\n- Run /benchmark to check performance\n- Run /optimize if performance targets not met\n- Commit changes if all checks pass"
+          }
+        ]
+      }
+    ]
+  },
+  "tool_permissions": {
+    "Bash": {
+      "auto_approve": [
+        "go test",
+        "go build",
+        "go fmt",
+        "go vet",
+        "gofmt",
+        "git status",
+        "git diff",
+        "git log"
+      ],
+      "require_approval": [
+        "go get",
+        "go mod",
+        "git commit",
+        "git push",
+        "rm",
+        "mv"
+      ]
+    }
+  },
+  "project": {
+    "name": "bolt",
+    "description": "High-performance Go web framework with Shockwave integration",
+    "version": "1.0.0",
+    "rules_file": "CLAUDE.md",
+    "prompts_file": "MASTER_PROMPTS.md"
+  }
+}

@@ -1,0 +1,45 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http2
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkDecode/small-8             	14472164	        80.70 ns/op	  24.78 MB/s	      64 B/op	       1 allocs/op
+BenchmarkDecode/small-8             	16056042	        80.91 ns/op	  24.72 MB/s	      64 B/op	       1 allocs/op
+BenchmarkDecode/small-8             	16254673	        80.69 ns/op	  24.79 MB/s	      64 B/op	       1 allocs/op
+BenchmarkDecode/small-8             	13874043	        79.34 ns/op	  25.21 MB/s	      64 B/op	       1 allocs/op
+BenchmarkDecode/small-8             	14289117	        80.15 ns/op	  24.95 MB/s	      64 B/op	       1 allocs/op
+BenchmarkDecode/medium-8            	 2439516	       527.8 ns/op	  49.26 MB/s	     320 B/op	       5 allocs/op
+BenchmarkDecode/medium-8            	 2145391	       538.8 ns/op	  48.25 MB/s	     320 B/op	       5 allocs/op
+BenchmarkDecode/medium-8            	 2252546	       542.1 ns/op	  47.96 MB/s	     320 B/op	       5 allocs/op
+BenchmarkDecode/medium-8            	 2270047	       526.0 ns/op	  49.43 MB/s	     320 B/op	       5 allocs/op
+BenchmarkDecode/medium-8            	 2267715	       541.3 ns/op	  48.03 MB/s	     320 B/op	       5 allocs/op
+BenchmarkDecode/large-8             	  459936	      2694 ns/op	  75.35 MB/s	    1120 B/op	      17 allocs/op
+BenchmarkDecode/large-8             	  449420	      2659 ns/op	  76.33 MB/s	    1120 B/op	      17 allocs/op
+BenchmarkDecode/large-8             	  481542	      2419 ns/op	  83.92 MB/s	    1120 B/op	      17 allocs/op
+BenchmarkDecode/large-8             	  494842	      2435 ns/op	  83.38 MB/s	    1120 B/op	      17 allocs/op
+BenchmarkDecode/large-8             	  493068	      2662 ns/op	  76.27 MB/s	    1120 B/op	      17 allocs/op
+BenchmarkSequentialRequests-8       	 1000000	      1071 ns/op	     396 B/op	       6 allocs/op
+BenchmarkSequentialRequests-8       	 1098186	      1118 ns/op	     396 B/op	       6 allocs/op
+BenchmarkSequentialRequests-8       	 1024687	      1051 ns/op	     396 B/op	       6 allocs/op
+BenchmarkSequentialRequests-8       	 1000000	      1134 ns/op	     396 B/op	       6 allocs/op
+BenchmarkSequentialRequests-8       	 1000000	      1110 ns/op	     396 B/op	       6 allocs/op
+BenchmarkStreamCreation-8           	 1502134	       810.6 ns/op	     168 B/op	       4 allocs/op
+BenchmarkStreamCreation-8           	 1501182	       816.6 ns/op	     168 B/op	       4 allocs/op
+BenchmarkStreamCreation-8           	 1545832	       805.4 ns/op	     168 B/op	       4 allocs/op
+BenchmarkStreamCreation-8           	 1450513	       821.0 ns/op	     168 B/op	       4 allocs/op
+BenchmarkStreamCreation-8           	 1423045	       807.2 ns/op	     168 B/op	       4 allocs/op
+BenchmarkStreamStateTransitions-8   	 1929105	       650.6 ns/op	     608 B/op	       4 allocs/op
+BenchmarkStreamStateTransitions-8   	 1858711	       640.6 ns/op	     608 B/op	       4 allocs/op
+BenchmarkStreamStateTransitions-8   	 1810682	       659.9 ns/op	     608 B/op	       4 allocs/op
+BenchmarkStreamStateTransitions-8   	 1828035	       682.8 ns/op	     608 B/op	       4 allocs/op
+BenchmarkStreamStateTransitions-8   	 1592317	       705.1 ns/op	     608 B/op	       4 allocs/op
+BenchmarkFlowControlSend-8          	19233602	        58.72 ns/op	17439.55 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFlowControlSend-8          	18025555	        57.91 ns/op	17683.34 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFlowControlSend-8          	21547339	        57.63 ns/op	17768.84 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFlowControlSend-8          	22000405	        57.71 ns/op	17743.62 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFlowControlSend-8          	20765796	        54.80 ns/op	18686.02 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFlowControlReceive-8       	40527244	        30.38 ns/op	33702.24 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFlowControlReceive-8       	38393551	        30.61 ns/op	33450.58 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFlowControlReceive-8       	38774364	        30.43 ns/op	33648.11 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFlowControlReceive-8       	40055710	        31.47 ns/op	32540.15 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFlowControlReceive-8       	38794716	        29.95 ns/op	34193.61 MB/s	       0 B/op	       0 allocs/op
+BenchmarkStreamIO-8                 	

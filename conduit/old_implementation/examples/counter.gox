@@ -1,0 +1,16 @@
+package main
+
+import "gox"
+
+component Counter() {
+	count, setCount := gox.UseState[int](0)
+	doubled := gox.UseMemo(func() int { return count * 2 }, []interface{}{count})
+
+	render {
+		<div>
+			<h1>Counter Component</h1>
+			<p>Current count: {count}</p>
+			<p>Doubled: {doubled}</p>
+		</div>
+	}
+}

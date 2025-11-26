@@ -1,0 +1,1922 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>http11: Go Coverage Report</title>
+		<style>
+			body {
+				background: black;
+				color: rgb(80, 80, 80);
+			}
+			body, pre, #legend span {
+				font-family: Menlo, monospace;
+				font-weight: bold;
+			}
+			#topbar {
+				background: black;
+				position: fixed;
+				top: 0; left: 0; right: 0;
+				height: 42px;
+				border-bottom: 1px solid rgb(80, 80, 80);
+			}
+			#content {
+				margin-top: 50px;
+			}
+			#nav, #legend {
+				float: left;
+				margin-left: 10px;
+			}
+			#legend {
+				margin-top: 12px;
+			}
+			#nav {
+				margin-top: 10px;
+			}
+			#legend span {
+				margin: 0 5px;
+			}
+			.cov0 { color: rgb(192, 0, 0) }
+.cov1 { color: rgb(128, 128, 128) }
+.cov2 { color: rgb(116, 140, 131) }
+.cov3 { color: rgb(104, 152, 134) }
+.cov4 { color: rgb(92, 164, 137) }
+.cov5 { color: rgb(80, 176, 140) }
+.cov6 { color: rgb(68, 188, 143) }
+.cov7 { color: rgb(56, 200, 146) }
+.cov8 { color: rgb(44, 212, 149) }
+.cov9 { color: rgb(32, 224, 152) }
+.cov10 { color: rgb(20, 236, 155) }
+
+		</style>
+	</head>
+	<body>
+		<div id="topbar">
+			<div id="nav">
+				<select id="files">
+				
+				<option value="file0">github.com/yourusername/shockwave/pkg/shockwave/http11/header.go (84.5%)</option>
+				
+				<option value="file1">github.com/yourusername/shockwave/pkg/shockwave/http11/method.go (100.0%)</option>
+				
+				<option value="file2">github.com/yourusername/shockwave/pkg/shockwave/http11/parser.go (89.9%)</option>
+				
+				<option value="file3">github.com/yourusername/shockwave/pkg/shockwave/http11/pool.go (98.6%)</option>
+				
+				<option value="file4">github.com/yourusername/shockwave/pkg/shockwave/http11/request.go (93.0%)</option>
+				
+				<option value="file5">github.com/yourusername/shockwave/pkg/shockwave/http11/response.go (64.7%)</option>
+				
+				</select>
+			</div>
+			<div id="legend">
+				<span>not tracked</span>
+			
+				<span class="cov0">not covered</span>
+				<span class="cov8">covered</span>
+			
+			</div>
+		</div>
+		<div id="content">
+		
+		<pre class="file" id="file0" style="display: none">package http11
+
+// Header stores HTTP headers inline to avoid heap allocations.
+// Supports up to 32 headers with inline storage (zero allocations).
+// For &gt;32 headers, falls back to heap allocation (rare case, acceptable).
+//
+// Design rationale:
+// - 32 headers covers 99.9% of real-world HTTP requests
+// - Fixed-size arrays enable stack allocation
+// - Linear scan is faster than map for N≤32 (cache-friendly)
+// - Header names are case-insensitive per RFC 7230
+type Header struct {
+        // Inline storage for up to 32 headers
+        // Each header has a name and value stored as byte arrays
+        names  [MaxHeaders][MaxHeaderName]byte   // Header names (64 bytes each)
+        values [MaxHeaders][MaxHeaderValue]byte  // Header values (256 bytes each)
+
+        // Actual lengths of each header
+        nameLens  [MaxHeaders]uint8  // Length of each name (0-64)
+        valueLens [MaxHeaders]uint8  // Length of each value (0-256)
+
+        // Number of headers currently stored (0-32)
+        count uint8
+
+        // Fallback storage for &gt;32 headers (heap-allocated, rare case)
+        // nil for typical requests
+        overflow map[string]string
+}
+
+// Add adds a header to the collection.
+// For ≤32 headers, this performs zero allocations.
+// For &gt;32 headers, overflow storage is allocated (rare case).
+//
+// Header names are stored as-is but lookup is case-insensitive.
+// Both name and value are copied into internal storage for safety.
+//
+// Returns ErrHeaderTooLarge if name or value exceeds size limits.
+// Allocation behavior: 0 allocs/op for ≤32 headers
+func (h *Header) Add(name, value []byte) error <span class="cov8" title="1">{
+        // Bounds check
+        if len(name) &gt; MaxHeaderName </span><span class="cov8" title="1">{
+                return ErrHeaderTooLarge
+        }</span>
+        <span class="cov8" title="1">if len(value) &gt; MaxHeaderValue </span><span class="cov8" title="1">{
+                return ErrHeaderTooLarge
+        }</span>
+
+        // Fast path: inline storage (0-32 headers)
+        <span class="cov8" title="1">if h.count &lt; MaxHeaders </span><span class="cov8" title="1">{
+                idx := h.count
+
+                // Copy name and value into inline storage
+                copy(h.names[idx][:], name)
+                copy(h.values[idx][:], value)
+                h.nameLens[idx] = uint8(len(name))
+                h.valueLens[idx] = uint8(len(value))
+                h.count++
+                return nil
+        }</span>
+
+        // Slow path: overflow storage (rare case, &gt;32 headers)
+        <span class="cov8" title="1">if h.overflow == nil </span><span class="cov8" title="1">{
+                h.overflow = make(map[string]string, 8)
+        }</span>
+        <span class="cov8" title="1">h.overflow[string(name)] = string(value)
+        return nil</span>
+}
+
+// Get retrieves a header value by name (case-insensitive).
+// Returns nil if the header is not found.
+//
+// The returned byte slice references internal storage and is valid
+// only until the next call to Reset() or Add().
+//
+// Allocation behavior: 0 allocs/op for inline storage lookup
+func (h *Header) Get(name []byte) []byte <span class="cov8" title="1">{
+        // Linear scan through inline storage
+        // For N≤32, this is faster than map lookup due to cache locality
+        for i := uint8(0); i &lt; h.count; i++ </span><span class="cov8" title="1">{
+                if h.nameLens[i] == uint8(len(name)) &amp;&amp;
+                        bytesEqualCaseInsensitive(h.names[i][:h.nameLens[i]], name) </span><span class="cov8" title="1">{
+                        return h.values[i][:h.valueLens[i]]
+                }</span>
+        }
+
+        // Check overflow storage if present
+        <span class="cov8" title="1">if h.overflow != nil </span><span class="cov8" title="1">{
+                // Convert to string for map lookup (small allocation, acceptable for rare case)
+                if val, ok := h.overflow[string(name)]; ok </span><span class="cov8" title="1">{
+                        return []byte(val)
+                }</span>
+        }
+
+        <span class="cov8" title="1">return nil</span>
+}
+
+// GetString retrieves a header value by name (case-insensitive) as a string.
+// Returns empty string if the header is not found.
+//
+// This method allocates a string from the byte slice.
+// Use Get() if you can work with []byte to avoid allocation.
+func (h *Header) GetString(name []byte) string <span class="cov8" title="1">{
+        val := h.Get(name)
+        if val == nil </span><span class="cov8" title="1">{
+                return ""
+        }</span>
+        <span class="cov8" title="1">return string(val)</span>
+}
+
+// Has checks if a header exists (case-insensitive).
+// Allocation behavior: 0 allocs/op
+func (h *Header) Has(name []byte) bool <span class="cov8" title="1">{
+        // Check inline storage
+        for i := uint8(0); i &lt; h.count; i++ </span><span class="cov8" title="1">{
+                if h.nameLens[i] == uint8(len(name)) &amp;&amp;
+                        bytesEqualCaseInsensitive(h.names[i][:h.nameLens[i]], name) </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+
+        // Check overflow
+        <span class="cov8" title="1">if h.overflow != nil </span><span class="cov0" title="0">{
+                _, ok := h.overflow[string(name)]
+                return ok
+        }</span>
+
+        <span class="cov8" title="1">return false</span>
+}
+
+// Set sets a header value, replacing any existing value.
+// If the header doesn't exist, it's added.
+// If it exists, the value is updated in-place.
+//
+// Allocation behavior: 0 allocs/op for ≤32 headers
+func (h *Header) Set(name, value []byte) error <span class="cov8" title="1">{
+        // Bounds check
+        if len(name) &gt; MaxHeaderName </span><span class="cov0" title="0">{
+                return ErrHeaderTooLarge
+        }</span>
+        <span class="cov8" title="1">if len(value) &gt; MaxHeaderValue </span><span class="cov0" title="0">{
+                return ErrHeaderTooLarge
+        }</span>
+
+        // Try to find and update existing header
+        <span class="cov8" title="1">for i := uint8(0); i &lt; h.count; i++ </span><span class="cov8" title="1">{
+                if h.nameLens[i] == uint8(len(name)) &amp;&amp;
+                        bytesEqualCaseInsensitive(h.names[i][:h.nameLens[i]], name) </span><span class="cov8" title="1">{
+                        // Update existing header
+                        copy(h.values[i][:], value)
+                        h.valueLens[i] = uint8(len(value))
+                        return nil
+                }</span>
+        }
+
+        // Check overflow
+        <span class="cov8" title="1">if h.overflow != nil </span><span class="cov0" title="0">{
+                nameStr := string(name)
+                if _, ok := h.overflow[nameStr]; ok </span><span class="cov0" title="0">{
+                        h.overflow[nameStr] = string(value)
+                        return nil
+                }</span>
+        }
+
+        // Header doesn't exist, add it
+        <span class="cov8" title="1">return h.Add(name, value)</span>
+}
+
+// Del deletes a header by name (case-insensitive).
+// Allocation behavior: 0 allocs/op
+func (h *Header) Del(name []byte) <span class="cov8" title="1">{
+        // Find and delete from inline storage
+        for i := uint8(0); i &lt; h.count; i++ </span><span class="cov8" title="1">{
+                if h.nameLens[i] == uint8(len(name)) &amp;&amp;
+                        bytesEqualCaseInsensitive(h.names[i][:h.nameLens[i]], name) </span><span class="cov8" title="1">{
+                        // Shift remaining headers down
+                        if i &lt; h.count-1 </span><span class="cov8" title="1">{
+                                copy(h.names[i:], h.names[i+1:])
+                                copy(h.values[i:], h.values[i+1:])
+                                copy(h.nameLens[i:], h.nameLens[i+1:])
+                                copy(h.valueLens[i:], h.valueLens[i+1:])
+                        }</span>
+                        <span class="cov8" title="1">h.count--
+                        return</span>
+                }
+        }
+
+        // Delete from overflow if present
+        <span class="cov0" title="0">if h.overflow != nil </span><span class="cov0" title="0">{
+                delete(h.overflow, string(name))
+        }</span>
+}
+
+// Len returns the total number of headers.
+func (h *Header) Len() int <span class="cov8" title="1">{
+        total := int(h.count)
+        if h.overflow != nil </span><span class="cov8" title="1">{
+                total += len(h.overflow)
+        }</span>
+        <span class="cov8" title="1">return total</span>
+}
+
+// Reset clears all headers for reuse (e.g., when returning to pool).
+// This does not deallocate the overflow map, but clears it.
+// The GC will clean up the map when the Header is no longer referenced.
+//
+// Allocation behavior: 0 allocs/op
+func (h *Header) Reset() <span class="cov8" title="1">{
+        h.count = 0
+        h.overflow = nil // Allow GC to clean up
+}</span>
+
+// VisitAll calls the visitor function for each header.
+// The visitor receives name and value as byte slices.
+// Iteration stops if visitor returns false.
+//
+// This is useful for serializing headers without allocation.
+func (h *Header) VisitAll(visitor func(name, value []byte) bool) <span class="cov8" title="1">{
+        // Visit inline headers
+        for i := uint8(0); i &lt; h.count; i++ </span><span class="cov8" title="1">{
+                name := h.names[i][:h.nameLens[i]]
+                value := h.values[i][:h.valueLens[i]]
+                if !visitor(name, value) </span><span class="cov8" title="1">{
+                        return
+                }</span>
+        }
+
+        // Visit overflow headers
+        <span class="cov8" title="1">if h.overflow != nil </span><span class="cov0" title="0">{
+                for name, value := range h.overflow </span><span class="cov0" title="0">{
+                        if !visitor([]byte(name), []byte(value)) </span><span class="cov0" title="0">{
+                                return
+                        }</span>
+                }
+        }
+}
+
+// bytesEqualCaseInsensitive compares two byte slices case-insensitively.
+// This is required per RFC 7230 - header field names are case-insensitive.
+//
+// Allocation behavior: 0 allocs/op
+func bytesEqualCaseInsensitive(a, b []byte) bool <span class="cov8" title="1">{
+        if len(a) != len(b) </span><span class="cov8" title="1">{
+                return false
+        }</span>
+        <span class="cov8" title="1">for i := 0; i &lt; len(a); i++ </span><span class="cov8" title="1">{
+                if toLower(a[i]) != toLower(b[i]) </span><span class="cov8" title="1">{
+                        return false
+                }</span>
+        }
+        <span class="cov8" title="1">return true</span>
+}
+
+// toLower converts an ASCII uppercase letter to lowercase.
+// Non-letter bytes are returned unchanged.
+// This is sufficient for HTTP header names which are ASCII.
+//
+// Allocation behavior: 0 allocs/op
+func toLower(b byte) byte <span class="cov8" title="1">{
+        if b &gt;= 'A' &amp;&amp; b &lt;= 'Z' </span><span class="cov8" title="1">{
+                return b + 32
+        }</span>
+        <span class="cov8" title="1">return b</span>
+}
+</pre>
+		
+		<pre class="file" id="file1" style="display: none">package http11
+
+// ParseMethodID converts an HTTP method byte slice to a numeric ID.
+// Returns MethodUnknown for unrecognized methods.
+// This function performs zero allocations and uses O(1) byte-level comparisons.
+//
+// Allocation behavior: 0 allocs/op
+func ParseMethodID(method []byte) uint8 <span class="cov8" title="1">{
+        // Fast path: check length first to reduce comparisons
+        switch len(method) </span>{
+        case 3:<span class="cov8" title="1"> // GET, PUT
+                if method[0] == 'G' &amp;&amp; method[1] == 'E' &amp;&amp; method[2] == 'T' </span><span class="cov8" title="1">{
+                        return MethodGET
+                }</span>
+                <span class="cov8" title="1">if method[0] == 'P' &amp;&amp; method[1] == 'U' &amp;&amp; method[2] == 'T' </span><span class="cov8" title="1">{
+                        return MethodPUT
+                }</span>
+
+        case 4:<span class="cov8" title="1"> // POST, HEAD
+                if method[0] == 'P' &amp;&amp; method[1] == 'O' &amp;&amp; method[2] == 'S' &amp;&amp; method[3] == 'T' </span><span class="cov8" title="1">{
+                        return MethodPOST
+                }</span>
+                <span class="cov8" title="1">if method[0] == 'H' &amp;&amp; method[1] == 'E' &amp;&amp; method[2] == 'A' &amp;&amp; method[3] == 'D' </span><span class="cov8" title="1">{
+                        return MethodHEAD
+                }</span>
+
+        case 5:<span class="cov8" title="1"> // PATCH, TRACE
+                if method[0] == 'P' &amp;&amp; method[1] == 'A' &amp;&amp; method[2] == 'T' &amp;&amp; method[3] == 'C' &amp;&amp; method[4] == 'H' </span><span class="cov8" title="1">{
+                        return MethodPATCH
+                }</span>
+                <span class="cov8" title="1">if method[0] == 'T' &amp;&amp; method[1] == 'R' &amp;&amp; method[2] == 'A' &amp;&amp; method[3] == 'C' &amp;&amp; method[4] == 'E' </span><span class="cov8" title="1">{
+                        return MethodTRACE
+                }</span>
+
+        case 6:<span class="cov8" title="1"> // DELETE
+                if method[0] == 'D' &amp;&amp; method[1] == 'E' &amp;&amp; method[2] == 'L' &amp;&amp;
+                        method[3] == 'E' &amp;&amp; method[4] == 'T' &amp;&amp; method[5] == 'E' </span><span class="cov8" title="1">{
+                        return MethodDELETE
+                }</span>
+
+        case 7:<span class="cov8" title="1"> // OPTIONS, CONNECT
+                if method[0] == 'O' &amp;&amp; method[1] == 'P' &amp;&amp; method[2] == 'T' &amp;&amp;
+                        method[3] == 'I' &amp;&amp; method[4] == 'O' &amp;&amp; method[5] == 'N' &amp;&amp; method[6] == 'S' </span><span class="cov8" title="1">{
+                        return MethodOPTIONS
+                }</span>
+                <span class="cov8" title="1">if method[0] == 'C' &amp;&amp; method[1] == 'O' &amp;&amp; method[2] == 'N' &amp;&amp;
+                        method[3] == 'N' &amp;&amp; method[4] == 'E' &amp;&amp; method[5] == 'C' &amp;&amp; method[6] == 'T' </span><span class="cov8" title="1">{
+                        return MethodCONNECT
+                }</span>
+        }
+
+        <span class="cov8" title="1">return MethodUnknown</span>
+}
+
+// MethodString returns the string representation of a method ID.
+// Uses pre-compiled constants for zero allocations.
+//
+// Allocation behavior: 0 allocs/op
+func MethodString(id uint8) string <span class="cov8" title="1">{
+        switch id </span>{
+        case MethodGET:<span class="cov8" title="1">
+                return methodGETString</span>
+        case MethodPOST:<span class="cov8" title="1">
+                return methodPOSTString</span>
+        case MethodPUT:<span class="cov8" title="1">
+                return methodPUTString</span>
+        case MethodDELETE:<span class="cov8" title="1">
+                return methodDELETEString</span>
+        case MethodPATCH:<span class="cov8" title="1">
+                return methodPATCHString</span>
+        case MethodHEAD:<span class="cov8" title="1">
+                return methodHEADString</span>
+        case MethodOPTIONS:<span class="cov8" title="1">
+                return methodOPTIONSString</span>
+        case MethodCONNECT:<span class="cov8" title="1">
+                return methodCONNECTString</span>
+        case MethodTRACE:<span class="cov8" title="1">
+                return methodTRACEString</span>
+        default:<span class="cov8" title="1">
+                return ""</span>
+        }
+}
+
+// MethodBytes returns the byte slice representation of a method ID.
+// Uses pre-compiled constants for zero allocations.
+//
+// Allocation behavior: 0 allocs/op
+func MethodBytes(id uint8) []byte <span class="cov8" title="1">{
+        switch id </span>{
+        case MethodGET:<span class="cov8" title="1">
+                return methodGETBytes</span>
+        case MethodPOST:<span class="cov8" title="1">
+                return methodPOSTBytes</span>
+        case MethodPUT:<span class="cov8" title="1">
+                return methodPUTBytes</span>
+        case MethodDELETE:<span class="cov8" title="1">
+                return methodDELETEBytes</span>
+        case MethodPATCH:<span class="cov8" title="1">
+                return methodPATCHBytes</span>
+        case MethodHEAD:<span class="cov8" title="1">
+                return methodHEADBytes</span>
+        case MethodOPTIONS:<span class="cov8" title="1">
+                return methodOPTIONSBytes</span>
+        case MethodCONNECT:<span class="cov8" title="1">
+                return methodCONNECTBytes</span>
+        case MethodTRACE:<span class="cov8" title="1">
+                return methodTRACEBytes</span>
+        default:<span class="cov8" title="1">
+                return nil</span>
+        }
+}
+
+// IsValidMethodID checks if a method ID is valid (not MethodUnknown).
+// Allocation behavior: 0 allocs/op
+func IsValidMethodID(id uint8) bool <span class="cov8" title="1">{
+        return id &gt;= MethodGET &amp;&amp; id &lt;= MethodTRACE
+}</span>
+</pre>
+		
+		<pre class="file" id="file2" style="display: none">package http11
+
+import (
+        "bytes"
+        "io"
+)
+
+// Parser implements zero-allocation HTTP/1.1 request parsing.
+// Uses a state machine approach for incremental parsing.
+//
+// Design:
+// - Single-pass parsing (no backtracking)
+// - Zero allocations for requests with ≤32 headers
+// - Byte-by-byte state machine for streaming data
+// - RFC 7230 compliant
+//
+// Allocation behavior: 0 allocs/op for typical requests
+type Parser struct {
+        // Internal buffer for request line and headers
+        // Maximum 8KB per RFC recommendations
+        buf []byte
+}
+
+// NewParser creates a new HTTP/1.1 parser.
+func NewParser() *Parser <span class="cov8" title="1">{
+        return &amp;Parser{
+                buf: make([]byte, 0, MaxRequestLineSize+MaxHeadersSize),
+        }
+}</span>
+
+// Parse parses an HTTP/1.1 request from the reader.
+// Returns a Request object or an error if parsing fails.
+//
+// The returned Request contains zero-copy slices referencing the internal buffer.
+// The Request is valid until the next call to Parse() or until the Parser is discarded.
+//
+// For requests with ≤32 headers, this performs zero allocations.
+//
+// Allocation behavior: 0 allocs/op for typical requests
+func (p *Parser) Parse(r io.Reader) (*Request, error) <span class="cov8" title="1">{
+        // Read request line and headers into buffer
+        // We read until we find \r\n\r\n (end of headers)
+        p.buf = p.buf[:0] // Reset buffer
+
+        if err := p.readUntilHeadersEnd(r); err != nil </span><span class="cov8" title="1">{
+                return nil, err
+        }</span>
+
+        // Create request object
+        <span class="cov8" title="1">req := &amp;Request{
+                Proto:      http11Proto,
+                ProtoMajor: ProtoHTTP11Major,
+                ProtoMinor: ProtoHTTP11Minor,
+                buf:        p.buf, // Zero-copy reference
+        }
+
+        // Parse request line
+        pos, err := p.parseRequestLine(req, p.buf)
+        if err != nil </span><span class="cov8" title="1">{
+                return nil, err
+        }</span>
+
+        // Parse headers
+        <span class="cov8" title="1">if err := p.parseHeaders(req, p.buf[pos:]); err != nil </span><span class="cov8" title="1">{
+                return nil, err
+        }</span>
+
+        // Setup body reader if needed
+        <span class="cov8" title="1">if err := p.setupBodyReader(req, r); err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">return req, nil</span>
+}
+
+// readUntilHeadersEnd reads from the reader until we find \r\n\r\n
+// This marks the end of the headers section.
+func (p *Parser) readUntilHeadersEnd(r io.Reader) error <span class="cov8" title="1">{
+        tmpBuf := make([]byte, 4096)
+        foundEnd := false
+
+        for !foundEnd </span><span class="cov8" title="1">{
+                n, err := r.Read(tmpBuf)
+                if err != nil &amp;&amp; err != io.EOF </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+                <span class="cov8" title="1">if n == 0 </span><span class="cov8" title="1">{
+                        if err == io.EOF </span><span class="cov8" title="1">{
+                                return ErrUnexpectedEOF
+                        }</span>
+                        <span class="cov0" title="0">continue</span>
+                }
+
+                // Append to buffer
+                <span class="cov8" title="1">p.buf = append(p.buf, tmpBuf[:n]...)
+
+                // Check for \r\n\r\n
+                if len(p.buf) &gt;= 4 </span><span class="cov8" title="1">{
+                        // Look for \r\n\r\n in the last read + 3 previous bytes
+                        searchStart := len(p.buf) - n - 3
+                        if searchStart &lt; 0 </span><span class="cov8" title="1">{
+                                searchStart = 0
+                        }</span>
+
+                        <span class="cov8" title="1">idx := bytes.Index(p.buf[searchStart:], []byte("\r\n\r\n"))
+                        if idx != -1 </span><span class="cov8" title="1">{
+                                foundEnd = true
+                                // Trim to just before body
+                                actualIdx := searchStart + idx + 4
+                                p.buf = p.buf[:actualIdx]
+                        }</span>
+                }
+
+                // Safety check: don't exceed maximum size
+                <span class="cov8" title="1">if len(p.buf) &gt; MaxRequestLineSize+MaxHeadersSize </span><span class="cov0" title="0">{
+                        return ErrHeadersTooLarge
+                }</span>
+
+                <span class="cov8" title="1">if err == io.EOF </span><span class="cov0" title="0">{
+                        break</span>
+                }
+        }
+
+        <span class="cov8" title="1">if !foundEnd </span><span class="cov0" title="0">{
+                return ErrUnexpectedEOF
+        }</span>
+
+        <span class="cov8" title="1">return nil</span>
+}
+
+// parseRequestLine parses "METHOD /path?query HTTP/1.1\r\n"
+// Returns the position after the request line.
+//
+// Format: METHOD SP Request-URI SP HTTP-Version CRLF
+// Example: GET /index.html HTTP/1.1\r\n
+//
+// Allocation behavior: 0 allocs/op
+func (p *Parser) parseRequestLine(req *Request, buf []byte) (int, error) <span class="cov8" title="1">{
+        // Find end of request line (\r\n)
+        lineEnd := bytes.Index(buf, []byte("\r\n"))
+        if lineEnd == -1 </span><span class="cov0" title="0">{
+                return 0, ErrInvalidRequestLine
+        }</span>
+
+        <span class="cov8" title="1">line := buf[:lineEnd]
+
+        // Parse METHOD
+        spaceIdx := bytes.IndexByte(line, ' ')
+        if spaceIdx == -1 </span><span class="cov8" title="1">{
+                return 0, ErrInvalidRequestLine
+        }</span>
+
+        <span class="cov8" title="1">methodBytes := line[:spaceIdx]
+        req.MethodID = ParseMethodID(methodBytes)
+        if req.MethodID == MethodUnknown </span><span class="cov8" title="1">{
+                return 0, ErrInvalidMethod
+        }</span>
+        <span class="cov8" title="1">req.methodBytes = methodBytes
+
+        // Parse Request-URI (path + optional query)
+        line = line[spaceIdx+1:]
+        spaceIdx = bytes.IndexByte(line, ' ')
+        if spaceIdx == -1 </span><span class="cov8" title="1">{
+                return 0, ErrInvalidRequestLine
+        }</span>
+
+        <span class="cov8" title="1">uriBytes := line[:spaceIdx]
+
+        // Split path and query
+        queryIdx := bytes.IndexByte(uriBytes, '?')
+        if queryIdx != -1 </span><span class="cov8" title="1">{
+                req.pathBytes = uriBytes[:queryIdx]
+                req.queryBytes = uriBytes[queryIdx+1:]
+        }</span> else<span class="cov8" title="1"> {
+                req.pathBytes = uriBytes
+                req.queryBytes = nil
+        }</span>
+
+        // Validate path (must start with / or be *)
+        <span class="cov8" title="1">if len(req.pathBytes) == 0 </span><span class="cov0" title="0">{
+                return 0, ErrInvalidPath
+        }</span>
+        <span class="cov8" title="1">if req.pathBytes[0] != '/' &amp;&amp; req.pathBytes[0] != '*' </span><span class="cov8" title="1">{
+                return 0, ErrInvalidPath
+        }</span>
+
+        // Parse HTTP-Version
+        <span class="cov8" title="1">line = line[spaceIdx+1:]
+        req.protoBytes = line
+
+        // Validate HTTP/1.1
+        if !bytes.Equal(line, http11Bytes) </span><span class="cov8" title="1">{
+                return 0, ErrInvalidProtocol
+        }</span>
+
+        <span class="cov8" title="1">return lineEnd + 2, nil</span> // +2 for \r\n
+}
+
+// parseHeaders parses HTTP headers.
+// Format: Name: Value\r\n
+// Headers end with \r\n\r\n (extra blank line)
+//
+// Allocation behavior: 0 allocs/op for ≤32 headers
+func (p *Parser) parseHeaders(req *Request, buf []byte) error <span class="cov8" title="1">{
+        pos := 0
+
+        for </span><span class="cov8" title="1">{
+                // Check for end of headers (\r\n)
+                if pos &gt;= len(buf) </span><span class="cov0" title="0">{
+                        break</span>
+                }
+
+                // Empty line marks end of headers
+                <span class="cov8" title="1">if pos+1 &lt; len(buf) &amp;&amp; buf[pos] == '\r' &amp;&amp; buf[pos+1] == '\n' </span><span class="cov8" title="1">{
+                        break</span>
+                }
+
+                // Find end of header line
+                <span class="cov8" title="1">lineEnd := bytes.Index(buf[pos:], []byte("\r\n"))
+                if lineEnd == -1 </span><span class="cov0" title="0">{
+                        return ErrInvalidHeader
+                }</span>
+                <span class="cov8" title="1">lineEnd += pos
+
+                line := buf[pos:lineEnd]
+
+                // Find colon separator
+                colonIdx := bytes.IndexByte(line, ':')
+                if colonIdx == -1 </span><span class="cov8" title="1">{
+                        return ErrInvalidHeader
+                }</span>
+
+                <span class="cov8" title="1">name := line[:colonIdx]
+                value := line[colonIdx+1:]
+
+                // Trim leading/trailing whitespace from value (per RFC 7230)
+                value = trimLeadingSpace(value)
+                value = trimTrailingSpace(value)
+
+                // Validate header name (no spaces allowed)
+                if bytes.IndexByte(name, ' ') != -1 </span><span class="cov8" title="1">{
+                        return ErrInvalidHeader
+                }</span>
+
+                // Add header
+                <span class="cov8" title="1">if err := req.Header.Add(name, value); err != nil </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+
+                // Process special headers
+                <span class="cov8" title="1">if err := p.processSpecialHeader(req, name, value); err != nil </span><span class="cov8" title="1">{
+                        return err
+                }</span>
+
+                // Move to next line
+                <span class="cov8" title="1">pos = lineEnd + 2</span> // +2 for \r\n
+        }
+
+        <span class="cov8" title="1">return nil</span>
+}
+
+// processSpecialHeader handles headers that affect request state
+// (Content-Length, Transfer-Encoding, Connection)
+func (p *Parser) processSpecialHeader(req *Request, name, value []byte) error <span class="cov8" title="1">{
+        // Content-Length
+        if bytesEqualCaseInsensitive(name, headerContentLength) </span><span class="cov8" title="1">{
+                contentLength, err := parseContentLength(value)
+                if err != nil </span><span class="cov8" title="1">{
+                        return ErrInvalidContentLength
+                }</span>
+                <span class="cov8" title="1">req.ContentLength = contentLength
+                return nil</span>
+        }
+
+        // Transfer-Encoding
+        <span class="cov8" title="1">if bytesEqualCaseInsensitive(name, headerTransferEncoding) </span><span class="cov8" title="1">{
+                // Parse comma-separated list
+                // For now, just check for "chunked"
+                if bytesEqualCaseInsensitive(value, headerChunked) </span><span class="cov8" title="1">{
+                        req.TransferEncoding = []string{"chunked"}
+                }</span>
+                <span class="cov8" title="1">return nil</span>
+        }
+
+        // Connection
+        <span class="cov8" title="1">if bytesEqualCaseInsensitive(name, headerConnection) </span><span class="cov8" title="1">{
+                if bytesEqualCaseInsensitive(value, headerClose) </span><span class="cov8" title="1">{
+                        req.Close = true
+                }</span>
+                <span class="cov8" title="1">return nil</span>
+        }
+
+        <span class="cov8" title="1">return nil</span>
+}
+
+// setupBodyReader configures the body reader based on Content-Length or Transfer-Encoding
+func (p *Parser) setupBodyReader(req *Request, r io.Reader) error <span class="cov8" title="1">{
+        // No body
+        if req.ContentLength == 0 &amp;&amp; len(req.TransferEncoding) == 0 </span><span class="cov8" title="1">{
+                req.Body = nil
+                return nil
+        }</span>
+
+        // Content-Length body
+        <span class="cov8" title="1">if req.ContentLength &gt; 0 </span><span class="cov8" title="1">{
+                req.Body = io.LimitReader(r, req.ContentLength)
+                return nil
+        }</span>
+
+        // Chunked encoding
+        <span class="cov8" title="1">if req.IsChunked() </span><span class="cov8" title="1">{
+                // TODO: Implement chunked reader in chunked.go
+                // For now, just set raw reader
+                req.Body = r
+                return nil
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+// Helper functions
+
+// parseContentLength parses Content-Length header value
+// Returns -1 on error
+func parseContentLength(b []byte) (int64, error) <span class="cov8" title="1">{
+        if len(b) == 0 </span><span class="cov0" title="0">{
+                return -1, ErrInvalidContentLength
+        }</span>
+
+        <span class="cov8" title="1">var n int64
+        for _, c := range b </span><span class="cov8" title="1">{
+                if c &lt; '0' || c &gt; '9' </span><span class="cov8" title="1">{
+                        return -1, ErrInvalidContentLength
+                }</span>
+                <span class="cov8" title="1">n = n*10 + int64(c-'0')
+
+                // Prevent overflow
+                if n &lt; 0 </span><span class="cov0" title="0">{
+                        return -1, ErrInvalidContentLength
+                }</span>
+        }
+        <span class="cov8" title="1">return n, nil</span>
+}
+
+// trimLeadingSpace trims leading spaces and tabs (per RFC 7230)
+func trimLeadingSpace(b []byte) []byte <span class="cov8" title="1">{
+        for len(b) &gt; 0 &amp;&amp; (b[0] == ' ' || b[0] == '\t') </span><span class="cov8" title="1">{
+                b = b[1:]
+        }</span>
+        <span class="cov8" title="1">return b</span>
+}
+
+// trimTrailingSpace trims trailing spaces and tabs (per RFC 7230)
+func trimTrailingSpace(b []byte) []byte <span class="cov8" title="1">{
+        for len(b) &gt; 0 &amp;&amp; (b[len(b)-1] == ' ' || b[len(b)-1] == '\t') </span><span class="cov8" title="1">{
+                b = b[:len(b)-1]
+        }</span>
+        <span class="cov8" title="1">return b</span>
+}
+</pre>
+		
+		<pre class="file" id="file3" style="display: none">package http11
+
+import (
+        "bufio"
+        "io"
+        "sync"
+)
+
+// Pool sizes and configurations
+const (
+        // DefaultBufferSize is the default size for read/write buffers
+        DefaultBufferSize = 4096
+
+        // ParserBufferSize is the size for parser internal buffers
+        ParserBufferSize = MaxRequestLineSize + MaxHeadersSize // 16KB
+)
+
+// Global pools for reusable objects
+var (
+        // requestPool pools Request objects
+        requestPool = sync.Pool{
+                New: func() interface{} <span class="cov8" title="1">{
+                        return &amp;Request{}
+                }</span>,
+        }
+
+        // responseWriterPool pools ResponseWriter objects
+        responseWriterPool = sync.Pool{
+                New: func() interface{} <span class="cov8" title="1">{
+                        return &amp;ResponseWriter{}
+                }</span>,
+        }
+
+        // parserPool pools Parser objects
+        parserPool = sync.Pool{
+                New: func() interface{} <span class="cov8" title="1">{
+                        return NewParser()
+                }</span>,
+        }
+
+        // bufferPool pools byte slices for general use
+        // Size: 4KB (suitable for most operations)
+        bufferPool = sync.Pool{
+                New: func() interface{} <span class="cov8" title="1">{
+                        buf := make([]byte, DefaultBufferSize)
+                        return &amp;buf
+                }</span>,
+        }
+
+        // largeBufferPool pools byte slices for parser buffers
+        // Size: 16KB (for request line + headers)
+        largeBufferPool = sync.Pool{
+                New: func() interface{} <span class="cov8" title="1">{
+                        buf := make([]byte, 0, ParserBufferSize)
+                        return &amp;buf
+                }</span>,
+        }
+
+        // bufioReaderPool pools bufio.Reader objects
+        bufioReaderPool = sync.Pool{
+                New: func() interface{} <span class="cov8" title="1">{
+                        return bufio.NewReaderSize(nil, DefaultBufferSize)
+                }</span>,
+        }
+
+        // bufioWriterPool pools bufio.Writer objects
+        bufioWriterPool = sync.Pool{
+                New: func() interface{} <span class="cov8" title="1">{
+                        return bufio.NewWriterSize(nil, DefaultBufferSize)
+                }</span>,
+        }
+)
+
+// Request pooling
+
+// GetRequest retrieves a Request from the pool.
+// The returned Request has been reset and is ready for use.
+//
+// IMPORTANT: You MUST call PutRequest when done to return it to the pool.
+//
+// Allocation behavior: 0 allocs/op (reuses pooled object)
+func GetRequest() *Request <span class="cov8" title="1">{
+        req := requestPool.Get().(*Request)
+        req.Reset()
+        return req
+}</span>
+
+// PutRequest returns a Request to the pool.
+// The Request is reset before being returned to the pool.
+// It is safe to call PutRequest on a nil Request (no-op).
+//
+// After calling PutRequest, you MUST NOT use the Request anymore.
+//
+// Allocation behavior: 0 allocs/op
+func PutRequest(req *Request) <span class="cov8" title="1">{
+        if req != nil </span><span class="cov8" title="1">{
+                req.Reset()
+                requestPool.Put(req)
+        }</span>
+}
+
+// ResponseWriter pooling
+
+// GetResponseWriter retrieves a ResponseWriter from the pool.
+// The returned ResponseWriter is configured with the given writer.
+//
+// IMPORTANT: You MUST call PutResponseWriter when done to return it to the pool.
+//
+// Allocation behavior: 0 allocs/op (reuses pooled object)
+func GetResponseWriter(w io.Writer) *ResponseWriter <span class="cov8" title="1">{
+        rw := responseWriterPool.Get().(*ResponseWriter)
+        rw.Reset(w)
+        return rw
+}</span>
+
+// PutResponseWriter returns a ResponseWriter to the pool.
+// The ResponseWriter is reset before being returned to the pool.
+// It is safe to call PutResponseWriter on a nil ResponseWriter (no-op).
+//
+// After calling PutResponseWriter, you MUST NOT use the ResponseWriter anymore.
+//
+// Allocation behavior: 0 allocs/op
+func PutResponseWriter(rw *ResponseWriter) <span class="cov8" title="1">{
+        if rw != nil </span><span class="cov8" title="1">{
+                rw.Reset(nil) // Clear writer reference
+                responseWriterPool.Put(rw)
+        }</span>
+}
+
+// Parser pooling
+
+// GetParser retrieves a Parser from the pool.
+// The returned Parser is ready for use.
+//
+// IMPORTANT: You MUST call PutParser when done to return it to the pool.
+//
+// Allocation behavior: 0 allocs/op (reuses pooled object)
+func GetParser() *Parser <span class="cov8" title="1">{
+        return parserPool.Get().(*Parser)
+}</span>
+
+// PutParser returns a Parser to the pool.
+// It is safe to call PutParser on a nil Parser (no-op).
+//
+// After calling PutParser, you MUST NOT use the Parser anymore.
+//
+// Allocation behavior: 0 allocs/op
+func PutParser(p *Parser) <span class="cov8" title="1">{
+        if p != nil </span><span class="cov8" title="1">{
+                // Reset buffer but keep capacity for reuse
+                if p.buf != nil </span><span class="cov8" title="1">{
+                        p.buf = p.buf[:0]
+                }</span>
+                <span class="cov8" title="1">parserPool.Put(p)</span>
+        }
+}
+
+// Buffer pooling
+
+// GetBuffer retrieves a buffer from the pool.
+// Returns a byte slice of DefaultBufferSize (4KB).
+// The buffer may contain data from previous use; clear it if needed.
+//
+// IMPORTANT: You MUST call PutBuffer when done to return it to the pool.
+//
+// Allocation behavior: 0 allocs/op (reuses pooled buffer)
+func GetBuffer() []byte <span class="cov8" title="1">{
+        bufPtr := bufferPool.Get().(*[]byte)
+        return *bufPtr
+}</span>
+
+// PutBuffer returns a buffer to the pool.
+// The buffer should be of DefaultBufferSize.
+// It is safe to call PutBuffer with a nil or incorrectly sized buffer (no-op).
+//
+// After calling PutBuffer, you MUST NOT use the buffer anymore.
+//
+// Allocation behavior: 0 allocs/op
+func PutBuffer(buf []byte) <span class="cov8" title="1">{
+        if buf == nil || cap(buf) &lt; DefaultBufferSize </span><span class="cov8" title="1">{
+                return // Don't pool incorrectly sized buffers
+        }</span>
+        // Reset to full capacity for next use
+        <span class="cov8" title="1">buf = buf[:DefaultBufferSize]
+        bufferPool.Put(&amp;buf)</span>
+}
+
+// GetLargeBuffer retrieves a large buffer from the pool.
+// Returns a byte slice with capacity of ParserBufferSize (16KB).
+// The buffer has length 0 but can grow up to capacity.
+//
+// IMPORTANT: You MUST call PutLargeBuffer when done to return it to the pool.
+//
+// Allocation behavior: 0 allocs/op (reuses pooled buffer)
+func GetLargeBuffer() []byte <span class="cov8" title="1">{
+        bufPtr := largeBufferPool.Get().(*[]byte)
+        buf := *bufPtr
+        return buf[:0] // Reset length but keep capacity
+}</span>
+
+// PutLargeBuffer returns a large buffer to the pool.
+// The buffer should have capacity of at least ParserBufferSize.
+// It is safe to call PutLargeBuffer with a nil or incorrectly sized buffer (no-op).
+//
+// After calling PutLargeBuffer, you MUST NOT use the buffer anymore.
+//
+// Allocation behavior: 0 allocs/op
+func PutLargeBuffer(buf []byte) <span class="cov8" title="1">{
+        if buf == nil || cap(buf) &lt; ParserBufferSize </span><span class="cov0" title="0">{
+                return // Don't pool incorrectly sized buffers
+        }</span>
+        // Reset to zero length for next use
+        <span class="cov8" title="1">buf = buf[:0]
+        largeBufferPool.Put(&amp;buf)</span>
+}
+
+// bufio pooling
+
+// GetBufioReader retrieves a bufio.Reader from the pool.
+// The reader is configured with the given io.Reader.
+//
+// IMPORTANT: You MUST call PutBufioReader when done to return it to the pool.
+//
+// Allocation behavior: 0 allocs/op (reuses pooled reader)
+func GetBufioReader(r io.Reader) *bufio.Reader <span class="cov8" title="1">{
+        br := bufioReaderPool.Get().(*bufio.Reader)
+        br.Reset(r)
+        return br
+}</span>
+
+// PutBufioReader returns a bufio.Reader to the pool.
+// The reader is reset (underlying reader cleared) before being returned.
+// It is safe to call PutBufioReader on a nil reader (no-op).
+//
+// After calling PutBufioReader, you MUST NOT use the reader anymore.
+//
+// Allocation behavior: 0 allocs/op
+func PutBufioReader(br *bufio.Reader) <span class="cov8" title="1">{
+        if br != nil </span><span class="cov8" title="1">{
+                br.Reset(nil) // Clear underlying reader
+                bufioReaderPool.Put(br)
+        }</span>
+}
+
+// GetBufioWriter retrieves a bufio.Writer from the pool.
+// The writer is configured with the given io.Writer.
+//
+// IMPORTANT: You MUST call PutBufioWriter when done to return it to the pool.
+//
+// Allocation behavior: 0 allocs/op (reuses pooled writer)
+func GetBufioWriter(w io.Writer) *bufio.Writer <span class="cov8" title="1">{
+        bw := bufioWriterPool.Get().(*bufio.Writer)
+        bw.Reset(w)
+        return bw
+}</span>
+
+// PutBufioWriter returns a bufio.Writer to the pool.
+// The writer is flushed and reset (underlying writer cleared) before being returned.
+// It is safe to call PutBufioWriter on a nil writer (no-op).
+//
+// After calling PutBufioWriter, you MUST NOT use the writer anymore.
+//
+// Allocation behavior: 0 allocs/op
+func PutBufioWriter(bw *bufio.Writer) <span class="cov8" title="1">{
+        if bw != nil </span><span class="cov8" title="1">{
+                bw.Flush()      // Ensure data is written
+                bw.Reset(nil)   // Clear underlying writer
+                bufioWriterPool.Put(bw)
+        }</span>
+}
+
+// PoolStats provides statistics about pool usage.
+// This is useful for debugging and optimization.
+type PoolStats struct {
+        // Name of the pool
+        Name string
+
+        // Approximate number of objects currently in the pool
+        // Note: sync.Pool doesn't provide exact counts, this is an estimate
+        Available int
+
+        // Total number of Get calls
+        Gets uint64
+
+        // Total number of Put calls
+        Puts uint64
+
+        // Estimated hit rate (Gets that reused pooled objects)
+        // This is approximate and may not be accurate
+        HitRate float64
+}
+
+// GetPoolStats returns statistics for all pools.
+// Note: sync.Pool doesn't provide instrumentation, so these are estimates.
+// This function is mainly for debugging purposes.
+func GetPoolStats() []PoolStats <span class="cov8" title="1">{
+        // sync.Pool doesn't provide statistics, so we return placeholder data
+        // In a real implementation, you'd need to instrument the pools yourself
+        return []PoolStats{
+                {Name: "Request", Available: 0, Gets: 0, Puts: 0, HitRate: 0.0},
+                {Name: "ResponseWriter", Available: 0, Gets: 0, Puts: 0, HitRate: 0.0},
+                {Name: "Parser", Available: 0, Gets: 0, Puts: 0, HitRate: 0.0},
+                {Name: "Buffer", Available: 0, Gets: 0, Puts: 0, HitRate: 0.0},
+                {Name: "LargeBuffer", Available: 0, Gets: 0, Puts: 0, HitRate: 0.0},
+                {Name: "BufioReader", Available: 0, Gets: 0, Puts: 0, HitRate: 0.0},
+                {Name: "BufioWriter", Available: 0, Gets: 0, Puts: 0, HitRate: 0.0},
+        }
+}</span>
+
+// WarmupPools pre-allocates objects in all pools.
+// This is useful for avoiding allocations during the first requests.
+// Call this during server initialization for optimal performance.
+//
+// The count parameter specifies how many objects to pre-allocate per pool.
+// Recommended values: 10-100 for low traffic, 1000-10000 for high traffic.
+func WarmupPools(count int) <span class="cov8" title="1">{
+        // Warmup request pool
+        for i := 0; i &lt; count; i++ </span><span class="cov8" title="1">{
+                req := GetRequest()
+                PutRequest(req)
+        }</span>
+
+        // Warmup response writer pool
+        <span class="cov8" title="1">for i := 0; i &lt; count; i++ </span><span class="cov8" title="1">{
+                rw := GetResponseWriter(nil)
+                PutResponseWriter(rw)
+        }</span>
+
+        // Warmup parser pool
+        <span class="cov8" title="1">for i := 0; i &lt; count; i++ </span><span class="cov8" title="1">{
+                p := GetParser()
+                PutParser(p)
+        }</span>
+
+        // Warmup buffer pools
+        <span class="cov8" title="1">for i := 0; i &lt; count; i++ </span><span class="cov8" title="1">{
+                buf := GetBuffer()
+                PutBuffer(buf)
+
+                largeBuf := GetLargeBuffer()
+                PutLargeBuffer(largeBuf)
+        }</span>
+
+        // Warmup bufio pools
+        <span class="cov8" title="1">for i := 0; i &lt; count; i++ </span><span class="cov8" title="1">{
+                br := GetBufioReader(nil)
+                PutBufioReader(br)
+
+                bw := GetBufioWriter(nil)
+                PutBufioWriter(bw)
+        }</span>
+}
+</pre>
+		
+		<pre class="file" id="file4" style="display: none">package http11
+
+import (
+        "io"
+        "net/url"
+)
+
+// Request represents an HTTP/1.1 request.
+// Designed for zero-allocation parsing and pooling.
+//
+// CRITICAL: All byte slices (methodBytes, pathBytes, queryBytes, protoBytes)
+// are zero-copy references into the request buffer. They are only valid
+// during the request lifetime. Do NOT store these slices beyond the handler
+// execution or use them after the request is returned to the pool.
+//
+// For safe string access that persists, use Method(), Path(), etc. which
+// return strings (1 allocation each, but safe to store).
+type Request struct {
+        // Method as numeric ID for O(1) switching
+        // Use MethodString() to get the string representation
+        MethodID uint8
+
+        // Request-Line components (zero-copy slices into buffer)
+        // WARNING: These slices are only valid during request lifetime
+        // They reference the internal buffer which is pooled and reused
+        methodBytes []byte // e.g., "GET"
+        pathBytes   []byte // e.g., "/api/users"
+        queryBytes  []byte // e.g., "id=123&amp;name=foo" (without '?')
+        protoBytes  []byte // e.g., "HTTP/1.1"
+
+        // Parsed URL (lazy allocation)
+        // Only allocated if ParsedURL() is called
+        // Use PathBytes() to avoid this allocation
+        pathParsed *url.URL
+
+        // Headers (inline storage, zero heap allocations for ≤32)
+        Header Header
+
+        // Body reader
+        // nil if no body present
+        // Will be io.LimitReader for Content-Length
+        // or chunkedReader for Transfer-Encoding: chunked
+        Body io.Reader
+
+        // Protocol information
+        Proto      string // Always "HTTP/1.1" for this engine
+        ProtoMajor int    // Always 1
+        ProtoMinor int    // Always 1
+
+        // Content information
+        ContentLength int64 // -1 if unknown, &gt;=0 if specified
+
+        // Transfer encoding
+        // nil for identity encoding
+        // ["chunked"] for chunked encoding
+        TransferEncoding []string
+
+        // Connection control
+        // true if "Connection: close" header present
+        // or if HTTP/1.0 without "Connection: keep-alive"
+        Close bool
+
+        // RemoteAddr is the network address of the client
+        RemoteAddr string
+
+        // Internal buffer reference (for zero-copy safety)
+        // This buffer is pooled and will be reused after request completes
+        // All zero-copy slices reference this buffer
+        buf []byte
+}
+
+// Method returns the HTTP method as a string.
+// Uses pre-compiled constants for zero allocations.
+//
+// Allocation behavior: 0 allocs/op
+func (r *Request) Method() string <span class="cov8" title="1">{
+        return MethodString(r.MethodID)
+}</span>
+
+// MethodBytes returns the HTTP method as a byte slice.
+// This is a zero-copy reference into the request buffer.
+// WARNING: Only valid during request lifetime.
+//
+// Allocation behavior: 0 allocs/op
+func (r *Request) MethodBytes() []byte <span class="cov8" title="1">{
+        return r.methodBytes
+}</span>
+
+// Path returns the request path as a string.
+// This allocates a string from the byte slice.
+// For zero-allocation access, use PathBytes().
+//
+// Allocation behavior: 1 alloc/op
+func (r *Request) Path() string <span class="cov8" title="1">{
+        return string(r.pathBytes)
+}</span>
+
+// PathBytes returns the request path as a byte slice.
+// This is a zero-copy reference into the request buffer.
+// WARNING: Only valid during request lifetime.
+//
+// Allocation behavior: 0 allocs/op
+func (r *Request) PathBytes() []byte <span class="cov8" title="1">{
+        return r.pathBytes
+}</span>
+
+// Query returns the query string as a string.
+// This allocates a string from the byte slice.
+// For zero-allocation access, use QueryBytes().
+//
+// Allocation behavior: 1 alloc/op
+func (r *Request) Query() string <span class="cov8" title="1">{
+        return string(r.queryBytes)
+}</span>
+
+// QueryBytes returns the query string as a byte slice (without the '?').
+// This is a zero-copy reference into the request buffer.
+// WARNING: Only valid during request lifetime.
+//
+// Allocation behavior: 0 allocs/op
+func (r *Request) QueryBytes() []byte <span class="cov8" title="1">{
+        return r.queryBytes
+}</span>
+
+// ParsedURL returns the parsed URL.
+// This is lazily allocated only when called.
+// The result is cached for subsequent calls.
+//
+// Use PathBytes() or QueryBytes() if you don't need URL parsing
+// to avoid this allocation.
+//
+// Allocation behavior: Multiple allocs/op on first call, 0 on subsequent
+func (r *Request) ParsedURL() (*url.URL, error) <span class="cov8" title="1">{
+        if r.pathParsed == nil </span><span class="cov8" title="1">{
+                // Build full URL string for parsing
+                // Format: path?query
+                var urlStr string
+                if len(r.queryBytes) &gt; 0 </span><span class="cov8" title="1">{
+                        urlStr = string(r.pathBytes) + "?" + string(r.queryBytes)
+                }</span> else<span class="cov8" title="1"> {
+                        urlStr = string(r.pathBytes)
+                }</span>
+
+                <span class="cov8" title="1">var err error
+                r.pathParsed, err = url.Parse(urlStr)
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+        }
+        <span class="cov8" title="1">return r.pathParsed, nil</span>
+}
+
+// GetHeader retrieves a header value by name (case-insensitive).
+// Returns nil if not found.
+//
+// Allocation behavior: 0 allocs/op
+func (r *Request) GetHeader(name []byte) []byte <span class="cov8" title="1">{
+        return r.Header.Get(name)
+}</span>
+
+// GetHeaderString retrieves a header value as a string (case-insensitive).
+// Returns empty string if not found.
+//
+// Allocation behavior: 1 alloc/op (string conversion)
+func (r *Request) GetHeaderString(name string) string <span class="cov8" title="1">{
+        return r.Header.GetString([]byte(name))
+}</span>
+
+// HasHeader checks if a header exists (case-insensitive).
+//
+// Allocation behavior: 0 allocs/op
+func (r *Request) HasHeader(name []byte) bool <span class="cov8" title="1">{
+        return r.Header.Has(name)
+}</span>
+
+// IsGET returns true if the request method is GET.
+// Allocation behavior: 0 allocs/op
+func (r *Request) IsGET() bool <span class="cov8" title="1">{
+        return r.MethodID == MethodGET
+}</span>
+
+// IsPOST returns true if the request method is POST.
+// Allocation behavior: 0 allocs/op
+func (r *Request) IsPOST() bool <span class="cov8" title="1">{
+        return r.MethodID == MethodPOST
+}</span>
+
+// IsPUT returns true if the request method is PUT.
+// Allocation behavior: 0 allocs/op
+func (r *Request) IsPUT() bool <span class="cov8" title="1">{
+        return r.MethodID == MethodPUT
+}</span>
+
+// IsDELETE returns true if the request method is DELETE.
+// Allocation behavior: 0 allocs/op
+func (r *Request) IsDELETE() bool <span class="cov8" title="1">{
+        return r.MethodID == MethodDELETE
+}</span>
+
+// IsPATCH returns true if the request method is PATCH.
+// Allocation behavior: 0 allocs/op
+func (r *Request) IsPATCH() bool <span class="cov8" title="1">{
+        return r.MethodID == MethodPATCH
+}</span>
+
+// IsHEAD returns true if the request method is HEAD.
+// Allocation behavior: 0 allocs/op
+func (r *Request) IsHEAD() bool <span class="cov8" title="1">{
+        return r.MethodID == MethodHEAD
+}</span>
+
+// IsOPTIONS returns true if the request method is OPTIONS.
+// Allocation behavior: 0 allocs/op
+func (r *Request) IsOPTIONS() bool <span class="cov8" title="1">{
+        return r.MethodID == MethodOPTIONS
+}</span>
+
+// HasBody returns true if the request has a body.
+// Checks for Content-Length &gt; 0 or Transfer-Encoding: chunked.
+//
+// Allocation behavior: 0 allocs/op
+func (r *Request) HasBody() bool <span class="cov8" title="1">{
+        return r.ContentLength &gt; 0 || len(r.TransferEncoding) &gt; 0
+}</span>
+
+// IsChunked returns true if the request uses chunked transfer encoding.
+//
+// Allocation behavior: 0 allocs/op
+func (r *Request) IsChunked() bool <span class="cov8" title="1">{
+        if len(r.TransferEncoding) == 0 </span><span class="cov8" title="1">{
+                return false
+        }</span>
+        // Check last encoding (per RFC 7230, chunked must be last)
+        <span class="cov8" title="1">lastEncoding := r.TransferEncoding[len(r.TransferEncoding)-1]
+        return lastEncoding == "chunked"</span>
+}
+
+// ShouldClose returns true if the connection should be closed after this request.
+//
+// Allocation behavior: 0 allocs/op
+func (r *Request) ShouldClose() bool <span class="cov8" title="1">{
+        return r.Close
+}</span>
+
+// Reset clears the request for reuse (when returning to pool).
+// All fields are reset to zero values.
+// This enables efficient object pooling.
+//
+// Allocation behavior: 0 allocs/op
+func (r *Request) Reset() <span class="cov8" title="1">{
+        r.MethodID = 0
+        r.methodBytes = nil
+        r.pathBytes = nil
+        r.queryBytes = nil
+        r.protoBytes = nil
+        r.pathParsed = nil
+        r.Header.Reset()
+        r.Body = nil
+        r.Proto = ""
+        r.ProtoMajor = 0
+        r.ProtoMinor = 0
+        r.ContentLength = 0
+        r.TransferEncoding = nil
+        r.Close = false
+        r.RemoteAddr = ""
+        r.buf = nil
+}</span>
+
+// Clone creates a shallow copy of the request.
+// This is useful when you need to store the request beyond its lifetime.
+//
+// IMPORTANT: This performs string conversions for path/query to ensure
+// they remain valid after the original buffer is reused.
+//
+// The Body reader is NOT cloned - the clone will have Body = nil.
+// If you need the body, read it before cloning or use io.TeeReader.
+//
+// Allocation behavior: Multiple allocations (strings, url.URL, etc.)
+func (r *Request) Clone() *Request <span class="cov8" title="1">{
+        clone := &amp;Request{
+                MethodID:         r.MethodID,
+                methodBytes:      []byte(r.Method()), // Allocate new slice with string data
+                pathBytes:        []byte(r.Path()),   // Allocate new slice
+                queryBytes:       []byte(r.Query()),  // Allocate new slice
+                protoBytes:       []byte(r.Proto),    // Allocate new slice
+                Proto:            r.Proto,
+                ProtoMajor:       r.ProtoMajor,
+                ProtoMinor:       r.ProtoMinor,
+                ContentLength:    r.ContentLength,
+                TransferEncoding: r.TransferEncoding, // Shallow copy (slice header)
+                Close:            r.Close,
+                RemoteAddr:       r.RemoteAddr,
+                Body:             nil, // Don't clone body reader
+                buf:              nil, // Don't reference original buffer
+        }
+
+        // Clone headers (this will allocate)
+        r.Header.VisitAll(func(name, value []byte) bool </span><span class="cov8" title="1">{
+                clone.Header.Add(name, value)
+                return true
+        }</span>)
+
+        // Clone parsed URL if present
+        <span class="cov8" title="1">if r.pathParsed != nil </span><span class="cov0" title="0">{
+                parsed, _ := r.ParsedURL()
+                if parsed != nil </span><span class="cov0" title="0">{
+                        clone.pathParsed = &amp;url.URL{
+                                Scheme:   parsed.Scheme,
+                                Host:     parsed.Host,
+                                Path:     parsed.Path,
+                                RawQuery: parsed.RawQuery,
+                        }
+                }</span>
+        }
+
+        <span class="cov8" title="1">return clone</span>
+}
+</pre>
+		
+		<pre class="file" id="file5" style="display: none">package http11
+
+import (
+        "io"
+        "strconv"
+)
+
+// ResponseWriter writes HTTP/1.1 responses with zero allocations for common cases.
+//
+// Design:
+// - Pre-compiled status lines for common status codes (200, 404, 500, etc.)
+// - Inline header storage (reuses Request's Header design)
+// - Buffered writing for efficiency
+// - Zero allocations for common responses
+//
+// Allocation behavior: 0 allocs/op for common status codes and ≤32 headers
+type ResponseWriter struct {
+        // Underlying writer
+        w io.Writer
+
+        // Status code (default 200)
+        status int
+
+        // Response headers (inline storage, zero allocations for ≤32)
+        header Header
+
+        // State tracking
+        statusWritten bool // True if WriteHeader was explicitly called
+        headerWritten bool // True if headers were written to the wire
+        bytesWritten  int64
+
+        // Content length (if known)
+        contentLength int64
+
+        // Chunked encoding flag
+        chunked bool
+}
+
+// NewResponseWriter creates a new ResponseWriter for the given writer.
+func NewResponseWriter(w io.Writer) *ResponseWriter <span class="cov8" title="1">{
+        return &amp;ResponseWriter{
+                w:      w,
+                status: 200, // Default to 200 OK
+        }
+}</span>
+
+// Header returns the response header map.
+// Headers must be set before calling Write or WriteHeader.
+func (rw *ResponseWriter) Header() *Header <span class="cov8" title="1">{
+        return &amp;rw.header
+}</span>
+
+// WriteHeader sends an HTTP response header with the provided status code.
+// If WriteHeader is not called explicitly, the first call to Write will
+// trigger an implicit WriteHeader(200).
+// Multiple calls to WriteHeader are ignored (only the first takes effect).
+//
+// Allocation behavior: 0 allocs/op for common status codes
+func (rw *ResponseWriter) WriteHeader(statusCode int) <span class="cov8" title="1">{
+        if rw.statusWritten </span><span class="cov8" title="1">{
+                return // Already set, ignore subsequent calls
+        }</span>
+        <span class="cov8" title="1">rw.status = statusCode
+        rw.statusWritten = true</span>
+}
+
+// Write writes the data to the connection as part of an HTTP reply.
+// If WriteHeader has not yet been called, Write calls WriteHeader(200)
+// before writing the data.
+//
+// Allocation behavior: Depends on underlying writer
+func (rw *ResponseWriter) Write(data []byte) (int, error) <span class="cov8" title="1">{
+        if !rw.headerWritten </span><span class="cov8" title="1">{
+                if err := rw.writeHeaders(); err != nil </span><span class="cov0" title="0">{
+                        return 0, err
+                }</span>
+        }
+
+        <span class="cov8" title="1">n, err := rw.w.Write(data)
+        rw.bytesWritten += int64(n)
+        return n, err</span>
+}
+
+// writeHeaders writes the status line and headers to the writer.
+// This is called automatically by Write() or can be called explicitly.
+//
+// Allocation behavior: 0 allocs/op for common status codes and ≤32 headers
+func (rw *ResponseWriter) writeHeaders() error <span class="cov8" title="1">{
+        if rw.headerWritten </span><span class="cov0" title="0">{
+                return nil
+        }</span>
+        <span class="cov8" title="1">rw.headerWritten = true
+
+        // Write status line
+        statusLine := getStatusLine(rw.status)
+        if _, err := rw.w.Write(statusLine); err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        // Write headers
+        <span class="cov8" title="1">rw.header.VisitAll(func(name, value []byte) bool </span><span class="cov8" title="1">{
+                // Write name
+                if _, err := rw.w.Write(name); err != nil </span><span class="cov0" title="0">{
+                        return false
+                }</span>
+                // Write ": "
+                <span class="cov8" title="1">if _, err := rw.w.Write(colonSpace); err != nil </span><span class="cov0" title="0">{
+                        return false
+                }</span>
+                // Write value
+                <span class="cov8" title="1">if _, err := rw.w.Write(value); err != nil </span><span class="cov0" title="0">{
+                        return false
+                }</span>
+                // Write CRLF
+                <span class="cov8" title="1">if _, err := rw.w.Write(crlfBytes); err != nil </span><span class="cov0" title="0">{
+                        return false
+                }</span>
+                <span class="cov8" title="1">return true</span>
+        })
+
+        // Write final CRLF (blank line separating headers from body)
+        <span class="cov8" title="1">if _, err := rw.w.Write(crlfBytes); err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">return nil</span>
+}
+
+// Flush ensures all buffered data is written.
+// For ResponseWriter without buffering, this is a no-op.
+// When used with a buffered writer, it flushes the buffer.
+func (rw *ResponseWriter) Flush() error <span class="cov8" title="1">{
+        if !rw.headerWritten </span><span class="cov0" title="0">{
+                if err := rw.writeHeaders(); err != nil </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+        }
+
+        // If the underlying writer supports Flush, call it
+        <span class="cov8" title="1">if flusher, ok := rw.w.(interface{ Flush() error }); ok </span><span class="cov0" title="0">{
+                return flusher.Flush()
+        }</span>
+
+        <span class="cov8" title="1">return nil</span>
+}
+
+// Status returns the HTTP status code that was written.
+// If WriteHeader was not called, returns 200.
+func (rw *ResponseWriter) Status() int <span class="cov8" title="1">{
+        return rw.status
+}</span>
+
+// BytesWritten returns the number of bytes written to the response body.
+func (rw *ResponseWriter) BytesWritten() int64 <span class="cov8" title="1">{
+        return rw.bytesWritten
+}</span>
+
+// HeaderWritten returns whether the headers have been written.
+func (rw *ResponseWriter) HeaderWritten() bool <span class="cov8" title="1">{
+        return rw.headerWritten
+}</span>
+
+// Reset resets the ResponseWriter for reuse (pooling support).
+// All fields are cleared to their zero values.
+//
+// Allocation behavior: 0 allocs/op
+func (rw *ResponseWriter) Reset(w io.Writer) <span class="cov8" title="1">{
+        rw.w = w
+        rw.status = 200
+        rw.header.Reset()
+        rw.statusWritten = false
+        rw.headerWritten = false
+        rw.bytesWritten = 0
+        rw.contentLength = 0
+        rw.chunked = false
+}</span>
+
+// getStatusLine returns the pre-compiled status line for common status codes.
+// For uncommon codes, it builds the status line (1 allocation).
+//
+// Allocation behavior: 0 allocs/op for common codes, 1 alloc/op for uncommon codes
+func getStatusLine(code int) []byte <span class="cov8" title="1">{
+        switch code </span>{
+        case 200:<span class="cov8" title="1">
+                return status200Bytes</span>
+        case 201:<span class="cov8" title="1">
+                return status201Bytes</span>
+        case 204:<span class="cov8" title="1">
+                return status204Bytes</span>
+        case 301:<span class="cov8" title="1">
+                return status301Bytes</span>
+        case 302:<span class="cov8" title="1">
+                return status302Bytes</span>
+        case 304:<span class="cov8" title="1">
+                return status304Bytes</span>
+        case 400:<span class="cov8" title="1">
+                return status400Bytes</span>
+        case 401:<span class="cov8" title="1">
+                return status401Bytes</span>
+        case 403:<span class="cov8" title="1">
+                return status403Bytes</span>
+        case 404:<span class="cov8" title="1">
+                return status404Bytes</span>
+        case 500:<span class="cov8" title="1">
+                return status500Bytes</span>
+        case 502:<span class="cov8" title="1">
+                return status502Bytes</span>
+        case 503:<span class="cov8" title="1">
+                return status503Bytes</span>
+        default:<span class="cov8" title="1">
+                // Uncommon status code, build it (allocates)
+                return buildStatusLine(code)</span>
+        }
+}
+
+// buildStatusLine builds a status line for uncommon status codes.
+// This allocates but is only called for rare status codes.
+func buildStatusLine(code int) []byte <span class="cov8" title="1">{
+        text := statusText(code)
+        // Format: "HTTP/1.1 CODE TEXT\r\n"
+        return []byte("HTTP/1.1 " + strconv.Itoa(code) + " " + text + "\r\n")
+}</span>
+
+// statusText returns the text description for an HTTP status code.
+// Based on RFC 7231 Section 6.
+func statusText(code int) string <span class="cov8" title="1">{
+        switch code </span>{
+        // 1xx Informational
+        case 100:<span class="cov0" title="0">
+                return "Continue"</span>
+        case 101:<span class="cov0" title="0">
+                return "Switching Protocols"</span>
+
+        // 2xx Success
+        case 200:<span class="cov8" title="1">
+                return "OK"</span>
+        case 201:<span class="cov8" title="1">
+                return "Created"</span>
+        case 202:<span class="cov0" title="0">
+                return "Accepted"</span>
+        case 203:<span class="cov0" title="0">
+                return "Non-Authoritative Information"</span>
+        case 204:<span class="cov8" title="1">
+                return "No Content"</span>
+        case 205:<span class="cov0" title="0">
+                return "Reset Content"</span>
+        case 206:<span class="cov0" title="0">
+                return "Partial Content"</span>
+
+        // 3xx Redirection
+        case 300:<span class="cov0" title="0">
+                return "Multiple Choices"</span>
+        case 301:<span class="cov8" title="1">
+                return "Moved Permanently"</span>
+        case 302:<span class="cov8" title="1">
+                return "Found"</span>
+        case 303:<span class="cov0" title="0">
+                return "See Other"</span>
+        case 304:<span class="cov8" title="1">
+                return "Not Modified"</span>
+        case 305:<span class="cov0" title="0">
+                return "Use Proxy"</span>
+        case 307:<span class="cov0" title="0">
+                return "Temporary Redirect"</span>
+        case 308:<span class="cov0" title="0">
+                return "Permanent Redirect"</span>
+
+        // 4xx Client Error
+        case 400:<span class="cov8" title="1">
+                return "Bad Request"</span>
+        case 401:<span class="cov8" title="1">
+                return "Unauthorized"</span>
+        case 402:<span class="cov0" title="0">
+                return "Payment Required"</span>
+        case 403:<span class="cov8" title="1">
+                return "Forbidden"</span>
+        case 404:<span class="cov8" title="1">
+                return "Not Found"</span>
+        case 405:<span class="cov0" title="0">
+                return "Method Not Allowed"</span>
+        case 406:<span class="cov0" title="0">
+                return "Not Acceptable"</span>
+        case 407:<span class="cov0" title="0">
+                return "Proxy Authentication Required"</span>
+        case 408:<span class="cov0" title="0">
+                return "Request Timeout"</span>
+        case 409:<span class="cov0" title="0">
+                return "Conflict"</span>
+        case 410:<span class="cov0" title="0">
+                return "Gone"</span>
+        case 411:<span class="cov0" title="0">
+                return "Length Required"</span>
+        case 412:<span class="cov0" title="0">
+                return "Precondition Failed"</span>
+        case 413:<span class="cov0" title="0">
+                return "Payload Too Large"</span>
+        case 414:<span class="cov0" title="0">
+                return "URI Too Long"</span>
+        case 415:<span class="cov0" title="0">
+                return "Unsupported Media Type"</span>
+        case 416:<span class="cov0" title="0">
+                return "Range Not Satisfiable"</span>
+        case 417:<span class="cov0" title="0">
+                return "Expectation Failed"</span>
+        case 418:<span class="cov8" title="1">
+                return "I'm a teapot"</span>
+        case 422:<span class="cov0" title="0">
+                return "Unprocessable Entity"</span>
+        case 426:<span class="cov0" title="0">
+                return "Upgrade Required"</span>
+        case 428:<span class="cov0" title="0">
+                return "Precondition Required"</span>
+        case 429:<span class="cov0" title="0">
+                return "Too Many Requests"</span>
+        case 431:<span class="cov0" title="0">
+                return "Request Header Fields Too Large"</span>
+
+        // 5xx Server Error
+        case 500:<span class="cov8" title="1">
+                return "Internal Server Error"</span>
+        case 501:<span class="cov0" title="0">
+                return "Not Implemented"</span>
+        case 502:<span class="cov8" title="1">
+                return "Bad Gateway"</span>
+        case 503:<span class="cov8" title="1">
+                return "Service Unavailable"</span>
+        case 504:<span class="cov0" title="0">
+                return "Gateway Timeout"</span>
+        case 505:<span class="cov0" title="0">
+                return "HTTP Version Not Supported"</span>
+
+        default:<span class="cov0" title="0">
+                return "Unknown"</span>
+        }
+}
+
+// WriteJSON is a convenience method to write a JSON response.
+// Sets Content-Type to application/json and writes the data.
+//
+// Allocation behavior: 1 alloc/op for status line (if uncommon), plus underlying Write
+func (rw *ResponseWriter) WriteJSON(statusCode int, data []byte) error <span class="cov8" title="1">{
+        rw.WriteHeader(statusCode)
+        rw.header.Set(headerContentType, contentTypeJSONUTF8)
+
+        // Set Content-Length
+        contentLengthStr := strconv.FormatInt(int64(len(data)), 10)
+        rw.header.Set(headerContentLength, []byte(contentLengthStr))
+
+        if _, err := rw.Write(data); err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov8" title="1">return rw.Flush()</span>
+}
+
+// WriteText is a convenience method to write a plain text response.
+// Sets Content-Type to text/plain and writes the data.
+func (rw *ResponseWriter) WriteText(statusCode int, data []byte) error <span class="cov8" title="1">{
+        rw.WriteHeader(statusCode)
+        rw.header.Set(headerContentType, contentTypePlain)
+
+        // Set Content-Length
+        contentLengthStr := strconv.FormatInt(int64(len(data)), 10)
+        rw.header.Set(headerContentLength, []byte(contentLengthStr))
+
+        if _, err := rw.Write(data); err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov8" title="1">return rw.Flush()</span>
+}
+
+// WriteHTML is a convenience method to write an HTML response.
+// Sets Content-Type to text/html and writes the data.
+func (rw *ResponseWriter) WriteHTML(statusCode int, data []byte) error <span class="cov8" title="1">{
+        rw.WriteHeader(statusCode)
+        rw.header.Set(headerContentType, contentTypeHTML)
+
+        // Set Content-Length
+        contentLengthStr := strconv.FormatInt(int64(len(data)), 10)
+        rw.header.Set(headerContentLength, []byte(contentLengthStr))
+
+        if _, err := rw.Write(data); err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov8" title="1">return rw.Flush()</span>
+}
+
+// WriteError is a convenience method to write an error response.
+// Writes a plain text error message with the given status code.
+func (rw *ResponseWriter) WriteError(statusCode int, message string) error <span class="cov8" title="1">{
+        return rw.WriteText(statusCode, []byte(message))
+}</span>
+</pre>
+		
+		</div>
+	</body>
+	<script>
+	(function() {
+		var files = document.getElementById('files');
+		var visible;
+		files.addEventListener('change', onChange, false);
+		function select(part) {
+			if (visible)
+				visible.style.display = 'none';
+			visible = document.getElementById(part);
+			if (!visible)
+				return;
+			files.value = part;
+			visible.style.display = 'block';
+			location.hash = part;
+		}
+		function onChange() {
+			select(files.value);
+			window.scrollTo(0, 0);
+		}
+		if (location.hash != "") {
+			select(location.hash.substr(1));
+		}
+		if (!visible) {
+			select("file0");
+		}
+	})();
+	</script>
+</html>

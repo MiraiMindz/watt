@@ -1,0 +1,2 @@
+go test -bench=. -benchmem -cpu=1,2,4,8 -count=5 -benchtime=5s -timeout=3h -cpuprofile=cpu.out -memprofile=mem.out -trace=trace.out
+

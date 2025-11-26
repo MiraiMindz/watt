@@ -1,0 +1,87 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http11
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkThreeWay_ParseSimpleGET_Shockwave-8         	 2079261	       638.3 ns/op	 122.20 MB/s	      32 B/op	       1 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_Shockwave-8         	 1942524	       631.5 ns/op	 123.51 MB/s	      32 B/op	       1 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_Shockwave-8         	 1822209	       659.6 ns/op	 118.26 MB/s	      32 B/op	       1 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_FastHTTP-8          	  382020	      3045 ns/op	  25.61 MB/s	    4360 B/op	       9 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_FastHTTP-8          	  350886	      2937 ns/op	  26.56 MB/s	    4360 B/op	       9 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_FastHTTP-8          	  397026	      2944 ns/op	  26.50 MB/s	    4360 B/op	       9 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_NetHTTP-8           	  223666	      4976 ns/op	  15.67 MB/s	    5185 B/op	      11 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_NetHTTP-8           	  215094	      5742 ns/op	  13.58 MB/s	    5185 B/op	      11 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_NetHTTP-8           	  197174	      7153 ns/op	  10.90 MB/s	    5185 B/op	      11 allocs/op
+BenchmarkThreeWay_ParsePOST_Shockwave-8              	  891528	      1170 ns/op	 106.00 MB/s	      88 B/op	       3 allocs/op
+BenchmarkThreeWay_ParsePOST_Shockwave-8              	 1000000	      3414 ns/op	  36.32 MB/s	      88 B/op	       3 allocs/op
+BenchmarkThreeWay_ParsePOST_Shockwave-8              	  286814	      6642 ns/op	  18.67 MB/s	      88 B/op	       3 allocs/op
+--- FAIL: BenchmarkThreeWay_ParsePOST_FastHTTP
+    threeway_comparison_bench_test.go:138: unexpected EOF
+BenchmarkThreeWay_ParsePOST_NetHTTP-8                	   62490	     24241 ns/op	   5.12 MB/s	    5281 B/op	      14 allocs/op
+BenchmarkThreeWay_ParsePOST_NetHTTP-8                	   44530	     36490 ns/op	   3.40 MB/s	    5282 B/op	      14 allocs/op
+BenchmarkThreeWay_ParsePOST_NetHTTP-8                	   69211	     16190 ns/op	   7.66 MB/s	    5281 B/op	      14 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_Shockwave-8   	  218854	      5064 ns/op	  58.45 MB/s	      32 B/op	       1 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_Shockwave-8   	  283528	      5721 ns/op	  51.74 MB/s	      32 B/op	       1 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_Shockwave-8   	  192750	      6710 ns/op	  44.12 MB/s	      32 B/op	       1 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_FastHTTP-8    	   46216	     23636 ns/op	  12.52 MB/s	    5656 B/op	      29 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_FastHTTP-8    	   59991	     30724 ns/op	   9.63 MB/s	    5656 B/op	      29 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_FastHTTP-8    	   40404	     27582 ns/op	  10.73 MB/s	    5656 B/op	      29 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_NetHTTP-8     	   35848	     36074 ns/op	   8.21 MB/s	    5850 B/op	      23 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_NetHTTP-8     	   61376	     26425 ns/op	  11.20 MB/s	    5850 B/op	      23 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_NetHTTP-8     	   44365	     37782 ns/op	   7.83 MB/s	    5850 B/op	      23 allocs/op
+BenchmarkThreeWay_WriteSimpleText_Shockwave-8        	  899734	      1364 ns/op	  68.21 MB/s	      16 B/op	       1 allocs/op
+BenchmarkThreeWay_WriteSimpleText_Shockwave-8        	  937622	      1084 ns/op	  85.83 MB/s	      16 B/op	       1 allocs/op
+BenchmarkThreeWay_WriteSimpleText_Shockwave-8        	 1000000	      1327 ns/op	  70.08 MB/s	      16 B/op	       1 allocs/op
+BenchmarkThreeWay_WriteSimpleText_FastHTTP-8         	  303193	      3920 ns/op	  29.33 MB/s	     729 B/op	      10 allocs/op
+BenchmarkThreeWay_WriteSimpleText_FastHTTP-8         	  224947	      5660 ns/op	  20.32 MB/s	     729 B/op	      10 allocs/op
+BenchmarkThreeWay_WriteSimpleText_FastHTTP-8         	  227996	      5286 ns/op	  21.75 MB/s	     729 B/op	      10 allocs/op
+BenchmarkThreeWay_WriteSimpleText_NetHTTP-8          	  116793	     12501 ns/op	   6.16 MB/s	     787 B/op	      12 allocs/op
+BenchmarkThreeWay_WriteSimpleText_NetHTTP-8          	  157476	      9693 ns/op	   7.94 MB/s	     786 B/op	      12 allocs/op
+BenchmarkThreeWay_WriteSimpleText_NetHTTP-8          	  114663	     12694 ns/op	   6.07 MB/s	     786 B/op	      12 allocs/op
+BenchmarkThreeWay_WriteJSON_Shockwave-8              	 1113541	       981.1 ns/op	  58.10 MB/s	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_WriteJSON_Shockwave-8              	 1000000	      1129 ns/op	  50.48 MB/s	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_WriteJSON_Shockwave-8              	 1270712	      1264 ns/op	  45.10 MB/s	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_WriteJSON_FastHTTP-8               	  225847	      5118 ns/op	  11.14 MB/s	     777 B/op	      10 allocs/op
+BenchmarkThreeWay_WriteJSON_FastHTTP-8               	  216880	      5123 ns/op	  11.13 MB/s	     777 B/op	      10 allocs/op
+BenchmarkThreeWay_WriteJSON_FastHTTP-8               	  173438	      7325 ns/op	   7.78 MB/s	     777 B/op	      10 allocs/op
+BenchmarkThreeWay_WriteJSON_NetHTTP-8                	  118785	      9135 ns/op	   6.24 MB/s	     692 B/op	       9 allocs/op
+BenchmarkThreeWay_WriteJSON_NetHTTP-8                	  138904	      8159 ns/op	   6.99 MB/s	     691 B/op	       9 allocs/op
+BenchmarkThreeWay_WriteJSON_NetHTTP-8                	  174872	      8930 ns/op	   6.38 MB/s	     693 B/op	       9 allocs/op
+BenchmarkThreeWay_FullCycle_Shockwave-8              	  263097	      4016 ns/op	  19.42 MB/s	      32 B/op	       1 allocs/op
+BenchmarkThreeWay_FullCycle_Shockwave-8              	  275470	      4463 ns/op	  17.48 MB/s	      32 B/op	       1 allocs/op
+BenchmarkThreeWay_FullCycle_Shockwave-8              	  306294	      3714 ns/op	  21.00 MB/s	      32 B/op	       1 allocs/op
+BenchmarkThreeWay_FullCycle_FastHTTP-8               	   80166	     14388 ns/op	   5.42 MB/s	    5148 B/op	      19 allocs/op
+BenchmarkThreeWay_FullCycle_FastHTTP-8               	  133406	      9993 ns/op	   7.81 MB/s	    5147 B/op	      19 allocs/op
+BenchmarkThreeWay_FullCycle_FastHTTP-8               	  139780	      9386 ns/op	   8.31 MB/s	    5147 B/op	      19 allocs/op
+BenchmarkThreeWay_FullCycle_NetHTTP-8                	   95520	     14280 ns/op	   5.46 MB/s	    5925 B/op	      20 allocs/op
+BenchmarkThreeWay_FullCycle_NetHTTP-8                	   96984	     12483 ns/op	   6.25 MB/s	    5923 B/op	      20 allocs/op
+BenchmarkThreeWay_FullCycle_NetHTTP-8                	   90507	     14111 ns/op	   5.53 MB/s	    5937 B/op	      20 allocs/op
+BenchmarkThreeWay_Throughput1KB_Shockwave-8          	 1427685	       774.9 ns/op	1321.47 MB/s	       4 B/op	       1 allocs/op
+BenchmarkThreeWay_Throughput1KB_Shockwave-8          	 1419813	       732.6 ns/op	1397.72 MB/s	       4 B/op	       1 allocs/op
+BenchmarkThreeWay_Throughput1KB_Shockwave-8          	 1878006	       705.2 ns/op	1451.97 MB/s	       4 B/op	       1 allocs/op
+BenchmarkThreeWay_Throughput1KB_FastHTTP-8           	  399150	      3457 ns/op	 296.24 MB/s	    1739 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput1KB_FastHTTP-8           	  316496	      3876 ns/op	 264.16 MB/s	    1739 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput1KB_FastHTTP-8           	  414242	      3050 ns/op	 335.73 MB/s	    1739 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput1KB_NetHTTP-8            	  259316	      4559 ns/op	 224.62 MB/s	     704 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput1KB_NetHTTP-8            	  339576	      3977 ns/op	 257.49 MB/s	     705 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput1KB_NetHTTP-8            	  312859	      4140 ns/op	 247.32 MB/s	     704 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput10KB_Shockwave-8         	  363630	      2789 ns/op	3671.41 MB/s	       5 B/op	       1 allocs/op
+BenchmarkThreeWay_Throughput10KB_Shockwave-8         	  446094	      2445 ns/op	4187.88 MB/s	       5 B/op	       1 allocs/op
+BenchmarkThreeWay_Throughput10KB_Shockwave-8         	  512335	      2473 ns/op	4141.01 MB/s	       5 B/op	       1 allocs/op
+BenchmarkThreeWay_Throughput10KB_FastHTTP-8          	  125886	     10769 ns/op	 950.92 MB/s	   10977 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput10KB_FastHTTP-8          	  130308	     10062 ns/op	1017.73 MB/s	   10976 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput10KB_FastHTTP-8          	  126883	     11082 ns/op	 924.02 MB/s	   10977 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput10KB_NetHTTP-8           	  219285	      5353 ns/op	1912.77 MB/s	     705 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput10KB_NetHTTP-8           	  258402	      4925 ns/op	2079.00 MB/s	     704 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput10KB_NetHTTP-8           	  209409	      5087 ns/op	2012.98 MB/s	     704 B/op	      10 allocs/op
+BenchmarkThreeWay_HeaderLookup_Shockwave-8           	 6507308	       198.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_HeaderLookup_Shockwave-8           	 4884106	       246.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_HeaderLookup_Shockwave-8           	 5884384	       215.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_HeaderLookup_FastHTTP-8            	 2717152	       387.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_HeaderLookup_FastHTTP-8            	 3192586	       381.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_HeaderLookup_FastHTTP-8            	 2695766	       411.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_HeaderLookup_NetHTTP-8             	 3004987	       396.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_HeaderLookup_NetHTTP-8             	 2949180	       372.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_HeaderLookup_NetHTTP-8             	 4007376	       446.3 ns/op	       0 B/op	       0 allocs/op
+FAIL
+exit status 1
+FAIL	github.com/yourusername/shockwave/pkg/shockwave/http11	129.356s

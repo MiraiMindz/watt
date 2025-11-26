@@ -1,0 +1,1122 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkClients_SimpleGET/Shockwave           	      50	     16304 ns/op	    2843 B/op	      22 allocs/op
+BenchmarkClients_SimpleGET/Shockwave-2         	      50	     20573 ns/op	    3361 B/op	      23 allocs/op
+BenchmarkClients_SimpleGET/fasthttp            	      50	     15725 ns/op	    1865 B/op	      16 allocs/op
+BenchmarkClients_SimpleGET/fasthttp-2          	      50	     20616 ns/op	    2303 B/op	      17 allocs/op
+BenchmarkClients_SimpleGET/net/http            	      50	     23455 ns/op	    5132 B/op	      61 allocs/op
+BenchmarkClients_SimpleGET/net/http-2          	      50	     28149 ns/op	    5366 B/op	      61 allocs/op
+BenchmarkClients_Concurrent/Shockwave          	      50	     15649 ns/op	    2826 B/op	      22 allocs/op
+BenchmarkClients_Concurrent/Shockwave-2        	      50	      9867 ns/op	    3203 B/op	      23 allocs/op
+BenchmarkClients_Concurrent/fasthttp           	      50	     15935 ns/op	    1865 B/op	      16 allocs/op
+BenchmarkClients_Concurrent/fasthttp-2         	      50	     11693 ns/op	    2407 B/op	      18 allocs/op
+BenchmarkClients_Concurrent/net/http           	      50	     23557 ns/op	    4915 B/op	      61 allocs/op
+BenchmarkClients_Concurrent/net/http-2         	      50	     16581 ns/op	    6226 B/op	      64 allocs/op
+BenchmarkClients_WithHeaders/Shockwave         	      50	     16992 ns/op	    3262 B/op	      30 allocs/op
+BenchmarkClients_WithHeaders/Shockwave-2       	      50	     19245 ns/op	    3691 B/op	      30 allocs/op
+BenchmarkClients_WithHeaders/fasthttp          	      50	     18399 ns/op	    2815 B/op	      25 allocs/op
+BenchmarkClients_WithHeaders/fasthttp-2        	      50	     19420 ns/op	    2934 B/op	      24 allocs/op
+BenchmarkClients_WithHeaders/net/http          	      50	     24902 ns/op	    6086 B/op	      75 allocs/op
+BenchmarkClients_WithHeaders/net/http-2        	      50	     28192 ns/op	    6117 B/op	      75 allocs/op
+BenchmarkServers_SimpleGET/Shockwave           	      50	      8967 ns/op	      70 B/op	       1 allocs/op
+BenchmarkServers_SimpleGET/Shockwave-2         	      50	      8981 ns/op	    1185 B/op	       1 allocs/op
+BenchmarkServers_SimpleGET/fasthttp            	      50	      7755 ns/op	     271 B/op	       1 allocs/op
+BenchmarkServers_SimpleGET/fasthttp-2          	      50	     10099 ns/op	     296 B/op	       1 allocs/op
+BenchmarkServers_SimpleGET/net/http            	      50	     12390 ns/op	    1509 B/op	      14 allocs/op
+BenchmarkServers_SimpleGET/net/http-2          	      50	     17393 ns/op	    1565 B/op	      14 allocs/op
+BenchmarkServers_Concurrent/Shockwave          	      50	     15959 ns/op	     348 B/op	       2 allocs/op
+BenchmarkServers_Concurrent/Shockwave-2        	      50	      9476 ns/op	     420 B/op	       2 allocs/op
+BenchmarkServers_Concurrent/fasthttp           	      50	     10899 ns/op	     287 B/op	       1 allocs/op
+BenchmarkServers_Concurrent/fasthttp-2         	      50	      9977 ns/op	     586 B/op	       2 allocs/op
+BenchmarkServers_Concurrent/net/http           	      50	     15856 ns/op	    1481 B/op	      15 allocs/op
+BenchmarkServers_Concurrent/net/http-2         	      50	     16693 ns/op	    1611 B/op	      16 allocs/op
+BenchmarkServers_JSON/Shockwave                	      50	      8353 ns/op	     647 B/op	       0 allocs/op
+BenchmarkServers_JSON/Shockwave-2              	      50	     10576 ns/op	     663 B/op	       0 allocs/op
+BenchmarkServers_JSON/fasthttp                 	      50	      7788 ns/op	     270 B/op	       1 allocs/op
+BenchmarkServers_JSON/fasthttp-2               	      50	      9088 ns/op	     288 B/op	       1 allocs/op
+BenchmarkServers_JSON/net/http                 	      50	     14075 ns/op	    2424 B/op	      18 allocs/op
+BenchmarkServers_JSON/net/http-2               	      50	     16420 ns/op	    2311 B/op	      18 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave	1.874s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/benchmarks/competitors
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkComparisonSimpleGET/net/http       	      50	     85496 ns/op	   16620 B/op	     110 allocs/op
+BenchmarkComparisonSimpleGET/net/http-2     	      50	     85873 ns/op	   16932 B/op	     111 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp       	      50	      3615 ns/op	     508 B/op	       2 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-2     	      50	      3643 ns/op	     556 B/op	       2 allocs/op
+BenchmarkComparisonRequestParsing/net/http           	      50	      1878 ns/op	  63.88 MB/s	    5242 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-2         	      50	      2586 ns/op	  46.40 MB/s	    5245 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp           	      50	      2011 ns/op	  59.68 MB/s	    4251 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-2         	      50	      2145 ns/op	  55.95 MB/s	    4253 B/op	       3 allocs/op
+BenchmarkComparisonResponseWriting/net/http          	      50	       517.5 ns/op	     458 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-2        	      50	       563.5 ns/op	     465 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp          	      50	       277.4 ns/op	      26 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-2        	      50	       303.4 ns/op	     118 B/op	       0 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http         	      50	      7745 ns/op	 118.92 MB/s	    8978 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-2       	      50	      7183 ns/op	 128.22 MB/s	    8982 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp         	      50	      4781 ns/op	 192.62 MB/s	    4359 B/op	       4 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-2       	      50	      4166 ns/op	 221.07 MB/s	    4359 B/op	       4 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket   	      50	      7328 ns/op	   4.64 MB/s	    1122 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-2 	      50	      7425 ns/op	   4.58 MB/s	    1122 B/op	       5 allocs/op
+BenchmarkComparisonKeepAlive/net/http                	      50	     86579 ns/op	   17093 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-2              	      50	     81930 ns/op	   17350 B/op	     116 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp                	      50	      3054 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-2              	      50	      3465 ns/op	      84 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc           	      50	         2.100 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-2         	      50	         2.140 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc           	      50	         2.100 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-2         	      50	         2.540 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc          	      50	       442.7 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-2        	      50	       438.8 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc          	      50	       165.7 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-2        	      50	       337.9 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonScalability/net/http-c1                     	      50	     87854 ns/op	   16845 B/op	     114 allocs/op
+BenchmarkComparisonScalability/net/http-c1-2                   	      50	     51240 ns/op	   17402 B/op	     116 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1                     	      50	      3704 ns/op	     567 B/op	       2 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-2                   	      50	      3713 ns/op	    1116 B/op	       4 allocs/op
+BenchmarkComparisonScalability/net/http-c10                    	      50	     77992 ns/op	   19524 B/op	     121 allocs/op
+BenchmarkComparisonScalability/net/http-c10-2                  	      50	     48434 ns/op	   21689 B/op	     128 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10                    	      50	      5524 ns/op	    4842 B/op	      18 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-2                  	      50	     10329 ns/op	   10113 B/op	      36 allocs/op
+BenchmarkComparisonScalability/net/http-c50                    	      50	    259573 ns/op	   29697 B/op	     148 allocs/op
+BenchmarkComparisonScalability/net/http-c50-2                  	      50	     50131 ns/op	   29868 B/op	     151 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50                    	      50	     26128 ns/op	   24156 B/op	      87 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-2                  	      50	     10101 ns/op	   14496 B/op	      53 allocs/op
+BenchmarkComparisonScalability/net/http-c100                   	      50	    127536 ns/op	   29294 B/op	     151 allocs/op
+BenchmarkComparisonScalability/net/http-c100-2                 	      50	     45573 ns/op	   27661 B/op	     156 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100                   	      50	     24905 ns/op	   26070 B/op	      95 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-2                 	      50	     12157 ns/op	   23781 B/op	      87 allocs/op
+BenchmarkFastHTTPSimpleGET                                     	      50	      4111 ns/op	   0.49 MB/s	     540 B/op	       2 allocs/op
+BenchmarkFastHTTPSimpleGET-2                                   	      50	      4114 ns/op	   0.49 MB/s	     544 B/op	       2 allocs/op
+BenchmarkFastHTTPPOST1KB                                       	      50	      3785 ns/op	 270.53 MB/s	     623 B/op	       2 allocs/op
+BenchmarkFastHTTPPOST1KB-2                                     	      50	      5248 ns/op	 195.14 MB/s	     737 B/op	       2 allocs/op
+BenchmarkFastHTTPKeepAlive                                     	      50	      3153 ns/op	   0.63 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-2                                   	      50	      3540 ns/op	   0.56 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent                                    	     100	     16084 ns/op	   0.12 MB/s	   25671 B/op	      91 allocs/op
+BenchmarkFastHTTPConcurrent-2                                  	     100	     13460 ns/op	   0.15 MB/s	   26124 B/op	      91 allocs/op
+BenchmarkFastHTTPLargeResponse                                 	      50	    198262 ns/op	5288.85 MB/s	   84554 B/op	       2 allocs/op
+BenchmarkFastHTTPLargeResponse-2                               	      50	    215746 ns/op	4860.23 MB/s	  105680 B/op	       2 allocs/op
+BenchmarkFastHTTPHeaderHeavy                                   	      50	     24956 ns/op	    2684 B/op	     107 allocs/op
+BenchmarkFastHTTPHeaderHeavy-2                                 	      50	     26556 ns/op	    2793 B/op	     107 allocs/op
+BenchmarkFastHTTPRequestParsing                                	      50	      1028 ns/op	  98.25 MB/s	    4247 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-2                              	      50	      1006 ns/op	 100.41 MB/s	    4247 B/op	       3 allocs/op
+BenchmarkFastHTTPResponseWriting                               	      50	       414.9 ns/op	      26 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-2                             	      50	       518.6 ns/op	     118 B/op	       0 allocs/op
+BenchmarkNetHTTPSimpleGET                                      	      50	     27670 ns/op	   0.07 MB/s	    5246 B/op	      59 allocs/op
+BenchmarkNetHTTPSimpleGET-2                                    	      50	     29085 ns/op	   0.07 MB/s	    5433 B/op	      60 allocs/op
+BenchmarkNetHTTPPOST1KB                                        	      50	     28142 ns/op	  36.39 MB/s	    6916 B/op	      76 allocs/op
+BenchmarkNetHTTPPOST1KB-2                                      	      50	     36007 ns/op	  28.44 MB/s	    8172 B/op	      76 allocs/op
+BenchmarkNetHTTPKeepAlive                                      	      50	     22143 ns/op	   0.09 MB/s	    5310 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-2                                    	      50	     40335 ns/op	   0.05 MB/s	    5524 B/op	      63 allocs/op
+BenchmarkNetHTTPConcurrent                                     	     100	     73324 ns/op	   0.03 MB/s	   21233 B/op	     123 allocs/op
+BenchmarkNetHTTPConcurrent-2                                   	     100	     39655 ns/op	   0.05 MB/s	   17078 B/op	     116 allocs/op
+BenchmarkNetHTTPLargeResponse                                  	      50	    278129 ns/op	3770.11 MB/s	    5312 B/op	      62 allocs/op
+BenchmarkNetHTTPLargeResponse-2                                	      50	    325321 ns/op	3223.20 MB/s	    5405 B/op	      63 allocs/op
+BenchmarkNetHTTPHeaderHeavy                                    	      50	     61018 ns/op	   21384 B/op	     325 allocs/op
+BenchmarkNetHTTPHeaderHeavy-2                                  	      50	     69189 ns/op	   21651 B/op	     325 allocs/op
+BenchmarkNetHTTPRequestParsing                                 	      50	      1868 ns/op	  54.08 MB/s	    5226 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-2                               	      50	      1827 ns/op	  55.28 MB/s	    5229 B/op	      13 allocs/op
+BenchmarkNetHTTPResponseWriting                                	      50	       710.2 ns/op	     458 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-2                              	      50	      1104 ns/op	     465 B/op	      10 allocs/op
+BenchmarkGorillaWebSocketEcho                                  	      50	      6471 ns/op	   5.25 MB/s	    1122 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-2                                	      50	      7134 ns/op	   4.77 MB/s	    1122 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketBroadcast                             	      50	     42231 ns/op	   4.26 MB/s	    5802 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-2                           	      50	     58128 ns/op	   3.10 MB/s	    5803 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketThroughput                            	      50	      1441 ns/op	 710.74 MB/s	      82 B/op	       1 allocs/op
+BenchmarkGorillaWebSocketThroughput-2                          	      50	      3753 ns/op	 272.84 MB/s	    2906 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent                            	     100	     78529 ns/op	  58.58 MB/s	   33510 B/op	     128 allocs/op
+BenchmarkGorillaWebSocketConcurrent-2                          	     100	     41013 ns/op	 112.16 MB/s	   32961 B/op	     127 allocs/op
+BenchmarkGorillaWebSocketLargeMessage                          	      50	  32760272 ns/op	  64.02 MB/s	10482351 B/op	      59 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-2                        	      50	  15598337 ns/op	 134.45 MB/s	10482538 B/op	      59 allocs/op
+BenchmarkGorillaWebSocketPing                                  	      50	      7537 ns/op	    1075 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-2                                	      50	     13907 ns/op	    1076 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketMessageParsing                        	      50	        12.76 ns/op	 862.07 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-2                      	      50	        12.52 ns/op	 878.59 MB/s	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/benchmarks/competitors	3.369s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkLoadTest                             	      50	1007699089 ns/op
+BenchmarkLoadTest-2                           	      50	1011401005 ns/op
+BenchmarkSecureBufferPool_Zeroed              	      50	       229.5 ns/op	     109 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Zeroed-2            	      50	       210.1 ns/op	     111 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random              	      50	      5914 ns/op	     109 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Random-2            	      50	      5974 ns/op	     111 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular              	      50	       114.3 ns/op	     109 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Regular-2            	      50	       124.7 ns/op	     111 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure               	      50	       173.0 ns/op	      26 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/Secure-2             	      50	       308.4 ns/op	     111 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom         	      50	      5985 ns/op	     125 B/op	       1 allocs/op
+BenchmarkSecureVsRegular/SecureRandom-2       	      50	      5933 ns/op	     127 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB        	      50	       152.6 ns/op	13420.71 MB/s	      26 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/2KB-2      	      50	       154.3 ns/op	13272.85 MB/s	      29 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB        	      50	       186.1 ns/op	22007.31 MB/s	     109 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/4KB-2      	      50	       184.0 ns/op	22265.71 MB/s	     111 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB        	      50	       216.2 ns/op	37897.85 MB/s	      26 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/8KB-2      	      50	       456.8 ns/op	17935.02 MB/s	     193 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB       	      50	       311.9 ns/op	52533.03 MB/s	      26 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/16KB-2     	      50	       315.6 ns/op	51910.53 MB/s	      29 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB       	      50	       515.7 ns/op	63535.89 MB/s	     682 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/32KB-2     	      50	       505.5 ns/op	64817.82 MB/s	      29 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB       	      50	      2606 ns/op	25146.00 MB/s	      26 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_AllSizes/64KB-2     	      50	      2759 ns/op	23753.71 MB/s	    1340 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool           	      50	       165.9 ns/op	      68 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithSecurePool-2         	      50	       164.2 ns/op	      29 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool              	      50	         5.980 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_PasswordUseCase/WithoutPool-2            	      50	         5.480 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSecureBufferPool_Parallel                                 	      50	       167.9 ns/op	     127 B/op	       1 allocs/op
+BenchmarkSecureBufferPool_Parallel-2                               	      50	       440.1 ns/op	     216 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB                                        	      50	        98.96 ns/op	20695.23 MB/s	      26 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/2KB-2                                      	      50	       103.9 ns/op	19711.26 MB/s	      29 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB                                        	      50	       100.9 ns/op	40594.65 MB/s	      26 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/4KB-2                                      	      50	       107.9 ns/op	37968.11 MB/s	      29 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB                                        	      50	       148.0 ns/op	55358.83 MB/s	     191 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/8KB-2                                      	      50	       102.5 ns/op	79937.55 MB/s	      29 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB                                       	      50	       126.0 ns/op	130052.39 MB/s	     354 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/16KB-2                                     	      50	       236.1 ns/op	69400.20 MB/s	     357 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB                                       	      50	        97.32 ns/op	336703.66 MB/s	      26 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/32KB-2                                     	      50	       227.5 ns/op	144022.50 MB/s	     685 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB                                       	      50	       411.9 ns/op	159091.13 MB/s	    1337 B/op	       1 allocs/op
+BenchmarkBufferPool_Get/64KB-2                                     	      50	       133.4 ns/op	491274.36 MB/s	    1340 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB                                  	      50	       333.4 ns/op	6142.77 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/2KB-2                                	      50	       549.7 ns/op	3725.40 MB/s	    2048 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/4KB                                  	      50	       732.9 ns/op	5588.60 MB/s	    4096 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/4KB-2                                	      50	       399.8 ns/op	10245.12 MB/s	    4096 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/8KB                                  	      50	       888.8 ns/op	9216.71 MB/s	    8192 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/8KB-2                                	      50	      1720 ns/op	4762.74 MB/s	    8192 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/16KB                                 	      50	      2259 ns/op	7253.92 MB/s	   16384 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/16KB-2                               	      50	       816.5 ns/op	20066.14 MB/s	   16384 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/32KB                                 	      50	      4486 ns/op	7305.09 MB/s	   32768 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/32KB-2                               	      50	      1262 ns/op	25954.85 MB/s	   32768 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/64KB                                 	      50	      9869 ns/op	6640.48 MB/s	   65536 B/op	       1 allocs/op
+BenchmarkBufferPool_GetNoPool/64KB-2                               	      50	      2043 ns/op	32075.18 MB/s	   65536 B/op	       1 allocs/op
+BenchmarkBufferPool_Parallel                                       	      50	      4077 ns/op	    5525 B/op	     121 allocs/op
+BenchmarkBufferPool_Parallel-2                                     	      50	      5044 ns/op	    5626 B/op	     121 allocs/op
+BenchmarkBufferPool_HitRate                                        	      50	        44.54 ns/op	        99.33 %hit	         1.000 misses	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_HitRate-2                                      	      50	        44.66 ns/op	        99.33 %hit	         1.000 misses	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_MixedSizes                                     	      50	        48.56 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_MixedSizes-2                                   	      50	        51.86 ns/op	      24 B/op	       1 allocs/op
+BenchmarkBufferPool_Reset                                          	      50	       718.4 ns/op	    2930 B/op	      13 allocs/op
+BenchmarkBufferPool_Reset-2                                        	      50	       875.0 ns/op	    2946 B/op	      13 allocs/op
+BenchmarkBufferPool_Global                                         	      50	       732.0 ns/op	    2913 B/op	      13 allocs/op
+BenchmarkBufferPool_Global-2                                       	      50	       503.5 ns/op	     345 B/op	      13 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave	102.984s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/client
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkClientGET                     	      50	     17234 ns/op	    2920 B/op	      23 allocs/op
+BenchmarkClientGET-2                   	      50	     23970 ns/op	    3023 B/op	      23 allocs/op
+BenchmarkOriginalClientGET             	      50	     16697 ns/op	    3722 B/op	      24 allocs/op
+BenchmarkOriginalClientGET-2           	      50	     19606 ns/op	    3921 B/op	      25 allocs/op
+BenchmarkNetHTTP_GET                   	      50	     24114 ns/op	    5981 B/op	      64 allocs/op
+BenchmarkNetHTTP_GET-2                 	      50	     30903 ns/op	    6024 B/op	      64 allocs/op
+BenchmarkFasthttp_GET                  	      50	     15809 ns/op	    1785 B/op	      17 allocs/op
+BenchmarkFasthttp_GET-2                	      50	     20237 ns/op	    2183 B/op	      19 allocs/op
+BenchmarkClientConcurrent              	      50	     15981 ns/op	    3092 B/op	      23 allocs/op
+BenchmarkClientConcurrent-2            	      50	     14048 ns/op	    3607 B/op	      24 allocs/op
+BenchmarkClientWithHeaders             	      50	     16367 ns/op	    2583 B/op	      29 allocs/op
+BenchmarkClientWithHeaders-2           	      50	     23419 ns/op	    2999 B/op	      28 allocs/op
+BenchmarkClientConnectionReuse         	      50	     15471 ns/op	    3078 B/op	      23 allocs/op
+BenchmarkClientConnectionReuse-2       	      50	     20511 ns/op	    2903 B/op	      22 allocs/op
+BenchmarkHeaderInlineStorage           	      50	       122.5 ns/op	       2 B/op	       0 allocs/op
+BenchmarkHeaderInlineStorage-2         	      50	       285.7 ns/op	      15 B/op	       0 allocs/op
+BenchmarkRequestBuilding               	      50	       187.1 ns/op	     195 B/op	       0 allocs/op
+BenchmarkRequestBuilding-2             	      50	       193.8 ns/op	     200 B/op	       0 allocs/op
+BenchmarkResponseParsing               	      50	       385.8 ns/op	     221 B/op	       5 allocs/op
+BenchmarkResponseParsing-2             	      50	       510.7 ns/op	     229 B/op	       5 allocs/op
+BenchmarkPoolWarmup                    	      50	      4286 ns/op	    4991 B/op	      70 allocs/op
+BenchmarkPoolWarmup-2                  	      50	      4799 ns/op	    5024 B/op	      70 allocs/op
+BenchmarkMethodIDLookup                	      50	         9.160 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMethodIDLookup-2              	      50	         5.380 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBytesEqualCaseInsensitive     	      50	        17.02 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBytesEqualCaseInsensitive-2   	      50	        29.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseIntFast                  	      50	         5.100 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseIntFast-2                	      50	        10.34 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOptimizedReaderReadLine       	      50	       228.9 ns/op	     175 B/op	       1 allocs/op
+BenchmarkOptimizedReaderReadLine-2     	      50	       210.4 ns/op	      53 B/op	       1 allocs/op
+BenchmarkURLCacheHit                   	      50	        52.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkURLCacheHit-2                 	      50	        58.20 ns/op	       0 B/op	       0 allocs/op
+BenchmarkURLCacheMiss                  	      50	       144.5 ns/op	     112 B/op	       3 allocs/op
+BenchmarkURLCacheMiss-2                	      50	       181.9 ns/op	     112 B/op	       3 allocs/op
+BenchmarkInlineStringBuilder           	      50	        18.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInlineStringBuilder-2         	      50	        24.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBuildHostPort                 	      50	        18.72 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBuildHostPort-2               	      50	        24.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardConcat                	      50	         1.900 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardConcat-2              	      50	         2.660 ns/op	       0 B/op	       0 allocs/op
+BenchmarkOptimizedResponseParsing      	      50	       334.0 ns/op	     196 B/op	       1 allocs/op
+BenchmarkOptimizedResponseParsing-2    	      50	       363.3 ns/op	      64 B/op	       1 allocs/op
+BenchmarkPooling/Request               	      50	       137.5 ns/op	     100 B/op	       0 allocs/op
+BenchmarkPooling/Request-2             	      50	       134.7 ns/op	     102 B/op	       0 allocs/op
+BenchmarkPooling/Response              	      50	        92.76 ns/op	       2 B/op	       0 allocs/op
+BenchmarkPooling/Response-2            	      50	       124.6 ns/op	       5 B/op	       0 allocs/op
+BenchmarkPooling/Headers               	      50	        92.64 ns/op	      12 B/op	       0 allocs/op
+BenchmarkPooling/Headers-2             	      50	        91.00 ns/op	       5 B/op	       0 allocs/op
+BenchmarkPooling/OptimizedReader       	      50	       117.1 ns/op	     128 B/op	       0 allocs/op
+BenchmarkPooling/OptimizedReader-2     	      50	       279.2 ns/op	     131 B/op	       0 allocs/op
+BenchmarkZeroCopyVsCopy/ZeroCopy       	      50	         2.460 ns/op	       0 B/op	       0 allocs/op
+BenchmarkZeroCopyVsCopy/ZeroCopy-2     	      50	         2.460 ns/op	       0 B/op	       0 allocs/op
+BenchmarkZeroCopyVsCopy/Copy           	      50	         2.460 ns/op	       0 B/op	       0 allocs/op
+BenchmarkZeroCopyVsCopy/Copy-2         	      50	         2.740 ns/op	       0 B/op	       0 allocs/op
+BenchmarkZeroCopyVsCopy/String         	      50	         6.220 ns/op	       0 B/op	       0 allocs/op
+BenchmarkZeroCopyVsCopy/String-2       	      50	         6.020 ns/op	       0 B/op	       0 allocs/op
+--- FAIL: BenchmarkCompleteRequestLifecycle
+    optimizations_bench_test.go:198: failed to get connection: failed to dial 127.0.0.1:8080: dial tcp 127.0.0.1:8080: connect: connection refused
+FAIL
+exit status 1
+FAIL	github.com/yourusername/shockwave/pkg/shockwave/client	0.043s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http11
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkSuite_ParseSimpleGET                          	      50	       884.6 ns/op	  41.82 MB/s	    6979 B/op	       2 allocs/op
+BenchmarkSuite_ParseSimpleGET-2                        	      50	      2238 ns/op	  16.53 MB/s	    6987 B/op	       2 allocs/op
+BenchmarkSuite_ParseGETWithHeaders                     	      50	       951.0 ns/op	 171.40 MB/s	    6979 B/op	       2 allocs/op
+BenchmarkSuite_ParseGETWithHeaders-2                   	      50	       794.5 ns/op	 205.17 MB/s	    6576 B/op	       2 allocs/op
+BenchmarkSuite_ParsePOST                               	      50	       941.7 ns/op	 105.13 MB/s	    7003 B/op	       3 allocs/op
+BenchmarkSuite_ParsePOST-2                             	      50	       722.0 ns/op	 137.12 MB/s	    7011 B/op	       3 allocs/op
+BenchmarkSuite_ParseWith10Headers                      	      50	      1068 ns/op	 194.83 MB/s	    6979 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith10Headers-2                    	      50	      2395 ns/op	  86.86 MB/s	    6576 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith20Headers                      	      50	      1729 ns/op	 230.16 MB/s	    6568 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith20Headers-2                    	      50	      1698 ns/op	 234.39 MB/s	    6576 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith32Headers                      	      50	      2262 ns/op	 276.69 MB/s	    6979 B/op	       2 allocs/op
+BenchmarkSuite_ParseWith32Headers-2                    	      50	      2580 ns/op	 242.67 MB/s	    6576 B/op	       2 allocs/op
+BenchmarkSuite_Write200OK                              	      50	       133.0 ns/op	     136 B/op	       1 allocs/op
+BenchmarkSuite_Write200OK-2                            	      50	       132.8 ns/op	     139 B/op	       1 allocs/op
+BenchmarkSuite_WriteJSONResponse                       	      50	       234.1 ns/op	 192.19 MB/s	      11 B/op	       0 allocs/op
+BenchmarkSuite_WriteJSONResponse-2                     	      50	       234.9 ns/op	 191.55 MB/s	     144 B/op	       0 allocs/op
+BenchmarkSuite_WriteHTMLResponse                       	      50	       216.5 ns/op	 254.04 MB/s	      11 B/op	       0 allocs/op
+BenchmarkSuite_WriteHTMLResponse-2                     	      50	       243.3 ns/op	 226.06 MB/s	     144 B/op	       0 allocs/op
+BenchmarkSuite_Write404Error                           	      50	       246.0 ns/op	      22 B/op	       1 allocs/op
+BenchmarkSuite_Write404Error-2                         	      50	       274.6 ns/op	     155 B/op	       1 allocs/op
+BenchmarkSuite_WriteWithCustomHeaders                  	      50	       257.1 ns/op	       8 B/op	       1 allocs/op
+BenchmarkSuite_WriteWithCustomHeaders-2                	      50	       297.9 ns/op	      11 B/op	       1 allocs/op
+BenchmarkSuite_FullCycleSimpleGET                      	      50	      1085 ns/op	  37.77 MB/s	     516 B/op	       7 allocs/op
+BenchmarkSuite_FullCycleSimpleGET-2                    	      50	      1105 ns/op	  37.12 MB/s	     531 B/op	       7 allocs/op
+BenchmarkSuite_FullCycleJSONAPI                        	      50	      1111 ns/op	 116.13 MB/s	     562 B/op	       6 allocs/op
+BenchmarkSuite_FullCycleJSONAPI-2                      	      50	      1271 ns/op	 101.48 MB/s	    1416 B/op	       6 allocs/op
+BenchmarkSuite_FullCycleWithHeaderProcessing           	      50	      1782 ns/op	    1384 B/op	       7 allocs/op
+BenchmarkSuite_FullCycleWithHeaderProcessing-2         	      50	      1652 ns/op	    1400 B/op	       7 allocs/op
+BenchmarkSuite_PoolEfficiency_Request                  	      50	       102.8 ns/op	     138 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_Request-2                	      50	       101.1 ns/op	     141 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_ResponseWriter           	      50	        74.46 ns/op	       2 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_ResponseWriter-2         	      50	        77.02 ns/op	       5 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_Parser                   	      50	        67.06 ns/op	       2 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_Parser-2                 	      50	        89.02 ns/op	       5 B/op	       0 allocs/op
+BenchmarkSuite_PoolEfficiency_Buffer                   	      50	        94.88 ns/op	      26 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_Buffer-2                 	      50	       150.0 ns/op	     111 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_AllPools                 	      50	       149.2 ns/op	      35 B/op	       1 allocs/op
+BenchmarkSuite_PoolEfficiency_AllPools-2               	      50	       210.6 ns/op	     717 B/op	       1 allocs/op
+BenchmarkSuite_ConcurrentParsing                       	      50	      1695 ns/op	    6984 B/op	       2 allocs/op
+BenchmarkSuite_ConcurrentParsing-2                     	      50	       629.7 ns/op	    7402 B/op	       2 allocs/op
+BenchmarkSuite_ConcurrentResponseWriting               	      50	       406.6 ns/op	     142 B/op	       0 allocs/op
+BenchmarkSuite_ConcurrentResponseWriting-2             	      50	       284.4 ns/op	     149 B/op	       0 allocs/op
+BenchmarkSuite_ConcurrentFullCycle                     	      50	      1127 ns/op	     518 B/op	       7 allocs/op
+BenchmarkSuite_ConcurrentFullCycle-2                   	      50	       911.8 ns/op	    1375 B/op	       7 allocs/op
+BenchmarkSuite_MemoryAlloc_ParseOnly                   	      50	      1255 ns/op	    6979 B/op	       2 allocs/op
+BenchmarkSuite_MemoryAlloc_ParseOnly-2                 	      50	       658.3 ns/op	    6987 B/op	       2 allocs/op
+BenchmarkSuite_MemoryAlloc_ResponseOnly                	      50	       128.6 ns/op	       6 B/op	       1 allocs/op
+BenchmarkSuite_MemoryAlloc_ResponseOnly-2              	      50	       144.3 ns/op	     139 B/op	       1 allocs/op
+BenchmarkSuite_MemoryAlloc_FullCycle                   	      50	      1362 ns/op	    1355 B/op	       7 allocs/op
+BenchmarkSuite_MemoryAlloc_FullCycle-2                 	      50	      1395 ns/op	    1370 B/op	       7 allocs/op
+BenchmarkSuite_Throughput_1KB_Response                 	      50	      1438 ns/op	 712.18 MB/s	    2413 B/op	       7 allocs/op
+BenchmarkSuite_Throughput_1KB_Response-2               	      50	      1378 ns/op	 743.34 MB/s	    2428 B/op	       7 allocs/op
+BenchmarkSuite_Throughput_10KB_Response                	      50	      5445 ns/op	1880.58 MB/s	   16238 B/op	       8 allocs/op
+BenchmarkSuite_Throughput_10KB_Response-2              	      50	      3059 ns/op	3347.56 MB/s	   15414 B/op	       8 allocs/op
+BenchmarkSuite_Throughput_SmallJSONAPI                 	      50	      1149 ns/op	  33.07 MB/s	    1384 B/op	       6 allocs/op
+BenchmarkSuite_Throughput_SmallJSONAPI-2               	      50	      1275 ns/op	  29.79 MB/s	    1401 B/op	       6 allocs/op
+BenchmarkSuite_Realistic_RESTfulAPI                    	      50	      1646 ns/op	    1520 B/op	       8 allocs/op
+BenchmarkSuite_Realistic_RESTfulAPI-2                  	      50	      1630 ns/op	     697 B/op	       8 allocs/op
+BenchmarkSuite_Realistic_StaticFileServing             	      50	      1131 ns/op	4528.01 MB/s	     465 B/op	       6 allocs/op
+BenchmarkSuite_Realistic_StaticFileServing-2           	      50	      1075 ns/op	4764.03 MB/s	     481 B/op	       6 allocs/op
+BenchmarkChunkedReader_Small                           	      50	      1006 ns/op
+BenchmarkChunkedReader_Small-2                         	      50	      1796 ns/op
+BenchmarkChunkedReader_Large                           	      50	      1780 ns/op	5753.13 MB/s
+BenchmarkChunkedReader_Large-2                         	      50	      1776 ns/op	5764.92 MB/s
+BenchmarkComparison_ParseSimpleGET_Shockwave           	      50	       384.4 ns/op	 202.93 MB/s	     582 B/op	       1 allocs/op
+BenchmarkComparison_ParseSimpleGET_Shockwave-2         	      50	       321.2 ns/op	 242.81 MB/s	      48 B/op	       1 allocs/op
+BenchmarkComparison_ParseSimpleGET_NetHTTP             	      50	      1749 ns/op	  44.59 MB/s	    5186 B/op	      11 allocs/op
+BenchmarkComparison_ParseSimpleGET_NetHTTP-2           	      50	      2846 ns/op	  27.41 MB/s	    5189 B/op	      11 allocs/op
+BenchmarkComparison_ParsePOST_Shockwave                	      50	       584.3 ns/op	 212.23 MB/s	     742 B/op	       6 allocs/op
+BenchmarkComparison_ParsePOST_Shockwave-2              	      50	       535.3 ns/op	 231.65 MB/s	     208 B/op	       6 allocs/op
+BenchmarkComparison_ParsePOST_NetHTTP                  	      50	      2129 ns/op	  58.25 MB/s	    5283 B/op	      14 allocs/op
+BenchmarkComparison_ParsePOST_NetHTTP-2                	      50	      2553 ns/op	  48.57 MB/s	    5286 B/op	      14 allocs/op
+BenchmarkComparison_ParseMultipleHeaders_Shockwave     	      50	       835.4 ns/op	 354.30 MB/s	     582 B/op	       1 allocs/op
+BenchmarkComparison_ParseMultipleHeaders_Shockwave-2   	      50	      1121 ns/op	 263.97 MB/s	     590 B/op	       1 allocs/op
+BenchmarkComparison_ParseMultipleHeaders_NetHTTP       	      50	      4053 ns/op	  73.03 MB/s	    5851 B/op	      23 allocs/op
+BenchmarkComparison_ParseMultipleHeaders_NetHTTP-2     	      50	      3726 ns/op	  79.44 MB/s	    5854 B/op	      23 allocs/op
+BenchmarkComparison_WriteSimpleResponse_Shockwave      	      50	       269.7 ns/op	 344.80 MB/s	     151 B/op	       1 allocs/op
+BenchmarkComparison_WriteSimpleResponse_Shockwave-2    	      50	       329.8 ns/op	 281.99 MB/s	     153 B/op	       1 allocs/op
+BenchmarkComparison_WriteSimpleResponse_NetHTTP        	      50	      1264 ns/op	  60.91 MB/s	    1478 B/op	      12 allocs/op
+BenchmarkComparison_WriteSimpleResponse_NetHTTP-2      	      50	      1311 ns/op	  58.74 MB/s	     831 B/op	      12 allocs/op
+BenchmarkComparison_WriteJSONResponse_Shockwave        	      50	       264.3 ns/op	 215.65 MB/s	     136 B/op	       0 allocs/op
+BenchmarkComparison_WriteJSONResponse_Shockwave-2      	      50	       352.6 ns/op	 161.67 MB/s	       8 B/op	       0 allocs/op
+BenchmarkComparison_WriteJSONResponse_NetHTTP          	      50	      1375 ns/op	  41.46 MB/s	     710 B/op	       9 allocs/op
+BenchmarkComparison_WriteJSONResponse_NetHTTP-2        	      50	      1049 ns/op	  54.36 MB/s	     717 B/op	       9 allocs/op
+BenchmarkComparison_FullCycleSimpleGET_Shockwave       	      50	       579.2 ns/op	 134.67 MB/s	      93 B/op	       2 allocs/op
+BenchmarkComparison_FullCycleSimpleGET_Shockwave-2     	      50	       692.0 ns/op	 112.72 MB/s	     776 B/op	       2 allocs/op
+BenchmarkComparison_FullCycleSimpleGET_NetHTTP         	      50	      3719 ns/op	  20.97 MB/s	    5892 B/op	      20 allocs/op
+BenchmarkComparison_FullCycleSimpleGET_NetHTTP-2       	      50	      3008 ns/op	  25.93 MB/s	    5902 B/op	      20 allocs/op
+BenchmarkComparison_Throughput1KB_Shockwave            	      50	       290.2 ns/op	3528.36 MB/s	      29 B/op	       1 allocs/op
+BenchmarkComparison_Throughput1KB_Shockwave-2          	      50	       293.1 ns/op	3493.93 MB/s	      32 B/op	       1 allocs/op
+BenchmarkComparison_Throughput1KB_NetHTTP              	      50	       944.4 ns/op	1084.24 MB/s	     800 B/op	      10 allocs/op
+BenchmarkComparison_Throughput1KB_NetHTTP-2            	      50	      1104 ns/op	 927.89 MB/s	     809 B/op	      10 allocs/op
+BenchmarkComparison_Throughput10KB_Shockwave           	      50	       602.0 ns/op	17011.10 MB/s	     307 B/op	       1 allocs/op
+BenchmarkComparison_Throughput10KB_Shockwave-2         	      50	       604.3 ns/op	16946.35 MB/s	     310 B/op	       1 allocs/op
+BenchmarkComparison_Throughput10KB_NetHTTP             	      50	      1293 ns/op	7920.55 MB/s	    1782 B/op	      10 allocs/op
+BenchmarkComparison_Throughput10KB_NetHTTP-2           	      50	      1623 ns/op	6309.07 MB/s	    1795 B/op	      10 allocs/op
+BenchmarkConnectionServe                               	      50	      2997 ns/op	    8740 B/op	      12 allocs/op
+BenchmarkConnectionServe-2                             	      50	      2139 ns/op	    9594 B/op	      12 allocs/op
+BenchmarkConnectionKeepAlive                           	      50	      1327 ns/op	    1348 B/op	      12 allocs/op
+BenchmarkConnectionKeepAlive-2                         	      50	      1415 ns/op	    2202 B/op	      12 allocs/op
+BenchmarkE2ESimpleGET                                  	      50	      1122 ns/op	    1356 B/op	       7 allocs/op
+BenchmarkE2ESimpleGET-2                                	      50	      1075 ns/op	     531 B/op	       7 allocs/op
+BenchmarkE2EJSONAPI                                    	      50	      1230 ns/op	  46.36 MB/s	    1400 B/op	       6 allocs/op
+BenchmarkE2EJSONAPI-2                                  	      50	      1097 ns/op	  51.95 MB/s	     577 B/op	       6 allocs/op
+BenchmarkE2EConcurrentConnections                      	      50	      1098 ns/op	     518 B/op	       7 allocs/op
+BenchmarkE2EConcurrentConnections-2                    	      50	       850.6 ns/op	    1375 B/op	       7 allocs/op
+BenchmarkHeaderAdd                                     	      50	        20.24 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderAdd-2                                   	      50	        20.06 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderAdd16                                   	      50	       346.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderAdd16-2                                 	      50	       265.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderAdd32                                   	      50	       777.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderAdd32-2                                 	      50	       725.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderGet                                     	      50	        16.12 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderGet-2                                   	      50	        16.04 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderGetCaseInsensitive                      	      50	        15.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderGetCaseInsensitive-2                    	      50	        21.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderSet                                     	      50	        32.78 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderSet-2                                   	      50	        36.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderHas                                     	      50	        18.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderHas-2                                   	      50	        17.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderVisitAll                                	      50	        33.14 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHeaderVisitAll-2                              	      50	        39.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegrationFullCycle                          	      50	      2280 ns/op	    7352 B/op	       5 allocs/op
+BenchmarkIntegrationFullCycle-2                        	      50	      1047 ns/op	    6821 B/op	       5 allocs/op
+BenchmarkIntegrationConcurrentFullCycle                	      50	      1123 ns/op	    6814 B/op	       5 allocs/op
+BenchmarkIntegrationConcurrentFullCycle-2              	      50	      1077 ns/op	    7378 B/op	       5 allocs/op
+BenchmarkKeepAliveReuse                                	      50	        76.68 ns/op	     139 B/op	       0 allocs/op
+BenchmarkKeepAliveReuse-2                              	      50	        71.50 ns/op	     147 B/op	       0 allocs/op
+BenchmarkKeepAliveSingleRequest                        	      50	      1131 ns/op	     468 B/op	       7 allocs/op
+BenchmarkKeepAliveSingleRequest-2                      	      50	       875.9 ns/op	     483 B/op	       7 allocs/op
+BenchmarkKeepAlive10Sequential                         	      50	      1458 ns/op	 281.15 MB/s	    2187 B/op	      12 allocs/op
+BenchmarkKeepAlive10Sequential-2                       	      50	      1561 ns/op	 262.59 MB/s	    2202 B/op	      12 allocs/op
+BenchmarkKeepAlive100Sequential                        	      50	      3224 ns/op	1271.59 MB/s	   10347 B/op	      12 allocs/op
+BenchmarkKeepAlive100Sequential-2                      	      50	      4557 ns/op	 899.65 MB/s	   10362 B/op	      12 allocs/op
+BenchmarkKeepAliveWithJSON                             	      50	      1505 ns/op	    1577 B/op	      11 allocs/op
+BenchmarkKeepAliveWithJSON-2                           	      50	      1565 ns/op	    1593 B/op	      11 allocs/op
+BenchmarkKeepAliveWithHeaders                          	      50	      1403 ns/op	    2243 B/op	      12 allocs/op
+BenchmarkKeepAliveWithHeaders-2                        	      50	      1909 ns/op	    2258 B/op	      12 allocs/op
+BenchmarkKeepAlivePipelined                            	      50	      1407 ns/op	    1348 B/op	      12 allocs/op
+BenchmarkKeepAlivePipelined-2                          	      50	      1394 ns/op	    1363 B/op	      12 allocs/op
+BenchmarkKeepAliveConnectionReuse_Amortized            	      50	       152.5 ns/op	   6749460 req/s	     115 B/op	       0 allocs/op
+BenchmarkKeepAliveConnectionReuse_Amortized-2          	      50	       146.5 ns/op	   6948305 req/s	     131 B/op	       0 allocs/op
+BenchmarkKeepAliveIsolated_ParseAndWrite               	      50	       275.7 ns/op	     404 B/op	       2 allocs/op
+BenchmarkKeepAliveIsolated_ParseAndWrite-2             	      50	       252.0 ns/op	      67 B/op	       2 allocs/op
+BenchmarkKeepAliveIsolated_HandlerCycle                	      50	       319.5 ns/op	      62 B/op	       2 allocs/op
+BenchmarkKeepAliveIsolated_HandlerCycle-2              	      50	       329.7 ns/op	      73 B/op	       2 allocs/op
+BenchmarkKeepAliveIsolated_PoolOperations              	      50	       111.8 ns/op	       8 B/op	       0 allocs/op
+BenchmarkKeepAliveIsolated_PoolOperations-2            	      50	       107.5 ns/op	      16 B/op	       0 allocs/op
+BenchmarkKeepAliveIsolated_JSON                        	      50	       455.2 ns/op	      63 B/op	       1 allocs/op
+BenchmarkKeepAliveIsolated_JSON-2                      	      50	       439.3 ns/op	      73 B/op	       1 allocs/op
+BenchmarkKeepAliveIsolated_ReuseParser                 	      50	       249.0 ns/op	      60 B/op	       2 allocs/op
+BenchmarkKeepAliveIsolated_ReuseParser-2               	      50	       245.0 ns/op	      67 B/op	       2 allocs/op
+BenchmarkKeepAliveIsolated_MinimalPath                 	      50	       252.1 ns/op	      89 B/op	       2 allocs/op
+BenchmarkKeepAliveIsolated_MinimalPath-2               	      50	       313.7 ns/op	     441 B/op	       2 allocs/op
+BenchmarkParseMethodID                                 	      50	         3.940 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseMethodID-2                               	      50	         4.260 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseMethodIDPOST                             	      50	         3.720 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseMethodIDPOST-2                           	      50	         3.580 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseMethodIDDELETE                           	      50	         4.420 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseMethodIDDELETE-2                         	      50	         5.120 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseMethodIDOPTIONS                          	      50	         4.880 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseMethodIDOPTIONS-2                        	      50	         4.620 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseMethodIDUnknown                          	      50	         4.600 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseMethodIDUnknown-2                        	      50	         4.260 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMethodString                                  	      50	         1.720 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMethodString-2                                	      50	         2.460 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMethodBytes                                   	      50	         1.960 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMethodBytes-2                                 	      50	         2.240 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRoundTrip                                     	      50	         3.680 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRoundTrip-2                                   	      50	         4.400 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseSimpleGET                                	      50	      5969 ns/op	   3.02 MB/s	   23048 B/op	       3 allocs/op
+BenchmarkParseSimpleGET-2                              	      50	      3264 ns/op	   5.51 MB/s	   23053 B/op	       3 allocs/op
+BenchmarkParseGETWithHeaders                           	      50	      3181 ns/op	  35.84 MB/s	   23048 B/op	       3 allocs/op
+BenchmarkParseGETWithHeaders-2                         	      50	      3654 ns/op	  31.20 MB/s	   22970 B/op	       3 allocs/op
+BenchmarkParsePOSTWithBody                             	      50	      2170 ns/op	  48.86 MB/s	   23109 B/op	       8 allocs/op
+BenchmarkParsePOSTWithBody-2                           	      50	      4395 ns/op	  24.12 MB/s	   23114 B/op	       8 allocs/op
+BenchmarkParse16Headers                                	      50	      2226 ns/op	 151.84 MB/s	   23048 B/op	       3 allocs/op
+BenchmarkParse16Headers-2                              	      50	      3919 ns/op	  86.25 MB/s	   23053 B/op	       3 allocs/op
+BenchmarkParse32Headers                                	      50	      4145 ns/op	 158.76 MB/s	   23048 B/op	       3 allocs/op
+BenchmarkParse32Headers-2                              	      50	      6763 ns/op	  97.30 MB/s	   22970 B/op	       3 allocs/op
+BenchmarkRequestPoolGetPut                             	      50	       101.4 ns/op	     133 B/op	       0 allocs/op
+BenchmarkRequestPoolGetPut-2                           	      50	       128.5 ns/op	       5 B/op	       0 allocs/op
+BenchmarkRequestPoolGetUsePut                          	      50	       114.6 ns/op	       8 B/op	       1 allocs/op
+BenchmarkRequestPoolGetUsePut-2                        	      50	       106.1 ns/op	      10 B/op	       1 allocs/op
+BenchmarkResponseWriterPoolGetPut                      	      50	        87.86 ns/op	     133 B/op	       0 allocs/op
+BenchmarkResponseWriterPoolGetPut-2                    	      50	        85.16 ns/op	       5 B/op	       0 allocs/op
+BenchmarkResponseWriterPoolGetUsePut                   	      50	       122.5 ns/op	     136 B/op	       1 allocs/op
+BenchmarkResponseWriterPoolGetUsePut-2                 	      50	       157.4 ns/op	       8 B/op	       1 allocs/op
+BenchmarkParserPoolGetPut                              	      50	       122.7 ns/op	     331 B/op	       0 allocs/op
+BenchmarkParserPoolGetPut-2                            	      50	       101.3 ns/op	     333 B/op	       0 allocs/op
+BenchmarkBufferPoolGetPut                              	      50	       109.1 ns/op	     109 B/op	       1 allocs/op
+BenchmarkBufferPoolGetPut-2                            	      50	       160.7 ns/op	     111 B/op	       1 allocs/op
+BenchmarkLargeBufferPoolGetPut                         	      50	        98.88 ns/op	      26 B/op	       1 allocs/op
+BenchmarkLargeBufferPoolGetPut-2                       	      50	       254.7 ns/op	      29 B/op	       1 allocs/op
+BenchmarkBufioReaderPoolGetPut                         	      50	        92.94 ns/op	      86 B/op	       0 allocs/op
+BenchmarkBufioReaderPoolGetPut-2                       	      50	        95.14 ns/op	       5 B/op	       0 allocs/op
+BenchmarkBufioWriterPoolGetPut                         	      50	        88.12 ns/op	      85 B/op	       0 allocs/op
+BenchmarkBufioWriterPoolGetPut-2                       	      50	        91.26 ns/op	      88 B/op	       0 allocs/op
+BenchmarkWarmupPools                                   	      50	      1463 ns/op	     500 B/op	      20 allocs/op
+BenchmarkWarmupPools-2                                 	      50	      1637 ns/op	     518 B/op	      20 allocs/op
+BenchmarkRequestNonPooled                              	      50	         1.800 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestNonPooled-2                            	      50	         2.440 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestPooled                                 	      50	        97.14 ns/op	     133 B/op	       0 allocs/op
+BenchmarkRequestPooled-2                               	      50	        81.72 ns/op	       5 B/op	       0 allocs/op
+BenchmarkResponseWriterNonPooled                       	      50	         1.640 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriterNonPooled-2                     	      50	         2.380 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriterPooled                          	      50	        92.62 ns/op	       2 B/op	       0 allocs/op
+BenchmarkResponseWriterPooled-2                        	      50	        83.32 ns/op	       5 B/op	       0 allocs/op
+BenchmarkRequestMethod                                 	      50	         2.420 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestMethod-2                               	      50	         2.600 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestPathBytes                              	      50	         1.900 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestPathBytes-2                            	      50	         2.280 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestPath                                   	      50	         6.240 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestPath-2                                 	      50	         7.080 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestIsGET                                  	      50	         1.980 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestIsGET-2                                	      50	         2.220 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestGetHeader                              	      50	        15.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestGetHeader-2                            	      50	        15.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestParsedURL                              	      50	         3.740 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestParsedURL-2                            	      50	         4.060 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestParsedURLFirstCall                     	      50	       392.2 ns/op	     176 B/op	       2 allocs/op
+BenchmarkRequestParsedURLFirstCall-2                   	      50	       461.1 ns/op	     176 B/op	       2 allocs/op
+BenchmarkRequestReset                                  	      50	        52.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestReset-2                                	      50	        54.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRequestClone                                  	      50	      1677 ns/op	    6568 B/op	       5 allocs/op
+BenchmarkRequestClone-2                                	      50	      1113 ns/op	    6568 B/op	       5 allocs/op
+BenchmarkResponseWriterSimple                          	      50	       451.3 ns/op	  28.80 MB/s	    6529 B/op	       1 allocs/op
+BenchmarkResponseWriterSimple-2                        	      50	       238.8 ns/op	  54.43 MB/s	    6529 B/op	       1 allocs/op
+BenchmarkResponseWriterWithHeaders                     	      50	       599.1 ns/op	  21.70 MB/s	    6531 B/op	       1 allocs/op
+BenchmarkResponseWriterWithHeaders-2                   	      50	       437.8 ns/op	  29.70 MB/s	    6531 B/op	       1 allocs/op
+BenchmarkResponseWriterStatus200                       	      50	       214.4 ns/op	    6529 B/op	       1 allocs/op
+BenchmarkResponseWriterStatus200-2                     	      50	       353.5 ns/op	    6529 B/op	       1 allocs/op
+BenchmarkResponseWriterStatus404                       	      50	       329.6 ns/op	    6529 B/op	       1 allocs/op
+BenchmarkResponseWriterStatus404-2                     	      50	       358.6 ns/op	    6529 B/op	       1 allocs/op
+BenchmarkResponseWriterStatus500                       	      50	       377.1 ns/op	    6529 B/op	       1 allocs/op
+BenchmarkResponseWriterStatus500-2                     	      50	       304.7 ns/op	    6529 B/op	       1 allocs/op
+BenchmarkResponseWriterUncommonStatus                  	      50	       481.9 ns/op	    6564 B/op	       3 allocs/op
+BenchmarkResponseWriterUncommonStatus-2                	      50	       426.6 ns/op	    6564 B/op	       3 allocs/op
+BenchmarkResponseWriterWriteJSON                       	      50	       525.3 ns/op	  66.63 MB/s	    6531 B/op	       1 allocs/op
+BenchmarkResponseWriterWriteJSON-2                     	      50	       603.4 ns/op	  58.01 MB/s	    6531 B/op	       1 allocs/op
+BenchmarkResponseWriterMultipleWrites                  	      50	       338.1 ns/op	  38.45 MB/s	    6529 B/op	       1 allocs/op
+BenchmarkResponseWriterMultipleWrites-2                	      50	       392.1 ns/op	  33.16 MB/s	    6529 B/op	       1 allocs/op
+BenchmarkResponseWriterReset                           	      50	         3.200 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResponseWriterReset-2                         	      50	         2.700 ns/op	       0 B/op	       0 allocs/op
+BenchmarkGetStatusLine                                 	      50	         5.760 ns/op	       0 B/op	       0 allocs/op
+BenchmarkGetStatusLine-2                               	      50	         3.700 ns/op	       0 B/op	       0 allocs/op
+BenchmarkGetStatusLineUncommon                         	      50	       160.3 ns/op	      35 B/op	       2 allocs/op
+BenchmarkGetStatusLineUncommon-2                       	      50	       133.9 ns/op	      35 B/op	       2 allocs/op
+BenchmarkResponseWriter_WriteStatusLine200             	      50	       139.6 ns/op	       4 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteStatusLine200-2           	      50	       233.5 ns/op	     137 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteStatusLine404             	      50	       195.5 ns/op	     134 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteStatusLine404-2           	      50	       125.9 ns/op	       6 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteStatusLine500             	      50	       111.6 ns/op	     134 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteStatusLine500-2           	      50	       115.7 ns/op	     137 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteSimpleResponse            	      50	       212.9 ns/op	  61.06 MB/s	       6 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteSimpleResponse-2          	      50	       228.7 ns/op	  56.83 MB/s	     139 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteJSON                      	      50	       457.0 ns/op	 124.72 MB/s	     142 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteJSON-2                    	      50	       457.9 ns/op	 124.48 MB/s	      14 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteHTML                      	      50	       238.0 ns/op	 168.07 MB/s	     137 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteHTML-2                    	      50	       223.0 ns/op	 179.36 MB/s	       9 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteError                     	      50	       345.6 ns/op	      22 B/op	       1 allocs/op
+BenchmarkResponseWriter_WriteError-2                   	      50	       251.0 ns/op	      25 B/op	       1 allocs/op
+BenchmarkResponseWriter_WriteWithSingleHeader          	      50	       167.7 ns/op	       4 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteWithSingleHeader-2        	      50	       181.8 ns/op	     137 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteWithMultipleHeaders       	      50	       308.1 ns/op	      11 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteWithMultipleHeaders-2     	      50	       336.4 ns/op	     144 B/op	       0 allocs/op
+BenchmarkResponseWriter_WriteChunkedSmall              	      50	       312.5 ns/op	     169 B/op	       4 allocs/op
+BenchmarkResponseWriter_WriteChunkedSmall-2            	      50	       294.3 ns/op	      41 B/op	       4 allocs/op
+BenchmarkResponseWriter_WriteChunkedIncremental        	      50	       359.4 ns/op	      62 B/op	       7 allocs/op
+BenchmarkResponseWriter_WriteChunkedIncremental-2      	      50	       394.2 ns/op	     195 B/op	       7 allocs/op
+BenchmarkResponseWriter_WriteChunkedLarge              	      50	       400.5 ns/op	28126.25 MB/s	     435 B/op	       5 allocs/op
+BenchmarkResponseWriter_WriteChunkedLarge-2            	      50	       463.4 ns/op	24308.34 MB/s	     307 B/op	       5 allocs/op
+BenchmarkResponseWriter_PoolGetPut                     	      50	        73.42 ns/op	       2 B/op	       0 allocs/op
+BenchmarkResponseWriter_PoolGetPut-2                   	      50	        72.16 ns/op	       5 B/op	       0 allocs/op
+BenchmarkResponseWriter_PoolReuse                      	      50	       211.3 ns/op	       6 B/op	       0 allocs/op
+BenchmarkResponseWriter_PoolReuse-2                    	      50	       211.5 ns/op	       9 B/op	       0 allocs/op
+BenchmarkResponseWriter_Throughput100B                 	      50	       240.7 ns/op	 415.52 MB/s	     145 B/op	       1 allocs/op
+BenchmarkResponseWriter_Throughput100B-2               	      50	       434.5 ns/op	 230.14 MB/s	     148 B/op	       1 allocs/op
+BenchmarkResponseWriter_Throughput1KB                  	      50	       417.1 ns/op	2455.05 MB/s	     164 B/op	       1 allocs/op
+BenchmarkResponseWriter_Throughput1KB-2                	      50	       321.9 ns/op	3181.31 MB/s	     166 B/op	       1 allocs/op
+BenchmarkResponseWriter_Throughput10KB                 	      50	       364.8 ns/op	28067.10 MB/s	     360 B/op	       1 allocs/op
+BenchmarkResponseWriter_Throughput10KB-2               	      50	       379.7 ns/op	26971.50 MB/s	     232 B/op	       1 allocs/op
+BenchmarkResponseWriter_Throughput100KB                	      50	      2241 ns/op	45699.60 MB/s	    2275 B/op	       1 allocs/op
+BenchmarkResponseWriter_Throughput100KB-2              	      50	      2262 ns/op	45262.07 MB/s	    2147 B/op	       1 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_Shockwave             	      50	       358.8 ns/op	 217.38 MB/s	     582 B/op	       1 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_Shockwave-2           	      50	       450.1 ns/op	 173.30 MB/s	     590 B/op	       1 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_FastHTTP              	      50	      1635 ns/op	  47.71 MB/s	    4360 B/op	       9 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_FastHTTP-2            	      50	      1337 ns/op	  58.32 MB/s	    4360 B/op	       9 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_NetHTTP               	      50	      1561 ns/op	  49.98 MB/s	    5187 B/op	      11 allocs/op
+BenchmarkThreeWay_ParseSimpleGET_NetHTTP-2             	      50	      1338 ns/op	  58.29 MB/s	    5190 B/op	      11 allocs/op
+BenchmarkThreeWay_ParsePOST_Shockwave                  	      50	       623.6 ns/op	 198.86 MB/s	     742 B/op	       6 allocs/op
+BenchmarkThreeWay_ParsePOST_Shockwave-2                	      50	       521.9 ns/op	 237.60 MB/s	     208 B/op	       6 allocs/op
+--- FAIL: BenchmarkThreeWay_ParsePOST_FastHTTP
+    threeway_comparison_bench_test.go:138: unexpected EOF
+BenchmarkThreeWay_ParsePOST_NetHTTP                    	      50	      2170 ns/op	  57.14 MB/s	    5282 B/op	      14 allocs/op
+BenchmarkThreeWay_ParsePOST_NetHTTP-2                  	      50	      2991 ns/op	  41.46 MB/s	    5285 B/op	      14 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_Shockwave       	      50	       771.1 ns/op	 383.87 MB/s	      40 B/op	       1 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_Shockwave-2     	      50	       780.5 ns/op	 379.26 MB/s	      48 B/op	       1 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_FastHTTP        	      50	      3727 ns/op	  79.41 MB/s	    5656 B/op	      29 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_FastHTTP-2      	      50	      3334 ns/op	  88.77 MB/s	    5656 B/op	      29 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_NetHTTP         	      50	      3252 ns/op	  91.01 MB/s	    5850 B/op	      23 allocs/op
+BenchmarkThreeWay_ParseMultipleHeaders_NetHTTP-2       	      50	      2873 ns/op	 103.02 MB/s	    5853 B/op	      23 allocs/op
+BenchmarkThreeWay_WriteSimpleText_Shockwave            	      50	       281.3 ns/op	 330.63 MB/s	     152 B/op	       1 allocs/op
+BenchmarkThreeWay_WriteSimpleText_Shockwave-2          	      50	       266.1 ns/op	 349.44 MB/s	      23 B/op	       1 allocs/op
+BenchmarkThreeWay_WriteSimpleText_FastHTTP             	      50	       504.3 ns/op	 228.03 MB/s	     739 B/op	      10 allocs/op
+BenchmarkThreeWay_WriteSimpleText_FastHTTP-2           	      50	       501.6 ns/op	 229.28 MB/s	     830 B/op	      10 allocs/op
+BenchmarkThreeWay_WriteSimpleText_NetHTTP              	      50	      1204 ns/op	  63.97 MB/s	    1478 B/op	      12 allocs/op
+BenchmarkThreeWay_WriteSimpleText_NetHTTP-2            	      50	      1141 ns/op	  67.50 MB/s	     829 B/op	      12 allocs/op
+BenchmarkThreeWay_WriteJSON_Shockwave                  	      50	       242.4 ns/op	 235.17 MB/s	       5 B/op	       0 allocs/op
+BenchmarkThreeWay_WriteJSON_Shockwave-2                	      50	       380.9 ns/op	 149.63 MB/s	       8 B/op	       0 allocs/op
+BenchmarkThreeWay_WriteJSON_FastHTTP                   	      50	       562.0 ns/op	 101.42 MB/s	     872 B/op	      10 allocs/op
+BenchmarkThreeWay_WriteJSON_FastHTTP-2                 	      50	       510.8 ns/op	 111.59 MB/s	     796 B/op	      10 allocs/op
+BenchmarkThreeWay_WriteJSON_NetHTTP                    	      50	       979.2 ns/op	  58.21 MB/s	     709 B/op	       9 allocs/op
+BenchmarkThreeWay_WriteJSON_NetHTTP-2                  	      50	      1081 ns/op	  52.75 MB/s	     717 B/op	       9 allocs/op
+BenchmarkThreeWay_FullCycle_Shockwave                  	      50	       555.1 ns/op	 140.52 MB/s	      46 B/op	       1 allocs/op
+BenchmarkThreeWay_FullCycle_Shockwave-2                	      50	       612.3 ns/op	 127.39 MB/s	     728 B/op	       1 allocs/op
+BenchmarkThreeWay_FullCycle_FastHTTP                   	      50	      1697 ns/op	  45.97 MB/s	    5232 B/op	      19 allocs/op
+BenchmarkThreeWay_FullCycle_FastHTTP-2                 	      50	      2737 ns/op	  28.50 MB/s	    5156 B/op	      19 allocs/op
+BenchmarkThreeWay_FullCycle_NetHTTP                    	      50	      3216 ns/op	  24.25 MB/s	    5892 B/op	      20 allocs/op
+BenchmarkThreeWay_FullCycle_NetHTTP-2                  	      50	      3340 ns/op	  23.35 MB/s	    6565 B/op	      20 allocs/op
+BenchmarkThreeWay_Throughput1KB_Shockwave              	      50	       293.2 ns/op	3492.50 MB/s	     160 B/op	       1 allocs/op
+BenchmarkThreeWay_Throughput1KB_Shockwave-2            	      50	       311.1 ns/op	3291.12 MB/s	     163 B/op	       1 allocs/op
+BenchmarkThreeWay_Throughput1KB_FastHTTP               	      50	       658.3 ns/op	1555.47 MB/s	    1851 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput1KB_FastHTTP-2             	      50	      1089 ns/op	 940.71 MB/s	    1775 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput1KB_NetHTTP                	      50	      1283 ns/op	 798.14 MB/s	     801 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput1KB_NetHTTP-2              	      50	      1048 ns/op	 977.04 MB/s	     809 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput10KB_Shockwave             	      50	       752.9 ns/op	13601.47 MB/s	     307 B/op	       1 allocs/op
+BenchmarkThreeWay_Throughput10KB_Shockwave-2           	      50	      1101 ns/op	9299.62 MB/s	     440 B/op	       1 allocs/op
+BenchmarkThreeWay_Throughput10KB_FastHTTP              	      50	      3383 ns/op	3026.88 MB/s	   11344 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput10KB_FastHTTP-2            	      50	      2465 ns/op	4154.12 MB/s	   11268 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput10KB_NetHTTP               	      50	      1347 ns/op	7602.42 MB/s	    1782 B/op	      10 allocs/op
+BenchmarkThreeWay_Throughput10KB_NetHTTP-2             	      50	      1361 ns/op	7522.55 MB/s	    1795 B/op	      10 allocs/op
+BenchmarkThreeWay_HeaderLookup_Shockwave               	      50	        53.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_HeaderLookup_Shockwave-2             	      50	        48.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_HeaderLookup_FastHTTP                	      50	        92.32 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_HeaderLookup_FastHTTP-2              	      50	        95.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_HeaderLookup_NetHTTP                 	      50	        87.72 ns/op	       0 B/op	       0 allocs/op
+BenchmarkThreeWay_HeaderLookup_NetHTTP-2               	      50	        93.26 ns/op	       0 B/op	       0 allocs/op
+BenchmarkZeroAlloc_ParseSimpleGET                      	      50	       301.3 ns/op	 258.86 MB/s	       8 B/op	       0 allocs/op
+BenchmarkZeroAlloc_ParseSimpleGET-2                    	      50	       278.6 ns/op	 280.01 MB/s	      16 B/op	       0 allocs/op
+BenchmarkZeroAlloc_ParseSimpleGET_Baseline             	      50	       319.8 ns/op	 243.90 MB/s	      56 B/op	       1 allocs/op
+BenchmarkZeroAlloc_ParseSimpleGET_Baseline-2           	      50	       363.0 ns/op	 214.89 MB/s	     606 B/op	       1 allocs/op
+BenchmarkZeroAlloc_ParseMultipleHeaders                	      50	       871.6 ns/op	 339.62 MB/s	     598 B/op	       1 allocs/op
+BenchmarkZeroAlloc_ParseMultipleHeaders-2              	      50	      1053 ns/op	 281.20 MB/s	     606 B/op	       1 allocs/op
+BenchmarkZeroAlloc_ParsePOST                           	      50	       623.0 ns/op	 199.02 MB/s	     758 B/op	       6 allocs/op
+BenchmarkZeroAlloc_ParsePOST-2                         	      50	       815.5 ns/op	 152.05 MB/s	     766 B/op	       6 allocs/op
+BenchmarkZeroAlloc_ParseReuse                          	      50	       266.8 ns/op	 292.33 MB/s	     267 B/op	       1 allocs/op
+BenchmarkZeroAlloc_ParseReuse-2                        	      50	       250.5 ns/op	 311.33 MB/s	      59 B/op	       1 allocs/op
+BenchmarkZeroAlloc_FullCycle                           	      50	       753.4 ns/op	    1227 B/op	       5 allocs/op
+BenchmarkZeroAlloc_FullCycle-2                         	      50	       726.8 ns/op	    1237 B/op	       5 allocs/op
+BenchmarkZeroAlloc_ParserOnly                          	      50	      1587 ns/op	  49.14 MB/s	    6664 B/op	       2 allocs/op
+BenchmarkZeroAlloc_ParserOnly-2                        	      50	       666.7 ns/op	 117.00 MB/s	    6586 B/op	       2 allocs/op
+FAIL
+exit status 1
+FAIL	github.com/yourusername/shockwave/pkg/shockwave/http11	0.118s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http2
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkParseFrameHeader                  	      50	         2.460 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseFrameHeader-2                	      50	         3.980 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWriteFrameHeader                  	      50	         1.740 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWriteFrameHeader-2                	      50	         3.900 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameHeaderValidation             	      50	         4.440 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameHeaderValidation-2           	      50	         4.560 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseDataFrame                    	      50	        27.06 ns/op	37841.83 MB/s	      48 B/op	       1 allocs/op
+BenchmarkParseDataFrame-2                  	      50	        30.18 ns/op	33929.75 MB/s	      48 B/op	       1 allocs/op
+BenchmarkParseDataFramePadded              	      50	        27.88 ns/op	36728.84 MB/s	      48 B/op	       1 allocs/op
+BenchmarkParseDataFramePadded-2            	      50	        28.18 ns/op	36337.83 MB/s	      48 B/op	       1 allocs/op
+BenchmarkParseHeadersFrame                 	      50	        28.06 ns/op	      48 B/op	       1 allocs/op
+BenchmarkParseHeadersFrame-2               	      50	        30.00 ns/op	      48 B/op	       1 allocs/op
+BenchmarkParseHeadersFrameWithPriority     	      50	        26.90 ns/op	      48 B/op	       1 allocs/op
+BenchmarkParseHeadersFrameWithPriority-2   	      50	        28.30 ns/op	      48 B/op	       1 allocs/op
+BenchmarkParsePriorityFrame                	      50	         2.280 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParsePriorityFrame-2              	      50	         2.180 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseRSTStreamFrame               	      50	         1.900 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseRSTStreamFrame-2             	      50	         2.280 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseSettingsFrame                	      50	        52.42 ns/op	      64 B/op	       2 allocs/op
+BenchmarkParseSettingsFrame-2              	      50	        50.40 ns/op	      64 B/op	       2 allocs/op
+BenchmarkParseSettingsFrameAck             	      50	        25.70 ns/op	      48 B/op	       1 allocs/op
+BenchmarkParseSettingsFrameAck-2           	      50	       130.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkParsePingFrame                    	      50	         1.740 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParsePingFrame-2                  	      50	         2.120 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseGoAwayFrame                  	      50	         1.960 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseGoAwayFrame-2                	      50	         2.000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseGoAwayFrameWithDebugData     	      50	         1.860 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseGoAwayFrameWithDebugData-2   	      50	         2.160 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseWindowUpdateFrame            	      50	         1.940 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseWindowUpdateFrame-2          	      50	         2.440 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseContinuationFrame            	      50	         1.380 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParseContinuationFrame-2          	      50	         1.780 ns/op	       0 B/op	       0 allocs/op
+BenchmarkParsePushPromiseFrame             	      50	        29.56 ns/op	      48 B/op	       1 allocs/op
+BenchmarkParsePushPromiseFrame-2           	      50	        30.90 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFrameParsingAllTypes/DATA         	      50	        26.28 ns/op	38964.99 MB/s	      48 B/op	       1 allocs/op
+BenchmarkFrameParsingAllTypes/DATA-2       	      50	        27.28 ns/op	37536.66 MB/s	      48 B/op	       1 allocs/op
+BenchmarkFrameParsingAllTypes/HEADERS      	      50	        24.12 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFrameParsingAllTypes/HEADERS-2    	      50	        27.26 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFrameParsingAllTypes/PRIORITY     	      50	         1.740 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/PRIORITY-2   	      50	         1.980 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/RST_STREAM   	      50	         1.940 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/RST_STREAM-2 	      50	         2.340 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/SETTINGS     	      50	        47.78 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFrameParsingAllTypes/SETTINGS-2   	      50	        52.38 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFrameParsingAllTypes/PUSH_PROMISE           	      50	        26.68 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFrameParsingAllTypes/PUSH_PROMISE-2         	      50	        26.20 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFrameParsingAllTypes/PING                   	      50	         1.560 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/PING-2                 	      50	         2.200 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/GOAWAY                 	      50	         1.800 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/GOAWAY-2               	      50	         1.640 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/WINDOW_UPDATE          	      50	         2.040 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/WINDOW_UPDATE-2        	      50	         2.100 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/CONTINUATION           	      50	         1.380 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameParsingAllTypes/CONTINUATION-2         	      50	         1.940 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameTypeString                             	      50	         3.440 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameTypeString-2                           	      50	         4.980 ns/op	       0 B/op	       0 allocs/op
+BenchmarkErrorCodeString                             	      50	         1.720 ns/op	       0 B/op	       0 allocs/op
+BenchmarkErrorCodeString-2                           	      50	         2.540 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFlagsHas                                    	      50	         1.760 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFlagsHas-2                                  	      50	         2.600 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHuffmanEncode/short                         	      50	        30.96 ns/op	  96.90 MB/s	      16 B/op	       1 allocs/op
+BenchmarkHuffmanEncode/short-2                       	      50	       196.2 ns/op	  15.29 MB/s	      16 B/op	       1 allocs/op
+BenchmarkHuffmanEncode/medium                        	      50	        55.02 ns/op	 272.63 MB/s	      64 B/op	       1 allocs/op
+BenchmarkHuffmanEncode/medium-2                      	      50	        91.42 ns/op	 164.08 MB/s	      64 B/op	       1 allocs/op
+BenchmarkHuffmanEncode/long                          	      50	       171.3 ns/op	 350.18 MB/s	     240 B/op	       1 allocs/op
+BenchmarkHuffmanEncode/long-2                        	      50	       244.0 ns/op	 245.90 MB/s	     240 B/op	       1 allocs/op
+BenchmarkHuffmanDecode/short                         	      50	        67.94 ns/op	  44.16 MB/s	      67 B/op	       2 allocs/op
+BenchmarkHuffmanDecode/short-2                       	      50	       106.4 ns/op	  28.21 MB/s	      67 B/op	       2 allocs/op
+BenchmarkHuffmanDecode/medium                        	      50	       152.5 ns/op	  78.71 MB/s	      80 B/op	       2 allocs/op
+BenchmarkHuffmanDecode/medium-2                      	      50	       303.6 ns/op	  39.52 MB/s	      80 B/op	       2 allocs/op
+BenchmarkHuffmanDecode/long                          	      50	       437.3 ns/op	 105.18 MB/s	     128 B/op	       2 allocs/op
+BenchmarkHuffmanDecode/long-2                        	      50	       515.9 ns/op	  89.16 MB/s	     128 B/op	       2 allocs/op
+BenchmarkStaticTableLookup/:method                   	      50	        34.16 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStaticTableLookup/:method-2                 	      50	        54.08 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStaticTableLookup/:status                   	      50	        34.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStaticTableLookup/:status-2                 	      50	        56.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStaticTableLookup/content-type              	      50	        38.16 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStaticTableLookup/content-type-2            	      50	        68.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicTableAdd                             	      50	         7.580 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicTableAdd-2                           	      50	         9.500 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicTableGet                             	      50	         4.140 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicTableGet-2                           	      50	         4.120 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicTableFind                            	      50	         4.980 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicTableFind-2                          	      50	        10.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegerEncode/small                         	      50	         8.360 ns/op	       1 B/op	       0 allocs/op
+BenchmarkIntegerEncode/small-2                       	      50	        15.38 ns/op	       1 B/op	       0 allocs/op
+BenchmarkIntegerEncode/medium                        	      50	        17.98 ns/op	       1 B/op	       0 allocs/op
+BenchmarkIntegerEncode/medium-2                      	      50	        88.20 ns/op	       1 B/op	       0 allocs/op
+BenchmarkIntegerEncode/large                         	      50	        23.72 ns/op	       1 B/op	       0 allocs/op
+BenchmarkIntegerEncode/large-2                       	      50	        73.02 ns/op	       1 B/op	       0 allocs/op
+BenchmarkIntegerDecode/small                         	      50	         5.680 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegerDecode/small-2                       	      50	         5.380 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegerDecode/medium                        	      50	         6.580 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegerDecode/medium-2                      	      50	         9.620 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegerDecode/large                         	      50	         7.840 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegerDecode/large-2                       	      50	        11.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkEncode/small                                	      50	       172.0 ns/op	  93.04 MB/s	       3 B/op	       1 allocs/op
+BenchmarkEncode/small-2                              	      50	       155.0 ns/op	 103.25 MB/s	       3 B/op	       1 allocs/op
+BenchmarkEncode/medium                               	      50	       289.4 ns/op	 269.50 MB/s	       9 B/op	       1 allocs/op
+BenchmarkEncode/medium-2                             	      50	       283.9 ns/op	 274.76 MB/s	       9 B/op	       1 allocs/op
+BenchmarkEncode/large                                	      50	       764.9 ns/op	 452.35 MB/s	     336 B/op	       6 allocs/op
+BenchmarkEncode/large-2                              	      50	       750.4 ns/op	 461.09 MB/s	     336 B/op	       6 allocs/op
+BenchmarkDecode/small                                	      50	        71.60 ns/op	  27.93 MB/s	      64 B/op	       1 allocs/op
+BenchmarkDecode/small-2                              	      50	       168.1 ns/op	  11.90 MB/s	      64 B/op	       1 allocs/op
+BenchmarkDecode/medium                               	      50	       791.6 ns/op	  32.84 MB/s	     417 B/op	       5 allocs/op
+BenchmarkDecode/medium-2                             	      50	       497.7 ns/op	  52.24 MB/s	     417 B/op	       5 allocs/op
+BenchmarkDecode/large                                	      50	      2991 ns/op	  67.86 MB/s	    1216 B/op	      19 allocs/op
+BenchmarkDecode/large-2                              	      50	      3160 ns/op	  64.24 MB/s	    1216 B/op	      19 allocs/op
+BenchmarkRoundTrip                                   	      50	       570.1 ns/op	     209 B/op	       2 allocs/op
+BenchmarkRoundTrip-2                                 	      50	       513.7 ns/op	     209 B/op	       2 allocs/op
+BenchmarkEncodeHuffman/with_huffman                  	      50	       233.8 ns/op	       7 B/op	       1 allocs/op
+BenchmarkEncodeHuffman/with_huffman-2                	      50	       228.5 ns/op	       7 B/op	       1 allocs/op
+BenchmarkEncodeHuffman/without_huffman               	      50	       226.6 ns/op	       5 B/op	       1 allocs/op
+BenchmarkEncodeHuffman/without_huffman-2             	      50	       273.7 ns/op	       5 B/op	       1 allocs/op
+BenchmarkEncoderWithDynamicTable                     	      50	       257.6 ns/op	      16 B/op	       1 allocs/op
+BenchmarkEncoderWithDynamicTable-2                   	      50	       247.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkSequentialRequests                          	      50	       968.4 ns/op	     406 B/op	       6 allocs/op
+BenchmarkSequentialRequests-2                        	      50	       958.6 ns/op	     406 B/op	       6 allocs/op
+BenchmarkStreamCreation                              	      50	       840.1 ns/op
+BenchmarkStreamCreation-2                            	      50	       828.0 ns/op
+BenchmarkConcurrentStreamCreation                    	      50	      1338 ns/op
+BenchmarkConcurrentStreamCreation-2                  	      50	      1779 ns/op
+BenchmarkStreamStateTransitions                      	      50	       521.6 ns/op
+BenchmarkStreamStateTransitions-2                    	      50	       734.3 ns/op
+BenchmarkFlowControlSend                             	      50	        56.96 ns/op	17977.53 MB/s
+BenchmarkFlowControlSend-2                           	      50	        59.64 ns/op	17169.68 MB/s
+BenchmarkFlowControlReceive                          	      50	        32.00 ns/op	32000.00 MB/s
+BenchmarkFlowControlReceive-2                        	      50	        32.50 ns/op	31507.69 MB/s
+BenchmarkStreamIO                                    	      50	       617.4 ns/op	1658.57 MB/s
+BenchmarkStreamIO-2                                  	      50	       524.7 ns/op	1951.44 MB/s
+BenchmarkConcurrentStreamIO                          	      50	    110519 ns/op	 926.54 MB/s
+BenchmarkConcurrentStreamIO-2                        	      50	     92147 ns/op	1111.27 MB/s
+BenchmarkWindowUpdate                                	      50	         1.680 ns/op
+BenchmarkWindowUpdate-2                              	      50	         2.700 ns/op
+BenchmarkHPACKEncoding                               	      50	       306.5 ns/op
+BenchmarkHPACKEncoding-2                             	      50	       296.3 ns/op
+BenchmarkHPACKDecoding                               	      50	       263.9 ns/op
+BenchmarkHPACKDecoding-2                             	      50	       256.1 ns/op
+BenchmarkPriorityTree/AddStream                      	      50	       177.0 ns/op
+BenchmarkPriorityTree/AddStream-2                    	      50	       190.4 ns/op
+BenchmarkPriorityTree/UpdatePriority                 	      50	       155.9 ns/op
+BenchmarkPriorityTree/UpdatePriority-2               	      50	       269.1 ns/op
+BenchmarkPriorityTree/CalculateWeight                	      50	        22.00 ns/op
+BenchmarkPriorityTree/CalculateWeight-2              	      50	        22.16 ns/op
+BenchmarkPriorityTree/RemoveStream                   	      50	       138.1 ns/op
+BenchmarkPriorityTree/RemoveStream-2                 	      50	       112.6 ns/op
+BenchmarkConnectionSettings                          	      50	        33.70 ns/op
+BenchmarkConnectionSettings-2                        	      50	        38.00 ns/op
+BenchmarkStreamLifecycle                             	      50	      1061 ns/op
+BenchmarkStreamLifecycle-2                           	      50	      1054 ns/op
+BenchmarkChunkData                                   	      50	       390.4 ns/op	256160.66 MB/s
+BenchmarkChunkData-2                                 	      50	       409.1 ns/op	244439.01 MB/s
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/http2	0.068s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http3
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkDataFrameEncode              	      50	       134.1 ns/op	    1160 B/op	       2 allocs/op
+BenchmarkDataFrameEncode-2            	      50	       907.8 ns/op	    1160 B/op	       2 allocs/op
+BenchmarkDataFrameDecode              	      50	       252.1 ns/op	    1099 B/op	       6 allocs/op
+BenchmarkDataFrameDecode-2            	      50	       203.1 ns/op	    1099 B/op	       6 allocs/op
+BenchmarkSettingsFrameEncode          	      50	       198.4 ns/op	      24 B/op	       2 allocs/op
+BenchmarkSettingsFrameEncode-2        	      50	       309.8 ns/op	      24 B/op	       2 allocs/op
+BenchmarkVarIntEncode                 	      50	        90.96 ns/op	      32 B/op	       4 allocs/op
+BenchmarkVarIntEncode-2               	      50	        84.10 ns/op	      32 B/op	       4 allocs/op
+BenchmarkHTTP3HeaderEncoding          	      50	       466.2 ns/op	     192 B/op	       2 allocs/op
+BenchmarkHTTP3HeaderEncoding-2        	      50	       475.6 ns/op	     192 B/op	       2 allocs/op
+BenchmarkHTTP3HeaderDecoding          	      50	       484.5 ns/op	     656 B/op	      13 allocs/op
+BenchmarkHTTP3HeaderDecoding-2        	      50	       381.3 ns/op	     656 B/op	      13 allocs/op
+BenchmarkHTTP3FrameSerialization      	      50	       240.0 ns/op	    1160 B/op	       2 allocs/op
+BenchmarkHTTP3FrameSerialization-2    	      50	       307.9 ns/op	    1160 B/op	       2 allocs/op
+BenchmarkHTTP3FrameParsing            	      50	       358.7 ns/op	    1083 B/op	       6 allocs/op
+BenchmarkHTTP3FrameParsing-2          	      50	       450.2 ns/op	    1083 B/op	       6 allocs/op
+BenchmarkHTTP3FullRequestResponse     	      50	      2336 ns/op	    3592 B/op	      38 allocs/op
+BenchmarkHTTP3FullRequestResponse-2   	      50	      1879 ns/op	    3592 B/op	      38 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/http3	0.008s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http3/benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkShockwaveHeaderEncoding            	      50	       533.3 ns/op	     192 B/op	       2 allocs/op
+BenchmarkShockwaveHeaderEncoding-2          	      50	       572.1 ns/op	     192 B/op	       2 allocs/op
+benchmarks.test: nghttp3_conn.c:2469: nghttp3_conn_submit_request: Assertion `conn->tx.qenc' failed.
+SIGABRT: abort
+PC=0x7f5d4b69890c m=5 sigcode=18446744073709551610
+signal arrived during cgo execution
+
+goroutine 19 gp=0xc0000a21c0 m=5 mp=0xc000100008 [syscall]:
+runtime.cgocall(0x543580, 0xc00006ac20)
+	/usr/lib/go/src/runtime/cgocall.go:167 +0x4b fp=0xc00006abf8 sp=0xc00006abc0 pc=0x4789cb
+github.com/yourusername/shockwave/pkg/shockwave/http3/benchmarks._Cfunc_nghttp3_encode_headers_helper(0x7f5cf40008e0, 0x0, 0xc0000821e0, 0xc)
+	_cgo_gotypes.go:131 +0x46 fp=0xc00006ac20 sp=0xc00006abf8 pc=0x532606
+github.com/yourusername/shockwave/pkg/shockwave/http3/benchmarks.(*NgHttp3Encoder).EncodeHeaders.func2(...)
+	/home/mirai/Documents/Programming/Projects/watt/shockwave/pkg/shockwave/http3/benchmarks/nghttp3_comparison.go:122
+github.com/yourusername/shockwave/pkg/shockwave/http3/benchmarks.(*NgHttp3Encoder).EncodeHeaders(0xc00006ad98, 0xc00006aeb8)
+	/home/mirai/Documents/Programming/Projects/watt/shockwave/pkg/shockwave/http3/benchmarks/nghttp3_comparison.go:122 +0x333 fp=0xc00006ad68 sp=0xc00006ac20 pc=0x532a93
+github.com/yourusername/shockwave/pkg/shockwave/http3/benchmarks.BenchmarkNghttp3HeaderEncoding(0xc0000d8848)
+	/home/mirai/Documents/Programming/Projects/watt/shockwave/pkg/shockwave/http3/benchmarks/comparison_test.go:51 +0x2e5 fp=0xc00006af10 sp=0xc00006ad68 pc=0x530e05
+testing.(*B).runN(0xc0000d8848, 0x1)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190 fp=0xc00006afa0 sp=0xc00006af10 pc=0x4db4b0
+testing.(*B).run1.func1()
+	/usr/lib/go/src/testing/benchmark.go:245 +0x48 fp=0xc00006afe0 sp=0xc00006afa0 pc=0x4dbb28
+runtime.goexit({})
+	/usr/lib/go/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc00006afe8 sp=0xc00006afe0 pc=0x482321
+created by testing.(*B).run1 in goroutine 1
+	/usr/lib/go/src/testing/benchmark.go:238 +0x90
+
+goroutine 1 gp=0xc000002380 m=nil [chan receive]:
+runtime.gopark(0x0?, 0x2000500000000?, 0x30?, 0xa?, 0x7f5d4b839210?)
+	/usr/lib/go/src/runtime/proc.go:460 +0xce fp=0xc0000e9840 sp=0xc0000e9820 pc=0x47ad6e
+runtime.chanrecv(0xc00008c1c0, 0x0, 0x1)
+	/usr/lib/go/src/runtime/chan.go:667 +0x473 fp=0xc0000e98b8 sp=0xc0000e9840 pc=0x412413
+runtime.chanrecv1(0x419137?, 0x7f5d4b841cf0?)
+	/usr/lib/go/src/runtime/chan.go:509 +0x12 fp=0xc0000e98e0 sp=0xc0000e98b8 pc=0x411f92
+testing.(*B).run1(0xc0000d8848)
+	/usr/lib/go/src/testing/benchmark.go:247 +0xa6 fp=0xc0000e99d0 sp=0xc0000e98e0 pc=0x4db6c6
+testing.(*B).Run(0xc0000d8008, {0x5900da?, 0x49c2d3?}, 0x597590)
+	/usr/lib/go/src/testing/benchmark.go:862 +0x4d4 fp=0xc0000e9ad0 sp=0xc0000e99d0 pc=0x4de254
+testing.runBenchmarks.func1(0xc0000d8008)
+	/usr/lib/go/src/testing/benchmark.go:721 +0x37 fp=0xc0000e9b10 sp=0xc0000e9ad0 pc=0x4dd2d7
+testing.(*B).runN(0xc0000d8008, 0x1)
+	/usr/lib/go/src/testing/benchmark.go:219 +0x190 fp=0xc0000e9ba0 sp=0xc0000e9b10 pc=0x4db4b0
+testing.runBenchmarks({0x596056, 0x40}, 0x0?, {0x6b3420, 0x8, 0xc000036900?})
+	/usr/lib/go/src/testing/benchmark.go:730 +0x5f1 fp=0xc0000e9ca0 sp=0xc0000e9ba0 pc=0x4dd211
+testing.(*M).Run(0xc0000981e0)
+	/usr/lib/go/src/testing/testing.go:2353 +0x996 fp=0xc0000e9ed0 sp=0xc0000e9ca0 pc=0x4e9c16
+main.main()
+	_testmain.go:59 +0x9b fp=0xc0000e9f50 sp=0xc0000e9ed0 pc=0x532dbb
+runtime.main()
+	/usr/lib/go/src/runtime/proc.go:285 +0x29d fp=0xc0000e9fe0 sp=0xc0000e9f50 pc=0x44669d
+runtime.goexit({})
+	/usr/lib/go/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc0000e9fe8 sp=0xc0000e9fe0 pc=0x482321
+
+goroutine 2 gp=0xc000002e00 m=nil [force gc (idle)]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go/src/runtime/proc.go:460 +0xce fp=0xc000054fa8 sp=0xc000054f88 pc=0x47ad6e
+runtime.goparkunlock(...)
+	/usr/lib/go/src/runtime/proc.go:466
+runtime.forcegchelper()
+	/usr/lib/go/src/runtime/proc.go:373 +0xb3 fp=0xc000054fe0 sp=0xc000054fa8 pc=0x4469d3
+runtime.goexit({})
+	/usr/lib/go/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000054fe8 sp=0xc000054fe0 pc=0x482321
+created by runtime.init.7 in goroutine 1
+	/usr/lib/go/src/runtime/proc.go:361 +0x1a
+
+goroutine 3 gp=0xc000003340 m=nil [GC sweep wait]:
+runtime.gopark(0x1?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go/src/runtime/proc.go:460 +0xce fp=0xc000055780 sp=0xc000055760 pc=0x47ad6e
+runtime.goparkunlock(...)
+	/usr/lib/go/src/runtime/proc.go:466
+runtime.bgsweep(0xc000080000)
+	/usr/lib/go/src/runtime/mgcsweep.go:323 +0xdf fp=0xc0000557c8 sp=0xc000055780 pc=0x42ea7f
+runtime.gcenable.gowrap1()
+	/usr/lib/go/src/runtime/mgc.go:212 +0x25 fp=0xc0000557e0 sp=0xc0000557c8 pc=0x422a85
+runtime.goexit({})
+	/usr/lib/go/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc0000557e8 sp=0xc0000557e0 pc=0x482321
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go/src/runtime/mgc.go:212 +0x66
+
+goroutine 4 gp=0xc000003500 m=nil [GC scavenge wait]:
+runtime.gopark(0x2d4e5?, 0x3b9aca00?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go/src/runtime/proc.go:460 +0xce fp=0xc000055f78 sp=0xc000055f58 pc=0x47ad6e
+runtime.goparkunlock(...)
+	/usr/lib/go/src/runtime/proc.go:466
+runtime.(*scavengerState).park(0x6d1cc0)
+	/usr/lib/go/src/runtime/mgcscavenge.go:425 +0x49 fp=0xc000055fa8 sp=0xc000055f78 pc=0x42c509
+runtime.bgscavenge(0xc000080000)
+	/usr/lib/go/src/runtime/mgcscavenge.go:658 +0x59 fp=0xc000055fc8 sp=0xc000055fa8 pc=0x42cab9
+runtime.gcenable.gowrap2()
+	/usr/lib/go/src/runtime/mgc.go:213 +0x25 fp=0xc000055fe0 sp=0xc000055fc8 pc=0x422a25
+runtime.goexit({})
+	/usr/lib/go/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000055fe8 sp=0xc000055fe0 pc=0x482321
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go/src/runtime/mgc.go:213 +0xa5
+
+goroutine 5 gp=0xc000003a40 m=nil [GOMAXPROCS updater (idle)]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go/src/runtime/proc.go:460 +0xce fp=0xc000056788 sp=0xc000056768 pc=0x47ad6e
+runtime.goparkunlock(...)
+	/usr/lib/go/src/runtime/proc.go:466
+runtime.updateMaxProcsGoroutine()
+	/usr/lib/go/src/runtime/proc.go:6720 +0xe7 fp=0xc0000567e0 sp=0xc000056788 pc=0x4549c7
+runtime.goexit({})
+	/usr/lib/go/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc0000567e8 sp=0xc0000567e0 pc=0x482321
+created by runtime.defaultGOMAXPROCSUpdateEnable in goroutine 1
+	/usr/lib/go/src/runtime/proc.go:6708 +0x37
+
+goroutine 6 gp=0xc0000a2000 m=nil [finalizer wait]:
+runtime.gopark(0x455995?, 0x41a4e5?, 0xb8?, 0x1?, 0xc000002380?)
+	/usr/lib/go/src/runtime/proc.go:460 +0xce fp=0xc000054620 sp=0xc000054600 pc=0x47ad6e
+runtime.runFinalizers()
+	/usr/lib/go/src/runtime/mfinal.go:210 +0x107 fp=0xc0000547e0 sp=0xc000054620 pc=0x421a27
+runtime.goexit({})
+	/usr/lib/go/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc0000547e8 sp=0xc0000547e0 pc=0x482321
+created by runtime.createfing in goroutine 1
+	/usr/lib/go/src/runtime/mfinal.go:172 +0x3d
+
+goroutine 7 gp=0xc0000a2540 m=nil [GC worker (idle)]:
+runtime.gopark(0x53aaf7f84ca?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go/src/runtime/proc.go:460 +0xce fp=0xc00011d738 sp=0xc00011d718 pc=0x47ad6e
+runtime.gcBgMarkWorker(0xc00008c2a0)
+	/usr/lib/go/src/runtime/mgc.go:1463 +0xeb fp=0xc00011d7c8 sp=0xc00011d738 pc=0x42516b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/usr/lib/go/src/runtime/mgc.go:1373 +0x25 fp=0xc00011d7e0 sp=0xc00011d7c8 pc=0x425045
+runtime.goexit({})
+	/usr/lib/go/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc00011d7e8 sp=0xc00011d7e0 pc=0x482321
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/usr/lib/go/src/runtime/mgc.go:1373 +0x105
+
+goroutine 8 gp=0xc0000a2700 m=nil [GC worker (idle)]:
+runtime.gopark(0x53aaf7f8543?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go/src/runtime/proc.go:460 +0xce fp=0xc000069f38 sp=0xc000069f18 pc=0x47ad6e
+runtime.gcBgMarkWorker(0xc00008c2a0)
+	/usr/lib/go/src/runtime/mgc.go:1463 +0xeb fp=0xc000069fc8 sp=0xc000069f38 pc=0x42516b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/usr/lib/go/src/runtime/mgc.go:1373 +0x25 fp=0xc000069fe0 sp=0xc000069fc8 pc=0x425045
+runtime.goexit({})
+	/usr/lib/go/src/runtime/asm_amd64.s:1693 +0x1 fp=0xc000069fe8 sp=0xc000069fe0 pc=0x482321
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/usr/lib/go/src/runtime/mgc.go:1373 +0x105
+
+rax    0x0
+rbx    0x3c03
+rcx    0x7f5d4b69890c
+rdx    0x6
+rdi    0x3bfe
+rsi    0x3c03
+rbp    0x7f5d0320bb40
+rsp    0x7f5d0320bb00
+r8     0x2e9a0fdad5fbe840
+r9     0x70
+r10    0x75
+r11    0x246
+r12    0x1000
+r13    0x7f5d4b89168c
+r14    0x6
+r15    0x65
+rip    0x7f5d4b69890c
+rflags 0x246
+cs     0x33
+fs     0x0
+gs     0x0
+exit status 2
+FAIL	github.com/yourusername/shockwave/pkg/shockwave/http3/benchmarks	0.005s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http3/qpack
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkDecodeIndexedFieldLine      	      50	        10.34 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecodeIndexedFieldLine-2    	      50	        12.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecodeHeaders               	      50	       194.9 ns/op	     272 B/op	       4 allocs/op
+BenchmarkDecodeHeaders-2             	      50	       204.4 ns/op	     272 B/op	       4 allocs/op
+BenchmarkEncoderDecoderRoundTrip     	      50	       637.0 ns/op	     624 B/op	       8 allocs/op
+BenchmarkEncoderDecoderRoundTrip-2   	      50	       471.5 ns/op	     624 B/op	       8 allocs/op
+BenchmarkHuffmanEncode               	      50	       168.4 ns/op	     192 B/op	       1 allocs/op
+BenchmarkHuffmanEncode-2             	      50	       130.4 ns/op	     192 B/op	       1 allocs/op
+BenchmarkHuffmanDecode               	      50	       347.7 ns/op	      64 B/op	       1 allocs/op
+BenchmarkHuffmanDecode-2             	      50	       344.9 ns/op	      64 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeShort          	      50	        33.30 ns/op	      16 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeShort-2        	      50	        58.70 ns/op	      16 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeLong           	      50	      1111 ns/op	    1280 B/op	       1 allocs/op
+BenchmarkHuffmanEncodeLong-2         	      50	      1154 ns/op	    1280 B/op	       1 allocs/op
+BenchmarkShouldHuffmanEncode         	      50	        20.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkShouldHuffmanEncode-2       	      50	        34.02 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/http3/qpack	0.006s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/http3/quic
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkCongestionControllerCanSend           	      50	        15.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCongestionControllerCanSend-2         	      50	        17.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCongestionControllerOnPacketAcked     	      50	        49.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCongestionControllerOnPacketAcked-2   	      50	        53.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCongestionControllerOnPacketLost      	      50	        93.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCongestionControllerOnPacketLost-2    	      50	        97.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPathValidation                        	      50	       712.2 ns/op	     312 B/op	      10 allocs/op
+BenchmarkPathValidation-2                      	      50	       791.7 ns/op	     312 B/op	      10 allocs/op
+BenchmarkPathStatisticsUpdate                  	      50	        54.04 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPathStatisticsUpdate-2                	      50	        54.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFlowControllerCanSend                 	      50	        15.12 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFlowControllerCanSend-2               	      50	        15.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFlowControllerRecordSent              	      50	        30.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFlowControllerRecordSent-2            	      50	        30.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStreamFlowControllerCanSend           	      50	        14.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStreamFlowControllerCanSend-2         	      50	        16.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStreamFlowControllerRecordSent        	      50	        24.94 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStreamFlowControllerRecordSent-2      	      50	        25.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStreamFrameEncode                     	      50	       310.3 ns/op	    1160 B/op	       2 allocs/op
+BenchmarkStreamFrameEncode-2                   	      50	       373.0 ns/op	    1160 B/op	       2 allocs/op
+BenchmarkStreamFrameDecode                     	      50	       552.0 ns/op	    1174 B/op	      10 allocs/op
+BenchmarkStreamFrameDecode-2                   	      50	       336.3 ns/op	    1174 B/op	      10 allocs/op
+BenchmarkAckFrameEncode                        	      50	       260.5 ns/op	      24 B/op	       2 allocs/op
+BenchmarkAckFrameEncode-2                      	      50	        57.94 ns/op	      24 B/op	       2 allocs/op
+BenchmarkIntegratedFlowAndCongestionCheck      	      50	        27.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegratedFlowAndCongestionCheck-2    	      50	        25.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegratedSendPath                    	      50	        97.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntegratedSendPath-2                  	      50	        98.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLossDetectorOnPacketSent              	      50	       752.6 ns/op	     157 B/op	       1 allocs/op
+BenchmarkLossDetectorOnPacketSent-2            	      50	       701.8 ns/op	     157 B/op	       1 allocs/op
+BenchmarkLossDetectorOnAckReceived             	      50	       937.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLossDetectorOnAckReceived-2           	      50	       939.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLossDetectorGetInFlight               	      50	       749.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkLossDetectorGetInFlight-2             	      50	       846.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPacketEncode                          	      50	       270.0 ns/op	    1400 B/op	       5 allocs/op
+BenchmarkPacketEncode-2                        	      50	       188.2 ns/op	    1400 B/op	       5 allocs/op
+BenchmarkPacketDecode                          	      50	       237.1 ns/op	    1488 B/op	       5 allocs/op
+BenchmarkPacketDecode-2                        	      50	       219.2 ns/op	    1488 B/op	       5 allocs/op
+BenchmarkCryptoBufferWrite                     	      50	        17.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCryptoBufferWrite-2                   	      50	        18.98 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCryptoBufferRead                      	      50	        18.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCryptoBufferRead-2                    	      50	        17.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintEncode/1-byte                   	      50	         3.880 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintEncode/1-byte-2                 	      50	         3.740 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintEncode/2-byte                   	      50	         3.980 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintEncode/2-byte-2                 	      50	         4.660 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintEncode/4-byte                   	      50	         4.980 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintEncode/4-byte-2                 	      50	         5.680 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintEncode/8-byte                   	      50	         6.200 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintEncode/8-byte-2                 	      50	         6.120 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintDecode/1-byte                   	      50	         3.260 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintDecode/1-byte-2                 	      50	         4.180 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintDecode/2-byte                   	      50	         4.520 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintDecode/2-byte-2                 	      50	         4.140 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintDecode/4-byte                   	      50	         4.600 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintDecode/4-byte-2                 	      50	         3.540 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintDecode/8-byte                   	      50	         5.000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkVarintDecode/8-byte-2                 	      50	         5.020 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSessionCachePut                       	      50	        89.40 ns/op	       4 B/op	       0 allocs/op
+BenchmarkSessionCachePut-2                     	      50	        84.50 ns/op	       4 B/op	       0 allocs/op
+BenchmarkSessionCacheGet                       	      50	        36.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSessionCacheGet-2                     	      50	        40.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAntiReplayCheck                       	      50	        20.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAntiReplayCheck-2                     	      50	        20.98 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/http3/quic	0.018s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/memory
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkStandardPool_HTTPRequest      	      50	       252.2 ns/op	     768 B/op	       3 allocs/op
+BenchmarkStandardPool_HTTPRequest-2    	      50	       266.9 ns/op	     768 B/op	       3 allocs/op
+BenchmarkGreenTeaGC_HTTPRequest        	      50	       653.7 ns/op	    5615 B/op	       7 allocs/op
+BenchmarkGreenTeaGC_HTTPRequest-2      	      50	       711.8 ns/op	    5620 B/op	       7 allocs/op
+BenchmarkStandardPool_LargeRequest     	      50	       889.7 ns/op	73664.10 MB/s	       0 B/op	       0 allocs/op
+BenchmarkStandardPool_LargeRequest-2   	      50	      1098 ns/op	59662.79 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGreenTeaGC_LargeRequest       	      50	      2531 ns/op	25890.25 MB/s	    5279 B/op	       1 allocs/op
+BenchmarkGreenTeaGC_LargeRequest-2     	      50	      2585 ns/op	25354.77 MB/s	    5284 B/op	       1 allocs/op
+BenchmarkStandardPool_ManyHeaders      	      50	      2267 ns/op	    2048 B/op	      66 allocs/op
+BenchmarkStandardPool_ManyHeaders-2    	      50	      1954 ns/op	    2048 B/op	      66 allocs/op
+BenchmarkGreenTeaGC_ManyHeaders        	      50	      3537 ns/op	    8559 B/op	      13 allocs/op
+BenchmarkGreenTeaGC_ManyHeaders-2      	      50	      1524 ns/op	    8564 B/op	      13 allocs/op
+BenchmarkGCPressure_Standard           	      50	        31.34 ns/op	         1.000 GCs	       116.0 ns/op-gc
+BenchmarkGCPressure_Standard-2         	      50	        36.72 ns/op	         1.000 GCs	       262.7 ns/op-gc
+BenchmarkGCPressure_GreenTea           	      50	       793.7 ns/op	         1.000 GCs	       129.1 ns/op-gc
+BenchmarkGCPressure_GreenTea-2         	      50	      1367 ns/op	         1.000 GCs	       215.6 ns/op-gc
+BenchmarkAllocationRate_Standard       	      50	        21.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllocationRate_Standard-2     	      50	        28.12 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllocationRate_GreenTea       	      50	      1142 ns/op	    5328 B/op	       3 allocs/op
+BenchmarkAllocationRate_GreenTea-2     	      50	       368.8 ns/op	    5333 B/op	       3 allocs/op
+BenchmarkCacheLocality_Standard        	      50	      4893 ns/op
+BenchmarkCacheLocality_Standard-2      	      50	      4643 ns/op
+BenchmarkCacheLocality_GreenTea        	      50	     59021 ns/op
+BenchmarkCacheLocality_GreenTea-2      	      50	     41942 ns/op
+BenchmarkThroughput_Standard           	      50	       193.4 ns/op
+BenchmarkThroughput_Standard-2         	      50	       143.0 ns/op
+BenchmarkThroughput_GreenTea           	      50	      1721 ns/op
+BenchmarkThroughput_GreenTea-2         	      50	       553.6 ns/op
+PASS
+ok  	github.com/yourusername/shockwave/pkg/shockwave/memory	0.023s
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/pkg/shockwave/server
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkServer_SimpleGET         	      50	     49338 ns/op	    3010 B/op	      26 allocs/op
+BenchmarkServer_SimpleGET-2       	      50	     54710 ns/op	    4137 B/op	      27 allocs/op
+BenchmarkServer_KeepAlive         	      50	      8908 ns/op	     908 B/op	       1 allocs/op
+BenchmarkServer_KeepAlive-2       	      50	      9340 ns/op	      91 B/op	       1 allocs/op
+BenchmarkServer_JSON              	      50	      9402 ns/op	      66 B/op	       0 allocs/op
+BenchmarkServer_JSON-2            	      50	      9773 ns/op	     928 B/op	       0 allocs/op
+BenchmarkServer_LargeResponse     	      50	120008798019 ns/op	   0.00 MB/s	  517586 B/op	      54 allocs/op
+BenchmarkServer_LargeResponse-2   	

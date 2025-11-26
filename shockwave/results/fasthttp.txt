@@ -1,0 +1,10 @@
+BenchmarkFastHTTPSimpleGET-8      	  233815	      4793 ns/op	   0.42 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8      	  281438	      4608 ns/op	   0.43 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8      	  280448	      4637 ns/op	   0.43 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8      	  269961	      5061 ns/op	   0.40 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8      	  239240	      4652 ns/op	   0.43 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8      	  287382	      4707 ns/op	   0.42 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8      	  262725	      4608 ns/op	   0.43 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8      	  253574	      4806 ns/op	   0.42 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8      	  263581	      5052 ns/op	   0.40 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8      	  249160	      4598 ns/op	   0.43 MB/s	       0 B/op	       0 allocs/op

@@ -1,0 +1,23 @@
+goos: linux
+goarch: amd64
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkClients_SimpleGET/Shockwave-8         	   22767	     28167 ns/op	    4143 B/op	      21 allocs/op
+BenchmarkClients_SimpleGET/fasthttp-8          	   24445	     26910 ns/op	    1439 B/op	      15 allocs/op
+BenchmarkClients_SimpleGET/net/http-8          	   17148	     38296 ns/op	    4944 B/op	      61 allocs/op
+BenchmarkClients_Concurrent/Shockwave-8        	   91617	      6394 ns/op	    4137 B/op	      21 allocs/op
+BenchmarkClients_Concurrent/fasthttp-8         	   88628	      7298 ns/op	    1443 B/op	      15 allocs/op
+BenchmarkClients_Concurrent/net/http-8         	   30996	     18843 ns/op	    8572 B/op	      78 allocs/op
+BenchmarkClients_WithHeaders/Shockwave-8       	   17834	     28665 ns/op	    5020 B/op	      29 allocs/op
+BenchmarkClients_WithHeaders/fasthttp-8        	   24123	     31277 ns/op	    2314 B/op	      23 allocs/op
+BenchmarkClients_WithHeaders/net/http-8        	   10000	     52284 ns/op	    5926 B/op	      75 allocs/op
+BenchmarkServers_SimpleGET/Shockwave-8         	   58956	     11442 ns/op	      27 B/op	       2 allocs/op
+BenchmarkServers_SimpleGET/fasthttp-8          	   51114	     10689 ns/op	       0 B/op	       0 allocs/op
+BenchmarkServers_SimpleGET/net/http-8          	   25538	     24458 ns/op	    1396 B/op	      14 allocs/op
+BenchmarkServers_Concurrent/Shockwave-8        	  136407	      4468 ns/op	      27 B/op	       2 allocs/op
+BenchmarkServers_Concurrent/fasthttp-8         	  119391	      4772 ns/op	       1 B/op	       0 allocs/op
+BenchmarkServers_Concurrent/net/http-8         	  105854	      6135 ns/op	    1398 B/op	      14 allocs/op
+BenchmarkServers_JSON/Shockwave-8              	   61426	     13053 ns/op	      25 B/op	       1 allocs/op
+BenchmarkServers_JSON/fasthttp-8               	   63583	     10345 ns/op	       0 B/op	       0 allocs/op
+BenchmarkServers_JSON/net/http-8               	   25014	     31276 ns/op	    2186 B/op	      17 allocs/op
+PASS
+ok  	command-line-arguments	16.200s

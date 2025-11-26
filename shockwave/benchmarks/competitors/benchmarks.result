@@ -1,0 +1,926 @@
+goos: linux
+goarch: amd64
+pkg: github.com/yourusername/shockwave/benchmarks/competitors
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkComparisonSimpleGET/net/http       	   63489	     98082 ns/op	   16091 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http       	   63762	     97085 ns/op	   16090 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http       	   63085	     97334 ns/op	   16089 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http       	   61315	    100548 ns/op	   16088 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http       	   55074	    105914 ns/op	   16089 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-2     	   51957	     97621 ns/op	   16112 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-2     	   61306	     96955 ns/op	   16112 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-2     	   60441	     97356 ns/op	   16109 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-2     	   62041	     98596 ns/op	   16109 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-2     	   47160	    110384 ns/op	   16115 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-4     	   58032	    112968 ns/op	   16149 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-4     	   47438	   1528303 ns/op	   16164 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-4     	   63350	     96541 ns/op	   16141 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-4     	   58358	    100278 ns/op	   16149 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-4     	   61041	    100843 ns/op	   16144 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-8     	   58363	    108618 ns/op	   16222 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-8     	   48350	    124034 ns/op	   16224 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-8     	   44776	    137520 ns/op	   16222 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-8     	   48195	    155184 ns/op	   16216 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/net/http-8     	   37737	    193716 ns/op	   16218 B/op	     109 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp       	  981775	      5667 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp       	 1356075	      4293 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp       	 1466727	      3719 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp       	 1617819	      3681 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp       	 1615070	      3635 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-2     	 1510556	      4113 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-2     	 1477118	      4004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-2     	 1340995	      4574 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-2     	 1223192	      4751 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-2     	 1342125	      4716 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-4     	 1343803	      4509 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-4     	 1312598	      4672 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-4     	 1296795	      4507 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-4     	 1334307	      4717 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-4     	 1447764	      4311 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-8     	 1238193	      4480 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-8     	 1204816	      4354 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-8     	 1310752	      4853 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-8     	 1000000	      5057 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonSimpleGET/fasthttp-8     	 1209339	      4986 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonRequestParsing/net/http           	 1792520	      3390 ns/op	  35.40 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http           	 1865822	      3221 ns/op	  37.26 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http           	 1839196	      3416 ns/op	  35.13 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http           	 1777510	      3248 ns/op	  36.95 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http           	 1844917	      3312 ns/op	  36.23 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-2         	 2264742	      2557 ns/op	  46.93 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-2         	 2395287	      2637 ns/op	  45.50 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-2         	 2268068	      2552 ns/op	  47.03 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-2         	 2307661	      2629 ns/op	  45.64 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-2         	 2244643	      2614 ns/op	  45.91 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-4         	 2323112	      2390 ns/op	  50.21 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-4         	 2359197	      2729 ns/op	  43.97 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-4         	 2252180	      2716 ns/op	  44.19 MB/s	    5241 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-4         	 2184550	      2782 ns/op	  43.14 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-4         	 2314075	      2642 ns/op	  45.42 MB/s	    5240 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-8         	 2228971	      2789 ns/op	  43.02 MB/s	    5241 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-8         	 2193754	      2627 ns/op	  45.67 MB/s	    5241 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-8         	 2245177	      2665 ns/op	  45.03 MB/s	    5241 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-8         	 2270732	      2735 ns/op	  43.88 MB/s	    5241 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/net/http-8         	 2264829	      2672 ns/op	  44.90 MB/s	    5241 B/op	      13 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp           	 2574132	      2328 ns/op	  51.54 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp           	 2521310	      2326 ns/op	  51.59 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp           	 2671345	      2234 ns/op	  53.71 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp           	 2612588	      2303 ns/op	  52.12 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp           	 2616166	      2289 ns/op	  52.44 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-2         	 3577542	      1700 ns/op	  70.59 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-2         	 3661572	      1691 ns/op	  70.96 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-2         	 3392948	      1731 ns/op	  69.32 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-2         	 3369868	      1795 ns/op	  66.83 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-2         	 3303290	      1786 ns/op	  67.18 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-4         	 3514699	      1798 ns/op	  66.75 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-4         	 3461256	      1761 ns/op	  68.15 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-4         	 3130501	      1791 ns/op	  66.99 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-4         	 3234254	      1731 ns/op	  69.31 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-4         	 3526414	      1845 ns/op	  65.04 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-8         	 2918577	      1813 ns/op	  66.19 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-8         	 3273034	      1756 ns/op	  68.32 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-8         	 3341871	      1892 ns/op	  63.43 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-8         	 3317388	      1800 ns/op	  66.68 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonRequestParsing/fasthttp-8         	 3418735	      1797 ns/op	  66.79 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonResponseWriting/net/http          	 7378309	       717.1 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http          	 8474452	       716.9 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http          	 7894719	       704.6 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http          	 8311766	       722.4 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http          	 8295687	       723.7 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-2        	10852333	       566.6 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-2        	10600290	       575.6 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-2        	10138396	       564.4 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-2        	10570627	       571.1 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-2        	10628752	       572.9 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-4        	 9985416	       558.7 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-4        	 9879564	       551.7 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-4        	10900039	       562.3 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-4        	10460508	       573.7 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-4        	10663920	       559.7 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-8        	10706469	       541.1 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-8        	10941597	       571.3 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-8        	11056964	       556.4 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-8        	10115442	       556.0 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/net/http-8        	10958641	       552.7 ns/op	     456 B/op	      10 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp          	29229501	       197.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp          	30695568	       194.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp          	30262957	       195.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp          	30364340	       188.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp          	28161273	       190.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-2        	31824872	       191.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-2        	31769353	       186.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-2        	33450441	       188.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-2        	32939268	       185.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-2        	30766495	       190.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-4        	31989962	       187.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-4        	31871281	       194.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-4        	31958527	       185.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-4        	34096519	       189.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-4        	32216247	       190.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-8        	32620863	       190.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-8        	32099053	       192.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-8        	31843754	       186.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-8        	29631530	       185.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonResponseWriting/fasthttp-8        	31141808	       186.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http         	  533541	     11350 ns/op	  81.15 MB/s	    8977 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http         	  457813	     11324 ns/op	  81.33 MB/s	    8977 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http         	  506989	     11720 ns/op	  78.58 MB/s	    8977 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http         	  490094	     11749 ns/op	  78.39 MB/s	    8977 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http         	  461210	     11101 ns/op	  82.97 MB/s	    8977 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-2       	  582642	      9314 ns/op	  98.88 MB/s	    8977 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-2       	  599479	      9420 ns/op	  97.77 MB/s	    8977 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-2       	  652732	      9676 ns/op	  95.18 MB/s	    8977 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-2       	  673239	      9164 ns/op	 100.51 MB/s	    8977 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-2       	  641246	      9335 ns/op	  98.66 MB/s	    8977 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-4       	  606610	      9412 ns/op	  97.85 MB/s	    8978 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-4       	  570084	      9183 ns/op	 100.29 MB/s	    8977 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-4       	  591024	      9185 ns/op	 100.27 MB/s	    8978 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-4       	  628462	      9290 ns/op	  99.14 MB/s	    8978 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-4       	  642156	      9658 ns/op	  95.36 MB/s	    8978 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-8       	  607220	      9286 ns/op	  99.19 MB/s	    8978 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-8       	  596814	      9509 ns/op	  96.86 MB/s	    8978 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-8       	  620823	      9132 ns/op	 100.85 MB/s	    8978 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-8       	  572490	      9692 ns/op	  95.03 MB/s	    8978 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/net/http-8       	  613540	      9611 ns/op	  95.83 MB/s	    8978 B/op	      72 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp         	  894160	      6360 ns/op	 144.81 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp         	  862376	      6317 ns/op	 145.80 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp         	  866475	      6508 ns/op	 141.53 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp         	  849154	      6497 ns/op	 141.76 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp         	  902118	      6619 ns/op	 139.14 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-2       	 1151173	      5520 ns/op	 166.86 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-2       	 1000000	      5339 ns/op	 172.51 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-2       	 1132498	      5456 ns/op	 168.81 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-2       	  973282	      5272 ns/op	 174.68 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-2       	 1118494	      5294 ns/op	 173.97 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-4       	 1000000	      5214 ns/op	 176.62 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-4       	 1159498	      5132 ns/op	 179.46 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-4       	  995527	      5229 ns/op	 176.14 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-4       	 1000000	      5203 ns/op	 177.00 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-4       	 1000000	      5303 ns/op	 173.69 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-8       	 1000000	      5096 ns/op	 180.73 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-8       	 1000000	      5253 ns/op	 175.32 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-8       	  979380	      5180 ns/op	 177.79 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-8       	 1000000	      5277 ns/op	 174.54 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonHeaderProcessing/fasthttp-8       	 1000000	      5107 ns/op	 180.35 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket   	  510669	     11117 ns/op	   3.06 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket   	  545476	     10874 ns/op	   3.13 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket   	  477680	     10754 ns/op	   3.16 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket   	  515068	     10965 ns/op	   3.10 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket   	  497552	     10762 ns/op	   3.16 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-2 	  525968	     10562 ns/op	   3.22 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-2 	  541506	     10665 ns/op	   3.19 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-2 	  517580	     10617 ns/op	   3.20 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-2 	  517390	     10422 ns/op	   3.26 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-2 	  557341	     10278 ns/op	   3.31 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-4 	  560619	     10660 ns/op	   3.19 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-4 	  543766	     10301 ns/op	   3.30 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-4 	  516676	     10307 ns/op	   3.30 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-4 	  511092	     10602 ns/op	   3.21 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-4 	  529242	     10447 ns/op	   3.25 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-8 	  473443	     10810 ns/op	   3.15 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-8 	  555363	     10437 ns/op	   3.26 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-8 	  512378	     10664 ns/op	   3.19 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-8 	  533950	     10412 ns/op	   3.27 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonWebSocketEcho/gorilla/websocket-8 	  578095	     10419 ns/op	   3.26 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkComparisonKeepAlive/net/http                	   48183	    123582 ns/op	   16895 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http                	   48724	    125447 ns/op	   16895 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http                	   49776	    121043 ns/op	   16894 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http                	   46893	    121361 ns/op	   16895 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http                	   49447	    121061 ns/op	   16894 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-2              	   53468	    114321 ns/op	   16907 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-2              	   50918	    118699 ns/op	   16908 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-2              	   43609	    117048 ns/op	   16907 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-2              	   49596	    125769 ns/op	   16910 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-2              	   50476	    121404 ns/op	   16907 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-4              	   41026	    133282 ns/op	   16927 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-4              	   43521	   1681293 ns/op	   16940 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-4              	   49875	    124469 ns/op	   16924 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-4              	   44877	    125024 ns/op	   16924 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-4              	   47676	    124092 ns/op	   16923 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-8              	   47052	    135202 ns/op	   16956 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-8              	   47212	    131867 ns/op	   16958 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-8              	   41902	    128852 ns/op	   16965 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-8              	   45873	    134417 ns/op	   16957 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/net/http-8              	   46597	    127758 ns/op	   16956 B/op	     115 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp                	 1259954	      4808 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp                	 1280912	      4655 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp                	 1256421	      4763 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp                	 1318262	      4468 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp                	 1307144	      4656 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-2              	 1240437	      5086 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-2              	  961933	      5263 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-2              	 1000000	      5278 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-2              	 1171986	      5440 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-2              	 1000000	      5310 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-4              	 1000000	      5074 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-4              	  979117	      5178 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-4              	 1240142	      5148 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-4              	 1200530	      5108 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-4              	 1209644	      5020 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-8              	 1000000	      5076 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-8              	 1000000	      5089 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-8              	 1000000	      5434 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-8              	 1393286	      4706 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonKeepAlive/fasthttp-8              	 1339922	      4681 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc           	1000000000	         0.2573 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc           	1000000000	         0.2664 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc           	1000000000	         0.2573 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc           	1000000000	         0.2850 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc           	1000000000	         0.2942 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-2         	1000000000	         0.2885 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-2         	1000000000	         0.2737 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-2         	1000000000	         0.2802 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-2         	1000000000	         0.2604 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-2         	1000000000	         0.2697 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-4         	1000000000	         0.2818 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-4         	1000000000	         0.2587 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-4         	1000000000	         0.2569 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-4         	1000000000	         0.2537 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-4         	1000000000	         0.2517 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-8         	1000000000	         0.2667 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-8         	1000000000	         0.2690 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-8         	1000000000	         0.2557 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-8         	1000000000	         0.2506 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-server-alloc-8         	1000000000	         0.2502 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc           	1000000000	         0.2483 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc           	1000000000	         0.2717 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc           	1000000000	         0.2854 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc           	1000000000	         0.2520 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc           	1000000000	         0.2528 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-2         	1000000000	         0.2474 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-2         	1000000000	         0.2469 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-2         	1000000000	         0.2489 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-2         	1000000000	         0.2542 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-2         	1000000000	         0.2483 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-4         	1000000000	         0.2545 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-4         	1000000000	         0.2644 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-4         	1000000000	         0.2646 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-4         	1000000000	         0.2614 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-4         	1000000000	         0.2667 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-8         	1000000000	         0.2528 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-8         	1000000000	         0.2519 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-8         	1000000000	         0.2637 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-8         	1000000000	         0.2539 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-server-alloc-8         	1000000000	         0.2489 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc          	 8789941	       699.6 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc          	 9354418	       799.8 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc          	 6683694	      1099 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc          	 4633288	      1248 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc          	 7617070	       842.9 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-2        	10764510	       513.0 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-2        	10541817	       625.5 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-2        	10450034	       520.6 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-2        	10500807	       513.4 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-2        	10925139	       530.0 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-4        	12125631	       512.2 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-4        	12903259	       517.4 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-4        	12043461	       502.4 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-4        	12153423	       519.2 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-4        	13068721	       502.2 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-8        	12175882	       474.6 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-8        	12762559	       497.8 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-8        	10357718	       630.5 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-8        	11471412	       570.6 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/net/http-request-alloc-8        	12353508	       486.3 ns/op	     880 B/op	       5 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc          	32296237	       180.8 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc          	28703950	       181.2 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc          	32194934	       182.2 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc          	33722144	       179.0 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc          	35577852	       170.3 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-2        	39337052	       138.9 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-2        	38306634	       142.1 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-2        	42139827	       137.4 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-2        	41949450	       141.2 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-2        	40443027	       143.5 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-4        	40966354	       141.6 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-4        	38656357	       151.1 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-4        	41729326	       135.2 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-4        	40960568	       145.1 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-4        	41968735	       135.1 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-8        	43943972	       134.4 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-8        	41974014	       136.4 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-8        	43350520	       134.2 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-8        	41783391	       135.8 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonMemoryUsage/fasthttp-request-alloc-8        	36792892	       146.2 ns/op	      72 B/op	       4 allocs/op
+BenchmarkComparisonScalability/net/http-c1                     	   53527	    107466 ns/op	   16525 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1                     	   55654	    108833 ns/op	   16526 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1                     	   54655	    108576 ns/op	   16525 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1                     	   55950	    109355 ns/op	   16525 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1                     	   54004	    106044 ns/op	   16525 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-2                   	  105909	     61394 ns/op	   16533 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-2                   	   98799	     65898 ns/op	   16533 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-2                   	   93487	     62880 ns/op	   16534 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-2                   	   95462	     62439 ns/op	   16533 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-2                   	   94558	     63431 ns/op	   16533 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-4                   	  151424	     56124 ns/op	   16545 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-4                   	  149356	    521686 ns/op	   16552 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-4                   	  157100	     67366 ns/op	   16546 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-4                   	  153531	     39219 ns/op	   16541 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-4                   	  155240	     40161 ns/op	   16543 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-8                   	  181573	     32000 ns/op	   16564 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-8                   	  176912	     33388 ns/op	   16565 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-8                   	  169008	     35719 ns/op	   16567 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-8                   	  171447	     32681 ns/op	   16561 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c1-8                   	  183513	     34048 ns/op	   16563 B/op	     113 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1                     	 1521008	      3930 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1                     	 1552579	      3824 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1                     	 1550397	      3990 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1                     	 1497656	      3980 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1                     	 1468702	      4155 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-2                   	 2635899	      2374 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-2                   	 2804756	      2155 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-2                   	 2906364	      2132 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-2                   	 2874063	      2114 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-2                   	 2861439	      2082 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-4                   	 4854373	      1293 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-4                   	 4826688	      1336 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-4                   	 4473392	      1387 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-4                   	 4569661	      1377 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-4                   	 4569381	      1361 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-8                   	 4689314	      1238 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-8                   	 4917805	      1243 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-8                   	 4983642	      1226 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-8                   	 4949878	      1328 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c1-8                   	 4156884	      1268 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/net/http-c10                    	   56019	     96294 ns/op	   16526 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10                    	   62676	     97866 ns/op	   16524 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10                    	   55640	     95413 ns/op	   16522 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10                    	   60117	    101661 ns/op	   16523 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10                    	   60097	    103439 ns/op	   16526 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-2                  	   94083	     63842 ns/op	   16546 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-2                  	   94964	     63056 ns/op	   16547 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-2                  	   99406	     55970 ns/op	   16540 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-2                  	  109640	     53278 ns/op	   16539 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-2                  	  107844	     53812 ns/op	   16543 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-4                  	  167527	     65104 ns/op	   16562 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-4                  	   10000	   7988072 ns/op	   16792 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-4                  	  209118	     65122 ns/op	   16561 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-4                  	  174482	     66533 ns/op	   16565 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-4                  	  177471	     33897 ns/op	   16557 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-8                  	  226952	     27370 ns/op	   16599 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-8                  	  216673	     29703 ns/op	   16597 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-8                  	  205389	     29934 ns/op	   16600 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-8                  	  182802	     31344 ns/op	   16606 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c10-8                  	  201273	     29407 ns/op	   16594 B/op	     113 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10                    	 1560684	      3767 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10                    	 1615795	      3782 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10                    	 1523763	      3764 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10                    	 1606412	      3703 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10                    	 1628023	      3685 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-2                  	 2983513	      2095 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-2                  	 2824392	      2106 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-2                  	 2847255	      2069 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-2                  	 2942097	      2060 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-2                  	 2901277	      2075 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-4                  	 5133652	      1207 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-4                  	 4973266	      1222 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-4                  	 4553028	      1341 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-4                  	 4628000	      1328 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-4                  	 4647237	      1284 ns/op	       0 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-8                  	 4912872	      1216 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-8                  	 4954166	      1260 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-8                  	 4866218	      1240 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-8                  	 4827752	      1204 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c10-8                  	 4519082	      1217 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/net/http-c50                    	   61429	     93342 ns/op	   16562 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50                    	   65324	     90310 ns/op	   16574 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50                    	   68318	     90552 ns/op	   16553 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50                    	   69398	     87301 ns/op	   16557 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50                    	   69654	     88692 ns/op	   16553 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-2                  	  115328	     51528 ns/op	   16600 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-2                  	  120249	     52858 ns/op	   16597 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-2                  	  107384	     51194 ns/op	   16591 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-2                  	  118358	     50763 ns/op	   16597 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-2                  	  114183	     51982 ns/op	   16597 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-4                  	  186678	     66007 ns/op	   16645 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-4                  	   10000	   7246600 ns/op	   17591 B/op	     114 allocs/op
+BenchmarkComparisonScalability/net/http-c50-4                  	  206594	     66246 ns/op	   16639 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-4                  	  172016	     66640 ns/op	   16644 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-4                  	  162945	     34678 ns/op	   16624 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-8                  	  182808	     32242 ns/op	   16728 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-8                  	  171608	     32586 ns/op	   16737 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-8                  	  188402	     32522 ns/op	   16750 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-8                  	  171490	     37499 ns/op	   16752 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c50-8                  	  172350	     32612 ns/op	   16753 B/op	     113 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50                    	 1511173	      3917 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50                    	 1545904	      3855 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50                    	 1587426	      3759 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50                    	 1599092	      3756 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50                    	 1597473	      3718 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-2                  	 2971929	      1977 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-2                  	 2980683	      2078 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-2                  	 2865290	      2090 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-2                  	 2869305	      2061 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-2                  	 2864852	      2085 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-4                  	 5124698	      1201 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-4                  	 4922012	      1235 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-4                  	 4917109	      1462 ns/op	       1 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-4                  	 3828512	      1549 ns/op	       2 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-4                  	 3675369	      1694 ns/op	       2 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-8                  	 4401934	      1474 ns/op	       4 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-8                  	 4155571	      1561 ns/op	       4 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-8                  	 3909534	      1525 ns/op	       4 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-8                  	 4483584	      1327 ns/op	       3 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c50-8                  	 4748950	      1206 ns/op	       3 B/op	       0 allocs/op
+BenchmarkComparisonScalability/net/http-c100                   	   57000	    103821 ns/op	   16627 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100                   	   59347	     95890 ns/op	   16621 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100                   	   64986	     93956 ns/op	   16644 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100                   	   64531	     89823 ns/op	   16632 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100                   	   64740	     89254 ns/op	   16625 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-2                 	  112683	     54440 ns/op	   16622 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-2                 	  109820	     55007 ns/op	   16625 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-2                 	  110612	     54883 ns/op	   16615 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-2                 	  109794	     54321 ns/op	   16630 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-2                 	  111780	     56134 ns/op	   16612 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-4                 	  158282	     58716 ns/op	   16675 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-4                 	   10000	   7345228 ns/op	   18262 B/op	     115 allocs/op
+BenchmarkComparisonScalability/net/http-c100-4                 	  178846	     69532 ns/op	   16646 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-4                 	  163431	     69604 ns/op	   16667 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-4                 	  156602	     38233 ns/op	   16673 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-8                 	  196947	     30902 ns/op	   16724 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-8                 	  190282	     33367 ns/op	   16802 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-8                 	  177871	     33620 ns/op	   16740 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-8                 	  176127	     33815 ns/op	   16759 B/op	     113 allocs/op
+BenchmarkComparisonScalability/net/http-c100-8                 	  158248	     33644 ns/op	   16741 B/op	     113 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100                   	 1596645	      3701 ns/op	       2 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100                   	 1632320	      3673 ns/op	       2 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100                   	 1623600	      3697 ns/op	       2 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100                   	 1629657	      3665 ns/op	       2 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100                   	 1631418	      3668 ns/op	       2 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-2                 	 3036753	      2015 ns/op	       2 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-2                 	 2952487	      1970 ns/op	       2 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-2                 	 2999342	      2002 ns/op	       2 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-2                 	 2998531	      2019 ns/op	       2 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-2                 	 2988140	      2020 ns/op	       2 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-4                 	 5198706	      1182 ns/op	       2 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-4                 	 4803157	      1203 ns/op	       3 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-4                 	 4338154	      1298 ns/op	       3 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-4                 	 4653932	      1342 ns/op	       3 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-4                 	 4719715	      1279 ns/op	       3 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-8                 	 5032114	      1201 ns/op	       6 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-8                 	 4925386	      1207 ns/op	       6 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-8                 	 4965574	      1201 ns/op	       6 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-8                 	 4901756	      1201 ns/op	       6 B/op	       0 allocs/op
+BenchmarkComparisonScalability/fasthttp-c100-8                 	 4530075	      1196 ns/op	       6 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET                                     	 1517385	      3849 ns/op	   0.52 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET                                     	 1586907	      3801 ns/op	   0.53 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET                                     	 1615350	      3718 ns/op	   0.54 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET                                     	 1628503	      3632 ns/op	   0.55 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET                                     	 1634690	      3612 ns/op	   0.55 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-2                                   	 1575789	      3985 ns/op	   0.50 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-2                                   	 1487316	      4534 ns/op	   0.44 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-2                                   	 1327146	      4715 ns/op	   0.42 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-2                                   	 1389927	      4276 ns/op	   0.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-2                                   	 1407446	      4230 ns/op	   0.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-4                                   	 1487910	      4273 ns/op	   0.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-4                                   	 1310508	      4990 ns/op	   0.40 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-4                                   	 1308723	      4772 ns/op	   0.42 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-4                                   	 1355504	      4462 ns/op	   0.45 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-4                                   	 1242127	      4635 ns/op	   0.43 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8                                   	 1427376	      4299 ns/op	   0.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8                                   	 1296068	      4793 ns/op	   0.42 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8                                   	 1000000	      5304 ns/op	   0.38 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8                                   	 1000000	      5260 ns/op	   0.38 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPSimpleGET-8                                   	 1426905	      4099 ns/op	   0.49 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB                                       	 1231502	      4846 ns/op	 211.31 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB                                       	 1273212	      4715 ns/op	 217.20 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB                                       	 1246911	      4699 ns/op	 217.90 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB                                       	 1299946	      4630 ns/op	 221.15 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB                                       	 1288398	      4612 ns/op	 222.02 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-2                                     	 1000000	      6210 ns/op	 164.90 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-2                                     	  820526	      6380 ns/op	 160.49 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-2                                     	  824266	      6515 ns/op	 157.18 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-2                                     	  824853	      6312 ns/op	 162.23 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-2                                     	 1000000	      5913 ns/op	 173.19 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-4                                     	  965220	      6612 ns/op	 154.87 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-4                                     	 1000000	      6275 ns/op	 163.19 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-4                                     	 1000000	      5898 ns/op	 173.62 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-4                                     	 1000000	      6016 ns/op	 170.21 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-4                                     	  859111	      6384 ns/op	 160.41 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-8                                     	 1000000	      5286 ns/op	 193.73 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-8                                     	  932964	      5423 ns/op	 188.81 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-8                                     	 1000000	      5480 ns/op	 186.85 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-8                                     	 1081066	      5479 ns/op	 186.89 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPPOST1KB-8                                     	  987256	      5436 ns/op	 188.38 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive                                     	 1502408	      3932 ns/op	   0.51 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive                                     	 1503627	      3965 ns/op	   0.50 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive                                     	 1521632	      3899 ns/op	   0.51 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive                                     	 1532462	      3906 ns/op	   0.51 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive                                     	 1576842	      3825 ns/op	   0.52 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-2                                   	 1452470	      4146 ns/op	   0.48 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-2                                   	 1454092	      4253 ns/op	   0.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-2                                   	 1495182	      4241 ns/op	   0.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-2                                   	 1441891	      4084 ns/op	   0.49 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-2                                   	 1419837	      4122 ns/op	   0.49 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-4                                   	 1446693	      4298 ns/op	   0.47 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-4                                   	 1458657	      4061 ns/op	   0.49 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-4                                   	 1475617	      4063 ns/op	   0.49 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-4                                   	 1454916	      4112 ns/op	   0.49 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-4                                   	 1425044	      4111 ns/op	   0.49 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-8                                   	 1520622	      3987 ns/op	   0.50 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-8                                   	 1525041	      4028 ns/op	   0.50 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-8                                   	 1491306	      3984 ns/op	   0.50 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-8                                   	 1527109	      3952 ns/op	   0.51 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPKeepAlive-8                                   	 1524925	      3951 ns/op	   0.51 MB/s	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent                                    	 1614060	      3728 ns/op	   0.54 MB/s	       2 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent                                    	 1629349	      3707 ns/op	   0.54 MB/s	       2 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent                                    	 1597208	      3737 ns/op	   0.54 MB/s	       2 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent                                    	 1607540	      3697 ns/op	   0.54 MB/s	       2 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent                                    	 1620733	      3586 ns/op	   0.56 MB/s	       2 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-2                                  	 3131947	      2019 ns/op	   0.99 MB/s	       2 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-2                                  	 2998682	      2046 ns/op	   0.98 MB/s	       2 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-2                                  	 2914394	      2021 ns/op	   0.99 MB/s	       2 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-2                                  	 2883664	      2057 ns/op	   0.97 MB/s	       2 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-2                                  	 2857785	      2031 ns/op	   0.98 MB/s	       2 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-4                                  	 5028698	      1198 ns/op	   1.67 MB/s	       2 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-4                                  	 5023838	      1205 ns/op	   1.66 MB/s	       2 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-4                                  	 4898137	      1255 ns/op	   1.59 MB/s	       3 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-4                                  	 4536522	      1280 ns/op	   1.56 MB/s	       3 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-4                                  	 4428799	      1286 ns/op	   1.56 MB/s	       3 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-8                                  	 4942071	      1213 ns/op	   1.65 MB/s	       6 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-8                                  	 4931997	      1192 ns/op	   1.68 MB/s	       6 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-8                                  	 4888666	      1198 ns/op	   1.67 MB/s	       6 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-8                                  	 4454805	      1204 ns/op	   1.66 MB/s	       7 B/op	       0 allocs/op
+BenchmarkFastHTTPConcurrent-8                                  	 4790047	      1189 ns/op	   1.68 MB/s	       6 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse                                 	   13705	    377260 ns/op	2779.45 MB/s	 1048878 B/op	       3 allocs/op
+BenchmarkFastHTTPLargeResponse                                 	   38376	    149458 ns/op	7015.85 MB/s	      32 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse                                 	   39844	    150020 ns/op	6989.58 MB/s	      57 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse                                 	   40240	    148525 ns/op	7059.93 MB/s	      57 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse                                 	   39871	    154113 ns/op	6803.95 MB/s	      57 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-2                               	   38653	    148612 ns/op	7055.82 MB/s	      87 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-2                               	   40092	    151371 ns/op	6927.20 MB/s	      84 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-2                               	   39512	    150831 ns/op	6952.01 MB/s	      58 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-2                               	   39813	    151597 ns/op	6916.88 MB/s	      84 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-2                               	   39772	    154272 ns/op	6796.95 MB/s	      59 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-4                               	   36523	    167118 ns/op	6274.46 MB/s	     150 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-4                               	   37404	    166199 ns/op	6309.16 MB/s	     147 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-4                               	   36166	    169483 ns/op	6186.89 MB/s	     151 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-4                               	   36018	    167742 ns/op	6251.12 MB/s	     152 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-4                               	   35931	    169797 ns/op	6175.45 MB/s	     182 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-8                               	   35935	    170694 ns/op	6143.02 MB/s	     212 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-8                               	   36198	    167906 ns/op	6245.02 MB/s	     152 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-8                               	   36387	    168563 ns/op	6220.67 MB/s	     209 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-8                               	   36381	    166642 ns/op	6292.40 MB/s	     180 B/op	       0 allocs/op
+BenchmarkFastHTTPLargeResponse-8                               	   34645	    167176 ns/op	6272.30 MB/s	     219 B/op	       0 allocs/op
+BenchmarkFastHTTPHeaderHeavy                                   	  216212	     27771 ns/op	    1624 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy                                   	  226936	     26990 ns/op	    1618 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy                                   	  228033	     26799 ns/op	    1619 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy                                   	  230835	     26650 ns/op	    1618 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy                                   	  225118	     27299 ns/op	    1618 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-2                                 	  198382	     28595 ns/op	    1619 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-2                                 	  218257	     27835 ns/op	    1619 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-2                                 	  215946	     27717 ns/op	    1619 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-2                                 	  213456	     27685 ns/op	    1619 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-2                                 	  204361	     28518 ns/op	    1618 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-4                                 	  214640	     28311 ns/op	    1619 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-4                                 	  195102	     28062 ns/op	    1620 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-4                                 	  210768	     28145 ns/op	    1619 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-4                                 	  212114	     28489 ns/op	    1619 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-4                                 	  204770	     27934 ns/op	    1619 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-8                                 	  187412	     28081 ns/op	    1620 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-8                                 	  210032	     28119 ns/op	    1620 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-8                                 	  215516	     28010 ns/op	    1620 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-8                                 	  210081	     28194 ns/op	    1620 B/op	     101 allocs/op
+BenchmarkFastHTTPHeaderHeavy-8                                 	  209694	     28048 ns/op	    1620 B/op	     101 allocs/op
+BenchmarkFastHTTPRequestParsing                                	 2611430	      2232 ns/op	  45.26 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing                                	 2793835	      2152 ns/op	  46.94 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing                                	 2781746	      2150 ns/op	  46.97 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing                                	 2793568	      2141 ns/op	  47.16 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing                                	 2790370	      2120 ns/op	  47.64 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-2                              	 4373661	      1422 ns/op	  71.00 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-2                              	 4315888	      1411 ns/op	  71.58 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-2                              	 4191772	      1456 ns/op	  69.37 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-2                              	 4239578	      1462 ns/op	  69.06 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-2                              	 4223912	      1440 ns/op	  70.13 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-4                              	 4277169	      1411 ns/op	  71.57 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-4                              	 4344799	      1410 ns/op	  71.65 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-4                              	 4286403	      1427 ns/op	  70.76 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-4                              	 4286377	      1401 ns/op	  72.08 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-4                              	 4081138	      1415 ns/op	  71.39 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-8                              	 4124869	      1408 ns/op	  71.76 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-8                              	 4193725	      1443 ns/op	  70.01 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-8                              	 4142413	      1435 ns/op	  70.39 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-8                              	 4263194	      1428 ns/op	  70.75 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPRequestParsing-8                              	 4253462	      1422 ns/op	  71.04 MB/s	    4240 B/op	       3 allocs/op
+BenchmarkFastHTTPResponseWriting                               	33122743	       172.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting                               	35087426	       168.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting                               	38171934	       164.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting                               	35834160	       165.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting                               	37313642	       161.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-2                             	39563887	       162.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-2                             	39011745	       162.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-2                             	38346037	       160.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-2                             	37581864	       160.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-2                             	39439084	       159.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-4                             	34282797	       160.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-4                             	36872810	       158.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-4                             	39590800	       160.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-4                             	37269103	       159.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-4                             	38957050	       157.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-8                             	38266815	       161.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-8                             	38152371	       160.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-8                             	39522356	       160.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-8                             	38398758	       160.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFastHTTPResponseWriting-8                             	35907744	       160.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkNetHTTPSimpleGET                                      	  226436	     26063 ns/op	   0.08 MB/s	    4459 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET                                      	  207338	     25910 ns/op	   0.08 MB/s	    4458 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET                                      	  218508	     26282 ns/op	   0.08 MB/s	    4459 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET                                      	  218659	     26311 ns/op	   0.08 MB/s	    4458 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET                                      	  226480	     26121 ns/op	   0.08 MB/s	    4459 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-2                                    	  200944	     30068 ns/op	   0.07 MB/s	    4460 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-2                                    	  197356	     29243 ns/op	   0.07 MB/s	    4460 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-2                                    	  194055	     29512 ns/op	   0.07 MB/s	    4460 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-2                                    	  193918	     29575 ns/op	   0.07 MB/s	    4459 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-2                                    	  198819	     29487 ns/op	   0.07 MB/s	    4460 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-4                                    	  179389	     32206 ns/op	   0.06 MB/s	    4461 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-4                                    	  165538	     32421 ns/op	   0.06 MB/s	    4462 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-4                                    	  179871	     33490 ns/op	   0.06 MB/s	    4461 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-4                                    	  161989	     35655 ns/op	   0.06 MB/s	    4461 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-4                                    	  164088	     35533 ns/op	   0.06 MB/s	    4461 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8                                    	  163040	     36273 ns/op	   0.06 MB/s	    4464 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8                                    	  150328	     35203 ns/op	   0.06 MB/s	    4465 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8                                    	  160260	     35356 ns/op	   0.06 MB/s	    4463 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8                                    	  158109	     35795 ns/op	   0.06 MB/s	    4464 B/op	      57 allocs/op
+BenchmarkNetHTTPSimpleGET-8                                    	  160694	     35737 ns/op	   0.06 MB/s	    4464 B/op	      57 allocs/op
+BenchmarkNetHTTPPOST1KB                                        	  189376	     31469 ns/op	  32.54 MB/s	    5857 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB                                        	  195781	     30408 ns/op	  33.68 MB/s	    5856 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB                                        	  197193	     30259 ns/op	  33.84 MB/s	    5856 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB                                        	  205327	     30149 ns/op	  33.96 MB/s	    5856 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB                                        	  192223	     30329 ns/op	  33.76 MB/s	    5857 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-2                                      	  185812	     31637 ns/op	  32.37 MB/s	    5858 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-2                                      	  185530	     31285 ns/op	  32.73 MB/s	    5858 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-2                                      	  188188	     31576 ns/op	  32.43 MB/s	    5858 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-2                                      	  186517	     34084 ns/op	  30.04 MB/s	    5858 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-2                                      	  182520	     31826 ns/op	  32.18 MB/s	    5858 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-4                                      	  163568	     36865 ns/op	  27.78 MB/s	    5859 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-4                                      	  157203	     39087 ns/op	  26.20 MB/s	    5860 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-4                                      	  151274	     39106 ns/op	  26.19 MB/s	    5859 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-4                                      	  153319	     38674 ns/op	  26.48 MB/s	    5859 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-4                                      	  151000	     39523 ns/op	  25.91 MB/s	    5859 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-8                                      	  144559	     39147 ns/op	  26.16 MB/s	    5871 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-8                                      	  150307	     39254 ns/op	  26.09 MB/s	    5877 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-8                                      	  146461	     39740 ns/op	  25.77 MB/s	    5871 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-8                                      	  151096	     39281 ns/op	  26.07 MB/s	    5878 B/op	      74 allocs/op
+BenchmarkNetHTTPPOST1KB-8                                      	  147788	     39092 ns/op	  26.19 MB/s	    5876 B/op	      74 allocs/op
+BenchmarkNetHTTPKeepAlive                                      	  200847	     29715 ns/op	   0.07 MB/s	    5275 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive                                      	  196560	     29445 ns/op	   0.07 MB/s	    5275 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive                                      	  200917	     29074 ns/op	   0.07 MB/s	    5274 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive                                      	  195592	     28963 ns/op	   0.07 MB/s	    5275 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive                                      	  209478	     28910 ns/op	   0.07 MB/s	    5275 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-2                                    	  171720	     29785 ns/op	   0.07 MB/s	    5276 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-2                                    	  195872	     29565 ns/op	   0.07 MB/s	    5276 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-2                                    	  199731	     29655 ns/op	   0.07 MB/s	    5276 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-2                                    	  198319	     29718 ns/op	   0.07 MB/s	    5276 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-2                                    	  198565	     29509 ns/op	   0.07 MB/s	    5276 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-4                                    	  172256	     33521 ns/op	   0.06 MB/s	    5277 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-4                                    	  180608	     34201 ns/op	   0.06 MB/s	    5277 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-4                                    	  160998	     35510 ns/op	   0.06 MB/s	    5276 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-4                                    	  165216	     35781 ns/op	   0.06 MB/s	    5277 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-4                                    	  142276	     35239 ns/op	   0.06 MB/s	    5277 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-8                                    	  162892	     36128 ns/op	   0.06 MB/s	    5281 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-8                                    	  160425	     35530 ns/op	   0.06 MB/s	    5281 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-8                                    	  158739	     35811 ns/op	   0.06 MB/s	    5281 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-8                                    	  160903	     35667 ns/op	   0.06 MB/s	    5282 B/op	      63 allocs/op
+BenchmarkNetHTTPKeepAlive-8                                    	  163798	     35695 ns/op	   0.06 MB/s	    5282 B/op	      63 allocs/op
+BenchmarkNetHTTPConcurrent                                     	  207234	     27851 ns/op	   0.07 MB/s	    4466 B/op	      57 allocs/op
+BenchmarkNetHTTPConcurrent                                     	  208675	     28141 ns/op	   0.07 MB/s	    4465 B/op	      57 allocs/op
+BenchmarkNetHTTPConcurrent                                     	  208749	     27238 ns/op	   0.07 MB/s	    4465 B/op	      57 allocs/op
+BenchmarkNetHTTPConcurrent                                     	  211948	     27551 ns/op	   0.07 MB/s	    4465 B/op	      57 allocs/op
+BenchmarkNetHTTPConcurrent                                     	  206610	     27112 ns/op	   0.07 MB/s	    4466 B/op	      57 allocs/op
+BenchmarkNetHTTPConcurrent-2                                   	  401412	     14666 ns/op	   0.14 MB/s	    4410 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-2                                   	  387555	     14788 ns/op	   0.14 MB/s	    4411 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-2                                   	  376959	     14743 ns/op	   0.14 MB/s	    4410 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-2                                   	  395906	     14717 ns/op	   0.14 MB/s	    4410 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-2                                   	  376665	     14862 ns/op	   0.13 MB/s	    4411 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-4                                   	  555817	     10161 ns/op	   0.20 MB/s	    4411 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-4                                   	  613174	      9883 ns/op	   0.20 MB/s	    4409 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-4                                   	  508040	     10509 ns/op	   0.19 MB/s	    4410 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-4                                   	  561267	     10690 ns/op	   0.19 MB/s	    4410 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-4                                   	  576360	     10626 ns/op	   0.19 MB/s	    4411 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-8                                   	  673286	      9514 ns/op	   0.21 MB/s	    4424 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-8                                   	  639367	      9416 ns/op	   0.21 MB/s	    4427 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-8                                   	  641895	      9539 ns/op	   0.21 MB/s	    4428 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-8                                   	  629509	      9517 ns/op	   0.21 MB/s	    4425 B/op	      55 allocs/op
+BenchmarkNetHTTPConcurrent-8                                   	  658404	      9486 ns/op	   0.21 MB/s	    4429 B/op	      55 allocs/op
+BenchmarkNetHTTPLargeResponse                                  	   21793	    265423 ns/op	3950.58 MB/s	    4550 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse                                  	   23064	    272163 ns/op	3852.75 MB/s	    4552 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse                                  	   22417	    276456 ns/op	3792.92 MB/s	    4551 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse                                  	   21808	    282262 ns/op	3714.91 MB/s	    4552 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse                                  	   22398	    265537 ns/op	3948.89 MB/s	    4551 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-2                                	   19059	    340242 ns/op	3081.86 MB/s	    4559 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-2                                	   16430	    358072 ns/op	2928.39 MB/s	    4561 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-2                                	   16682	    360160 ns/op	2911.42 MB/s	    4559 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-2                                	   16388	    378774 ns/op	2768.34 MB/s	    4560 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-2                                	   16912	    317810 ns/op	3299.38 MB/s	    4557 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-4                                	   20191	    311251 ns/op	3368.91 MB/s	    4557 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-4                                	   21890	    272147 ns/op	3852.97 MB/s	    4557 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-4                                	   20114	    287848 ns/op	3642.81 MB/s	    4560 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-4                                	   21570	    322338 ns/op	3253.03 MB/s	    4558 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-4                                	   19678	    317356 ns/op	3304.10 MB/s	    4558 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-8                                	   17818	    318982 ns/op	3287.26 MB/s	    4569 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-8                                	   19225	    285669 ns/op	3670.59 MB/s	    4563 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-8                                	   18948	    319070 ns/op	3286.35 MB/s	    4563 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-8                                	   19374	    296200 ns/op	3540.10 MB/s	    4564 B/op	      60 allocs/op
+BenchmarkNetHTTPLargeResponse-8                                	   20386	    319298 ns/op	3284.01 MB/s	    4562 B/op	      60 allocs/op
+BenchmarkNetHTTPHeaderHeavy                                    	   66032	     82388 ns/op	   20618 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy                                    	   71572	     82414 ns/op	   20617 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy                                    	   68863	     81210 ns/op	   20617 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy                                    	   73704	     80327 ns/op	   20617 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy                                    	   71041	     80027 ns/op	   20616 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-2                                  	   82624	     75469 ns/op	   20619 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-2                                  	   78025	     76443 ns/op	   20619 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-2                                  	   79125	     74709 ns/op	   20619 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-2                                  	   82222	     75149 ns/op	   20618 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-2                                  	   81405	     75113 ns/op	   20619 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-4                                  	   74868	     85177 ns/op	   20622 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-4                                  	   70134	     87135 ns/op	   20623 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-4                                  	   67908	     85369 ns/op	   20623 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-4                                  	   68348	     84148 ns/op	   20620 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-4                                  	   71499	     86116 ns/op	   20624 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-8                                  	   68892	     84906 ns/op	   20647 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-8                                  	   69974	     87900 ns/op	   20648 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-8                                  	   66150	     89800 ns/op	   20646 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-8                                  	   64815	     89609 ns/op	   20646 B/op	     323 allocs/op
+BenchmarkNetHTTPHeaderHeavy-8                                  	   68337	     89216 ns/op	   20646 B/op	     323 allocs/op
+BenchmarkNetHTTPRequestParsing                                 	 1694554	      3516 ns/op	  28.73 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing                                 	 1718820	      3517 ns/op	  28.72 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing                                 	 1706707	      3500 ns/op	  28.86 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing                                 	 1706985	      3512 ns/op	  28.76 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing                                 	 1719886	      3499 ns/op	  28.87 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-2                               	 2479544	      2444 ns/op	  41.32 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-2                               	 2368714	      2528 ns/op	  39.95 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-2                               	 2264420	      2536 ns/op	  39.82 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-2                               	 2531247	      2372 ns/op	  42.58 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-2                               	 2437293	      2418 ns/op	  41.77 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-4                               	 2499853	      2397 ns/op	  42.14 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-4                               	 2531996	      2381 ns/op	  42.42 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-4                               	 2524916	      2388 ns/op	  42.29 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-4                               	 2497430	      2383 ns/op	  42.38 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-4                               	 2418954	      2470 ns/op	  40.89 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-8                               	 2519454	      2404 ns/op	  42.01 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-8                               	 2479382	      2393 ns/op	  42.20 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-8                               	 2627964	      2309 ns/op	  43.75 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-8                               	 2550510	      2286 ns/op	  44.18 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPRequestParsing-8                               	 2606900	      2282 ns/op	  44.27 MB/s	    5224 B/op	      13 allocs/op
+BenchmarkNetHTTPResponseWriting                                	 8761488	       677.1 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting                                	 8832861	       675.1 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting                                	 8514925	       692.3 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting                                	 8378425	       687.6 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting                                	 8484060	       689.7 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-2                              	11129590	       549.3 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-2                              	11110758	       545.2 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-2                              	10951822	       547.0 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-2                              	11081361	       544.1 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-2                              	11157507	       549.6 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-4                              	11332222	       526.0 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-4                              	11618802	       531.8 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-4                              	11034152	       526.0 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-4                              	11152768	       522.6 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-4                              	11494999	       523.1 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-8                              	11194368	       525.1 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-8                              	11347486	       514.9 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-8                              	11630780	       518.0 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-8                              	11386118	       511.5 ns/op	     456 B/op	      10 allocs/op
+BenchmarkNetHTTPResponseWriting-8                              	10973437	       511.4 ns/op	     456 B/op	      10 allocs/op
+BenchmarkGorillaWebSocketEcho                                  	  637402	      9930 ns/op	   3.42 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho                                  	  623749	     10036 ns/op	   3.39 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho                                  	  629571	     10454 ns/op	   3.25 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho                                  	  608582	     10250 ns/op	   3.32 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho                                  	  587324	     10528 ns/op	   3.23 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-2                                	  614868	     10084 ns/op	   3.37 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-2                                	  520476	     10415 ns/op	   3.26 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-2                                	  580482	     10410 ns/op	   3.27 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-2                                	  569390	      9830 ns/op	   3.46 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-2                                	  624184	     10007 ns/op	   3.40 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-4                                	  596456	      9796 ns/op	   3.47 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-4                                	  585736	      9929 ns/op	   3.42 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-4                                	  551577	     10212 ns/op	   3.33 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-4                                	  581775	      9986 ns/op	   3.40 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-4                                	  587370	      9762 ns/op	   3.48 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-8                                	  634620	      9824 ns/op	   3.46 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-8                                	  569526	      9838 ns/op	   3.46 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-8                                	  596175	     10200 ns/op	   3.33 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-8                                	  577333	     10227 ns/op	   3.32 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketEcho-8                                	  559532	      9939 ns/op	   3.42 MB/s	    1088 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketBroadcast                             	   98092	     58265 ns/op	   3.09 MB/s	    5770 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast                             	  100249	     57694 ns/op	   3.12 MB/s	    5770 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast                             	  102538	     57506 ns/op	   3.13 MB/s	    5770 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast                             	  103704	     57340 ns/op	   3.14 MB/s	    5770 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast                             	  102291	     62006 ns/op	   2.90 MB/s	    5771 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-2                           	   98772	     62756 ns/op	   2.87 MB/s	    5771 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-2                           	   88795	     63595 ns/op	   2.83 MB/s	    5772 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-2                           	  100257	     71870 ns/op	   2.50 MB/s	    5772 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-2                           	   77599	     70532 ns/op	   2.55 MB/s	    5772 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-2                           	   87560	     74517 ns/op	   2.42 MB/s	    5772 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-4                           	   76431	     72478 ns/op	   2.48 MB/s	    5772 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-4                           	   87819	     76628 ns/op	   2.35 MB/s	    5772 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-4                           	   76348	     76261 ns/op	   2.36 MB/s	    5772 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-4                           	   77349	     87714 ns/op	   2.05 MB/s	    5773 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-4                           	   78530	     77857 ns/op	   2.31 MB/s	    5772 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-8                           	   66913	     86305 ns/op	   2.09 MB/s	    5772 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-8                           	   71343	     84808 ns/op	   2.12 MB/s	    5773 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-8                           	   68656	     94903 ns/op	   1.90 MB/s	    5774 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-8                           	   63084	     85647 ns/op	   2.10 MB/s	    5773 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketBroadcast-8                           	   72552	     86040 ns/op	   2.09 MB/s	    5773 B/op	      23 allocs/op
+BenchmarkGorillaWebSocketThroughput                            	  255926	     64647 ns/op	  15.84 MB/s	    2854 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput                            	 1000000	    209177 ns/op	   4.90 MB/s	    2868 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketThroughput                            	 1000000	    136768 ns/op	   7.49 MB/s	    2869 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketThroughput                            	 1000000	    124307 ns/op	   8.24 MB/s	    2873 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketThroughput                            	   10000	   2085850 ns/op	   0.49 MB/s	    1972 B/op	       3 allocs/op
+BenchmarkGorillaWebSocketThroughput-2                          	 3324682	      2264 ns/op	 452.39 MB/s	    2872 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketThroughput-2                          	 3257719	      1918 ns/op	 533.78 MB/s	    2869 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-2                          	 2956101	      1939 ns/op	 528.14 MB/s	    2869 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-2                          	 2935028	      1918 ns/op	 533.85 MB/s	    2868 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-2                          	 2894222	      1888 ns/op	 542.29 MB/s	    2869 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-4                          	 3356427	      1781 ns/op	 575.07 MB/s	    2868 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-4                          	 3405036	      1854 ns/op	 552.29 MB/s	    2868 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-4                          	 2896411	      2062 ns/op	 496.72 MB/s	    2868 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-4                          	 2845566	      1900 ns/op	 538.88 MB/s	    2868 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-4                          	 3159326	      2045 ns/op	 500.76 MB/s	    2868 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-8                          	 2873389	      1864 ns/op	 549.25 MB/s	    2869 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-8                          	 3058884	      1881 ns/op	 544.34 MB/s	    2868 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-8                          	 3185720	      1907 ns/op	 537.01 MB/s	    2869 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-8                          	 3139928	      1933 ns/op	 529.80 MB/s	    2869 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketThroughput-8                          	 2633335	      1945 ns/op	 526.57 MB/s	    2868 B/op	       4 allocs/op
+BenchmarkGorillaWebSocketConcurrent                            	  547083	     10263 ns/op	   4.48 MB/s	    1094 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent                            	  581054	     10119 ns/op	   4.55 MB/s	    1094 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent                            	  541125	     10253 ns/op	   4.49 MB/s	    1094 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent                            	  550219	     10418 ns/op	   4.42 MB/s	    1094 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent                            	  526646	     10195 ns/op	   4.51 MB/s	    1094 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-2                          	  887664	      6242 ns/op	   7.37 MB/s	    1095 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-2                          	  838140	      6213 ns/op	   7.40 MB/s	    1096 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-2                          	  934284	      6262 ns/op	   7.35 MB/s	    1095 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-2                          	  866202	      6188 ns/op	   7.43 MB/s	    1096 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-2                          	  853993	      6202 ns/op	   7.42 MB/s	    1096 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-4                          	 1389412	      4474 ns/op	  10.28 MB/s	    1097 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-4                          	 1384507	      4244 ns/op	  10.84 MB/s	    1098 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-4                          	 1465628	      4260 ns/op	  10.80 MB/s	    1097 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-4                          	 1461873	      4077 ns/op	  11.28 MB/s	    1097 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-4                          	 1447069	      4088 ns/op	  11.25 MB/s	    1097 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-8                          	 1627170	      3682 ns/op	  12.49 MB/s	    1104 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-8                          	 1553820	      3605 ns/op	  12.76 MB/s	    1105 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-8                          	 1670134	      3629 ns/op	  12.68 MB/s	    1104 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-8                          	 1676635	      3850 ns/op	  11.95 MB/s	    1104 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketConcurrent-8                          	 1635058	      3610 ns/op	  12.74 MB/s	    1104 B/op	       5 allocs/op
+BenchmarkGorillaWebSocketLargeMessage                          	     100	 866844342 ns/op	   2.42 MB/s	10508733 B/op	     132 allocs/op
+BenchmarkGorillaWebSocketLargeMessage                          	     100	 217311539 ns/op	   9.65 MB/s	10489692 B/op	      80 allocs/op
+BenchmarkGorillaWebSocketLargeMessage                          	     100	  52122331 ns/op	  40.24 MB/s	10484775 B/op	      66 allocs/op
+BenchmarkGorillaWebSocketLargeMessage                          	    1416	   4227516 ns/op	 496.07 MB/s	10482760 B/op	      60 allocs/op
+BenchmarkGorillaWebSocketLargeMessage                          	    1024	  83528212 ns/op	  25.11 MB/s	10484949 B/op	      66 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-2                        	     100	  61404520 ns/op	  34.15 MB/s	10485911 B/op	      69 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-2                        	     128	 187566787 ns/op	  11.18 MB/s	10488752 B/op	      77 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-2                        	    2013	   4214426 ns/op	 497.61 MB/s	10482798 B/op	      60 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-2                        	     100	 147238403 ns/op	  14.24 MB/s	10488196 B/op	      76 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-2                        	    1818	 109914346 ns/op	  19.08 MB/s	10485656 B/op	      68 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-4                        	     649	  33774633 ns/op	  62.09 MB/s	10483763 B/op	      63 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-4                        	    2136	   2547526 ns/op	 823.21 MB/s	10482661 B/op	      60 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-4                        	    1810	  11874762 ns/op	 176.61 MB/s	10482946 B/op	      60 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-4                        	    1233	   8892941 ns/op	 235.82 MB/s	10482973 B/op	      61 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-4                        	    1312	  16815153 ns/op	 124.72 MB/s	10483112 B/op	      61 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-8                        	    1317	  51085402 ns/op	  41.05 MB/s	10484169 B/op	      64 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-8                        	     163	 146553370 ns/op	  14.31 MB/s	10487328 B/op	      73 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-8                        	     100	  88116849 ns/op	  23.80 MB/s	10486085 B/op	      70 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-8                        	    1172	  12395513 ns/op	 169.19 MB/s	10483154 B/op	      61 allocs/op
+BenchmarkGorillaWebSocketLargeMessage-8                        	    1342	  17281274 ns/op	 121.35 MB/s	10483131 B/op	      61 allocs/op
+BenchmarkGorillaWebSocketPing                                  	  480330	     11561 ns/op	    1040 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing                                  	  541706	     11928 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing                                  	  539954	     11351 ns/op	    1040 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing                                  	  530425	     11425 ns/op	    1040 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing                                  	  542800	     11561 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-2                                	  307333	     16736 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-2                                	  386683	     19010 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-2                                	  345274	     18032 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-2                                	  312373	     18993 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-2                                	  307723	     19563 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-4                                	  284002	     20278 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-4                                	  291244	     20383 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-4                                	  302258	     21205 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-4                                	  255394	     20459 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-4                                	  298514	     20018 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-8                                	  296364	     20741 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-8                                	  283377	     22243 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-8                                	  285520	     20686 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-8                                	  282757	     20539 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketPing-8                                	  290336	     21105 ns/op	    1041 B/op	      13 allocs/op
+BenchmarkGorillaWebSocketMessageParsing                        	528131989	        11.37 ns/op	 967.12 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing                        	526230642	        11.10 ns/op	 991.08 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing                        	523131850	        10.78 ns/op	1019.97 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing                        	537308672	        10.99 ns/op	1001.10 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing                        	557369026	        10.78 ns/op	1020.41 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-2                      	520589516	        11.57 ns/op	 951.06 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-2                      	551792220	        10.76 ns/op	1021.87 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-2                      	594474039	        10.82 ns/op	1016.88 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-2                      	560911699	        10.72 ns/op	1026.03 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-2                      	533177580	        10.83 ns/op	1015.55 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-4                      	549543907	        10.93 ns/op	1006.68 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-4                      	549616076	        11.17 ns/op	 984.49 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-4                      	554335057	        10.91 ns/op	1008.49 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-4                      	535542846	        11.25 ns/op	 978.17 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-4                      	557333940	        11.06 ns/op	 994.29 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-8                      	560913436	        10.93 ns/op	1006.81 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-8                      	546805366	        10.89 ns/op	1010.30 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-8                      	505619719	        10.74 ns/op	1024.61 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-8                      	544310536	        11.07 ns/op	 993.34 MB/s	       0 B/op	       0 allocs/op
+BenchmarkGorillaWebSocketMessageParsing-8                      	543623217	        10.94 ns/op	1005.17 MB/s	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/yourusername/shockwave/benchmarks/competitors	8020.683s

@@ -1,0 +1,88 @@
+{
+  "description": "Capacitor DAL/DTO project settings",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "prevent-panics",
+            "description": "Prevent panic() usage in library code",
+            "command": "if echo \"$TOOL_INPUT\" | grep -q 'panic('; then echo 'ERROR: Library code must not use panic(). Return errors instead.'; exit 1; fi"
+          },
+          {
+            "type": "command",
+            "name": "prevent-any-type",
+            "description": "Prevent use of 'any' type (use generics instead)",
+            "command": "if echo \"$TOOL_INPUT\" | grep -E '\\bany\\b' | grep -v '// any is acceptable here' | grep -v 'interface{}'; then echo 'ERROR: Do not use \"any\" type. Use generics or concrete types.'; exit 1; fi"
+          },
+          {
+            "type": "command",
+            "name": "check-godoc",
+            "description": "Ensure exported symbols have godoc comments",
+            "command": "if echo \"$TOOL_INPUT\" | grep -E '^func [A-Z]|^type [A-Z]|^const [A-Z]|^var [A-Z]' | head -1 | grep -v '^//'; then echo 'WARNING: Exported symbols should have godoc comments.'; fi"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "format-code",
+            "description": "Automatically format Go code",
+            "command": "if echo \"$TOOL_INPUT\" | jq -r '.file_path' | grep -q '\\.go$'; then FILE=$(echo \"$TOOL_INPUT\" | jq -r '.file_path'); gofmt -w \"$FILE\" 2>/dev/null || true; fi"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "prompt",
+            "name": "summarize-work",
+            "description": "Summarize work completed by subagent",
+            "prompt": "A subagent has completed its work. Please:\n1. Review what was accomplished\n2. Check if any tests need to be run\n3. Verify code quality and adherence to CLAUDE.md\n4. Suggest next steps if any\n\nSubagent output:\n${SUBAGENT_OUTPUT}"
+          }
+        ]
+      }
+    ]
+  },
+  "rules": {
+    "code_style": {
+      "go_formatting": "gofmt",
+      "linting": "golangci-lint",
+      "max_line_length": 120,
+      "tab_width": 4
+    },
+    "quality_gates": {
+      "min_test_coverage": 85,
+      "require_benchmarks": true,
+      "require_godoc": true,
+      "no_panics": true,
+      "no_any_type": true,
+      "no_reflection_in_hot_paths": true
+    },
+    "performance": {
+      "max_allocs_hot_path": 0,
+      "max_latency_cache_get_ns": 100,
+      "max_latency_cache_set_ns": 200,
+      "max_latency_db_get_ms": 1,
+      "max_latency_db_set_ms": 2
+    }
+  },
+  "allowed_tools": [
+    "Read",
+    "Write",
+    "Edit",
+    "Bash",
+    "Grep",
+    "Glob",
+    "Task"
+  ]
+}

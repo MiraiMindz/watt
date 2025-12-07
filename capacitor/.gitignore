@@ -1,0 +1,42 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Test and coverage
+coverage.out
+coverage.html
+*.prof
+test-results/
+profiles/
+
+# Benchmarks
+benchmarks/results/current.txt
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.log
+
+# Docker
+docker-compose.override.yml
+
+# Claude Code local settings
+.claude/settings.local.json

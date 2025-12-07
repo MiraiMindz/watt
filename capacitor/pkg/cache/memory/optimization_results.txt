@@ -1,0 +1,57 @@
+goos: linux
+goarch: amd64
+pkg: github.com/watt-toolkit/capacitor/pkg/cache/memory
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkStandardCache_Get_Parallel-8             	 7080270	       182.5 ns/op	      13 B/op	       1 allocs/op
+BenchmarkStandardCache_Get_Parallel-8             	 7587284	       170.7 ns/op	      13 B/op	       1 allocs/op
+BenchmarkStandardCache_Get_Parallel-8             	 7224692	       165.8 ns/op	      13 B/op	       1 allocs/op
+BenchmarkShardedCache_Get_Parallel-8              	10696690	       119.2 ns/op	      13 B/op	       1 allocs/op
+BenchmarkShardedCache_Get_Parallel-8              	 9679737	       125.7 ns/op	      13 B/op	       1 allocs/op
+BenchmarkShardedCache_Get_Parallel-8              	 8635676	       131.6 ns/op	      13 B/op	       1 allocs/op
+BenchmarkStandardCache_Set_Parallel-8             	 4664125	       254.8 ns/op	      24 B/op	       2 allocs/op
+BenchmarkStandardCache_Set_Parallel-8             	 4235886	       264.5 ns/op	      24 B/op	       2 allocs/op
+BenchmarkStandardCache_Set_Parallel-8             	 4242784	       262.3 ns/op	      24 B/op	       2 allocs/op
+BenchmarkShardedCache_Set_Parallel-8              	11291348	       109.1 ns/op	      23 B/op	       2 allocs/op
+BenchmarkShardedCache_Set_Parallel-8              	 9167684	       124.6 ns/op	      23 B/op	       2 allocs/op
+BenchmarkShardedCache_Set_Parallel-8              	11584938	       116.2 ns/op	      23 B/op	       2 allocs/op
+BenchmarkStandardCache_MixedWorkload_Parallel-8   	 5434722	       225.5 ns/op	      14 B/op	       1 allocs/op
+BenchmarkStandardCache_MixedWorkload_Parallel-8   	 5084767	       209.0 ns/op	      14 B/op	       1 allocs/op
+BenchmarkStandardCache_MixedWorkload_Parallel-8   	 6396628	       197.7 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_MixedWorkload_Parallel-8    	 8023070	       159.8 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_MixedWorkload_Parallel-8    	 8469127	       152.6 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_MixedWorkload_Parallel-8    	 7875586	       151.9 ns/op	      14 B/op	       1 allocs/op
+BenchmarkAtomicMetrics_RecordHit_Parallel-8       	66715616	        16.13 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicMetrics_RecordHit_Parallel-8       	79752151	        14.91 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicMetrics_RecordHit_Parallel-8       	75293172	        15.77 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCustomMap_Get-8                          	79638842	        14.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCustomMap_Get-8                          	61241443	        19.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCustomMap_Get-8                          	81835537	        15.86 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMap_Get-8                        	80260470	        16.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMap_Get-8                        	77374317	        19.32 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMap_Get-8                        	64608441	        18.50 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCustomMap_Set-8                          	 6490058	       215.7 ns/op	      15 B/op	       1 allocs/op
+BenchmarkCustomMap_Set-8                          	 6997135	       147.9 ns/op	      15 B/op	       1 allocs/op
+BenchmarkCustomMap_Set-8                          	 9071552	       145.1 ns/op	      15 B/op	       1 allocs/op
+BenchmarkStandardMap_Set-8                        	 7554963	       156.1 ns/op	      15 B/op	       1 allocs/op
+BenchmarkStandardMap_Set-8                        	 7525963	       137.4 ns/op	      15 B/op	       1 allocs/op
+BenchmarkStandardMap_Set-8                        	 8772820	       136.7 ns/op	      15 B/op	       1 allocs/op
+BenchmarkCustomMap_Delete-8                       	 9028921	       188.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCustomMap_Delete-8                       	 8237072	       187.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCustomMap_Delete-8                       	 8278081	       193.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMap_Delete-8                     	 7674805	       167.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMap_Delete-8                     	 8364798	       153.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStandardMap_Delete-8                     	 9517672	       153.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkShardedCache_Shards16_Parallel-8         	 5672424	       244.4 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_Shards16_Parallel-8         	 5535997	       206.7 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_Shards16_Parallel-8         	 6148609	       218.0 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_Shards32_Parallel-8         	 7542426	       183.7 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_Shards32_Parallel-8         	 6756585	       168.6 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_Shards32_Parallel-8         	 7125184	       185.4 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_Shards64_Parallel-8         	 7714057	       151.0 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_Shards64_Parallel-8         	 7355904	       172.5 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_Shards64_Parallel-8         	 7731994	       154.0 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_Shards128_Parallel-8        	 9728646	       138.7 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_Shards128_Parallel-8        	 9592731	       147.2 ns/op	      14 B/op	       1 allocs/op
+BenchmarkShardedCache_Shards128_Parallel-8        	 9599216	       136.1 ns/op	      14 B/op	       1 allocs/op
+PASS
+ok  	github.com/watt-toolkit/capacitor/pkg/cache/memory	95.504s

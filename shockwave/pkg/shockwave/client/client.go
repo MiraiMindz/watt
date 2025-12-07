@@ -1,11 +1,9 @@
 package client
 
 import (
-	"context"
 	"errors"
 	"fmt"
 	"io"
-	"strings"
 	"time"
 )
 
@@ -114,27 +112,10 @@ func (c *Client) DoString(method, urlStr string, body io.Reader) (*ClientRespons
 //
 // Allocation behavior: 0-2 allocs/op with all optimizations
 func (c *Client) Do(req *ClientRequest) (*ClientResponse, error) {
-	// Build host:port efficiently with minimal allocations
-	var sb InlineStringBuilder
-
-	// Add host
-	sb.WriteBytes(req.hostBytes[:req.hostLen])
-	sb.WriteByte(':')
-
-	// Add port (explicit or default based on scheme)
-	if req.portLen > 0 {
-		sb.WriteBytes(req.portBytes[:req.portLen])
-	} else {
-		// Default port based on scheme
-		if req.schemeLen == 5 && req.schemeBytes[0] == 'h' && req.schemeBytes[1] == 't' &&
-		   req.schemeBytes[2] == 't' && req.schemeBytes[3] == 'p' && req.schemeBytes[4] == 's' {
-			sb.WriteString("443")
-		} else {
-			sb.WriteString("80")
-		}
-	}
-
-	hostPort := sb.String()
+	// Build host:port efficiently with zero allocations
+	// Use cached hostPort buffer to avoid string allocation
+	hostPortBytes := req.buildHostPort()
+	hostPort := bytesToStringUnsafe(hostPortBytes)
 
 	// Set default headers if not present
 	c.setDefaultHeaders(req)
@@ -142,7 +123,7 @@ func (c *Client) Do(req *ClientRequest) (*ClientResponse, error) {
 	// Get connection from pool
 	ctx := req.ctx
 	if ctx == nil {
-		ctx = context.Background()
+		ctx = GetGlobalContext()
 	}
 
 	conn, err := c.pool.GetConn(ctx, hostPort, HTTP11)
@@ -225,32 +206,33 @@ func (c *Client) doHTTP11Optimized(req *ClientRequest, conn *PooledConn) (*Clien
 	var bodyReader io.ReadCloser
 
 	if req.methodID == methodIDHEAD || resp.statusCode == 204 || resp.statusCode == 304 {
-		// No body expected
-		bodyReader = io.NopCloser(strings.NewReader(""))
-	} else if resp.transferEncoding != nil && len(resp.transferEncoding) > 0 {
+		// No body expected - use empty pooled body reader
+		bodyReader = getEmptyBodyReader(conn, resp, br)
+	} else if resp.isChunked {
 		// Chunked encoding
-		bodyReader = &responseBodyReader{
-			reader: br,
-			conn:   conn,
-			resp:   resp,
-			or:     br,
-		}
+		rbr := getResponseBodyReader()
+		rbr.reader = br
+		rbr.conn = conn
+		rbr.resp = resp
+		rbr.or = br
+		bodyReader = rbr
 	} else if resp.contentLength >= 0 {
-		// Fixed content length - use LimitReader
-		bodyReader = &responseBodyReader{
-			reader: io.LimitReader(br, resp.contentLength),
-			conn:   conn,
-			resp:   resp,
-			or:     br,
-		}
+		// Fixed content length - use pooled LimitReader
+		rbr := getResponseBodyReader()
+		rbr.lr = getLimitedReader(br, resp.contentLength)
+		rbr.reader = rbr.lr
+		rbr.conn = conn
+		rbr.resp = resp
+		rbr.or = br
+		bodyReader = rbr
 	} else {
 		// Read until EOF
-		bodyReader = &responseBodyReader{
-			reader: br,
-			conn:   conn,
-			resp:   resp,
-			or:     br,
-		}
+		rbr := getResponseBodyReader()
+		rbr.reader = br
+		rbr.conn = conn
+		rbr.resp = resp
+		rbr.or = br
+		bodyReader = rbr
 	}
 
 	resp.SetBody(bodyReader)
@@ -260,16 +242,18 @@ func (c *Client) doHTTP11Optimized(req *ClientRequest, conn *PooledConn) (*Clien
 
 // responseBodyReader wraps the response body and handles cleanup.
 type responseBodyReader struct {
-	reader io.Reader
-	conn   *PooledConn
-	resp   *ClientResponse
-	or     *OptimizedReader
-	closed bool
+	reader  io.Reader
+	conn    *PooledConn
+	resp    *ClientResponse
+	or      *OptimizedReader
+	lr      *limitedReader // pooled limitedReader if used
+	closed  bool
+	isEmpty bool // true if this is an empty body reader (for HEAD/204/304)
 }
 
 // Read reads from the response body.
 func (r *responseBodyReader) Read(p []byte) (int, error) {
-	if r.closed {
+	if r.closed || r.isEmpty {
 		return 0, io.EOF
 	}
 	return r.reader.Read(p)
@@ -282,15 +266,49 @@ func (r *responseBodyReader) Close() error {
 	}
 	r.closed = true
 
-	// Drain remaining body
-	io.Copy(io.Discard, r.reader)
+	// Drain remaining body (skip if empty)
+	if !r.isEmpty && r.reader != nil {
+		io.Copy(io.Discard, r.reader)
+	}
 
 	// Return OptimizedReader to pool
 	if r.or != nil {
 		PutOptimizedReader(r.or)
 	}
 
+	// Return limitedReader to pool
+	if r.lr != nil {
+		putLimitedReader(r.lr)
+	}
+
+	// Return body reader to pool
+	putResponseBodyReader(r)
+
 	return nil
+}
+
+// Reset prepares the body reader for reuse
+func (r *responseBodyReader) reset() {
+	r.reader = nil
+	r.conn = nil
+	r.resp = nil
+	r.or = nil
+	r.lr = nil
+	r.closed = false
+	r.isEmpty = false
+}
+
+// getEmptyBodyReader returns an empty body reader for HEAD/204/304 responses.
+// This avoids the io.NopCloser allocation.
+//
+// Allocation behavior: 0 allocs/op (uses pooled responseBodyReader)
+func getEmptyBodyReader(conn *PooledConn, resp *ClientResponse, or *OptimizedReader) *responseBodyReader {
+	rbr := getResponseBodyReader()
+	rbr.isEmpty = true
+	rbr.conn = conn
+	rbr.resp = resp
+	rbr.or = or
+	return rbr
 }
 
 // setDefaultHeaders sets default headers if not already present.

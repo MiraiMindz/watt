@@ -1,0 +1,24 @@
+goos: linux
+goarch: amd64
+pkg: github.com/watt-toolkit/capacitor/pkg/capacitor
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkMultiLayerDAL_Get_L1Hit-8                   	25680284	       168.8 ns/op	      13 B/op	       1 allocs/op
+BenchmarkMultiLayerDAL_Get_L2Hit-8                   	22847172	       141.0 ns/op	      13 B/op	       1 allocs/op
+BenchmarkMultiLayerDAL_Get_L2HitWithPromotion-8      	30690698	       120.2 ns/op	      13 B/op	       1 allocs/op
+BenchmarkMultiLayerDAL_Get_Miss-8                    	22728760	       162.2 ns/op	      31 B/op	       2 allocs/op
+BenchmarkMultiLayerDAL_Set_WriteThrough-8            	 7602363	       706.9 ns/op	     120 B/op	       7 allocs/op
+BenchmarkMultiLayerDAL_Set_L1Only-8                  	12112836	       284.6 ns/op	      87 B/op	       4 allocs/op
+BenchmarkMultiLayerDAL_Delete-8                      	 7484241	       566.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMultiLayerDAL_Exists-8                      	22764405	       137.5 ns/op	      13 B/op	       1 allocs/op
+BenchmarkMultiLayerDAL_GetMulti-8                    	 4276154	       826.3 ns/op	     872 B/op	       7 allocs/op
+BenchmarkMultiLayerDAL_SetMulti-8                    	 1718448	      2050 ns/op	     616 B/op	       8 allocs/op
+BenchmarkMultiLayerDAL_DeleteMulti-8                 	 1000000	      3018 ns/op	     504 B/op	       4 allocs/op
+BenchmarkMultiLayerDAL_MixedWorkload_80R_10W_10D-8   	19809456	       162.6 ns/op	      23 B/op	       2 allocs/op
+BenchmarkMultiLayerDAL_2Layers-8                     	32571572	       121.6 ns/op	      13 B/op	       1 allocs/op
+BenchmarkMultiLayerDAL_3Layers-8                     	27058987	       149.0 ns/op	      13 B/op	       1 allocs/op
+BenchmarkMultiLayerDAL_4Layers-8                     	20590311	       162.4 ns/op	      13 B/op	       1 allocs/op
+BenchmarkMultiLayerDAL_Get_Parallel-8                	29548857	       144.0 ns/op	      13 B/op	       1 allocs/op
+BenchmarkMultiLayerDAL_Set_Parallel-8                	 4750375	       650.0 ns/op	      80 B/op	       4 allocs/op
+BenchmarkMultiLayerDAL_MixedWorkload_Parallel-8      	11498984	       301.1 ns/op	      20 B/op	       2 allocs/op
+PASS
+ok  	github.com/watt-toolkit/capacitor/pkg/capacitor	87.837s

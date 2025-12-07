@@ -1,2 +1,0 @@
-timeout: invalid time interval ‘1h15m’
-Try 'timeout --help' for more information.

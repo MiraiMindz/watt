@@ -2,6 +2,7 @@ package client
 
 import (
 	"bufio"
+	"context"
 	"io"
 	"sync"
 
@@ -11,10 +12,20 @@ import (
 // Global pools for reusable objects
 // All pools use sync.Pool for zero-allocation reuse
 var (
+	// Reusable context to avoid context.Background() allocations
+	globalContext = context.Background()
+
 	// Request pooling
 	clientRequestPool = sync.Pool{
 		New: func() interface{} {
 			return &ClientRequest{}
+		},
+	}
+
+	// responseBodyReader pooling
+	responseBodyReaderPool = sync.Pool{
+		New: func() interface{} {
+			return &responseBodyReader{}
 		},
 	}
 
@@ -292,4 +303,39 @@ func WarmupPools(count int) {
 
 	// Warmup global buffer pool
 	shockwave.WarmupBufferPool(count)
+
+	// Warmup responseBodyReader pool
+	for i := 0; i < count; i++ {
+		rbr := getResponseBodyReader()
+		putResponseBodyReader(rbr)
+	}
+}
+
+// GetGlobalContext returns a reusable context.
+// This avoids allocation from context.Background().
+//
+// Allocation behavior: 0 allocs/op
+func GetGlobalContext() context.Context {
+	return globalContext
+}
+
+// getResponseBodyReader retrieves a responseBodyReader from the pool.
+// Internal use only.
+//
+// Allocation behavior: 0 allocs/op (reuses pooled object)
+func getResponseBodyReader() *responseBodyReader {
+	rbr := responseBodyReaderPool.Get().(*responseBodyReader)
+	rbr.reset()
+	return rbr
+}
+
+// putResponseBodyReader returns a responseBodyReader to the pool.
+// Internal use only.
+//
+// Allocation behavior: 0 allocs/op
+func putResponseBodyReader(rbr *responseBodyReader) {
+	if rbr != nil {
+		rbr.reset()
+		responseBodyReaderPool.Put(rbr)
+	}
 }

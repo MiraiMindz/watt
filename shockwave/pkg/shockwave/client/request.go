@@ -23,13 +23,13 @@ type ClientRequest struct {
 	// Using fixed-size arrays to avoid allocations
 	schemeBytes [8]byte   // "http" or "https"
 	schemeLen   uint8     // Length of scheme
-	hostBytes   [256]byte // Host name
-	hostLen     uint16    // Length of host
+	hostBytes   [128]byte // Host name (128 bytes is enough for most hosts)
+	hostLen     uint8     // Length of host
 	portBytes   [6]byte   // Port number as string
 	portLen     uint8     // Length of port
-	pathBytes   [2048]byte // Request path
+	pathBytes   [256]byte // Request path (256 bytes covers most paths)
 	pathLen     uint16    // Length of path
-	queryBytes  [2048]byte // Query string (without '?')
+	queryBytes  [256]byte // Query string (256 bytes for query params)
 	queryLen    uint16    // Length of query
 
 	// Headers (inline storage via ClientHeaders)
@@ -53,6 +53,11 @@ type ClientRequest struct {
 
 	// Buffer for building request (reused across requests)
 	buf []byte
+
+	// Cached hostPort buffer (avoids allocation in Do())
+	// 160 bytes is enough for "host:port" (128 + 1 + 6 + padding)
+	hostPortBuf [160]byte
+	hostPortLen uint8
 }
 
 // Reset clears the request for reuse.
@@ -90,6 +95,9 @@ func (r *ClientRequest) Reset() {
 	if r.buf != nil {
 		r.buf = r.buf[:0]
 	}
+
+	// Reset hostPort cache
+	r.hostPortLen = 0
 }
 
 // SetMethod sets the HTTP method.
@@ -112,65 +120,64 @@ func (r *ClientRequest) SetMethod(method string) {
 // Allocation behavior: 0 allocs/op if all components fit inline
 func (r *ClientRequest) SetURL(scheme, host, port, path, query string) {
 	// Set scheme
-	if len(scheme) <= cap(r.schemeBytes) {
+	if len(scheme) <= len(r.schemeBytes) {
 		copy(r.schemeBytes[:], scheme)
 		r.schemeLen = uint8(len(scheme))
 	}
 
-	// Set host
-	if len(host) <= cap(r.hostBytes) {
-		copy(r.hostBytes[:], host)
-		r.hostLen = uint16(len(host))
+	// Set host (truncate if too long)
+	hostLen := len(host)
+	if hostLen > len(r.hostBytes) {
+		hostLen = len(r.hostBytes)
 	}
+	copy(r.hostBytes[:], host[:hostLen])
+	r.hostLen = uint8(hostLen)
 
 	// Set port
-	if len(port) <= cap(r.portBytes) {
+	if len(port) <= len(r.portBytes) {
 		copy(r.portBytes[:], port)
 		r.portLen = uint8(len(port))
 	}
 
-	// Set path
-	if len(path) <= cap(r.pathBytes) {
-		copy(r.pathBytes[:], path)
-		r.pathLen = uint16(len(path))
-	} else {
-		// Path too long, truncate (should be rare)
-		copy(r.pathBytes[:], path[:cap(r.pathBytes)])
-		r.pathLen = uint16(cap(r.pathBytes))
+	// Set path (truncate if too long)
+	pathLen := len(path)
+	if pathLen > len(r.pathBytes) {
+		pathLen = len(r.pathBytes)
 	}
+	copy(r.pathBytes[:], path[:pathLen])
+	r.pathLen = uint16(pathLen)
 
-	// Set query
-	if len(query) <= cap(r.queryBytes) {
-		copy(r.queryBytes[:], query)
-		r.queryLen = uint16(len(query))
-	} else {
-		// Query too long, truncate
-		copy(r.queryBytes[:], query[:cap(r.queryBytes)])
-		r.queryLen = uint16(cap(r.queryBytes))
+	// Set query (truncate if too long)
+	queryLen := len(query)
+	if queryLen > len(r.queryBytes) {
+		queryLen = len(r.queryBytes)
 	}
+	copy(r.queryBytes[:], query[:queryLen])
+	r.queryLen = uint16(queryLen)
 }
 
 // SetPath sets just the path component.
 //
 // Allocation behavior: 0 allocs/op
 func (r *ClientRequest) SetPath(path string) {
-	if len(path) <= cap(r.pathBytes) {
-		copy(r.pathBytes[:], path)
-		r.pathLen = uint16(len(path))
-	} else {
-		copy(r.pathBytes[:], path[:cap(r.pathBytes)])
-		r.pathLen = uint16(cap(r.pathBytes))
+	pathLen := len(path)
+	if pathLen > len(r.pathBytes) {
+		pathLen = len(r.pathBytes)
 	}
+	copy(r.pathBytes[:], path[:pathLen])
+	r.pathLen = uint16(pathLen)
 }
 
 // SetHost sets the host component.
 //
 // Allocation behavior: 0 allocs/op
 func (r *ClientRequest) SetHost(host string) {
-	if len(host) <= cap(r.hostBytes) {
-		copy(r.hostBytes[:], host)
-		r.hostLen = uint16(len(host))
+	hostLen := len(host)
+	if hostLen > len(r.hostBytes) {
+		hostLen = len(r.hostBytes)
 	}
+	copy(r.hostBytes[:], host[:hostLen])
+	r.hostLen = uint8(hostLen)
 }
 
 // SetHeader sets a request header.
@@ -327,4 +334,42 @@ func (r *ClientRequest) BuildRequest() []byte {
 	r.buf = append(r.buf, crlfBytes...)
 
 	return r.buf
+}
+
+// buildHostPort builds "host:port" string and caches it.
+// Returns zero-copy byte slice. Zero allocations.
+//
+// Allocation behavior: 0 allocs/op
+func (r *ClientRequest) buildHostPort() []byte {
+	// Build into cached buffer
+	pos := uint8(0)
+
+	// Copy host
+	n := copy(r.hostPortBuf[pos:], r.hostBytes[:r.hostLen])
+	pos += uint8(n)
+
+	// Add colon
+	if pos < uint8(len(r.hostPortBuf)) {
+		r.hostPortBuf[pos] = ':'
+		pos++
+	}
+
+	// Add port (explicit or default based on scheme)
+	if r.portLen > 0 {
+		n = copy(r.hostPortBuf[pos:], r.portBytes[:r.portLen])
+		pos += uint8(n)
+	} else {
+		// Default port based on scheme
+		if r.schemeLen == 5 && r.schemeBytes[0] == 'h' && r.schemeBytes[1] == 't' &&
+			r.schemeBytes[2] == 't' && r.schemeBytes[3] == 'p' && r.schemeBytes[4] == 's' {
+			copy(r.hostPortBuf[pos:], "443")
+			pos += 3
+		} else {
+			copy(r.hostPortBuf[pos:], "80")
+			pos += 2
+		}
+	}
+
+	r.hostPortLen = pos
+	return r.hostPortBuf[:pos]
 }

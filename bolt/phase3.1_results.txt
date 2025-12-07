@@ -1,2 +1,0 @@
-PASS
-ok  	github.com/yourusername/bolt/core	0.002s

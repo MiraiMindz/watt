@@ -33,7 +33,7 @@ type ClientResponse struct {
 
 	// Content information
 	contentLength    int64 // -1 if unknown
-	transferEncoding []string // nil for identity, ["chunked"] for chunked
+	isChunked        bool  // true if Transfer-Encoding: chunked
 
 	// Connection info
 	close bool // true if connection should be closed after this response
@@ -62,7 +62,7 @@ func (r *ClientResponse) Reset() {
 
 	r.body = nil
 	r.contentLength = -1
-	r.transferEncoding = nil
+	r.isChunked = false
 	r.close = false
 	r.conn = nil
 
@@ -278,7 +278,7 @@ func (r *ClientResponse) processHeaders() {
 	// Transfer-Encoding
 	if teBytes := r.headers.Get(headerTransferEncoding); teBytes != nil {
 		if bytesEqual(teBytes, headerChunked) {
-			r.transferEncoding = []string{"chunked"}
+			r.isChunked = true
 		}
 	}
 
